@@ -141,11 +141,13 @@
 
   function start() {
     if (live) return;
+    try { sessionStorage.removeItem("tour-dismissed"); } catch (err) {}
     if (!root) build();
     live = true;
     document.body.classList.add("tour-on");
     root.classList.add("on");
     go(0);
+    syncLaunchers();
     card.focus && card.querySelector(".tour-next").focus();
   }
 
@@ -154,7 +156,24 @@
     if (root) root.classList.remove("on");
   }
 
-  function end() { cleanup(); live = false; }
+  function end() {
+    cleanup(); live = false;
+    try { sessionStorage.setItem("tour-dismissed", "1"); } catch (err) {}
+    try {
+      if (/[?&]tour=(1|go)\b/.test(location.search)) {
+        var q = location.search.replace(/([?&])tour=(?:1|go)(&|$)/, function (m, a, b) { return b === "&" ? a : ""; });
+        history.replaceState(null, "", location.pathname + (q === "?" ? "" : q) + location.hash);
+      }
+    } catch (err) {}
+    syncLaunchers();
+  }
+
+  function syncLaunchers() {
+    document.querySelectorAll("[data-tour-start]").forEach(function (b) {
+      b.classList.toggle("tour-live", live);
+      if (b.classList.contains("tour-toggle")) b.setAttribute("aria-pressed", live ? "true" : "false");
+    });
+  }
 
   // public
   window.Tour = { start: start, end: end };
@@ -162,14 +181,16 @@
   // launchers
   function wireLaunchers() {
     document.querySelectorAll("[data-tour-start]").forEach(function (b) {
-      b.addEventListener("click", function (e) { e.preventDefault(); start(); });
+      b.addEventListener("click", function (e) { e.preventDefault(); if (live) { end(); } else { start(); } });
     });
   }
   document.addEventListener("DOMContentLoaded", wireLaunchers);
   if (document.readyState !== "loading") wireLaunchers();
 
   // auto-resume across pages
-  if (/[?&]tour=1\b/.test(location.search)) {
+  var dismissed = false;
+  try { dismissed = sessionStorage.getItem("tour-dismissed") === "1"; } catch (err) {}
+  if (/[?&]tour=go\b/.test(location.search) || (/[?&]tour=1\b/.test(location.search) && !dismissed)) {
     var go0 = function () { setTimeout(start, 350); };
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go0);
     else go0();
