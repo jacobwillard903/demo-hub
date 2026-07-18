@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Financials | Ironworks Strength Co.</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <div class="wordmark">IRONWORKS<small>STRENGTH CO.</small></div>
+    </div>
+    <div class="sb-action"><button class="btn" type="button" data-new-member>+ Add Member</button></div>
+    <nav class="sb-nav">
+      <div class="sb-group">
+        <div class="sb-group-label">Overview</div>
+        <a href="app-dashboard.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          Dashboard</a>
+        <a href="app-ask.html" id="nav-ask">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Ask</a>
+      </div>
+      <div class="sb-group">
+        <div class="sb-group-label">Members</div>
+        <a href="app-members.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Members</a>
+        <a href="app-leads.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Lead Concierge</a>
+        <a href="app-retention.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          At-Risk Radar</a>
+      </div>
+      <div class="sb-group">
+        <div class="sb-group-label">Operations</div>
+        <a href="app-schedule.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Schedule &amp; Classes</a>
+        <a href="app-integrations.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Integrations</a>
+      </div>
+      <div class="sb-group">
+        <div class="sb-group-label">Money</div>
+        <a href="app-money.html" class="active" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Financials</a>
+        <a href="app-payments.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          Payment Recovery</a>
+      </div>
+    </nav>
+    <div class="sb-foot">
+      <div class="who">sarah@ironworksstrength.com</div>
+      <a href="index.html">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Money <span>/</span> <b>Financials</b></div>
+      <div class="topbar-right">
+        <button class="tour-toggle" type="button" data-tour-start>Tour <span class="tk"></span></button>
+        <div class="searchbox">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search <kbd>&#8984;K</kbd>
+        </div>
+      </div>
+    </div>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>Financials</h1>
+          <div class="sub">The books, kept clean while you coach. You never have to open QuickBooks again.</div>
+        </div>
+        <div class="page-head-actions">
+          <span class="sync-chip" id="qb-sync"><span class="dot"></span>Synced with <b>QuickBooks Online</b> &middot; last sync 4 min ago</span>
+          <button class="btn btn-primary" type="button" data-tour-start>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Walk Me Through It</button>
+        </div>
+      </div>
+
+      <div class="kpis" id="money-kpis">
+        <div class="kpi">
+          <div class="l">Revenue MTD</div>
+          <div class="n">$19,870</div>
+          <div class="d">July 1 through 18</div>
+        </div>
+        <div class="kpi">
+          <div class="l">Expenses MTD</div>
+          <div class="n">$12,310</div>
+          <div class="d">rent + payroll cleared July 1</div>
+        </div>
+        <div class="kpi">
+          <div class="l">Net Profit MTD</div>
+          <div class="n green">$7,560</div>
+          <div class="d">38.0% margin</div>
+        </div>
+        <div class="kpi">
+          <div class="l">Cash on Hand</div>
+          <div class="n">$23,400</div>
+          <div class="d">operating account</div>
+        </div>
+        <div class="kpi" id="kpi-ar">
+          <div class="l">AR Outstanding</div>
+          <div class="n red">$294</div>
+          <div class="d">the 2 open declined cards</div>
+        </div>
+        <div class="kpi">
+          <div class="l">Avg Daily Take</div>
+          <div class="n">$1,104</div>
+          <div class="d">trailing 18 days</div>
+        </div>
+      </div>
+
+      <div class="grid grid-2 stack" style="margin-top:6px">
+        <div>
+          <div class="card stack" id="cash-chart">
+            <div class="card-h"><h2>Cash Flow by Week</h2><div class="hint">July &middot; in vs out</div></div>
+            <div class="card-b">
+              <div class="cashchart" role="img" aria-label="Weekly cash in versus cash out for July">
+                <div class="cwk">
+                  <div class="cpair">
+                    <div class="cbar"><div class="cv">$9.4k</div><div class="cfill" style="height:78%"></div></div>
+                    <div class="cbar"><div class="cv">$7.2k</div><div class="cfill out" style="height:60%"></div></div>
+                  </div>
+                  <div class="cl">Jun 30 - Jul 6</div>
+                </div>
+                <div class="cwk">
+                  <div class="cpair">
+                    <div class="cbar"><div class="cv">$6.1k</div><div class="cfill" style="height:51%"></div></div>
+                    <div class="cbar"><div class="cv">$2.9k</div><div class="cfill out" style="height:24%"></div></div>
+                  </div>
+                  <div class="cl">Jul 7 - 13</div>
+                </div>
+                <div class="cwk">
+                  <div class="cpair">
+                    <div class="cbar"><div class="cv">$4.3k</div><div class="cfill" style="height:36%"></div></div>
+                    <div class="cbar"><div class="cv">$2.2k</div><div class="cfill out" style="height:18%"></div></div>
+                  </div>
+                  <div class="cl">Jul 14 - 18</div>
+                </div>
+              </div>
+              <div class="seglegend" style="margin-top:12px">
+                <div class="li"><span class="sw" style="background:var(--good)"></span>Cash in <b>&middot; $19,870</b></div>
+                <div class="li"><span class="sw" style="background:var(--accent)"></span>Cash out <b>&middot; $12,310</b></div>
+                <div class="li">Week 1 is heavy on both sides: dues land on the 1st, rent and payroll go out.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="bookkeeper-feed">
+            <div class="card-h"><h2>AI Bookkeeper</h2><div class="hint">what it did in the books this week</div></div>
+            <div class="feed">
+              <div class="frow">
+                <span class="fdot green"></span>
+                <div class="fmain">
+                  <div class="ft">Categorized 42 transactions</div>
+                  <div class="fs">Dues, PT sessions, day passes, retail, and a Rogue hardware order, all filed to the right accounts. Zero left for your accountant to guess at.</div>
+                </div>
+                <div class="ftime">Fri 7:02 AM</div>
+              </div>
+              <div class="frow">
+                <span class="fdot green"></span>
+                <div class="fmain">
+                  <div class="ft">Matched 3 Stripe payouts to bank deposits</div>
+                  <div class="fs">Fees split out automatically. The deposit that hit Tuesday reconciles to the penny.</div>
+                </div>
+                <div class="ftime">Thu 6:48 AM</div>
+              </div>
+              <div class="frow">
+                <span class="fdot red"></span>
+                <div class="fmain">
+                  <div class="ft">Flagged a duplicate $59 software charge</div>
+                  <div class="fs">Billed twice by the scheduling add-on you cancelled in May. Refund request drafted and waiting for your OK.</div>
+                </div>
+                <div class="ftime">Wed 7:15 AM</div>
+              </div>
+              <div class="frow">
+                <span class="fdot amber"></span>
+                <div class="fmain">
+                  <div class="ft">Logged the 2 open declined cards as receivable</div>
+                  <div class="fs">$294 tracked as AR, tied to the Payment Recovery queue. It clears itself when the cards update.</div>
+                </div>
+                <div class="ftime">Wed 7:14 AM</div>
+              </div>
+              <div class="frow">
+                <span class="fdot green"></span>
+                <div class="fmain">
+                  <div class="ft">Drafted the monthly P&amp;L summary email</div>
+                  <div class="fs">June, in plain English: what came in, what went out, what changed vs May. Sitting in your drafts.</div>
+                </div>
+                <div class="ftime">Tue 7:00 AM</div>
+              </div>
+              <div class="frow">
+                <span class="fdot green"></span>
+                <div class="fmain">
+                  <div class="ft">Set aside sales tax on June retail</div>
+                  <div class="fs">$78 on $940 of retail, moved to the tax holding account so quarter-end is a non-event.</div>
+                </div>
+                <div class="ftime">Mon 7:04 AM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card stack pl" id="pl-card">
+            <div class="card-h"><h2>June P&amp;L</h2><div class="hint">last full month</div></div>
+            <div class="plrow plhead"><span class="pln">Revenue</span><span class="plv"></span></div>
+            <div class="plrow plsub"><span class="pln">Membership dues</span><span class="plv">$28,000</span></div>
+            <div class="plrow plsub"><span class="pln">Personal training</span><span class="plv">$3,840</span></div>
+            <div class="plrow plsub"><span class="pln">Drop-ins &amp; day passes</span><span class="plv">$520</span></div>
+            <div class="plrow plsub"><span class="pln">Retail (chalk, belts, apparel)</span><span class="plv">$940</span></div>
+            <div class="plrow pltotal"><span class="pln">Total revenue</span><span class="plv">$33,300</span></div>
+            <div class="plrow plhead"><span class="pln">Expenses</span><span class="plv"></span></div>
+            <div class="plrow plsub"><span class="pln">Coach payroll</span><span class="plv">$11,400</span></div>
+            <div class="plrow plsub"><span class="pln">Rent</span><span class="plv">$5,600</span></div>
+            <div class="plrow plsub"><span class="pln">Payment processing</span><span class="plv">$940</span></div>
+            <div class="plrow plsub"><span class="pln">Equipment &amp; maintenance</span><span class="plv">$720</span></div>
+            <div class="plrow plsub"><span class="pln">Software</span><span class="plv">$640</span></div>
+            <div class="plrow plsub"><span class="pln">Utilities</span><span class="plv">$610</span></div>
+            <div class="plrow plsub"><span class="pln">Insurance</span><span class="plv">$460</span></div>
+            <div class="plrow plsub"><span class="pln">Marketing</span><span class="plv">$380</span></div>
+            <div class="plrow pltotal"><span class="pln">Total expenses</span><span class="plv">$20,750</span></div>
+            <div class="plrow plnet"><span class="pln">Net profit</span><span class="plv">$12,550 &middot; 37.7%</span></div>
+          </div>
+
+          <div class="card" id="expense-mix">
+            <div class="card-h"><h2>Expense Mix</h2><div class="hint">June</div></div>
+            <div class="card-b">
+              <div class="donutwrap">
+                <div class="donut" role="img" aria-label="June expense mix donut chart"
+                  style="background:conic-gradient(#1b1c1e 0 55%, #8c2f2f 55% 82%, #55565b 82% 89.7%, #85847f 89.7% 93.2%, #b3b1ac 93.2% 100%)"></div>
+                <div class="seglegend" style="flex-direction:column;align-items:flex-start;gap:8px">
+                  <div class="li"><span class="sw" style="background:#1b1c1e"></span>Coach payroll <b>&middot; $11,400</b></div>
+                  <div class="li"><span class="sw" style="background:#8c2f2f"></span>Rent <b>&middot; $5,600</b></div>
+                  <div class="li"><span class="sw" style="background:#55565b"></span>Processing <b>&middot; $940</b></div>
+                  <div class="li"><span class="sw" style="background:#85847f"></span>Equipment <b>&middot; $720</b></div>
+                  <div class="li"><span class="sw" style="background:#b3b1ac"></span>Everything else <b>&middot; $2,090</b></div>
+                </div>
+              </div>
+              <div style="font-size:12.5px;color:var(--text-2);margin-top:14px;line-height:1.6;border-top:1px solid var(--border);padding-top:12px">
+                Payroll and rent are the whole game. Everything else combined is under 12% of spend, which is exactly where a one-location gym should be.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-note">Demo data, illustrative numbers.</div>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script>
+window.TOUR = [
+  { el: "#money-kpis", side: "bottom",
+    title: "The books, without opening QuickBooks.",
+    body: "Everything syncs from QuickBooks Online and Stripe. Revenue <b>$19,870</b> so far this July, <b>38% margin</b>, $23,400 in the operating account. This is the page you glance at over coffee, not the software you dread." },
+  { el: "#pl-card", side: "left",
+    title: "A P&L in your own vocabulary.",
+    body: "Dues, PT, day passes, retail. Payroll, rent, equipment. June came in at <b>$33,300</b> revenue and <b>$12,550</b> net. No accountant-speak, no 47-row export." },
+  { el: "#kpi-ar", side: "bottom",
+    title: "AR here is the same $294 from Payment Recovery.",
+    body: "The 2 declined cards on the recovery page show up in the books as receivable, automatically. When the cards update, both pages clear together. One system, one truth." },
+  { el: "#bookkeeper-feed", side: "right",
+    title: "Your bookkeeper never sleeps and never bills hourly.",
+    body: "42 transactions categorized, payouts matched to deposits, a duplicate <b>$59</b> charge caught, sales tax set aside. Month-end used to be a lost Sunday. Now it is a feed you skim." }
+];
+window.TOUR_NEXT = { href: "app-integrations.html", label: "Next: Integrations" };
+</script>
+<script src="assets/tour.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendar &middot; Marlowe Hair Co.</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="side">
+    <div class="side-mark">Marlowe <span>Hair Co.</span></div>
+    <div class="side-sub">Owner View</div>
+    <button class="side-new" type="button" data-new-appt>+ New Appointment</button>
+
+    <div class="side-group">Overview</div>
+    <a class="nav" href="app-dashboard.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a class="nav" href="app-ask.html" id="nav-ask">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Ask Marlowe
+    </a>
+    <div class="side-group">Front Desk</div>
+    <a class="nav on" href="app-calendar.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Calendar
+    </a>
+    <a class="nav" href="app-frontdesk.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      AI Front Desk
+    </a>
+    <a class="nav" href="app-rescue.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Cancellation Rescue
+    </a>
+    <div class="side-group">Clients</div>
+    <a class="nav" href="app-clients.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Clients
+    </a>
+    <a class="nav" href="app-rebooking.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      Rebooking Radar
+    </a>
+    <div class="side-group">Money</div>
+    <a class="nav" href="app-money.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Financials
+    </a>
+    <a class="nav" href="app-retail.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      Retail and Backbar
+    </a>
+    <a class="nav" href="app-integrations.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      Integrations
+    </a>
+
+    <div class="side-spacer"></div>
+    <div class="side-foot">
+      <div class="who">dana@marlowehair.co</div>
+      <a href="index.html">Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Front Desk / <b>Calendar</b></div>
+      <div class="topbar-right">
+        <button class="tour-toggle" type="button" data-tour-start><span class="pip"></span> Tour</button>
+        <div class="search" aria-hidden="true">Search clients<span class="kbd">&#8984;K</span></div>
+      </div>
+    </div>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>Today's Book</h1>
+          <div class="sub">Friday, Jul 18 &middot; live from Square Appointments &middot; all 8 chairs</div>
+        </div>
+        <div class="actions">
+          <button class="btn-walk" type="button" data-tour-start>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Walk Me Through It
+          </button>
+        </div>
+      </div>
+
+      <section class="card" id="cal-kpis">
+        <div class="card-b">
+          <div class="stat-row">
+            <div class="big-stat"><div class="n tnum">31</div><div class="l">Appointments on the book today</div></div>
+            <div class="big-stat"><div class="n tnum">92%</div><div class="l">Of today already confirmed</div></div>
+            <div class="big-stat"><div class="n tnum">1</div><div class="l">Slot rescued this morning ($185)</div></div>
+            <div class="big-stat"><div class="n tnum">2</div><div class="l">Chairs still open Saturday</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="cal-card" style="margin-top:14px">
+        <div class="card-h"><h2>Day View</h2><span class="note">9 AM to 7 PM &middot; drawn to scale, processing time visible</span></div>
+        <div class="card-b">
+          <div class="cal">
+            <div class="cal-hd"></div>
+            <div class="cal-hd"><div class="nm">Danielle</div><div class="ch">Chair 1</div></div>
+            <div class="cal-hd"><div class="nm">Brooke</div><div class="ch">Chair 2</div></div>
+            <div class="cal-hd"><div class="nm">Marissa</div><div class="ch">Chair 3</div></div>
+            <div class="cal-hd"><div class="nm">Elise</div><div class="ch">Chair 4 &middot; booth</div></div>
+            <div class="cal-hd"><div class="nm">Nikki</div><div class="ch">Chair 5 &middot; booth</div></div>
+            <div class="cal-hd"><div class="nm">Open</div><div class="ch">Chairs 6 to 8</div></div>
+
+            <div class="cal-times" style="height:560px">
+              <span class="tk" style="top:0">9 AM</span>
+              <span class="tk" style="top:56px">10</span>
+              <span class="tk" style="top:112px">11</span>
+              <span class="tk" style="top:168px">12 PM</span>
+              <span class="tk" style="top:224px">1</span>
+              <span class="tk" style="top:280px">2</span>
+              <span class="tk" style="top:336px">3</span>
+              <span class="tk" style="top:392px">4</span>
+              <span class="tk" style="top:448px">5</span>
+              <span class="tk" style="top:504px">6</span>
+            </div>
+
+            <div class="cal-col" id="col-danielle">
+              <div class="appt done" style="top:0;height:40px"><b>Nicole S.</b><span class="sv">Women's Cut &middot; done</span></div>
+              <div class="appt" style="top:56px;height:54px"><b>Erin D.</b><span class="sv">Full Highlight &middot; application</span></div>
+              <div class="appt proc half-l" style="top:112px;height:36px"><b>Erin D.</b><span class="sv">processing</span></div>
+              <div class="appt cut half-r" style="top:112px;height:26px"><b>Tom H.</b><span class="sv">Men's Cut &middot; fits inside</span></div>
+              <div class="appt" style="top:150px;height:44px"><b>Erin D.</b><span class="sv">rinse + tone + style</span></div>
+              <div class="appt" style="top:252px;height:26px"><b>Maya K.</b><span class="sv">Root Touch-Up &middot; application</span></div>
+              <div class="appt proc half-l" style="top:280px;height:35px"><b>Maya K.</b><span class="sv">processing</span></div>
+              <div class="appt rescued half-r" style="top:280px;height:68px"><b>Amber T.</b><span class="sv">Balayage &middot; rescued slot</span></div>
+              <div class="appt half-l" style="top:317px;height:26px"><b>Maya K.</b><span class="sv">rinse + style</span></div>
+              <div class="appt proc half-r" style="top:350px;height:40px"><b>Amber T.</b><span class="sv">processing</span></div>
+              <div class="appt rescued" style="top:392px;height:34px"><b>Amber T.</b><span class="sv">tone + style</span></div>
+            </div>
+
+            <div class="cal-col">
+              <div class="appt done cut" style="top:28px;height:40px"><b>Jenna W.</b><span class="sv">Women's Cut &middot; done</span></div>
+              <div class="appt done" style="top:84px;height:40px"><b>Sarah L.</b><span class="sv">Blowout &middot; done</span></div>
+              <div class="appt cut" style="top:140px;height:26px"><b>Chris B.</b><span class="sv">Men's Cut</span></div>
+              <div class="appt proc" style="top:196px;height:26px"><b>Blocked</b><span class="sv">lunch</span></div>
+              <div class="appt cut" style="top:296px;height:40px"><b>Kayla M.</b><span class="sv">Women's Cut</span></div>
+              <div class="appt" style="top:350px;height:44px"><b>Mia F.</b><span class="sv">Gloss + Blowout</span></div>
+              <div class="appt" style="top:420px;height:40px"><b>Jessica R.</b><span class="sv">Gloss + Blowout</span></div>
+            </div>
+
+            <div class="cal-col">
+              <div class="appt" style="top:56px;height:124px"><b>Rachel P.</b><span class="sv">Balayage</span></div>
+              <div class="appt" style="top:224px;height:26px"><b>Kim A.</b><span class="sv">Gloss/Toner</span></div>
+              <div class="appt" style="top:336px;height:96px"><b>Lauren P.</b><span class="sv">Partial Highlight</span></div>
+              <div class="appt cut" style="top:448px;height:26px"><b>Walk-in</b><span class="sv">Men's Cut</span></div>
+            </div>
+
+            <div class="cal-col">
+              <div class="appt" style="top:0;height:152px"><b>Amanda J.</b><span class="sv">Keratin</span></div>
+              <div class="appt cut" style="top:224px;height:40px"><b>Beth N.</b><span class="sv">Women's Cut</span></div>
+              <div class="appt" style="top:364px;height:54px"><b>Carla M.</b><span class="sv">Root Touch-Up</span></div>
+            </div>
+
+            <div class="cal-col">
+              <div class="appt cut" style="top:168px;height:26px"><b>Jake T.</b><span class="sv">Men's Cut</span></div>
+              <div class="appt" style="top:210px;height:40px"><b>Tess W.</b><span class="sv">Blowout</span></div>
+              <div class="appt" style="top:308px;height:82px"><b>Holly G.</b><span class="sv">Partial Highlight</span></div>
+              <div class="appt ghost" style="top:448px;height:82px"><b>Open &middot; waitlist watching</b></div>
+            </div>
+
+            <div class="cal-col" id="cal-open">
+              <div class="appt ghost" style="top:56px;height:196px"><b>Open today<br>AI is offering these hours<br>to the waitlist</b></div>
+              <div class="appt ghost" style="top:308px;height:168px"><b>Open</b></div>
+            </div>
+          </div>
+
+          <div class="cal-legend">
+            <span class="k"><span class="b1"></span>Color service</span>
+            <span class="k"><span class="b2"></span>Cut / dry service</span>
+            <span class="k"><span class="b3"></span>Processing time (chair is free)</span>
+            <span class="k"><span class="b4"></span>Rescued slot</span>
+          </div>
+        </div>
+      </section>
+
+      <p class="foot-note">Demo data, illustrative numbers.</p>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interact.js"></script>
+<script>
+window.TOUR = [
+  { el: "#cal-card", side: "top",
+    title: "The whole book, one glance.",
+    body: "Every chair, drawn to scale, straight from Square. Dana used to keep this picture in her head. Now it is just on screen, and the AI reads the same book when it offers slots." },
+  { el: "#col-danielle", side: "right",
+    title: "Processing time is money.",
+    body: "Watch Danielle's afternoon. Maya's root touch-up processes from 2:00 to 2:40, and the chair does not sit idle: Amber's rescued balayage starts right inside that window. The striped blocks are free chair time the AI knows how to fill <b>without ever double-booking hands</b>." },
+  { el: "#cal-open", side: "left",
+    title: "Open chairs never just sit.",
+    body: "Chairs 6 to 8 are open today, and two chairs are still open Saturday. The AI is already offering those hours to waitlisted clients who fit them. An open block is an offer in progress, not a gap." }
+];
+window.TOUR_NEXT = { href: "app-clients.html", label: "Next: Clients" };
+</script>
+<script src="assets/tour.js"></script>
+</body>
+</html>

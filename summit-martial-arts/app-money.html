@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financials | Summit Martial Arts Academy</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="side-brand">
+      <div class="wordmark">SUM<span class="stripe">M</span>IT</div>
+      <div class="wordsub">Martial Arts Academy</div>
+    </div>
+    <button class="side-cta" type="button"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>New Student</button>
+    <nav class="nav-group">
+      <div class="nav-label">Overview</div>
+      <a class="nav-item" href="app-dashboard.html"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Dashboard</a>
+      <a class="nav-item" href="app-ask.html"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Ask</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Front Office</div>
+      <a class="nav-item" href="app-trials.html"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>Leads &amp; Trials</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Class Schedule</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg>Attendance</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Programs</div>
+      <a class="nav-item" href="app-belttest.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M12 15l-2 6 2-1.5L14 21l-2-6z"/></svg>Belt Test Radar</a>
+      <a class="nav-item" href="app-retention.html"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>Retention Radar</a>
+      <a class="nav-item" href="app-retention.html#parents"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>Parent Pulse</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Money</div>
+      <a class="nav-item on" href="app-money.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 8.5h-5.5a2 2 0 000 4h3a2 2 0 010 4H8"/><path d="M12 6v12"/></svg>Financials</a>
+      <a class="nav-item" href="app-integrations.html"><svg viewBox="0 0 24 24"><path d="M9 2v6M15 2v6"/><path d="M6 8h12v4a6 6 0 01-12 0V8z"/><path d="M12 18v4"/></svg>Integrations</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Tuition</a>
+    </nav>
+    <div class="side-foot">
+      ray@summitmartialarts.com
+      <a class="signout" href="index.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sign Out</a>
+    </div>
+  </aside>
+
+  <div>
+    <div class="topbar">
+      <div class="crumb">Money <span class="sep">/</span> <b>Financials</b></div>
+      <div class="top-right">
+        <button class="tour-toggle" type="button" data-tour-start>Tour <span class="knob"></span></button>
+        <div class="searchbox"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Search<span class="kbd">&#8984;K</span></div>
+      </div>
+    </div>
+
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h1>Financials</h1>
+          <p class="page-sub">The academy's books, kept clean while you teach. Coach Ray has not opened QuickBooks since March.</p>
+        </div>
+        <div class="head-actions">
+          <span class="chip good" id="qb-sync"><span class="dot good"></span>Synced with QuickBooks Online, last sync 4 min ago</span>
+          <button class="btn btn-ghost btn-pill" type="button" data-tour-start><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Walk Me Through It</button>
+        </div>
+      </div>
+
+      <section class="kpi-row" id="money-kpis">
+        <div class="kpi">
+          <div class="k-label">Revenue MTD</div>
+          <div class="k-val">$27,061<span class="delta up">&#9650; +3.4%</span></div>
+          <div class="k-sub">July 1 to 18, vs same window June</div>
+        </div>
+        <div class="kpi">
+          <div class="k-label">Expenses MTD</div>
+          <div class="k-val">$14,259</div>
+          <div class="k-sub">Payroll and rent are 82% of it</div>
+        </div>
+        <div class="kpi">
+          <div class="k-label">Net Profit MTD</div>
+          <div class="k-val">$12,802<span class="delta up">&#9650; 47% margin</span></div>
+          <div class="k-sub">Was 41% this time last year</div>
+        </div>
+        <div class="kpi">
+          <div class="k-label">Cash on Hand</div>
+          <div class="k-val">$38,400</div>
+          <div class="k-sub">2.7 months of expenses</div>
+        </div>
+        <div class="kpi" data-href="#recovery-card">
+          <div class="k-label">Past Due</div>
+          <div class="k-val">$243</div>
+          <div class="k-sub">1 autopay, 2 testing fees</div>
+        </div>
+        <div class="kpi">
+          <div class="k-label">Avg Daily Take</div>
+          <div class="k-val">$1,503</div>
+          <div class="k-sub">18 days into July</div>
+        </div>
+      </section>
+
+      <section class="grid g23 mt">
+        <div class="card" id="pl-card">
+          <div class="card-head"><h2>Profit and Loss, July to Date</h2><span class="chip plain">Pulled from QuickBooks</span></div>
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Detail</th>
+                <th class="num">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="who"><b>Tuition, Little Dragons</b><span>38 students</span></td>
+                <td>Billed July 1 autopay run</td>
+                <td class="num">$4,900</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Tuition, Kids Karate</b><span>72 students</span></td>
+                <td>Billed July 1 autopay run</td>
+                <td class="num">$10,000</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Tuition, Teen/Adult Karate</b><span>34 students</span></td>
+                <td>Billed July 1 autopay run</td>
+                <td class="num">$5,100</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Tuition, Adult BJJ</b><span>28 students</span></td>
+                <td>Billed July 1 autopay run</td>
+                <td class="num">$4,450</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Multi-program add-ons</b><span>8 students</span></td>
+                <td>Second-program upgrades</td>
+                <td class="num">$450</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Testing fees</b><span>12 x $45, Saturday grading</span></td>
+                <td>10 paid, 2 reminders queued</td>
+                <td class="num">$540</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Intro offers</b><span>9 sold this month</span></td>
+                <td>2 Weeks + Uniform, $49</td>
+                <td class="num">$441</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Retail, gis and gear</b><span>Pro shop</span></td>
+                <td>Uniforms, sparring gear, patches</td>
+                <td class="num">$1,180</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Total revenue</b><span>MRR base $24,900</span></td>
+                <td></td>
+                <td class="num"><b>$27,061</b></td>
+              </tr>
+              <tr>
+                <td class="who"><b>Rent</b><span>9140 W 135th St</span></td>
+                <td>Paid July 1</td>
+                <td class="num">$4,800</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Instructor payroll</b><span>Dana, Tom, Elena + subs</span></td>
+                <td>Ran July 15</td>
+                <td class="num">$6,850</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Insurance</b><span>Liability + accident</span></td>
+                <td>Monthly premium</td>
+                <td class="num">$410</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Software</b><span>Kicksite + this layer</span></td>
+                <td>Subscriptions</td>
+                <td class="num">$389</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Equipment and mats</b><span>Mat section replaced</span></td>
+                <td>One-time, July 9</td>
+                <td class="num">$620</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Utilities</b><span>Electric, water, internet</span></td>
+                <td>Monthly</td>
+                <td class="num">$540</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Marketing</b><span>Meta lead ads</span></td>
+                <td>$21.70 per lead this month</td>
+                <td class="num">$650</td>
+              </tr>
+              <tr>
+                <td class="who"><b>Total expenses</b><span></span></td>
+                <td></td>
+                <td class="num"><b>$14,259</b></td>
+              </tr>
+              <tr>
+                <td class="who"><b>Net profit</b><span>47% margin</span></td>
+                <td></td>
+                <td class="num"><b>$12,802</b></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tbl-note">Categories mirror the QuickBooks chart of accounts. Every line drills into its transactions.</div>
+        </div>
+        <div class="card" id="bookkeeper-feed">
+          <div class="card-head"><h2>This Week in the Books</h2><span class="chip info"><span class="dot info"></span>AI bookkeeper</span></div>
+          <div class="feed">
+            <div class="f-item">
+              <div class="f-meta"><span class="dot good"></span><b>63 transactions categorized</b><span class="t">Ongoing</span></div>
+              <div class="f-tag">Every Stripe charge, check, and card swipe filed to the right QuickBooks account. Zero touched by hand.</div>
+            </div>
+            <div class="f-item">
+              <div class="f-meta"><span class="dot good"></span><b>9 Stripe payouts matched to deposits</b><span class="t">Daily</span></div>
+              <div class="f-tag">Payouts reconciled against the bank feed the morning they land. The books always tie.</div>
+            </div>
+            <div class="f-item">
+              <div class="f-meta"><span class="dot warn"></span><b>Duplicate charge flagged, $86</b><span class="t">Tue</span></div>
+              <div class="f-tag">A gear vendor billed the sparring pad order twice. Refund requested, tracking until it posts.</div>
+            </div>
+            <div class="f-item">
+              <div class="f-meta"><span class="dot good"></span><b>5 failed autopays recovered, $769</b><span class="t">Jul 1 to 4</span></div>
+              <div class="f-tag">Expired cards retried and parents texted a secure update link. No awkward front-desk conversation.</div>
+            </div>
+            <div class="f-item">
+              <div class="f-meta"><span class="dot warn"></span><b>2 testing fee reminders drafted, $90</b><span class="t">Today</span></div>
+              <div class="f-tag">The Kims and the Reyes family, friendly nudge with a pay link, scheduled before Saturday's grading.</div>
+            </div>
+            <div class="f-item">
+              <div class="f-meta"><span class="dot info"></span><b>Monthly P&amp;L email prepped</b><span class="t">Aug 1</span></div>
+              <div class="f-tag">Plain-language summary of the month, in Coach Ray's inbox before the first coffee of the month.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid g23 mt">
+        <div class="card" id="cashflow-card">
+          <div class="card-head"><h2>Cash Flow by Week, July</h2><span class="chip good"><span class="dot good"></span>$12,559 ahead</span></div>
+          <div class="card-body">
+            <div class="barlist">
+              <div class="bl-row">
+                <div class="bl-top"><b>Week of July 1</b><span>In $21,340 &middot; Out $5,610</span></div>
+                <div class="bl-track"><div class="bl-fill" style="width:100%;background:#1e7f4f"></div></div>
+                <div class="bl-track" style="margin-top:4px"><div class="bl-fill" style="width:26%;background:#b3312d"></div></div>
+              </div>
+              <div class="bl-row">
+                <div class="bl-top"><b>Week of July 8</b><span>In $2,861 &middot; Out $7,090</span></div>
+                <div class="bl-track"><div class="bl-fill" style="width:13%;background:#1e7f4f"></div></div>
+                <div class="bl-track" style="margin-top:4px"><div class="bl-fill" style="width:33%;background:#b3312d"></div></div>
+              </div>
+              <div class="bl-row">
+                <div class="bl-top"><b>Week of July 15, partial</b><span>In $2,617 &middot; Out $1,559</span></div>
+                <div class="bl-track"><div class="bl-fill" style="width:12%;background:#1e7f4f"></div></div>
+                <div class="bl-track" style="margin-top:4px"><div class="bl-fill" style="width:7%;background:#b3312d"></div></div>
+              </div>
+            </div>
+            <div class="legend" style="margin-top:14px">
+              <span class="li"><span class="sw" style="background:#1e7f4f"></span>Cash in <b>$26,818</b></span>
+              <span class="li"><span class="sw" style="background:#b3312d"></span>Cash out <b>$14,259</b></span>
+            </div>
+            <p class="foot-note" style="margin-top:14px">Nearly all tuition lands in the July 1 autopay run, then the month coasts. Rent clears day 1, payroll the 15th.</p>
+          </div>
+        </div>
+        <div>
+          <div class="card" id="recovery-card">
+            <div class="card-head"><h2>Failed Tuition Recovery</h2><span class="chip good"><span class="dot good"></span>5 of 6 recovered</span></div>
+            <div class="rowlist">
+              <div class="row">
+                <span class="ico" style="background:#b3312d"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+                <span class="rt"><b>6 autopays failed on the July 1 run</b><span>Expired or replaced cards, $922 at risk</span></span>
+              </div>
+              <div class="row">
+                <span class="ico" style="background:#1e7f4f"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg></span>
+                <span class="rt"><b>5 recovered by July 4, $769</b><span>Auto-retry plus a friendly text with a card update link</span></span>
+              </div>
+              <div class="row">
+                <span class="ico" style="background:#a06511"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+                <span class="rt"><b>1 open, the Hansen family, $153</b><span>Second reminder queued Friday, tone stays warm</span></span>
+              </div>
+            </div>
+            <div class="tbl-note">Failed autopays used to sit until someone noticed at the front desk, often a month late.</div>
+          </div>
+          <div class="card mt" id="expense-mix">
+            <div class="card-head"><h2>Expense Mix MTD</h2><span class="chip plain">5 categories</span></div>
+            <div class="card-body">
+              <div class="segbar" style="height:30px">
+                <div class="seg" style="flex:48;background:#1d2e4e">48%</div>
+                <div class="seg" style="flex:34;background:#3f5a86">34%</div>
+                <div class="seg" style="flex:8;background:#586073">8%</div>
+                <div class="seg" style="flex:6;background:#9aa3b5">6%</div>
+                <div class="seg" style="flex:4;background:#b3312d">4%</div>
+              </div>
+              <div class="legend">
+                <span class="li"><span class="sw" style="background:#1d2e4e"></span>Payroll <b>$6,850</b></span>
+                <span class="li"><span class="sw" style="background:#3f5a86"></span>Rent <b>$4,800</b></span>
+                <span class="li"><span class="sw" style="background:#586073"></span>Facility <b>$1,160</b></span>
+                <span class="li"><span class="sw" style="background:#9aa3b5"></span>Ins + software <b>$799</b></span>
+                <span class="li"><span class="sw" style="background:#b3312d"></span>Marketing <b>$650</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <p class="foot-note">Demo data, illustrative numbers. All students, parents, and vendors are fictional.</p>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script>
+window.TOUR = [
+  { el: "#money-kpis", side: "bottom", title: "The books, without opening QuickBooks",
+    body: "Everything on this page is live from QuickBooks Online, synced minutes ago. <b>$27,061 in, $14,259 out, $12,802 net</b> at a 47% margin, and Coach Ray has not logged into QuickBooks since March." },
+  { el: "#pl-card", side: "right", title: "A P&L that speaks academy",
+    body: "Tuition by program, <b>testing fees</b>, intro offers, and pro shop retail on one side. Rent, instructor payroll, insurance, and mats on the other. The tuition lines tie to the <b>$24,900 MRR</b> on the dashboard, to the dollar." },
+  { el: "#recovery-card", side: "left", title: "Failed tuition no longer just leaks",
+    body: "6 autopays failed on July 1, <b>$922 at risk</b>. The assistant retried the cards and texted parents an update link: <b>5 recovered, $769</b>, no awkward front-desk conversation. One warm reminder still working." },
+  { el: "#bookkeeper-feed", side: "left", title: "A bookkeeper that never sleeps",
+    body: "63 transactions categorized, 9 payouts matched to deposits, an <b>$86 duplicate charge</b> caught and refunded. Month end is a summary email, not a weekend in QuickBooks. Last stop: <b>what this plugs into</b>." }
+];
+window.TOUR_NEXT = { href: "app-integrations.html", label: "See Integrations" };
+</script>
+<script src="assets/app.js"></script>
+<script src="assets/tour.js"></script>
+</body>
+</html>

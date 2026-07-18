@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Financials, Cedar Ridge Golf Club</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="wordmark">
+      <div class="wm-name">CEDAR RIDGE</div>
+      <div class="wm-sub">Golf Club</div>
+    </div>
+    <button class="side-cta" type="button" data-new-booking>+ New Booking</button>
+    <nav class="nav-group">
+      <div class="nav-label">Overview</div>
+      <a class="nav-item" href="app-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</a>
+      <a class="nav-item" href="app-ask.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Ask</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Automations</div>
+      <a class="nav-item" href="app-phone.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>AI Phone Agent</a>
+      <a class="nav-item" href="app-teesheet.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>No-Show Shield</a>
+      <a class="nav-item" href="app-rainday.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.6A5 5 0 0 0 18 7h-1.3A8 8 0 1 0 4 15.3"/><path d="M8 19v2M12 18v3M16 19v2"/></svg>Rain Day Autopilot</a>
+      <a class="nav-item" href="app-outings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Outing Quotes</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Money</div>
+      <a class="nav-item active" href="app-money.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Financials</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Course</div>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Tee Sheet (foreUP)</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-8-8V2h10.6l8 8a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1"/></svg>Rates &amp; Policies</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Golfers</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 6v12"/></svg>Reports</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">System</div>
+      <a class="nav-item" href="app-integrations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Integrations</a>
+    </nav>
+    <div class="side-foot">
+      <div class="who">dale@cedarridgegolf.com</div>
+      <a href="index.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Money <span class="sep">/</span> <b>Financials</b></div>
+      <div class="topbar-right">
+        <button class="tour-toggle" data-tour-start type="button">Tour <span class="knob"></span></button>
+        <div class="searchbox">Search<span class="kbd">/</span></div>
+      </div>
+    </div>
+
+    <main class="content">
+      <div class="page-head" id="money-head">
+        <div>
+          <h1>Financials</h1>
+          <div class="sub">The books, kept for you. Dale reads this page. Nobody opens QuickBooks.</div>
+        </div>
+        <div class="head-actions">
+          <span class="chip chip-good" style="align-self:center"><span class="dot"></span>Synced with QuickBooks Online, last sync 4 min ago</span>
+        </div>
+      </div>
+
+      <div class="grid kpis" id="money-kpis">
+        <div class="kpi" data-scroll="#pl-card">
+          <div class="k-label">Revenue, July 1 to 16</div>
+          <div class="k-num">$188,800</div>
+          <div class="k-delta up">&#9650; +12.4%</div>
+          <div class="k-ctx">vs same stretch last July</div>
+        </div>
+        <div class="kpi" data-scroll="#mix-card">
+          <div class="k-label">Expenses, July 1 to 16</div>
+          <div class="k-num">$131,200</div>
+          <div class="k-delta flat">On budget</div>
+          <div class="k-ctx">Payroll and course upkeep lead</div>
+        </div>
+        <div class="kpi" data-scroll="#pl-card">
+          <div class="k-label">Net Profit MTD</div>
+          <div class="k-num">$57,600</div>
+          <div class="k-delta up">&#9650; 31% margin</div>
+          <div class="k-ctx">July carries the winter</div>
+        </div>
+        <div class="kpi" data-scroll="#cashflow-card">
+          <div class="k-label">Cash on Hand</div>
+          <div class="k-num">$168,400</div>
+          <div class="k-delta up">&#9650; +$21,300 this month</div>
+          <div class="k-ctx">Operating account, reconciled</div>
+        </div>
+        <div class="kpi" data-scroll="#ar-card">
+          <div class="k-label">AR Outstanding</div>
+          <div class="k-num">$6,814</div>
+          <div class="k-delta flat">4 open items</div>
+          <div class="k-ctx">Mostly outing deposits and balances</div>
+        </div>
+        <div class="kpi" data-scroll="#cashflow-card">
+          <div class="k-label">Avg Daily Take</div>
+          <div class="k-num">$11,800</div>
+          <div class="k-delta up">&#9650; +$1,240</div>
+          <div class="k-ctx">All revenue lines, July to date</div>
+        </div>
+      </div>
+
+      <div class="grid two-col section-gap">
+        <div class="card" id="pl-card">
+          <div class="card-head">
+            <h2>P&amp;L, July 1 to 16</h2>
+            <span class="chip chip-neutral">Straight from QuickBooks</span>
+          </div>
+          <div class="card-body">
+            <div class="quote-line"><span>Green fees<br><span class="ql-sub">2,996 rounds to date</span></span><span class="tnum">$114,600</span></div>
+            <div class="quote-line"><span>Cart fees<br><span class="ql-sub">$18 per rider, card on file</span></span><span class="tnum">$38,200</span></div>
+            <div class="quote-line"><span>Outings &amp; events<br><span class="ql-sub">Deposits and balances recognized</span></span><span class="tnum">$12,400</span></div>
+            <div class="quote-line"><span>Food &amp; beverage<br><span class="ql-sub">Grill and beverage cart, via Toast</span></span><span class="tnum">$16,800</span></div>
+            <div class="quote-line"><span>Range &amp; retail<br><span class="ql-sub">Range balls, gloves, balls, hats</span></span><span class="tnum">$6,800</span></div>
+            <div class="quote-line total"><span>Total revenue</span><span class="tnum">$188,800</span></div>
+            <div style="height:14px"></div>
+            <div class="quote-line"><span>Payroll<br><span class="ql-sub">Pro shop, grounds crew, grill</span></span><span class="tnum">$68,200</span></div>
+            <div class="quote-line"><span>Course maintenance<br><span class="ql-sub">Mowing, bunkers, irrigation labor</span></span><span class="tnum">$24,800</span></div>
+            <div class="quote-line"><span>Chemicals &amp; fertilizer<br><span class="ql-sub">Greens program, fairway apps</span></span><span class="tnum">$11,200</span></div>
+            <div class="quote-line"><span>Equipment leases<br><span class="ql-sub">Mowers and the cart fleet</span></span><span class="tnum">$8,600</span></div>
+            <div class="quote-line"><span>Utilities &amp; irrigation<br><span class="ql-sub">Pump station is the big one</span></span><span class="tnum">$7,900</span></div>
+            <div class="quote-line"><span>Insurance<br><span class="ql-sub">Property, liability, liquor</span></span><span class="tnum">$4,300</span></div>
+            <div class="quote-line"><span>Merchant fees &amp; other<br><span class="ql-sub">Card processing, software, misc</span></span><span class="tnum">$6,200</span></div>
+            <div class="quote-line total"><span>Total expenses</span><span class="tnum">$131,200</span></div>
+            <div class="quote-line total"><span>Net profit</span><span class="tnum">$57,600</span></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card section-gap" id="mix-card">
+            <div class="card-head">
+              <h2>Where Expenses Go</h2>
+              <span class="chip chip-neutral">July to date</span>
+            </div>
+            <div class="card-body">
+              <div class="splitbar" style="height:30px">
+                <div style="flex:52;background:#2f6b40">52%</div>
+                <div style="flex:19;background:#6f9a5e">19%</div>
+                <div style="flex:9;background:#8a9a6b">9%</div>
+                <div style="flex:7;background:#a7a27a">7%</div>
+                <div style="flex:6;background:#b9b193;color:#3c4237">6%</div>
+                <div style="flex:7;background:#9a6c12">7%</div>
+              </div>
+              <div class="legend">
+                <span><span class="sw" style="background:#2f6b40"></span>Payroll</span>
+                <span><span class="sw" style="background:#6f9a5e"></span>Course maintenance</span>
+                <span><span class="sw" style="background:#8a9a6b"></span>Chemicals &amp; fertilizer</span>
+                <span><span class="sw" style="background:#a7a27a"></span>Equipment leases</span>
+                <span><span class="sw" style="background:#b9b193"></span>Utilities</span>
+                <span><span class="sw" style="background:#9a6c12"></span>Insurance &amp; other</span>
+              </div>
+              <div style="margin-top:12px;font-size:12.5px;color:var(--text-2)">
+                A golf course is a payroll and turf business. The AI cannot mow, but it keeps every one of these lines categorized the day the charge hits.
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="cashflow-card">
+            <div class="card-head">
+              <h2>Cash In vs Out, by Week</h2>
+              <span class="chip chip-neutral">Deposits vs disbursements</span>
+            </div>
+            <div class="card-body">
+              <div class="cashflow">
+                <div class="cf-group">
+                  <div class="cf-bars">
+                    <div class="cf-col"><span class="cf-val">$41.2k</span><div class="cf-bar in" style="height:88%"></div></div>
+                    <div class="cf-col"><span class="cf-val">$29.8k</span><div class="cf-bar out" style="height:64%"></div></div>
+                  </div>
+                  <span class="cf-lab">Jun 22</span>
+                </div>
+                <div class="cf-group">
+                  <div class="cf-bars">
+                    <div class="cf-col"><span class="cf-val">$44.6k</span><div class="cf-bar in" style="height:95%"></div></div>
+                    <div class="cf-col"><span class="cf-val">$31.4k</span><div class="cf-bar out" style="height:67%"></div></div>
+                  </div>
+                  <span class="cf-lab">Jun 29</span>
+                </div>
+                <div class="cf-group">
+                  <div class="cf-bars">
+                    <div class="cf-col"><span class="cf-val">$46.9k</span><div class="cf-bar in" style="height:100%"></div></div>
+                    <div class="cf-col"><span class="cf-val">$30.2k</span><div class="cf-bar out" style="height:64%"></div></div>
+                  </div>
+                  <span class="cf-lab">Jul 6</span>
+                </div>
+                <div class="cf-group">
+                  <div class="cf-bars">
+                    <div class="cf-col"><span class="cf-val">$32.4k</span><div class="cf-bar in" style="height:69%"></div></div>
+                    <div class="cf-col"><span class="cf-val">$21.9k</span><div class="cf-bar out" style="height:47%"></div></div>
+                  </div>
+                  <span class="cf-lab">Jul 13</span>
+                </div>
+              </div>
+              <div class="legend" style="margin-top:10px">
+                <span><span class="sw" style="background:var(--brand)"></span>Cash in</span>
+                <span><span class="sw" style="background:#b0862f"></span>Cash out</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid two-col section-gap">
+        <div class="card" id="bk-feed">
+          <div class="card-head">
+            <h2>AI Bookkeeper, This Week</h2>
+            <span class="chip chip-good"><span class="dot"></span>Caught up through last night</span>
+          </div>
+          <div class="feed">
+            <div class="feed-item">
+              <span class="f-time">Mon</span>
+              <div class="f-body">
+                <div class="f-title">Categorized 41 transactions</div>
+                <div class="f-sub">Including the Reinders order, filed to Chemicals &amp; fertilizer, not Supplies.</div>
+              </div>
+              <span class="f-tag chip chip-neutral">Books</span>
+            </div>
+            <div class="feed-item">
+              <span class="f-time">Tue</span>
+              <div class="f-body">
+                <div class="f-title">Matched 12 Stripe payouts to bank deposits</div>
+                <div class="f-sub">Green fees, cart fees, and outing deposits, tied out to the penny.</div>
+              </div>
+              <span class="f-tag chip chip-good">Reconciled</span>
+            </div>
+            <div class="feed-item">
+              <span class="f-time">Tue</span>
+              <div class="f-body">
+                <div class="f-title">Reconciled the week's Toast F&amp;B batches</div>
+                <div class="f-sub">Grill and beverage cart sales posted, tips split out of revenue.</div>
+              </div>
+              <span class="f-tag chip chip-good">Reconciled</span>
+            </div>
+            <div class="feed-item">
+              <span class="f-time">Wed</span>
+              <div class="f-body">
+                <div class="f-title">Flagged a duplicate $214 charge from the beverage distributor</div>
+                <div class="f-sub">Same invoice number, billed twice. Credit requested, awaiting their reply.</div>
+              </div>
+              <span class="f-tag chip chip-warn">Flagged</span>
+            </div>
+            <div class="feed-item">
+              <span class="f-time">Wed</span>
+              <div class="f-body">
+                <div class="f-title">Drafted the Maplewood FD balance reminder</div>
+                <div class="f-sub">$4,410 due before their Sep 28 date. Sitting in your approval queue.</div>
+              </div>
+              <span class="f-tag chip chip-warn">Awaiting OK</span>
+            </div>
+            <div class="feed-item" id="bk-recovered">
+              <span class="f-time">Thu</span>
+              <div class="f-body">
+                <div class="f-title">Tagged $1,830 of July revenue as AI-recovered</div>
+                <div class="f-sub">Waitlist refills and midday offers, tracked as their own class. $18,400 YTD.</div>
+              </div>
+              <span class="f-tag chip chip-good">Tracked</span>
+            </div>
+            <div class="feed-item">
+              <span class="f-time">Thu</span>
+              <div class="f-body">
+                <div class="f-title">Monthly P&amp;L email prepped for Dale</div>
+                <div class="f-sub">One page, plain language, sends on the 1st. No login required.</div>
+              </div>
+              <span class="f-tag chip chip-neutral">Scheduled</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" id="ar-card">
+          <div class="card-head">
+            <h2>Receivables, Mostly Outings</h2>
+            <span class="chip chip-neutral">$6,814 outstanding</span>
+          </div>
+          <table class="table">
+            <thead>
+              <tr><th>Who</th><th>What</th><th class="num">Amount</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr data-drill="ar-rotary">
+                <td>Riverside Rotary</td>
+                <td>Outing deposit</td>
+                <td class="num">$1,224</td>
+                <td><span class="chip chip-warn">Nudge scheduled</span></td>
+              </tr>
+              <tr data-drill="ar-maplewood">
+                <td>Maplewood FD Benefit</td>
+                <td>Balance after deposit</td>
+                <td class="num">$4,410</td>
+                <td><span class="chip chip-neutral">Not yet due</span></td>
+              </tr>
+              <tr data-drill="ar-league">
+                <td>Wednesday Men's League</td>
+                <td>Season balance</td>
+                <td class="num">$860</td>
+                <td><span class="chip chip-warn">Reminder sent</span></td>
+              </tr>
+              <tr data-drill="ar-hartline">
+                <td>Hartline Insurance</td>
+                <td>House account, F&amp;B</td>
+                <td class="num">$320</td>
+                <td><span class="chip chip-bad">Second notice</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="card-body" style="border-top:1px solid var(--border);font-size:12.5px;color:var(--text-2)">
+            Every open dollar has a next step already scheduled. Outing deposits used to be a sticky-note system; now they chase themselves and you approve the sends.
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:22px;font-size:12px;color:var(--muted)">Demo data, illustrative numbers.</p>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interact.js"></script>
+<script>
+window.TOUR = [
+  { el: "#money-kpis",
+    title: "The books, without opening QuickBooks",
+    body: "Synced 4 minutes ago. July so far: <b>$188,800 in, $131,200 out, $57,600 kept</b>. Same $51 a round you saw on the dashboard, now flowing through to a real P&L, automatically." },
+  { el: "#pl-card",
+    title: "A P&L in golf language",
+    body: "Green fees, carts, outings, F&B, range and retail on one side. Payroll, turf, chemicals, leases on the other. Every line categorized by the AI bookkeeper the day the charge hits, not at month end.",
+    side: "right" },
+  { el: "#ar-card",
+    title: "Outing money that chases itself",
+    body: "<b>$6,814</b> outstanding, and every dollar has a next step: the Rotary deposit gets nudged tomorrow, the Maplewood balance reminder is drafted and waiting for your OK. No sticky notes.",
+    side: "left" },
+  { el: "#bk-recovered",
+    title: "The $18,400 shows up in the books too",
+    body: "Recovered revenue is tagged as its own class in QuickBooks, so the scoreboard on the dashboard is not a marketing number, it is an accounting one. One more stop: what this plugs into.",
+    side: "top",
+    cta: "Next: integrations" }
+];
+window.TOUR_NEXT = { href: "app-integrations.html", label: "Next: Integrations" };
+</script>
+<script src="assets/tour.js"></script>
+</body>
+</html>

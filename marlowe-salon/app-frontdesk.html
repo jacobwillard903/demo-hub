@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Front Desk &middot; Marlowe Hair Co.</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="side">
+    <div class="side-mark">Marlowe <span>Hair Co.</span></div>
+    <div class="side-sub">Owner View</div>
+    <button class="side-new" type="button" data-new-appt>+ New Appointment</button>
+
+    <div class="side-group">Overview</div>
+    <a class="nav" href="app-dashboard.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a class="nav" href="app-ask.html" id="nav-ask">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Ask Marlowe
+    </a>
+    <div class="side-group">Front Desk</div>
+    <a class="nav" href="app-calendar.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Calendar
+    </a>
+    <a class="nav on" href="app-frontdesk.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      AI Front Desk
+    </a>
+    <a class="nav" href="app-rescue.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Cancellation Rescue
+    </a>
+    <div class="side-group">Clients</div>
+    <a class="nav" href="app-clients.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Clients
+    </a>
+    <a class="nav" href="app-rebooking.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      Rebooking Radar
+    </a>
+    <div class="side-group">Money</div>
+    <a class="nav" href="app-money.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Financials
+    </a>
+    <a class="nav" href="app-retail.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      Retail and Backbar
+    </a>
+    <a class="nav" href="app-integrations.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      Integrations
+    </a>
+
+    <div class="side-spacer"></div>
+    <div class="side-foot">
+      <div class="who">dana@marlowehair.co</div>
+      <a href="index.html">Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Automations / <b>AI Front Desk</b></div>
+      <div class="topbar-right">
+        <button class="tour-toggle" type="button" data-tour-start><span class="pip"></span> Tour</button>
+        <div class="search" aria-hidden="true">Search clients<span class="kbd">&#8984;K</span></div>
+      </div>
+    </div>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>AI Front Desk</h1>
+          <div class="sub">Every DM, text, and missed call answered in seconds, while everyone's hands are full.</div>
+        </div>
+        <div class="actions">
+          <button class="btn-walk" type="button" data-tour-start>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Walk Me Through It
+          </button>
+        </div>
+      </div>
+
+      <section class="card" id="desk-kpis">
+        <div class="card-b">
+          <div class="stat-row">
+            <div class="big-stat"><div class="n tnum">34</div><div class="l">Conversations this week</div></div>
+            <div class="big-stat"><div class="n tnum">11</div><div class="l">Bookings made</div></div>
+            <div class="big-stat"><div class="n tnum">28 sec</div><div class="l">Average response time</div></div>
+            <div class="big-stat"><div class="n tnum">6</div><div class="l">Answered after hours</div></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid-2" style="margin-top:14px">
+        <section class="card" id="desk-feed">
+          <div class="card-h"><h2>Conversation Feed</h2><span class="note">This week, all channels</span></div>
+          <div class="card-b">
+            <ul class="rows">
+              <li>
+                <span class="when tnum">10:41 PM</span>
+                <span class="who"><b>Instagram DM</b> <span class="svc">&middot; "how much for a color correction?"</span></span>
+                <span class="pill good">Booked consult</span>
+              </li>
+              <li>
+                <span class="when tnum">6:12 PM</span>
+                <span class="who"><b>Missed call</b> <span class="svc">&middot; new number, texted back in 24 sec</span></span>
+                <span class="pill good">Booked</span>
+              </li>
+              <li>
+                <span class="when tnum">3:38 PM</span>
+                <span class="who"><b>Text</b> <span class="svc">&middot; "can I move Friday to Saturday?"</span></span>
+                <span class="pill plum">Rescheduled</span>
+              </li>
+              <li>
+                <span class="when tnum">1:02 PM</span>
+                <span class="who"><b>Instagram DM</b> <span class="svc">&middot; "do you do keratin? prices?"</span></span>
+                <span class="pill warn">Quoted, following up</span>
+              </li>
+              <li>
+                <span class="when tnum">11:47 AM</span>
+                <span class="who"><b>Text</b> <span class="svc">&middot; "running 10 late so sorry!!"</span></span>
+                <span class="pill mut">Stylist notified</span>
+              </li>
+              <li>
+                <span class="when tnum">9:15 AM</span>
+                <span class="who"><b>Missed call</b> <span class="svc">&middot; asked about walk-ins today</span></span>
+                <span class="pill good">Booked 4:15 PM</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card" id="desk-thread">
+          <div class="card-h"><h2>The 10:41 PM DM</h2><span class="note">Answered in 26 seconds</span></div>
+          <div class="card-b">
+            <div class="thread">
+              <div class="meta"><span class="pill plum">Instagram DM</span> @nash.jenna &middot; new client</div>
+              <div class="bubble in">hey! how much for a color correction? box dye gone wrong lol<span class="bt">10:41 PM</span></div>
+              <div class="bubble out">Hi Jenna! Color corrections at Marlowe start at $250 and always begin with a quick free consult so a stylist can see your hair first. That way you get a real quote, not a guess.<span class="bt">10:41 PM</span></div>
+              <div class="bubble out">I have consult openings Tuesday 5:30 PM with Danielle or Wednesday 1:00 PM with Marissa. Want me to hold one for you?<span class="bt">10:42 PM</span></div>
+              <div class="bubble in">tuesday 530 please!!<span class="bt">10:44 PM</span></div>
+              <div class="bubble out">You're set: Tuesday 5:30 PM, color correction consult with Danielle. We'll text you a reminder. Welcome to Marlowe!<span class="bt">10:44 PM</span></div>
+              <div class="sys">Consult written to Square Appointments &middot; policy applied: correction requires consult</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <p class="foot-note">Demo data, illustrative numbers.</p>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interact.js"></script>
+<script>
+window.TOUR = [
+  { el: "#desk-kpis", side: "bottom",
+    title: "34 conversations. Zero interruptions.",
+    body: "Every channel in one feed: Instagram DMs, texts, missed calls. <b>11 bookings</b> this week, average reply in <b>28 seconds</b>, and nobody behind the chair stopped working." },
+  { el: "#desk-feed", side: "right",
+    title: "This is what it handles.",
+    body: "Pricing questions, reschedules, walk-in asks, missed calls texted back within a minute. The clients who used to wait hours for a reply, and quietly book somewhere else, now get an answer while they're still interested." },
+  { el: "#desk-thread", side: "left",
+    title: "The 10:41 PM DM, handled.",
+    body: "A box-dye disaster asks about color correction. The AI quotes the starting price, applies your <b>consult-first policy</b>, offers two real openings, and books one. Dana was asleep." },
+  { el: null,
+    title: "The second shift is over.",
+    body: "Answering DMs at 10 PM was the job after the job. Salons lose 30 to 40% of potential bookings to slow replies, each a $100 to $500 service. Six after-hours conversations this week were handled without her. Next: the clients who drift away without ever complaining." }
+];
+window.TOUR_NEXT = { href: "app-rebooking.html", label: "Next: Rebooking Radar" };
+</script>
+<script src="assets/tour.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cancellation Rescue &middot; Marlowe Hair Co.</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="side">
+    <div class="side-mark">Marlowe <span>Hair Co.</span></div>
+    <div class="side-sub">Owner View</div>
+    <button class="side-new" type="button" data-new-appt>+ New Appointment</button>
+
+    <div class="side-group">Overview</div>
+    <a class="nav" href="app-dashboard.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a class="nav" href="app-ask.html" id="nav-ask">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Ask Marlowe
+    </a>
+    <div class="side-group">Front Desk</div>
+    <a class="nav" href="app-calendar.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Calendar
+    </a>
+    <a class="nav" href="app-frontdesk.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      AI Front Desk
+    </a>
+    <a class="nav on" href="app-rescue.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Cancellation Rescue
+    </a>
+    <div class="side-group">Clients</div>
+    <a class="nav" href="app-clients.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Clients
+    </a>
+    <a class="nav" href="app-rebooking.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      Rebooking Radar
+    </a>
+    <div class="side-group">Money</div>
+    <a class="nav" href="app-money.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Financials
+    </a>
+    <a class="nav" href="app-retail.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      Retail and Backbar
+    </a>
+    <a class="nav" href="app-integrations.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      Integrations
+    </a>
+
+    <div class="side-spacer"></div>
+    <div class="side-foot">
+      <div class="who">dana@marlowehair.co</div>
+      <a href="index.html">Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Automations / <b>Cancellation Rescue</b></div>
+      <div class="topbar-right">
+        <button class="tour-toggle" type="button" data-tour-start><span class="pip"></span> Tour</button>
+        <div class="search" aria-hidden="true">Search clients<span class="kbd">&#8984;K</span></div>
+      </div>
+    </div>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>Cancellation Rescue</h1>
+          <div class="sub">When a slot dies, the waitlist gets texted in seconds. Not when someone remembers.</div>
+        </div>
+        <div class="actions">
+          <button class="btn-walk" type="button" data-tour-start>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Walk Me Through It
+          </button>
+        </div>
+      </div>
+
+      <section class="card" id="rescue-kpis">
+        <div class="card-b">
+          <div class="stat-row" style="grid-template-columns:repeat(3,1fr)">
+            <div class="big-stat"><div class="n tnum">$2,340</div><div class="l">Recovered this month</div></div>
+            <div class="big-stat"><div class="n tnum">14 of 16</div><div class="l">Canceled slots refilled (87%)</div></div>
+            <div class="big-stat"><div class="n tnum">12 min</div><div class="l">Average time to refill</div></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid-2" style="margin-top:14px">
+        <section class="card" id="rescue-timeline">
+          <div class="card-h"><h2>This Morning's Rescue</h2><span class="note">Friday, Jul 18</span></div>
+          <div class="card-b">
+            <ul class="feed">
+              <li>
+                <span class="t tnum">11:04 AM</span><span class="dot bad"></span>
+                <span class="body"><b>Jessica R. canceled</b> her 2:00 PM Balayage with Danielle. Value at risk: <b>$185</b>. Three hours out, the slot would normally die.</span>
+              </li>
+              <li>
+                <span class="t tnum">11:04 AM</span><span class="dot plum"></span>
+                <span class="body">The AI pulled the waitlist and found <b>4 clients</b> who match the slot: right service length, right stylist, asked for a weekday afternoon.</span>
+              </li>
+              <li>
+                <span class="t tnum">11:05 AM</span><span class="dot plum"></span>
+                <span class="body"><b>4 texts sent</b>, 60 seconds apart, first come first served. No group blast, no double-booking risk.</span>
+              </li>
+              <li>
+                <span class="t tnum">11:16 AM</span><span class="dot good"></span>
+                <span class="body"><b>Amber T. claimed the slot.</b> Booked into Square, confirmation sent, the other three notified the slot is gone.</span>
+              </li>
+              <li>
+                <span class="t tnum">11:16 AM</span><span class="dot good"></span>
+                <span class="body"><b>Chair saved: $185.</b> Total elapsed: 12 minutes. Danielle never put her foils down.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card" id="rescue-thread">
+          <div class="card-h"><h2>The Texts</h2><span class="note">Sent by Marlowe's assistant</span></div>
+          <div class="card-b">
+            <div class="thread">
+              <div class="meta"><span class="pill plum">SMS</span> Amber T. &middot; (555) 014-2287</div>
+              <div class="bubble out">Hi Amber, it's Marlowe Hair Co. A 2:00 PM balayage with Danielle just opened up today. You're on our waitlist for exactly this. Want it? Reply YES and it's yours.<span class="bt">11:05 AM</span></div>
+              <div class="bubble in">YES omg perfect timing<span class="bt">11:16 AM</span></div>
+              <div class="bubble out">Done! You're booked: today 2:00 PM, Balayage with Danielle. Plan for about 2.5 hours. See you soon.<span class="bt">11:16 AM</span></div>
+              <div class="sys">Appointment written to Square Appointments &middot; confirmation sent</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="card" id="rescue-matches" style="margin-top:14px">
+        <div class="card-h"><h2>Why These Four</h2><span class="note">Match logic, not a blast list</span></div>
+        <div class="card-b">
+          <div class="match-grid">
+            <div class="match won">
+              <div class="nm">Amber T. <span class="st pill good">Claimed 11:16 AM</span></div>
+              <div class="why">Waitlisted for balayage with Danielle. 2.5 hour block fits her request for a weekday afternoon. Card on file.</div>
+            </div>
+            <div class="match">
+              <div class="nm">Tara B. <span class="st pill mut">Notified: slot filled</span></div>
+              <div class="why">Waitlisted for partial highlight, Danielle. Service fits the open block with room for processing time.</div>
+            </div>
+            <div class="match">
+              <div class="nm">Kayla M. <span class="st pill mut">Notified: slot filled</span></div>
+              <div class="why">Asked to move her balayage earlier if anything opened. Same stylist, same service length.</div>
+            </div>
+            <div class="match">
+              <div class="nm">Lauren P. <span class="st pill mut">Notified: slot filled</span></div>
+              <div class="why">Flexible on stylist, waitlisted for any color slot this week. Fourth in line by waitlist age.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <p class="foot-note">Demo data, illustrative numbers.</p>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interact.js"></script>
+<script>
+window.TOUR = [
+  { el: "#rescue-kpis", side: "bottom",
+    title: "The dead chair problem, solved.",
+    body: "A late cancellation used to mean a stylist standing around and $100 to $200 gone. This month the waitlist refilled <b>87%</b> of canceled slots and put <b>$2,340</b> back on the books." },
+  { el: "#rescue-timeline", side: "right",
+    title: "Watch one rescue, start to finish.",
+    body: "11:04 AM: Jessica cancels her 2:00 PM balayage. By 11:05 the AI has texted the four waitlist clients who actually fit the slot. By <b>11:16 the chair is saved</b>. Nobody at the salon touched a phone." },
+  { el: "#rescue-matches", side: "top",
+    title: "It matches, it doesn't blast.",
+    body: "Right service length, right stylist, real waitlist order. A balayage slot never goes to a men's cut. First YES wins, everyone else gets a polite heads-up. No double-booking." },
+  { el: "#rescue-thread", side: "left",
+    title: "The texts sound like your salon.",
+    body: "Short, warm, specific. The client replies YES and the AI writes the appointment straight into Square and confirms. Twelve minutes, $185 saved." },
+  { el: null,
+    title: "That was one slot. It runs on every one.",
+    body: "Sixteen cancellations last month, fourteen refilled, on Saturdays too, when the book is packed and an empty chair costs the most. Next stop: who answers the DMs while everyone has foils in hand." }
+];
+window.TOUR_NEXT = { href: "app-frontdesk.html", label: "Next: AI Front Desk" };
+</script>
+<script src="assets/tour.js"></script>
+</body>
+</html>

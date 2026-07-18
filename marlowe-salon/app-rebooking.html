@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rebooking Radar &middot; Marlowe Hair Co.</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="side">
+    <div class="side-mark">Marlowe <span>Hair Co.</span></div>
+    <div class="side-sub">Owner View</div>
+    <button class="side-new" type="button" data-new-appt>+ New Appointment</button>
+
+    <div class="side-group">Overview</div>
+    <a class="nav" href="app-dashboard.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a class="nav" href="app-ask.html" id="nav-ask">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Ask Marlowe
+    </a>
+    <div class="side-group">Front Desk</div>
+    <a class="nav" href="app-calendar.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Calendar
+    </a>
+    <a class="nav" href="app-frontdesk.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      AI Front Desk
+    </a>
+    <a class="nav" href="app-rescue.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Cancellation Rescue
+    </a>
+    <div class="side-group">Clients</div>
+    <a class="nav" href="app-clients.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Clients
+    </a>
+    <a class="nav on" href="app-rebooking.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      Rebooking Radar
+    </a>
+    <div class="side-group">Money</div>
+    <a class="nav" href="app-money.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Financials
+    </a>
+    <a class="nav" href="app-retail.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      Retail and Backbar
+    </a>
+    <a class="nav" href="app-integrations.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      Integrations
+    </a>
+
+    <div class="side-spacer"></div>
+    <div class="side-foot">
+      <div class="who">dana@marlowehair.co</div>
+      <a href="index.html">Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Automations / <b>Rebooking Radar</b></div>
+      <div class="topbar-right">
+        <button class="tour-toggle" type="button" data-tour-start><span class="pip"></span> Tour</button>
+        <div class="search" aria-hidden="true">Search clients<span class="kbd">&#8984;K</span></div>
+      </div>
+    </div>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>Rebooking Radar</h1>
+          <div class="sub">Catches the color clients who drift past their window, and the no-shows before they happen.</div>
+        </div>
+        <div class="actions">
+          <button class="btn-walk" type="button" data-tour-start>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Walk Me Through It
+          </button>
+        </div>
+      </div>
+
+      <section class="card" id="radar-kpis">
+        <div class="card-b">
+          <div class="stat-row">
+            <div class="big-stat"><div class="n tnum">52% to 71%</div><div class="l">Rebook rate, then and now</div></div>
+            <div class="big-stat"><div class="n tnum">23</div><div class="l">Clients recovered this quarter</div></div>
+            <div class="big-stat"><div class="n tnum">4</div><div class="l">Currently overdue for color</div></div>
+            <div class="big-stat"><div class="n tnum">5 to 6 wks</div><div class="l">The color window it protects</div></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid-2" style="margin-top:14px">
+        <section class="card" id="radar-due">
+          <div class="card-h"><h2>Due and Overdue</h2><span class="note">Watched by service cadence</span></div>
+          <div class="card-b">
+            <ul class="rows">
+              <li>
+                <span class="who"><b>Maya K.</b> <span class="svc">&middot; Root Touch-Up $95 &middot; last visit 6w 2d</span></span>
+                <span class="pill good">Nudged, booked Fri 3:00</span>
+              </li>
+              <li>
+                <span class="who"><b>Tara B.</b> <span class="svc">&middot; Partial Highlight $145 &middot; 8w overdue</span></span>
+                <span class="pill warn">2nd nudge queued</span>
+              </li>
+              <li>
+                <span class="who"><b>Jessica R.</b> <span class="svc">&middot; Balayage $185 &middot; last visit 5w 6d</span></span>
+                <span class="pill plum">Nudge sent today</span>
+              </li>
+              <li>
+                <span class="who"><b>Kayla M.</b> <span class="svc">&middot; Gloss/Toner $40 &middot; last visit 6w 4d</span></span>
+                <span class="pill plum">Nudge sent today</span>
+              </li>
+              <li>
+                <span class="who"><b>Lauren P.</b> <span class="svc">&middot; Full Highlight $175 &middot; 7w 1d overdue</span></span>
+                <span class="pill warn">2nd nudge queued</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card" id="radar-shield">
+          <div class="card-h"><h2>No-Show Shield</h2><span class="note">Tomorrow, Saturday Jul 19</span></div>
+          <div class="card-b">
+            <div class="progressbar" aria-hidden="true">
+              <div class="seg" style="width:86%;background:var(--good)"></div>
+              <div class="seg" style="width:9%;background:var(--warn)"></div>
+              <div class="seg" style="width:5%;background:var(--bad)"></div>
+            </div>
+            <div class="legend">
+              <span><span class="sw" style="background:var(--good)"></span>Confirmed 18</span>
+              <span><span class="sw" style="background:var(--warn)"></span>Awaiting 2</span>
+              <span><span class="sw" style="background:var(--bad)"></span>High risk 1</span>
+            </div>
+            <ul class="rows" style="margin-top:10px">
+              <li>
+                <span class="who"><b>18 of 21 confirmed</b> <span class="svc">&middot; 3-day confirm went out Wednesday</span></span>
+                <span class="pill good">On track</span>
+              </li>
+              <li>
+                <span class="who"><b>2 awaiting reply</b> <span class="svc">&middot; auto re-ping at 5 PM today</span></span>
+                <span class="pill warn">Watching</span>
+              </li>
+              <li>
+                <span class="who"><b>1 high risk</b> <span class="svc">&middot; 2 prior no-shows, $50 deposit requested, card on file</span></span>
+                <span class="pill bad">Deposit requested</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <div class="grid-2b" style="grid-template-columns:1fr">
+        <section class="card" id="radar-reviews">
+          <div class="card-h"><h2>Review Engine</h2><span class="note">Google Business Profile</span></div>
+          <div class="card-b">
+            <div class="stat-row" style="grid-template-columns:repeat(2,1fr)">
+              <div class="big-stat"><div class="n tnum">4.9</div><div class="l">On Google, 212 reviews</div></div>
+              <div class="big-stat"><div class="n tnum">+18</div><div class="l">New reviews this month</div></div>
+            </div>
+            <ul class="rows" style="margin-top:8px">
+              <li>
+                <span class="who"><b>Requests sent to 6 clients today</b> <span class="svc">&middot; after checkout, happy visits only</span></span>
+                <span class="pill plum">Running</span>
+              </li>
+              <li>
+                <span class="who"><b>3 reviews awaiting your reply</b> <span class="svc">&middot; drafts ready for approval</span></span>
+                <span class="pill warn">Needs you</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+      <p class="foot-note">Demo data, illustrative numbers.</p>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interact.js"></script>
+<script>
+window.TOUR = [
+  { el: "#radar-kpis", side: "bottom",
+    title: "The silent churn, made visible.",
+    body: "Clients rarely quit your salon. They drift. The radar lifted the rebook rate from <b>52% to 71%</b> and pulled <b>23 drifting clients</b> back onto the books this quarter." },
+  { el: "#radar-due", side: "right",
+    title: "Every client has a clock.",
+    body: "Maya hit 6 weeks 2 days on her root touch-up, got a nudge, and booked Friday 3:00. Tara is 8 weeks overdue, so a second nudge is queued. No spreadsheet, no sticky notes, no one slips through." },
+  { el: "#radar-shield", side: "left",
+    title: "Tomorrow's no-shows, handled today.",
+    body: "Saturday is packed: 21 appointments, <b>18 already confirmed</b>. Two get a re-ping at 5 PM. And the one client with two prior no-shows? A polite $50 deposit request, card on file. That is how 17% became 4%." },
+  { el: "#radar-reviews", side: "right",
+    title: "Reviews on autopilot.",
+    body: "After a good visit, the AI asks for the review while the blowout still looks perfect. <b>4.9 on Google, 212 reviews, 18 new this month.</b> Replies are drafted for you, sent only when you approve." },
+  { el: null,
+    title: "The book protects itself.",
+    body: "Dead chairs refilled, drifting clients pulled back, tomorrow's no-shows confirmed today. Now let's look at the book itself, live across all eight chairs, and then follow the money into the books." }
+];
+window.TOUR_NEXT = { href: "app-calendar.html", label: "Next: Calendar" };
+</script>
+<script src="assets/tour.js"></script>
+</body>
+</html>

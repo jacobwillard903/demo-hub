@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard &middot; Marlowe Hair Co.</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-welcome>
+<div class="shell">
+
+  <aside class="side">
+    <div class="side-mark">Marlowe <span>Hair Co.</span></div>
+    <div class="side-sub">Owner View</div>
+    <button class="side-new" type="button" data-new-appt>+ New Appointment</button>
+
+    <div class="side-group">Overview</div>
+    <a class="nav on" href="app-dashboard.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a class="nav" href="app-ask.html" id="nav-ask">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Ask Marlowe
+    </a>
+    <div class="side-group">Front Desk</div>
+    <a class="nav" href="app-calendar.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Calendar
+    </a>
+    <a class="nav" href="app-frontdesk.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      AI Front Desk
+    </a>
+    <a class="nav" href="app-rescue.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Cancellation Rescue
+    </a>
+    <div class="side-group">Clients</div>
+    <a class="nav" href="app-clients.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Clients
+    </a>
+    <a class="nav" href="app-rebooking.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      Rebooking Radar
+    </a>
+    <div class="side-group">Money</div>
+    <a class="nav" href="app-money.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Financials
+    </a>
+    <a class="nav" href="app-retail.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      Retail and Backbar
+    </a>
+    <a class="nav" href="app-integrations.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      Integrations
+    </a>
+
+    <div class="side-spacer"></div>
+    <div class="side-foot">
+      <div class="who">dana@marlowehair.co</div>
+      <a href="index.html">Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Overview / <b>Dashboard</b></div>
+      <div class="topbar-right">
+        <button class="tour-toggle" type="button" data-tour-start><span class="pip"></span> Tour</button>
+        <div class="search" aria-hidden="true">Search clients<span class="kbd">&#8984;K</span></div>
+      </div>
+    </div>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>Owner Dashboard</h1>
+          <div class="sub">Marlowe Hair Co. &middot; Last 30 days</div>
+        </div>
+        <div class="actions">
+          <button class="btn-walk" type="button" data-tour-start>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Walk Me Through It
+          </button>
+        </div>
+      </div>
+
+      <section class="kpis" id="kpis" style="grid-template-columns:repeat(5,1fr)">
+        <div class="kpi" data-href="app-money.html">
+          <div class="lbl">Revenue, last 30 days</div>
+          <div class="num tnum">$38,940</div>
+          <div class="delta up">&#9650; +6.2%</div>
+          <div class="ctx">vs prior 30 days</div>
+        </div>
+        <div class="kpi" data-href="app-money.html">
+          <div class="lbl">Average ticket</div>
+          <div class="num tnum">$140</div>
+          <div class="delta up">&#9650; +4.5%</div>
+          <div class="ctx">278 paid tickets</div>
+        </div>
+        <div class="kpi" data-href="app-calendar.html">
+          <div class="lbl">Chair utilization</div>
+          <div class="num tnum">73%</div>
+          <div class="delta up">&#9650; +5.1%</div>
+          <div class="ctx">Healthy 75-85%</div>
+        </div>
+        <div class="kpi" data-href="app-rebooking.html">
+          <div class="lbl">Prebook rate</div>
+          <div class="num tnum">64%</div>
+          <div class="delta up">&#9650; +9 pts</div>
+          <div class="ctx">Rebooked at checkout</div>
+        </div>
+        <div class="kpi" id="kpi-noshow" data-href="app-rebooking.html">
+          <div class="lbl">No-show rate</div>
+          <div class="num tnum">4%<small> was 17%</small></div>
+          <div class="delta up">&#9660; -13 pts</div>
+          <div class="ctx">Since auto-confirms went live</div>
+        </div>
+      </section>
+
+      <section class="chips" id="chips">
+        <a class="chip" href="app-rescue.html" data-drawer="sat-chairs">
+          <span class="count warn tnum">2</span>
+          <span class="what">Chairs open this Saturday</span>
+          <span class="chev">&#8250;</span>
+        </a>
+        <a class="chip" href="app-rebooking.html" data-drawer="overdue-color">
+          <span class="count bad tnum">4</span>
+          <span class="what">Clients overdue for color</span>
+          <span class="chev">&#8250;</span>
+        </a>
+        <a class="chip" href="app-rebooking.html" data-drawer="reviews-reply">
+          <span class="count plum tnum">3</span>
+          <span class="what">Reviews needing a reply</span>
+          <span class="chev">&#8250;</span>
+        </a>
+      </section>
+
+      <div class="grid-2">
+        <section class="card" id="card-revenue">
+          <div class="card-h"><h2>Revenue Trend</h2><span class="note">Weekly, last 8 weeks</span></div>
+          <div class="card-b">
+            <div class="bars" id="revenue-bars"></div>
+            <div class="baseline"></div>
+            <div class="legend">
+              <span><span class="sw" style="background:var(--plum)"></span>Current week</span>
+              <span><span class="sw" style="background:var(--plum-line)"></span>Prior weeks</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="card-mix">
+          <div class="card-h"><h2>Service vs Retail</h2><span class="note">Last 30 days</span></div>
+          <div class="card-b">
+            <div class="donut-wrap">
+              <svg width="132" height="132" viewBox="0 0 132 132" role="img" aria-label="Service 87.5 percent, retail 12.5 percent">
+                <circle cx="66" cy="66" r="54" fill="none" stroke="var(--plum-line)" stroke-width="16"/>
+                <circle cx="66" cy="66" r="54" fill="none" stroke="var(--plum)" stroke-width="16"
+                        stroke-dasharray="296.9 339.3" stroke-dashoffset="0"
+                        transform="rotate(-90 66 66)" stroke-linecap="butt"/>
+                <text x="66" y="62" text-anchor="middle" class="donut-c" font-size="19" fill="var(--ink)" font-family="Palatino, Georgia, serif" font-weight="700">$38.9k</text>
+                <text x="66" y="80" text-anchor="middle" font-size="11" fill="var(--muted)">Total</text>
+              </svg>
+              <div class="donut-legend">
+                <div class="row">
+                  <span class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--plum)"></span>
+                  Service
+                  <span class="amt tnum">$34,070</span>
+                  <span class="pct tnum">87.5%</span>
+                </div>
+                <div class="row">
+                  <span class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--plum-line)"></span>
+                  Retail
+                  <span class="amt tnum">$4,870</span>
+                  <span class="pct tnum">12.5%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="grid-2b">
+        <section class="card" id="glance">
+          <div class="card-h"><h2>Today at a Glance</h2><span class="note">Friday, Jul 18</span></div>
+          <div class="card-b">
+            <div class="glance">
+              <div class="g"><div class="n tnum">31</div><div class="t">Booked</div></div>
+              <div class="g"><div class="n tnum">6</div><div class="t">Checked in</div></div>
+              <div class="g"><div class="n tnum">18</div><div class="t">Upcoming</div></div>
+              <div class="g"><div class="n tnum">0</div><div class="t">No-shows</div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="upnext">
+          <div class="card-h"><h2>Up Next</h2><a class="note" href="app-calendar.html" style="color:var(--plum);font-weight:600">Open the calendar &#8250;</a></div>
+          <div class="card-b">
+            <ul class="rows">
+              <li>
+                <span class="when tnum">1:30 PM</span>
+                <span class="who"><b>Maya K.</b> <span class="svc">&middot; Root Touch-Up, Danielle</span></span>
+                <span class="pill good">Confirmed</span>
+                <span class="amt tnum">$95</span>
+              </li>
+              <li>
+                <span class="when tnum">2:00 PM</span>
+                <span class="who"><b>Amber T.</b> <span class="svc">&middot; Balayage, Danielle</span></span>
+                <span class="pill plum">Rescued slot</span>
+                <span class="amt tnum">$185</span>
+              </li>
+              <li>
+                <span class="when tnum">2:15 PM</span>
+                <span class="who"><b>Kayla M.</b> <span class="svc">&middot; Women's Cut, Brooke</span></span>
+                <span class="pill good">Confirmed</span>
+                <span class="amt tnum">$65</span>
+              </li>
+              <li>
+                <span class="when tnum">3:00 PM</span>
+                <span class="who"><b>Lauren P.</b> <span class="svc">&middot; Partial Highlight, Marissa</span></span>
+                <span class="pill warn">Awaiting confirm</span>
+                <span class="amt tnum">$145</span>
+              </li>
+              <li>
+                <span class="when tnum">4:30 PM</span>
+                <span class="who"><b>Jessica R.</b> <span class="svc">&middot; Gloss + Blowout, Brooke</span></span>
+                <span class="pill mut">Booked</span>
+                <span class="amt tnum">$85</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <section class="card" id="leaderboard" style="margin-top:14px">
+        <div class="card-h"><h2>Stylist Leaderboard</h2><span class="note">Last 30 days &middot; commission + booth</span></div>
+        <div class="card-b" style="padding:0 0 4px;overflow-x:auto">
+          <table class="data">
+            <thead>
+              <tr>
+                <th>Stylist</th>
+                <th class="r">Revenue</th>
+                <th class="r">Tickets</th>
+                <th class="r">Avg Ticket</th>
+                <th class="r">Retail Mix %</th>
+                <th class="r">Rebook %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Danielle</b> <span class="pill mut">Commission</span></td>
+                <td class="r">$9,840</td><td class="r">58</td><td class="r">$170</td><td class="r">14.2</td><td class="r">74</td>
+              </tr>
+              <tr>
+                <td><b>Brooke</b> <span class="pill mut">Commission</span></td>
+                <td class="r">$8,610</td><td class="r">66</td><td class="r">$130</td><td class="r">12.8</td><td class="r">69</td>
+              </tr>
+              <tr>
+                <td><b>Marissa</b> <span class="pill mut">Commission</span></td>
+                <td class="r">$7,930</td><td class="r">61</td><td class="r">$130</td><td class="r">11.4</td><td class="r">63</td>
+              </tr>
+              <tr>
+                <td><b>Elise</b> <span class="pill mut">Booth renter</span></td>
+                <td class="r">$6,720</td><td class="r">49</td><td class="r">$137</td><td class="r">12.1</td><td class="r">58</td>
+              </tr>
+              <tr>
+                <td><b>Nikki</b> <span class="pill mut">Booth renter</span></td>
+                <td class="r">$5,840</td><td class="r">44</td><td class="r">$133</td><td class="r">10.6</td><td class="r">55</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <p class="foot-note">Demo data, illustrative numbers.</p>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interact.js"></script>
+<script>
+window.TOUR = [
+  { el: null,
+    title: "This is Marlowe with an AI front desk.",
+    body: "Everything you are about to see runs on top of the Square Appointments book you already use. Nothing changed about how the salon works. What changed is that nothing slips anymore. A few minutes, eight stops, ending at the money." },
+  { el: "#kpis", side: "bottom",
+    title: "The month, in one row.",
+    body: "Revenue, average ticket, chair utilization, prebook rate. The numbers a busy owner never has time to pull from Square are just here, every morning." },
+  { el: "#kpi-noshow", side: "bottom",
+    title: "No-shows: 17% to 4%.",
+    body: "This was the expensive one. At a $140 average ticket, a 17% no-show rate quietly costs thousands a month. Confirmations now go out three days ahead automatically, and most no-shows were just <b>forgetfulness</b>." },
+  { el: "#chips", side: "bottom",
+    title: "What needs you today.",
+    body: "Two chairs open Saturday, four color clients drifting past their window, three reviews waiting on a reply. Each one is a link, not a memory you have to hold behind the chair." },
+  { el: "#nav-ask", side: "right",
+    title: "Ask it anything, in plain words.",
+    body: "\"Who's overdue for color?\" \"How does tomorrow look?\" \"What did we recover this month?\" The Ask page answers from the salon's own numbers. Try it after the tour." },
+  { el: "#card-revenue", side: "right",
+    title: "The trend, not a spreadsheet.",
+    body: "Weekly revenue for the last 8 weeks, with retail mix alongside. When Tuesday and Wednesday run 40 to 60% booked, you see it here before the month is over." },
+  { el: "#leaderboard", side: "top",
+    title: "Every chair, earning what?",
+    body: "Revenue, tickets, retail mix, and rebook rate per stylist, commission and booth renters side by side. Now the first stop: the canceled balayage that used to be a dead chair." }
+];
+window.TOUR_NEXT = { href: "app-rescue.html", label: "Next: Cancellation Rescue" };
+</script>
+<script src="assets/tour.js"></script>
+</body>
+</html>

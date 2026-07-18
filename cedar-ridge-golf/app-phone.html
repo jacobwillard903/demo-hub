@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Phone Agent, Cedar Ridge Golf Club</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="wordmark">
+      <div class="wm-name">CEDAR RIDGE</div>
+      <div class="wm-sub">Golf Club</div>
+    </div>
+    <button class="side-cta" type="button" data-new-booking>+ New Booking</button>
+    <nav class="nav-group">
+      <div class="nav-label">Overview</div>
+      <a class="nav-item" href="app-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</a>
+      <a class="nav-item" href="app-ask.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Ask</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Automations</div>
+      <a class="nav-item active" href="app-phone.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>AI Phone Agent</a>
+      <a class="nav-item" href="app-teesheet.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>No-Show Shield</a>
+      <a class="nav-item" href="app-rainday.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.6A5 5 0 0 0 18 7h-1.3A8 8 0 1 0 4 15.3"/><path d="M8 19v2M12 18v3M16 19v2"/></svg>Rain Day Autopilot</a>
+      <a class="nav-item" href="app-outings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Outing Quotes</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Money</div>
+      <a class="nav-item" href="app-money.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Financials</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Course</div>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Tee Sheet (foreUP)</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-8-8V2h10.6l8 8a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1"/></svg>Rates &amp; Policies</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Golfers</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 6v12"/></svg>Reports</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">System</div>
+      <a class="nav-item" href="app-integrations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Integrations</a>
+    </nav>
+    <div class="side-foot">
+      <div class="who">dale@cedarridgegolf.com</div>
+      <a href="index.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Automations <span class="sep">/</span> <b>AI Phone Agent</b></div>
+      <div class="topbar-right">
+        <button class="tour-toggle" data-tour-start type="button">Tour <span class="knob"></span></button>
+        <div class="searchbox">Search<span class="kbd">/</span></div>
+      </div>
+    </div>
+
+    <main class="content">
+      <div class="page-head">
+        <div>
+          <h1>AI Phone Agent</h1>
+          <div class="sub">Every call answered on the first ring, on the course's own number. Kim and Rob stay with the golfers in front of them.</div>
+        </div>
+        <div class="head-actions">
+          <span class="chip chip-good" style="align-self:center"><span class="dot"></span>Live on (555) 214-8800</span>
+        </div>
+      </div>
+
+      <div class="statline section-gap" id="phone-stats">
+        <div><div class="s-num">43</div><div class="s-lab">Calls handled today</div></div>
+        <div><div class="s-num">41</div><div class="s-lab">Resolved start to finish</div></div>
+        <div><div class="s-num">2</div><div class="s-lab">Handed to the pro shop</div></div>
+        <div><div class="s-num">0</div><div class="s-lab">Missed or sent to voicemail</div></div>
+        <div><div class="s-num">2.5 hrs</div><div class="s-lab">Staff time saved today</div></div>
+      </div>
+
+      <div class="card section-gap" id="call-mix">
+        <div class="card-head">
+          <h2>What Golfers Call About</h2>
+          <span class="chip chip-neutral">Last 30 days, 1,218 calls</span>
+        </div>
+        <div class="card-body">
+          <div class="splitbar">
+            <div style="flex:46;background:#2f6b40">46%</div>
+            <div style="flex:21;background:#6f9a5e">21%</div>
+            <div style="flex:14;background:#8a9a6b;">14%</div>
+            <div style="flex:11;background:#a7a27a">11%</div>
+            <div style="flex:8;background:#b9b193;color:#3c4237">8%</div>
+          </div>
+          <div class="legend">
+            <span><span class="sw" style="background:#2f6b40"></span>Book, move, or cancel a tee time</span>
+            <span><span class="sw" style="background:#6f9a5e"></span>Rates and specials</span>
+            <span><span class="sw" style="background:#8a9a6b"></span>Course conditions and frost delays</span>
+            <span><span class="sw" style="background:#a7a27a"></span>Outings and leagues</span>
+            <span><span class="sw" style="background:#b9b193"></span>Everything else</span>
+          </div>
+          <div style="margin-top:12px;font-size:12.5px;color:var(--text-2)">
+            Two thirds of the ring volume is reservations and pricing. None of it needs a person anymore.
+          </div>
+        </div>
+      </div>
+
+      <div class="grid two-col">
+        <div class="card" id="call-feed">
+          <div class="card-head">
+            <h2>Today's Call Feed</h2>
+            <a class="link" href="#">Full log</a>
+          </div>
+          <div class="feed">
+            <div class="feed-item" id="call-first" data-drill="call-book">
+              <span class="f-time">7:02 AM</span>
+              <div class="f-body">
+                <div class="f-title">Booked Saturday 8:40 AM, foursome</div>
+                <div class="f-sub">Weekend rack rate, card on file, $232 collected. Confirmation text sent.</div>
+              </div>
+              <span class="f-tag chip chip-good">Booked</span>
+            </div>
+            <div class="feed-item">
+              <span class="f-time">7:48 AM</span>
+              <div class="f-body">
+                <div class="f-title">Answered: is there a frost delay this morning?</div>
+                <div class="f-sub">Read the 8 AM start from the course status board. 40 second call.</div>
+              </div>
+              <span class="f-tag chip chip-neutral">Answered</span>
+            </div>
+            <div class="feed-item">
+              <span class="f-time">9:31 AM</span>
+              <div class="f-body">
+                <div class="f-title">Cancelled J. Whitfield, Sunday 9:10 AM twosome</div>
+                <div class="f-sub">Inside 48 hours. Slots released to the waitlist engine immediately.</div>
+              </div>
+              <span class="f-tag chip chip-warn">Cancelled</span>
+            </div>
+            <div class="feed-item" id="call-johnson" data-drill="call-johnson">
+              <span class="f-time">11:15 AM</span>
+              <div class="f-body">
+                <div class="f-title">Moved the Johnson party to 1:30 PM, cart added</div>
+                <div class="f-sub">Rebooked in one call, $18 cart fee collected, tee sheet updated in foreUP.</div>
+              </div>
+              <span class="f-tag chip chip-good">Rescheduled</span>
+            </div>
+            <div class="feed-item">
+              <span class="f-time">12:05 PM</span>
+              <div class="f-body">
+                <div class="f-title">Answered: what time does twilight start?</div>
+                <div class="f-sub">5 PM, $29. Fourth time today. The agent never gets tired of it.</div>
+              </div>
+              <span class="f-tag chip chip-neutral">Answered</span>
+            </div>
+            <div class="feed-item">
+              <span class="f-time">1:22 PM</span>
+              <div class="f-body">
+                <div class="f-title">Waitlist add: Saturday morning, any foursome slot</div>
+                <div class="f-sub">B. Keller, will pay rack rate. On the list, texted when 8:50 opens.</div>
+              </div>
+              <span class="f-tag chip chip-neutral">Waitlisted</span>
+            </div>
+            <div class="feed-item">
+              <span class="f-time">2:16 PM</span>
+              <div class="f-body">
+                <div class="f-title">Handed to Rob: junior lesson question</div>
+                <div class="f-sub">Warm transfer with a one line summary. The 2 of 43 that needed a human.</div>
+              </div>
+              <span class="f-tag chip chip-warn">Transferred</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" id="sms-card">
+          <div class="card-head">
+            <h2>Same Brain, Over Text</h2>
+            <span class="chip chip-neutral">(555) 630-4417</span>
+          </div>
+          <div class="thread">
+            <div class="bubble golfer">Any chance 4 of us can get out Saturday morning?</div>
+            <div class="bubble-meta right">M. Torres, 6:58 AM</div>
+            <div class="bubble ai">Saturday morning is tight, but 8:40 AM just opened with room for 4. $58 green fee, $18 cart per rider. Want it?</div>
+            <div class="bubble golfer">Book it. Same card as last time.</div>
+            <div class="bubble ai">Done. 4 players, Saturday 8:40 AM under Torres, $232 in green fees collected, carts settled at the shop. Reply MOVE or CANCEL anytime. See you at the first tee.</div>
+            <div class="bubble-meta">Cedar Ridge assistant, 7:02 AM</div>
+          </div>
+          <div class="card-body" style="border-top:1px solid var(--border);font-size:12.5px;color:var(--text-2)">
+            The 7:02 AM call in the feed and this thread are the same booking. Phone, text, same tee sheet, no double entry.
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:22px;font-size:12px;color:var(--muted)">Demo data, illustrative numbers.</p>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interact.js"></script>
+<script>
+window.TOUR = [
+  { el: "#phone-stats",
+    title: "43 calls today. Zero missed.",
+    body: "A course this size takes 40 to 50 calls a day and two thirds are tee times and rates. Today the agent handled all 43, resolved 41, and gave Kim and Rob about <b>2.5 hours</b> of their day back." },
+  { el: "#call-mix",
+    title: "The phone problem, measured",
+    body: "Almost half of all calls are book, move, or cancel. Another fifth are just rates. Every one of those used to interrupt a real transaction at the counter. Now none of them do." },
+  { el: "#call-first",
+    title: "7:02 AM, before the shop even opened",
+    body: "A foursome booked Saturday 8:40 and <b>$232 collected</b> on a card, while the doors were still locked. Money that used to go to whichever course picked up first." },
+  { el: "#sms-card",
+    title: "Golfers who text get the same agent",
+    body: "Same brain, same tee sheet, over SMS. This thread is the 7:02 booking. Next: what happens when people book and then do not show up.",
+    side: "left",
+    cta: "Next: no-shows" }
+];
+window.TOUR_NEXT = { href: "app-teesheet.html", label: "Next: No-Show Shield" };
+</script>
+<script src="assets/tour.js"></script>
+</body>
+</html>

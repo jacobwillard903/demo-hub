@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retail and Backbar &middot; Marlowe Hair Co.</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="side">
+    <div class="side-mark">Marlowe <span>Hair Co.</span></div>
+    <div class="side-sub">Owner View</div>
+    <button class="side-new" type="button" data-new-appt>+ New Appointment</button>
+
+    <div class="side-group">Overview</div>
+    <a class="nav" href="app-dashboard.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a class="nav" href="app-ask.html" id="nav-ask">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Ask Marlowe
+    </a>
+    <div class="side-group">Front Desk</div>
+    <a class="nav" href="app-calendar.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Calendar
+    </a>
+    <a class="nav" href="app-frontdesk.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      AI Front Desk
+    </a>
+    <a class="nav" href="app-rescue.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Cancellation Rescue
+    </a>
+    <div class="side-group">Clients</div>
+    <a class="nav" href="app-clients.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Clients
+    </a>
+    <a class="nav" href="app-rebooking.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      Rebooking Radar
+    </a>
+    <div class="side-group">Money</div>
+    <a class="nav" href="app-money.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Financials
+    </a>
+    <a class="nav on" href="app-retail.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      Retail and Backbar
+    </a>
+    <a class="nav" href="app-integrations.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      Integrations
+    </a>
+
+    <div class="side-spacer"></div>
+    <div class="side-foot">
+      <div class="who">dana@marlowehair.co</div>
+      <a href="index.html">Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Money / <b>Retail and Backbar</b></div>
+      <div class="topbar-right">
+        <button class="tour-toggle" type="button" data-tour-start><span class="pip"></span> Tour</button>
+        <div class="search" aria-hidden="true">Search clients<span class="kbd">&#8984;K</span></div>
+      </div>
+    </div>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>Retail and Backbar</h1>
+          <div class="sub">Shelf stock and color room stock, counted by the register, reordered before they run out.</div>
+        </div>
+        <div class="actions">
+          <button class="btn-walk" type="button" data-tour-start>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Walk Me Through It
+          </button>
+        </div>
+      </div>
+
+      <section class="card" id="ret-kpis">
+        <div class="card-b">
+          <div class="stat-row">
+            <div class="big-stat"><div class="n tnum">$4,870</div><div class="l">Retail sold, last 30 days</div></div>
+            <div class="big-stat"><div class="n tnum">12.5%</div><div class="l">Retail attach rate</div></div>
+            <div class="big-stat"><div class="n tnum">5</div><div class="l">Items at or below reorder point</div></div>
+            <div class="big-stat"><div class="n tnum">$312</div><div class="l">Draft reorder awaiting approval</div></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid-2" style="margin-top:14px">
+        <div>
+          <section class="card" id="ret-shelf">
+            <div class="card-h"><h2>Take-Home Shelf</h2><span class="note">Counted by Square POS</span></div>
+            <div class="card-b" style="padding:0 0 4px;overflow-x:auto">
+              <table class="data">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th class="r">Price</th>
+                    <th class="r">On hand</th>
+                    <th class="r">Sold / wk</th>
+                    <th>Stock</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>Olaplex No. 3</b></td>
+                    <td class="r">$30</td><td class="r">3</td><td class="r">7</td>
+                    <td><div class="stockbar low"><i style="width:25%"></i></div></td>
+                  </tr>
+                  <tr>
+                    <td><b>Purple shampoo</b></td>
+                    <td class="r">$24</td><td class="r">9</td><td class="r">4</td>
+                    <td><div class="stockbar"><i style="width:75%"></i></div></td>
+                  </tr>
+                  <tr>
+                    <td><b>Heat protectant</b></td>
+                    <td class="r">$28</td><td class="r">2</td><td class="r">5</td>
+                    <td><div class="stockbar low"><i style="width:18%"></i></div></td>
+                  </tr>
+                  <tr>
+                    <td><b>Bond repair mask</b></td>
+                    <td class="r">$42</td><td class="r">6</td><td class="r">3</td>
+                    <td><div class="stockbar"><i style="width:65%"></i></div></td>
+                  </tr>
+                  <tr>
+                    <td><b>Texture spray</b></td>
+                    <td class="r">$26</td><td class="r">0</td><td class="r">3</td>
+                    <td><div class="stockbar out"><i style="width:6%"></i></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="card" id="ret-backbar" style="margin-top:14px">
+            <div class="card-h"><h2>Backbar</h2><span class="note">Color room, tracked by usage</span></div>
+            <div class="card-b" style="padding:0 0 4px;overflow-x:auto">
+              <table class="data">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th class="r">On hand</th>
+                    <th class="r">Reorder at</th>
+                    <th>Stock</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>Developer, 20 vol</b></td>
+                    <td class="r">2 bottles</td><td class="r">3</td>
+                    <td><div class="stockbar low"><i style="width:30%"></i></div></td>
+                  </tr>
+                  <tr>
+                    <td><b>Developer, 30 vol</b></td>
+                    <td class="r">5 bottles</td><td class="r">2</td>
+                    <td><div class="stockbar"><i style="width:80%"></i></div></td>
+                  </tr>
+                  <tr>
+                    <td><b>7N color</b></td>
+                    <td class="r">4 tubes</td><td class="r">6</td>
+                    <td><div class="stockbar low"><i style="width:33%"></i></div></td>
+                  </tr>
+                  <tr>
+                    <td><b>9V toner</b></td>
+                    <td class="r">7 tubes</td><td class="r">3</td>
+                    <td><div class="stockbar"><i style="width:85%"></i></div></td>
+                  </tr>
+                  <tr>
+                    <td><b>Lightener</b></td>
+                    <td class="r">1 tub</td><td class="r">2</td>
+                    <td><div class="stockbar low"><i style="width:22%"></i></div></td>
+                  </tr>
+                  <tr>
+                    <td><b>Foils</b></td>
+                    <td class="r">3 boxes</td><td class="r">1</td>
+                    <td><div class="stockbar"><i style="width:90%"></i></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <section class="card" id="ret-feed">
+          <div class="card-h"><h2>AI Reorder Desk</h2><span class="note">This week</span></div>
+          <div class="card-b">
+            <ul class="feed">
+              <li>
+                <span class="t tnum">Today</span><span class="dot plum"></span>
+                <span class="body"><b>Drafted a $312 order</b> to the distributor: Olaplex No. 3 x6, heat protectant x6, texture spray x6, 20 vol x2, 7N x8. One tap to approve.</span>
+              </li>
+              <li>
+                <span class="t tnum">Today</span><span class="dot warn" style="background:var(--warn)"></span>
+                <span class="body"><b>Flagged Saturday risk:</b> Olaplex No. 3 is selling 40% faster since Danielle's transformation reel. Three left, and Saturday is the biggest retail day.</span>
+              </li>
+              <li>
+                <span class="t tnum">Thu</span><span class="dot bad"></span>
+                <span class="body"><b>Texture spray sold out</b> mid-week. Two clients asked; both were texted when it restocks. Added to the draft order.</span>
+              </li>
+              <li>
+                <span class="t tnum">Wed</span><span class="dot plum"></span>
+                <span class="body"><b>Caught a price increase</b> on lightener, up $4 a tub. Adjusted the backbar cost line so color services still price right.</span>
+              </li>
+              <li>
+                <span class="t tnum">Mon</span><span class="dot good"></span>
+                <span class="body"><b>Matched last week's supply invoice</b> to the QuickBooks bill. Backbar spend this month: $2,140, right on trend.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <p class="foot-note">Demo data, illustrative numbers.</p>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interact.js"></script>
+<script>
+window.TOUR = [
+  { el: "#ret-kpis", side: "bottom",
+    title: "The shelf pays rent too.",
+    body: "$4,870 of retail in 30 days at a 12.5% attach rate. The register counts every unit out, so the stock numbers here are real, not a clipboard guess from last month." },
+  { el: "#ret-shelf", side: "right",
+    title: "Nothing quietly runs out.",
+    body: "Olaplex is down to three with Saturday coming. Texture spray already sold out, and the clients who wanted it get a text when it lands. Out of stock used to mean lost sales nobody ever counted." },
+  { el: "#ret-feed", side: "left",
+    title: "Reordering is a one-tap approval.",
+    body: "The AI drafts the distributor order, watches sales velocity, catches price increases, and matches invoices into QuickBooks. Dana approves. That is the whole job now." }
+];
+</script>
+<script src="assets/tour.js"></script>
+</body>
+</html>

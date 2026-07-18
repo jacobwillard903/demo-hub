@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | Summit Martial Arts Academy</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="side-brand">
+      <div class="wordmark">SUM<span class="stripe">M</span>IT</div>
+      <div class="wordsub">Martial Arts Academy</div>
+    </div>
+    <button class="side-cta" type="button"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>New Student</button>
+    <nav class="nav-group">
+      <div class="nav-label">Overview</div>
+      <a class="nav-item on" href="app-dashboard.html"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Dashboard</a>
+      <a class="nav-item" id="nav-ask" href="app-ask.html"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Ask</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Front Office</div>
+      <a class="nav-item" href="app-trials.html"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>Leads &amp; Trials</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Class Schedule</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg>Attendance</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Programs</div>
+      <a class="nav-item" href="app-belttest.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M12 15l-2 6 2-1.5L14 21l-2-6z"/></svg>Belt Test Radar</a>
+      <a class="nav-item" href="app-retention.html"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>Retention Radar</a>
+      <a class="nav-item" href="app-retention.html#parents"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>Parent Pulse</a>
+    </nav>
+    <nav class="nav-group">
+      <div class="nav-label">Money</div>
+      <a class="nav-item" href="app-money.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 8.5h-5.5a2 2 0 000 4h3a2 2 0 010 4H8"/><path d="M12 6v12"/></svg>Financials</a>
+      <a class="nav-item" href="app-integrations.html"><svg viewBox="0 0 24 24"><path d="M9 2v6M15 2v6"/><path d="M6 8h12v4a6 6 0 01-12 0V8z"/><path d="M12 18v4"/></svg>Integrations</a>
+      <a class="nav-item" href="#"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Tuition</a>
+    </nav>
+    <div class="side-foot">
+      ray@summitmartialarts.com
+      <a class="signout" href="index.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sign Out</a>
+    </div>
+  </aside>
+
+  <div>
+    <div class="topbar">
+      <div class="crumb">Overview <span class="sep">/</span> <b>Dashboard</b></div>
+      <div class="top-right">
+        <button class="tour-toggle" type="button" data-tour-start>Tour <span class="knob"></span></button>
+        <div class="searchbox"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Search<span class="kbd">&#8984;K</span></div>
+      </div>
+    </div>
+
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h1>Good evening, Coach Ray</h1>
+          <p class="page-sub">Thursday, one class in session. Here is the academy at a glance.</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn btn-ghost btn-pill" type="button" data-tour-start><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Walk Me Through It</button>
+          <button class="btn btn-accent" type="button" data-new-student><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>New Student</button>
+        </div>
+      </div>
+
+      <section class="kpi-row" id="kpi-row" style="grid-template-columns:repeat(5,minmax(0,1fr))">
+        <div class="kpi" data-href="app-retention.html">
+          <div class="k-label">Active Students</div>
+          <div class="k-val">180<span class="delta up">&#9650; +4</span></div>
+          <div class="k-sub">This month</div>
+        </div>
+        <div class="kpi" data-href="app-money.html">
+          <div class="k-label">Monthly Tuition (MRR)</div>
+          <div class="k-val">$24,900<span class="delta up">&#9650; +2.6%</span></div>
+          <div class="k-sub">$129 to $159 per student</div>
+        </div>
+        <div class="kpi" data-href="app-retention.html">
+          <div class="k-label">Monthly Churn</div>
+          <div class="k-val">3.1%<span class="delta up">&#9660; -2.3 pts</span></div>
+          <div class="k-sub">Was 5.4% before the radar</div>
+        </div>
+        <div class="kpi" data-href="app-trials.html">
+          <div class="k-label">Trial Close Rate</div>
+          <div class="k-val">46%<span class="delta up">&#9650; +8 pts</span></div>
+          <div class="k-sub">Last 90 days</div>
+        </div>
+        <div class="kpi" data-href="app-trials.html">
+          <div class="k-label">Avg Lead Response</div>
+          <div class="k-val">2m 40s</div>
+          <div class="k-sub">Industry avg is 47 hours</div>
+        </div>
+      </section>
+
+      <section class="alert-row mt" id="alert-row">
+        <a class="alert-chip" href="app-trials.html">
+          <span class="n red tnum">3</span>
+          <span class="t">Intros at risk of expiring unconverted</span>
+          <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+        </a>
+        <a class="alert-chip" href="app-belttest.html">
+          <span class="n blue tnum">12</span>
+          <span class="t">Students test-eligible for Saturday</span>
+          <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+        </a>
+        <a class="alert-chip" href="app-belttest.html">
+          <span class="n amber tnum">2</span>
+          <span class="t">Testing fees not yet collected</span>
+          <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+        </a>
+        <a class="alert-chip" href="app-retention.html">
+          <span class="n amber tnum">1</span>
+          <span class="t">Substitute needed, Tue 6:00 PM</span>
+          <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+        </a>
+      </section>
+
+      <section class="grid g23 mt">
+        <div class="card" id="chart-enrollment">
+          <div class="card-head"><h2>Active Enrollment by Month</h2><span class="chip good"><span class="dot good"></span>Growing</span></div>
+          <div class="card-body">
+            <div class="vchart">
+              <div class="vbar"><span class="v">158</span><div class="bar" style="height:64%"></div><span class="x">Feb</span></div>
+              <div class="vbar"><span class="v">163</span><div class="bar" style="height:70%"></div><span class="x">Mar</span></div>
+              <div class="vbar"><span class="v">166</span><div class="bar" style="height:74%"></div><span class="x">Apr</span></div>
+              <div class="vbar"><span class="v">171</span><div class="bar" style="height:81%"></div><span class="x">May</span></div>
+              <div class="vbar"><span class="v">176</span><div class="bar" style="height:88%"></div><span class="x">Jun</span></div>
+              <div class="vbar hot"><span class="v">180</span><div class="bar" style="height:94%"></div><span class="x">Jul</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="program-mix">
+          <div class="card-head"><h2>Program Mix</h2><span class="chip plain tnum">180 students</span></div>
+          <div class="card-body">
+            <div class="segbar">
+              <div class="seg" style="flex:38;background:#b3312d">38</div>
+              <div class="seg" style="flex:72;background:#1d2e4e">72</div>
+              <div class="seg" style="flex:34;background:#3f5a86">34</div>
+              <div class="seg" style="flex:28;background:#586073">28</div>
+              <div class="seg" style="flex:8;background:#9aa3b5">8</div>
+            </div>
+            <div class="legend">
+              <span class="li"><span class="sw" style="background:#b3312d"></span>Little Dragons <b>38</b></span>
+              <span class="li"><span class="sw" style="background:#1d2e4e"></span>Kids Karate <b>72</b></span>
+              <span class="li"><span class="sw" style="background:#3f5a86"></span>Teen/Adult Karate <b>34</b></span>
+              <span class="li"><span class="sw" style="background:#586073"></span>Adult BJJ <b>28</b></span>
+              <span class="li"><span class="sw" style="background:#9aa3b5"></span>Multi-program <b>8</b></span>
+            </div>
+            <div class="barlist" style="margin-top:20px">
+              <div class="bl-row">
+                <div class="bl-top"><b>Avg visits per student / wk</b><span>2.3</span></div>
+                <div class="bl-track"><div class="bl-fill" style="width:77%"></div></div>
+              </div>
+              <div class="bl-row">
+                <div class="bl-top"><b>Black Belt Club members</b><span>41 of 180</span></div>
+                <div class="bl-track"><div class="bl-fill" style="width:23%;background:#b3312d"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid g23 mt">
+        <div class="card" id="today-classes">
+          <div class="card-head"><h2>Today on the Mat</h2><a class="link" href="#">Full schedule</a></div>
+          <div class="rowlist">
+            <div class="row">
+              <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+              <span class="rt"><b>Little Dragons</b><span>Ages 4 to 6 &middot; Coach Dana</span></span>
+              <span class="rmeta"><span class="when">4:30 PM</span><span class="cap ok">14 / 16</span></span>
+            </div>
+            <div class="row">
+              <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+              <span class="rt"><b>Kids Karate</b><span>Ages 7 to 12 &middot; Coach Ray</span></span>
+              <span class="rmeta"><span class="when">5:30 PM</span><span class="cap near">22 / 24</span></span>
+            </div>
+            <div class="row">
+              <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+              <span class="rt"><b>Teen/Adult Karate</b><span>Forms night &middot; Coach Ray</span></span>
+              <span class="rmeta"><span class="when">6:30 PM</span><span class="cap ok">18 / 24</span></span>
+            </div>
+            <div class="row">
+              <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+              <span class="rt"><b>Adult BJJ, no-gi</b><span>Positional rolling &middot; Coach Tom</span></span>
+              <span class="rmeta"><span class="when">7:30 PM</span><span class="cap full">20 / 20</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="attention-feed">
+          <div class="card-head"><h2>Needs Attention</h2><span class="chip bad tnum">4 items</span></div>
+          <div class="card-body attn">
+            <div class="a-item">
+              <div class="a-top"><span>Sofia R. quiet for 11 days</span><span class="amt">3x/wk regular</span></div>
+              <div class="a-sub">Assistant sent a we-missed-you text Tuesday. Mom replied, see Retention Radar.</div>
+            </div>
+            <div class="a-item">
+              <div class="a-top"><span>Jordan P. intro expires in 3 days</span><span class="amt">3 of 6 visits</span></div>
+              <div class="a-sub">Below visit pace. Decision text queued for tonight, offer a coach call.</div>
+            </div>
+            <div class="a-item amber">
+              <div class="a-top"><span>2 testing fees uncollected</span><span class="amt">$90</span></div>
+              <div class="a-sub">The Kims and the Reyes family. Reminder scheduled before Saturday.</div>
+            </div>
+            <div class="a-item amber">
+              <div class="a-top"><span>Tue 6:00 PM needs a substitute</span><span class="amt">Coach Tom out</span></div>
+              <div class="a-sub">Sub blast went to 4 qualified instructors. Coach Elena claimed it in 14 minutes.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card mt" id="instructor-table">
+        <div class="card-head"><h2>Instructor Performance, Last 30 Days</h2><a class="link" href="#">All instructors</a></div>
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>Instructor</th>
+              <th>Programs</th>
+              <th class="num">Classes Taught</th>
+              <th class="num">Avg Attendance</th>
+              <th class="num">Student Retention</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="who"><b>Ray Delgado</b><span>Owner, head instructor</span></td>
+              <td>Kids Karate, Teen/Adult</td>
+              <td class="num">38</td>
+              <td class="num">19.2</td>
+              <td class="num"><span class="mini"><span class="mtrack"><span class="mfill" style="width:94%;display:block"></span></span><span>94%</span></span></td>
+              <td><span class="chip good"><span class="dot good"></span>Anchor</span></td>
+            </tr>
+            <tr>
+              <td class="who"><b>Dana Whitfield</b><span>Little Dragons lead</span></td>
+              <td>Little Dragons</td>
+              <td class="num">26</td>
+              <td class="num">14.8</td>
+              <td class="num"><span class="mini"><span class="mtrack"><span class="mfill" style="width:91%;display:block"></span></span><span>91%</span></span></td>
+              <td><span class="chip good"><span class="dot good"></span>Strong</span></td>
+            </tr>
+            <tr>
+              <td class="who"><b>Tom Barrett</b><span>BJJ coach, brown belt</span></td>
+              <td>Adult BJJ gi/no-gi</td>
+              <td class="num">18</td>
+              <td class="num">16.4</td>
+              <td class="num"><span class="mini"><span class="mtrack"><span class="mfill" style="width:89%;display:block"></span></span><span>89%</span></span></td>
+              <td><span class="chip warn"><span class="dot warn"></span>Out Tue</span></td>
+            </tr>
+            <tr>
+              <td class="who"><b>Elena Cruz</b><span>Assistant instructor</span></td>
+              <td>Kids Karate, subs</td>
+              <td class="num">12</td>
+              <td class="num">11.6</td>
+              <td class="num"><span class="mini"><span class="mtrack"><span class="mfill" style="width:92%;display:block"></span></span><span>92%</span></span></td>
+              <td><span class="chip info"><span class="dot info"></span>Sub Tue 6 PM</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tbl-note">Showing 4 of 4 instructors. Retention is the share of each instructor's regulars still active after 6 months.</div>
+      </section>
+
+      <p class="foot-note">Demo data, illustrative numbers. All students, parents, and instructors are fictional.</p>
+    </main>
+  </div>
+</div>
+
+<div class="welcome" id="welcome-gate">
+  <h3>Welcome to Summit's ops layer</h3>
+  <p>This is a working preview built on Summit's real numbers, with fictional students. The guided tour hits the five systems that move revenue, books included.</p>
+  <div class="w-btns">
+    <button class="btn btn-accent" type="button" data-welcome-start>Take the tour</button>
+    <button class="btn btn-ghost" type="button" data-welcome-dismiss>Look around first</button>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script>
+window.TOUR = [
+  { el: null, title: "This is Summit with an AI front office",
+    body: "Everything on this screen runs itself. Your job stays on the mat, and the system works the phones, the intros, the testing cycle, the quiet kids, and the books. <b>A few minutes, five systems.</b>" },
+  { el: "#kpi-row", side: "bottom", title: "The numbers that pay the rent",
+    body: "180 active students, <b>$24,900 a month</b> in tuition. Churn is down from 5.4% to <b>3.1%</b>, and the average lead now hears back in <b>2 minutes 40 seconds</b>. The industry average is 47 hours." },
+  { el: "#alert-row", side: "bottom", title: "What actually needs a human today",
+    body: "The assistant handles the routine and surfaces the exceptions: <b>3 intros at risk</b>, <b>12 students ready to test Saturday</b>, 2 fees to collect, 1 class needing a sub. Each chip opens the page that fixes it." },
+  { el: "#chart-enrollment", side: "right", title: "Enrollment, trending the right way",
+    body: "Up <b>22 students since February</b>. Growth here is not more leads, it is the same leads answered in minutes and fewer members slipping out the back door." },
+  { el: "#today-classes", side: "right", title: "Today's mat schedule, with capacity",
+    body: "Every class shows fill against cap. Kids Karate is near full at <b>22 of 24</b>, and no-gi is capped. When a coach calls in sick, the sub finder handles it, you will see that on the retention page." },
+  { el: "#attention-feed", side: "left", title: "Nothing slips through anymore",
+    body: "Sofia has been quiet 11 days and the family already got a text. Jordan's intro expires in 3 days and tonight's nudge is queued. Click any item on this page to open the full record and its history. This feed is why churn fell." },
+  { el: "#nav-ask", side: "right", title: "Or just ask it",
+    body: "Anything on these pages can be asked in plain English: <b>who tests Saturday, which intros expire, what did the failed autopays do</b>. Try it after the tour. Next, the first system: <b>speed to lead</b>." }
+];
+window.TOUR_NEXT = { href: "app-trials.html", label: "See Leads & Trials" };
+</script>
+<script src="assets/app.js"></script>
+<script src="assets/tour.js"></script>
+</body>
+</html>

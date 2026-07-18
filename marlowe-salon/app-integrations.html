@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integrations &middot; Marlowe Hair Co.</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="side">
+    <div class="side-mark">Marlowe <span>Hair Co.</span></div>
+    <div class="side-sub">Owner View</div>
+    <button class="side-new" type="button" data-new-appt>+ New Appointment</button>
+
+    <div class="side-group">Overview</div>
+    <a class="nav" href="app-dashboard.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a class="nav" href="app-ask.html" id="nav-ask">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Ask Marlowe
+    </a>
+    <div class="side-group">Front Desk</div>
+    <a class="nav" href="app-calendar.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Calendar
+    </a>
+    <a class="nav" href="app-frontdesk.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      AI Front Desk
+    </a>
+    <a class="nav" href="app-rescue.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Cancellation Rescue
+    </a>
+    <div class="side-group">Clients</div>
+    <a class="nav" href="app-clients.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Clients
+    </a>
+    <a class="nav" href="app-rebooking.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      Rebooking Radar
+    </a>
+    <div class="side-group">Money</div>
+    <a class="nav" href="app-money.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Financials
+    </a>
+    <a class="nav" href="app-retail.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      Retail and Backbar
+    </a>
+    <a class="nav on" href="app-integrations.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      Integrations
+    </a>
+
+    <div class="side-spacer"></div>
+    <div class="side-foot">
+      <div class="who">dana@marlowehair.co</div>
+      <a href="index.html">Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Money / <b>Integrations</b></div>
+      <div class="topbar-right">
+        <button class="tour-toggle" type="button" data-tour-start><span class="pip"></span> Tour</button>
+        <div class="search" aria-hidden="true">Search clients<span class="kbd">&#8984;K</span></div>
+      </div>
+    </div>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>Integrations</h1>
+          <div class="sub">Nothing was replaced. The AI plugs into what the salon already runs.</div>
+        </div>
+        <div class="actions">
+          <button class="btn-walk" type="button" data-tour-start>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Walk Me Through It
+          </button>
+        </div>
+      </div>
+
+      <section class="int-grid" id="int-grid">
+        <div class="int">
+          <div class="top"><span class="mark">Square Appointments</span><span class="st pill good">Connected</span></div>
+          <p>The book of record. Every booking, reschedule, and rescue the AI makes is written straight into the calendar the salon already lives in.</p>
+        </div>
+        <div class="int">
+          <div class="top"><span class="mark">Square POS</span><span class="st pill good">Connected</span></div>
+          <p>Tickets, tips, and retail sales flow in as they happen. Powers the dashboard numbers and the shelf counts on the retail page.</p>
+        </div>
+        <div class="int">
+          <div class="top"><span class="mark">QuickBooks Online</span><span class="st pill good">Connected</span></div>
+          <p>The AI bookkeeper categorizes transactions, splits tips, matches payouts, and keeps the P&amp;L current. Dana never logs in.</p>
+        </div>
+        <div class="int">
+          <div class="top"><span class="mark">Twilio SMS</span><span class="st pill good">Connected</span></div>
+          <p>Every confirmation, waitlist offer, rebook nudge, and missed-call text goes out on the salon's own number.</p>
+        </div>
+        <div class="int">
+          <div class="top"><span class="mark">Instagram + Meta DMs</span><span class="st pill good">Connected</span></div>
+          <p>The 10 PM "how much for balayage?" DM gets answered in seconds, priced right, and booked, while everyone's hands are in foils.</p>
+        </div>
+        <div class="int">
+          <div class="top"><span class="mark">Google Business Profile</span><span class="st pill good">Connected</span></div>
+          <p>Review requests go out after happy visits. New reviews come in with drafted replies waiting for Dana's approval. 4.9 and climbing.</p>
+        </div>
+        <div class="int">
+          <div class="top"><span class="mark">Gmail</span><span class="st pill good">Connected</span></div>
+          <p>Booking confirmations, the monthly P&amp;L email to the accountant, and supplier invoices, read and filed automatically.</p>
+        </div>
+        <div class="int">
+          <div class="top"><span class="mark">Google Calendar</span><span class="st pill good">Connected</span></div>
+          <p>Dana's personal calendar syncs both ways, so a school pickup blocks her chair before anyone can book over it.</p>
+        </div>
+        <div class="int" id="int-avail">
+          <div class="top"><span class="mark">Shopify</span><span class="st pill mut">Available</span></div>
+          <p>Put the take-home shelf online. Same inventory counts, so the site never sells a bottle the shelf does not have.</p>
+        </div>
+        <div class="int">
+          <div class="top"><span class="mark">Mailchimp</span><span class="st pill mut">Available</span></div>
+          <p>Seasonal promos and win-back campaigns to the client list, segmented by service history the AI already keeps.</p>
+        </div>
+        <div class="int">
+          <div class="top"><span class="mark">SalonCentric ordering</span><span class="st pill mut">Available</span></div>
+          <p>Send the AI's draft backbar orders straight to the distributor instead of a phone call and a sticky note.</p>
+        </div>
+        <div class="int">
+          <div class="top"><span class="mark">Waitlist widget</span><span class="st pill mut">Available</span></div>
+          <p>A "join the waitlist" button for the website and Instagram bio that feeds Cancellation Rescue directly.</p>
+        </div>
+      </section>
+
+      <p class="foot-note">Demo data, illustrative numbers.</p>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interact.js"></script>
+<script>
+window.TOUR = [
+  { el: "#int-grid", side: "top",
+    title: "It works with your stuff.",
+    body: "Square stays the book. QuickBooks stays the books. The salon's own number sends the texts. The AI is a layer on top of the tools Marlowe already pays for, not a rip-and-replace." },
+  { el: "#int-avail", side: "bottom",
+    title: "And there is room to grow.",
+    body: "When Dana wants the shelf online, Shopify plugs into the same inventory. Promos, distributor ordering, a waitlist button for the Instagram bio. Each one is a switch, not a project." },
+  { el: null, cta: "Done",
+    title: "One book. No leaks.",
+    body: "Dead chairs refilled, every DM answered in seconds, drifting color clients pulled back, no-shows down to 4%, and the books closing themselves in QuickBooks. That is <b>$2,340 recovered this month</b>, a <b>$16,181 net</b> the owner can actually see, and evenings that belong to Dana again. All of it on top of the Square setup the salon already runs. Let's talk about turning this on for Marlowe." }
+];
+</script>
+<script src="assets/tour.js"></script>
+</body>
+</html>

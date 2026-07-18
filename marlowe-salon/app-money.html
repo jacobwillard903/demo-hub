@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Financials &middot; Marlowe Hair Co.</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="side">
+    <div class="side-mark">Marlowe <span>Hair Co.</span></div>
+    <div class="side-sub">Owner View</div>
+    <button class="side-new" type="button" data-new-appt>+ New Appointment</button>
+
+    <div class="side-group">Overview</div>
+    <a class="nav" href="app-dashboard.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a class="nav" href="app-ask.html" id="nav-ask">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Ask Marlowe
+    </a>
+    <div class="side-group">Front Desk</div>
+    <a class="nav" href="app-calendar.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Calendar
+    </a>
+    <a class="nav" href="app-frontdesk.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      AI Front Desk
+    </a>
+    <a class="nav" href="app-rescue.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Cancellation Rescue
+    </a>
+    <div class="side-group">Clients</div>
+    <a class="nav" href="app-clients.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Clients
+    </a>
+    <a class="nav" href="app-rebooking.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      Rebooking Radar
+    </a>
+    <div class="side-group">Money</div>
+    <a class="nav on" href="app-money.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Financials
+    </a>
+    <a class="nav" href="app-retail.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      Retail and Backbar
+    </a>
+    <a class="nav" href="app-integrations.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      Integrations
+    </a>
+
+    <div class="side-spacer"></div>
+    <div class="side-foot">
+      <div class="who">dana@marlowehair.co</div>
+      <a href="index.html">Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Money / <b>Financials</b></div>
+      <div class="topbar-right">
+        <button class="tour-toggle" type="button" data-tour-start><span class="pip"></span> Tour</button>
+        <div class="search" aria-hidden="true">Search clients<span class="kbd">&#8984;K</span></div>
+      </div>
+    </div>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>Financials</h1>
+          <div class="sub">The salon's books, in salon language. Dana has not opened QuickBooks in six weeks.</div>
+        </div>
+        <div class="actions">
+          <span class="sync-chip"><span class="dot"></span>Synced with QuickBooks Online &middot; last sync 4 min ago</span>
+          <button class="btn-walk" type="button" data-tour-start>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Walk Me Through It
+          </button>
+        </div>
+      </div>
+
+      <section class="kpis" id="money-kpis" style="grid-template-columns:repeat(6,1fr)">
+        <div class="kpi">
+          <div class="lbl">Revenue, last 30 days</div>
+          <div class="num tnum">$38,940</div>
+          <div class="delta up">&#9650; +6.2%</div>
+          <div class="ctx">Service + retail, matches Square</div>
+        </div>
+        <div class="kpi">
+          <div class="lbl">Booth rent collected</div>
+          <div class="num tnum">$2,000</div>
+          <div class="delta up">&#9650; on time</div>
+          <div class="ctx">Elise + Nikki, $250/wk each</div>
+        </div>
+        <div class="kpi">
+          <div class="lbl">Expenses, last 30 days</div>
+          <div class="num tnum">$24,759</div>
+          <div class="delta down">&#9650; +2.1%</div>
+          <div class="ctx">Payroll is 53% of it</div>
+        </div>
+        <div class="kpi">
+          <div class="lbl">Net profit</div>
+          <div class="num tnum">$16,181</div>
+          <div class="delta up">&#9650; 39.5% margin</div>
+          <div class="ctx">Of $40,940 total income</div>
+        </div>
+        <div class="kpi">
+          <div class="lbl">Cash on hand</div>
+          <div class="num tnum">$23,400</div>
+          <div class="delta up">&#9650; +$3,150</div>
+          <div class="ctx">Operating account</div>
+        </div>
+        <div class="kpi">
+          <div class="lbl">Next Square payout</div>
+          <div class="num tnum">$1,284</div>
+          <div class="delta up">Tomorrow</div>
+          <div class="ctx">Auto-matched to the books</div>
+        </div>
+      </section>
+
+      <div class="grid-2">
+        <section class="card" id="money-pl">
+          <div class="card-h"><h2>Profit and Loss</h2><span class="note">Last 30 days &middot; from QuickBooks</span></div>
+          <div class="card-b" style="padding:0 0 4px;overflow-x:auto">
+            <table class="pl">
+              <tr class="sec"><td>Income</td><td class="r"></td></tr>
+              <tr><td class="ind">Service revenue: color (highlights, balayage, corrections)</td><td class="r">$21,480</td></tr>
+              <tr><td class="ind">Service revenue: cuts</td><td class="r">$8,120</td></tr>
+              <tr><td class="ind">Service revenue: treatments, gloss, blowouts</td><td class="r">$4,470</td></tr>
+              <tr><td class="ind">Retail sales</td><td class="r">$4,870</td></tr>
+              <tr><td class="ind">Booth rent (2 chairs)</td><td class="r">$2,000</td></tr>
+              <tr class="sum"><td>Total income</td><td class="r">$40,940</td></tr>
+              <tr class="sec"><td>Expenses</td><td class="r"></td></tr>
+              <tr><td class="ind">Commission payroll (3 stylists)</td><td class="r">$13,190</td></tr>
+              <tr><td class="ind">Backbar and color supplies</td><td class="r">$2,140</td></tr>
+              <tr><td class="ind">Retail cost of goods</td><td class="r">$2,430</td></tr>
+              <tr><td class="ind">Rent</td><td class="r">$4,200</td></tr>
+              <tr><td class="ind">Card processing (Square)</td><td class="r">$1,010</td></tr>
+              <tr><td class="ind">Utilities</td><td class="r">$640</td></tr>
+              <tr><td class="ind">Marketing</td><td class="r">$450</td></tr>
+              <tr><td class="ind">Software</td><td class="r">$389</td></tr>
+              <tr><td class="ind">Insurance</td><td class="r">$310</td></tr>
+              <tr class="sum"><td>Total expenses</td><td class="r">$24,759</td></tr>
+              <tr class="net"><td>Net profit</td><td class="r">$16,181</td></tr>
+            </table>
+          </div>
+        </section>
+
+        <section class="card" id="money-book">
+          <div class="card-h"><h2>AI Bookkeeper</h2><span class="note">What it did this week</span></div>
+          <div class="card-b">
+            <ul class="feed">
+              <li>
+                <span class="t tnum">Today</span><span class="dot plum"></span>
+                <span class="body"><b>Categorized 41 Square transactions</b> into the salon's chart of accounts. Color, cuts, retail, tips, all filed.</span>
+              </li>
+              <li>
+                <span class="t tnum">Today</span><span class="dot plum"></span>
+                <span class="body"><b>Split $1,420 of card tips out of revenue</b> and into the tip payable account, per stylist. Tips never inflate the top line.</span>
+              </li>
+              <li>
+                <span class="t tnum">Thu</span><span class="dot good"></span>
+                <span class="body"><b>Matched 12 Square payouts to bank deposits.</b> The books and the bank agree to the penny.</span>
+              </li>
+              <li>
+                <span class="t tnum">Wed</span><span class="dot bad"></span>
+                <span class="body"><b>Flagged a duplicate $86 charge</b> from the color supply distributor. Held for Dana's one-tap review.</span>
+              </li>
+              <li>
+                <span class="t tnum">Wed</span><span class="dot plum"></span>
+                <span class="body"><b>Drafted a booth rent reminder</b> for Nikki, 2 days past due. Sent after Dana approved. Paid same day.</span>
+              </li>
+              <li>
+                <span class="t tnum">Mon</span><span class="dot good"></span>
+                <span class="body"><b>Prepped the monthly P&amp;L email</b> for the accountant. July closes itself.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <div class="grid-2b">
+        <section class="card" id="money-cash">
+          <div class="card-h"><h2>Cash Flow</h2><span class="note">Weekly, in vs out</span></div>
+          <div class="card-b">
+            <div class="duo">
+              <div class="grp"><span class="v">$10.1k / $6.2k</span><div class="pair"><div class="in" style="height:150px"></div><div class="out" style="height:92px"></div></div><span class="x">Jun 22</span></div>
+              <div class="grp"><span class="v">$9.6k / $5.9k</span><div class="pair"><div class="in" style="height:142px"></div><div class="out" style="height:88px"></div></div><span class="x">Jun 29</span></div>
+              <div class="grp"><span class="v">$9.9k / $6.4k</span><div class="pair"><div class="in" style="height:147px"></div><div class="out" style="height:95px"></div></div><span class="x">Jul 6</span></div>
+              <div class="grp"><span class="v">$9.5k / $6.2k</span><div class="pair"><div class="in" style="height:140px"></div><div class="out" style="height:92px"></div></div><span class="x">Jul 13</span></div>
+            </div>
+            <div class="baseline"></div>
+            <div class="legend">
+              <span><span class="sw" style="background:var(--plum)"></span>Money in</span>
+              <span><span class="sw" style="background:var(--line-2)"></span>Money out</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="money-mix">
+          <div class="card-h"><h2>Where Expenses Go</h2><span class="note">Last 30 days</span></div>
+          <div class="card-b">
+            <div class="donut-wrap">
+              <svg width="132" height="132" viewBox="0 0 132 132" role="img" aria-label="Expense mix: payroll 53 percent, product 19 percent, rent 17 percent, other 11 percent">
+                <circle cx="66" cy="66" r="54" fill="none" stroke="var(--plum)" stroke-width="16"
+                        stroke-dasharray="180.8 339.3" transform="rotate(-90 66 66)"/>
+                <circle cx="66" cy="66" r="54" fill="none" stroke="var(--plum-line)" stroke-width="16"
+                        stroke-dasharray="62.7 339.3" stroke-dashoffset="-180.8" transform="rotate(-90 66 66)"/>
+                <circle cx="66" cy="66" r="54" fill="none" stroke="var(--warn)" stroke-width="16"
+                        stroke-dasharray="57.7 339.3" stroke-dashoffset="-243.5" transform="rotate(-90 66 66)"/>
+                <circle cx="66" cy="66" r="54" fill="none" stroke="var(--line-2)" stroke-width="16"
+                        stroke-dasharray="38.2 339.3" stroke-dashoffset="-301.2" transform="rotate(-90 66 66)"/>
+                <text x="66" y="62" text-anchor="middle" font-size="19" fill="var(--ink)" font-family="Palatino, Georgia, serif" font-weight="700">$24.8k</text>
+                <text x="66" y="80" text-anchor="middle" font-size="11" fill="var(--muted)">Expenses</text>
+              </svg>
+              <div class="donut-legend">
+                <div class="row"><span class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--plum)"></span>Commission payroll<span class="amt tnum">$13,190</span><span class="pct tnum">53%</span></div>
+                <div class="row"><span class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--plum-line)"></span>Product + retail cost<span class="amt tnum">$4,570</span><span class="pct tnum">19%</span></div>
+                <div class="row"><span class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--warn)"></span>Rent<span class="amt tnum">$4,200</span><span class="pct tnum">17%</span></div>
+                <div class="row"><span class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--line-2)"></span>Everything else<span class="amt tnum">$2,799</span><span class="pct tnum">11%</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="card" id="money-tips" style="margin-top:14px">
+        <div class="card-h"><h2>Tips</h2><span class="note">Handled, not tangled</span></div>
+        <div class="card-b">
+          <div class="stat-row" style="grid-template-columns:repeat(3,1fr)">
+            <div class="big-stat"><div class="n tnum">$6,240</div><div class="l">Card tips collected this month</div></div>
+            <div class="big-stat"><div class="n tnum">100%</div><div class="l">Auto-split and paid out to stylists</div></div>
+            <div class="big-stat"><div class="n tnum">$0</div><div class="l">Tips miscounted as revenue</div></div>
+          </div>
+        </div>
+      </section>
+
+      <p class="foot-note">Demo data, illustrative numbers.</p>
+    </main>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interact.js"></script>
+<script>
+window.TOUR = [
+  { el: "#money-kpis", side: "bottom",
+    title: "The books, without opening QuickBooks.",
+    body: "Same $38,940 you saw on the dashboard, now with the whole story: booth rent in, expenses out, <b>$16,181 net</b>, and tomorrow's Square payout already matched. QuickBooks stays synced underneath. Dana just never has to log in." },
+  { el: "#money-pl", side: "right",
+    title: "A P&L in salon language.",
+    body: "Color, cuts, treatments, retail, booth rent. Commission payroll, backbar, rent. Not \"Sales of Product Income\" and a shoebox of receipts in April. This is the statement her accountant wishes she kept all along." },
+  { el: "#money-book", side: "left",
+    title: "The bookkeeper works nights too.",
+    body: "41 transactions categorized, tips split out per stylist, payouts matched to the bank, a duplicate charge caught, and Nikki's late booth rent chased, politely, with Dana's approval. That used to be a Sunday." },
+  { el: "#money-tips", side: "top",
+    title: "Tips stop being a spreadsheet fight.",
+    body: "$6,240 in card tips this month, auto-split, paid out, and kept out of revenue. Next: proof it plugs into the tools the salon already runs on." }
+];
+window.TOUR_NEXT = { href: "app-integrations.html", label: "Next: Integrations" };
+</script>
+<script src="assets/tour.js"></script>
+</body>
+</html>
