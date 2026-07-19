@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard, Bright &amp; Tidy Cleaning Co.</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="wordmark">BRIGHT <span>&amp; TIDY</span></div>
+      <div class="tagline">Cleaning Co, Kansas City</div>
+    </div>
+    <div class="side-cta"><button type="button">+ New Booking</button></div>
+    <nav class="nav">
+      <div class="nav-group">
+        <div class="nav-group-label">Overview</div>
+        <a href="app-dashboard.html" class="active"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</a>
+        <a href="app-ask.html"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Ask</a>
+        <a href="app-integrations.html"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Integrations</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Front Office</div>
+        <a href="app-frontdesk.html"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>AI Quote Responder</a>
+        <a href="app-gaps.html"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>Route Gaps</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Clients</div>
+        <a href="app-retention.html"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Churn Radar &amp; Payments</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Operations</div>
+        <a href="app-crews.html"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Crew Board</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Money</div>
+        <a href="app-money.html"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Financials</a>
+      </div>
+    </nav>
+    <div class="side-foot">
+      <div class="who">melissa@brightandtidykc.com</div>
+      <a href="index.html"><svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign Out</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb">Overview <span class="sep">/</span> <b>Dashboard</b></div>
+      <div class="top-right">
+        <button class="tour-toggle" type="button" data-tour-start>Tour <span class="knob"></span></button>
+        <div class="searchbox">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search <span class="kbd">&#8984;K</span>
+        </div>
+      </div>
+    </div>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>Dashboard</h1>
+          <div class="sub">Bright &amp; Tidy at a glance. Friday, July 17.</div>
+        </div>
+        <div class="page-actions">
+          <button class="tourpill" type="button" data-tour-start>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Walk Me Through It
+          </button>
+          <a class="btn btn-primary" href="app-gaps.html">Open Route Gaps</a>
+        </div>
+      </div>
+
+      <div class="kpi-row" id="kpi-row">
+        <div class="kpi">
+          <div class="label">On the Books</div>
+          <div class="value">$24,700</div>
+          <div class="ctx">Per month, recurring + commercial</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Recurring Clients</div>
+          <div class="value">84</div>
+          <div class="ctx">Avg ~$3,300/yr each</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Monthly Churn</div>
+          <div class="value teal">4.1%</div>
+          <div class="delta up">&#9660; Down from 8% in the spring</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Skips Saved This Week</div>
+          <div class="value teal">4 of 6</div>
+          <div class="ctx">$560 kept on the books</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Missed Calls</div>
+          <div class="value teal">0</div>
+          <div class="ctx">27% of calls missed before</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Unpaid Invoices</div>
+          <div class="value">$445</div>
+          <div class="delta up">&#9660; Down from $1,100</div>
+        </div>
+      </div>
+
+      <div class="chip-row" id="chip-row">
+        <a class="chip" href="app-crews.html">
+          <span class="num amber">1</span>
+          <span class="txt">Callout this morning, covered by 6:52 AM</span>
+          <span class="chev"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+        </a>
+        <a class="chip" href="app-retention.html">
+          <span class="num rose">2</span>
+          <span class="txt">At-risk clients flagged, the Patels first</span>
+          <span class="chev"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+        </a>
+        <a class="chip" href="app-gaps.html">
+          <span class="num info">1</span>
+          <span class="txt">Slot open Thursday 1 PM, waitlist offer ready</span>
+          <span class="chev"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+        </a>
+        <a class="chip" href="app-retention.html">
+          <span class="num amber">3</span>
+          <span class="txt">Invoices overdue, reminders already out</span>
+          <span class="chev"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+        </a>
+      </div>
+
+      <div class="grid-2">
+        <div class="card" id="rev-chart">
+          <div class="card-head"><h2>Weekly Revenue</h2><span class="link tnum">Last 8 weeks</span></div>
+          <div class="card-body">
+            <div class="barchart">
+              <div class="col"><span class="val">$5.1k</span><div class="bar" style="height:56%"></div><span class="cap">May 22</span></div>
+              <div class="col"><span class="val">$5.3k</span><div class="bar" style="height:59%"></div><span class="cap">May 29</span></div>
+              <div class="col"><span class="val">$5.5k</span><div class="bar" style="height:61%"></div><span class="cap">Jun 5</span></div>
+              <div class="col"><span class="val">$5.6k</span><div class="bar" style="height:63%"></div><span class="cap">Jun 12</span></div>
+              <div class="col"><span class="val">$5.6k</span><div class="bar" style="height:62%"></div><span class="cap">Jun 19</span></div>
+              <div class="col"><span class="val">$5.7k</span><div class="bar" style="height:64%"></div><span class="cap">Jun 26</span></div>
+              <div class="col"><span class="val">$5.9k</span><div class="bar hot" style="height:67%"></div><span class="cap">Jul 3</span></div>
+              <div class="col"><span class="val">$5.9k</span><div class="bar hot" style="height:68%"></div><span class="cap">Jul 10</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="mix-chart">
+          <div class="card-head"><h2>Visit Mix This Month</h2><span class="link tnum">185 visits</span></div>
+          <div class="card-body">
+            <div class="segbar">
+              <span style="width:37%;background:var(--teal-900)">68</span>
+              <span style="width:40%;background:var(--teal-600)">74</span>
+              <span style="width:11%;background:var(--teal-300);color:var(--teal-950)">21</span>
+              <span style="width:5%;background:var(--gold-500)">9</span>
+              <span style="width:7%;background:var(--info)">13</span>
+            </div>
+            <div class="seg-legend">
+              <span class="li"><span class="sw" style="background:var(--teal-900)"></span>Weekly <b>68</b></span>
+              <span class="li"><span class="sw" style="background:var(--teal-600)"></span>Biweekly <b>74</b></span>
+              <span class="li"><span class="sw" style="background:var(--teal-300)"></span>Monthly <b>21</b></span>
+              <span class="li"><span class="sw" style="background:var(--gold-500)"></span>Deep &amp; move-out <b>9</b></span>
+              <span class="li"><span class="sw" style="background:var(--info)"></span>Commercial <b>13</b></span>
+            </div>
+            <div class="footnote" style="margin-top:14px">Biweeklies are the backbone and the churn risk. Every saved skip up top protects this bar.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card" id="routes-today">
+          <div class="card-head"><h2>Today's Routes</h2><a class="link" href="app-crews.html">Crew Board</a></div>
+          <div class="rowlist">
+            <div class="route-label">Team A, Northside. Dana + Sofia, confirmed 6:05 AM</div>
+            <div class="row">
+              <span class="ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></span>
+              <span class="who"><b>M. Duran</b><span>Weekly, 2/2. Arrival window texted, garage keypad on file.</span></span>
+              <span class="meta"><span class="amt">$125</span><span class="when">8:30 AM</span></span>
+            </div>
+            <div class="row">
+              <span class="ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></span>
+              <span class="who"><b>The Kellers</b><span>Biweekly, 3/2. Two cats, note on the litter room.</span></span>
+              <span class="meta"><span class="amt">$140</span><span class="when">10:30 AM</span></span>
+            </div>
+            <div class="route-label">Team B, West Loop. Marisol solo today, Kayla out sick</div>
+            <div class="row">
+              <span class="ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></span>
+              <span class="who"><b>The Steins</b><span>Biweekly, 2/1. Smaller home, fine solo. Window updated by text.</span></span>
+              <span class="meta"><span class="amt">$130</span><span class="when">9:00 AM</span></span>
+            </div>
+            <div class="row">
+              <span class="ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></span>
+              <span class="who"><b>K. Ellison</b><span>Biweekly, 3/2. On the churn watchlist, extra care flag for Marisol.</span></span>
+              <span class="meta"><span class="amt">$145</span><span class="when">11:30 AM</span></span>
+            </div>
+            <div class="route-label">Team C, Jen floating</div>
+            <div class="row">
+              <span class="ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></span>
+              <span class="who"><b>The Beaumonts</b><span>Covering Kayla's 10:00 stop. Jen has cleaned it twice.</span></span>
+              <span class="meta"><span class="amt">$150</span><span class="when">10:00 AM</span></span>
+            </div>
+            <div class="row">
+              <span class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+              <span class="who"><b>Riverside Dental</b><span>Commercial janitorial, evening visit. Checklist loaded.</span></span>
+              <span class="meta"><span class="amt">$480/mo</span><span class="when">6:30 PM</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" id="attention">
+          <div class="card-head"><h2>Needs Attention</h2></div>
+          <div class="card-body stack" style="gap:10px">
+            <div class="alert-card">
+              <div>
+                <b>The Patels are drifting. 2 skips in 6 weeks + a baseboards complaint.</b>
+                <p>Risk 82. Save play drafted: free baseboard redo next visit, note to Dana. Worth $3,900/yr.</p>
+              </div>
+              <span class="amt">$3,900/yr</span>
+            </div>
+            <div class="alert-card warn">
+              <div>
+                <b>3 invoices overdue, $445 total.</b>
+                <p>Reminders already out. Two others paid $270 this week after one friendly text.</p>
+              </div>
+              <span class="amt">$445</span>
+            </div>
+            <div class="alert-card info">
+              <div>
+                <b>Walkthrough Thursday 4:30 PM, J. Whitfield.</b>
+                <p>The missed-call rescue from Tuesday. Quoted $150 biweekly, ~$3,900/yr if she converts.</p>
+              </div>
+            </div>
+            <div class="alert-card warn">
+              <div>
+                <b>Supplies low: microfiber, hardwood cleaner, vacuum bags.</b>
+                <p>Reorder drafted at KC Janitorial Supply, $86. One tap to place it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="footnote">Demo data, illustrative numbers.</p>
+    </main>
+  </div>
+</div>
+
+<div class="welcome-gate" id="welcome-gate">
+  <b>Welcome to Melissa's owner view.</b>
+  <p>This is what 84 recurring clients look like when the office runs itself. Want the 3 minute walkthrough? It ends with money.</p>
+  <div class="wg-btns">
+    <button class="wg-go" type="button">Walk me through it</button>
+    <button class="wg-skip" type="button">Maybe later</button>
+  </div>
+</div>
+
+<script>
+window.TOUR = [
+  { el: null,
+    title: "This is Bright & Tidy with an AI office manager.",
+    body: "Six cleaners, 84 recurring clients, and Melissa still cleans three days a week. Same ZenMaid, same group text. The difference: the skips, the quotes, the callouts, and the invoices now run themselves. Let's walk it." },
+  { el: "#kpi-row",
+    title: "The whole business in one row.",
+    body: "<b>$24,700 a month on the books.</b> Churn cut from 8% to <b>4.1%</b>. Four of six skip requests saved this week, <b>$560</b> kept. Zero missed calls, versus 27% before. Unpaid invoices down from $1,100 to <b>$445</b>." },
+  { el: "#chip-row",
+    title: "The stuff that used to be a group-text scramble.",
+    body: "A 6:45 AM callout, already covered. Two at-risk clients, already flagged with a save play. An open Thursday slot with the waitlist offer ready. Overdue invoices, already nudged. Nothing here is waiting on you." },
+  { el: "#rev-chart",
+    title: "Revenue climbs when holes stop appearing.",
+    body: "Eight straight weeks up, $5.1k to $5.9k. No new marketing. Saved skips, backfilled slots, and rescued calls are pure adds, every one used to be a hole in a route.", side: "right" },
+  { el: "#routes-today",
+    title: "Today's routes, already sorted.",
+    body: "Three teams, arrival windows texted, entry notes on file. Kayla called out sick at 6:45 this morning, and you can see the covered stops right here. The morning did not fall apart.", side: "right" },
+  { el: "#attention",
+    title: "Only real exceptions reach you.",
+    body: "A drifting client worth <b>$3,900 a year</b> with a save play drafted. $445 of overdue invoices already being chased. A $3,900/yr walkthrough on Thursday. That's the entire to-do list for 84 clients.", side: "left" }
+];
+window.TOUR_NEXT = { href: "app-gaps.html", label: "Next: Route Gaps" };
+</script>
+<script src="assets/data.js"></script>
+<script src="assets/tour.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interact.js"></script>
+<script src="assets/mobile.js"></script>
+</body>
+</html>
