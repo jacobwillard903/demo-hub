@@ -584,3 +584,9 @@ a:focus-visible,button:focus-visible{outline:2px solid #8194b8;outline-offset:2p
   .land-hero h1{font-size:30px}
   .land-hero .cta-row{flex-wrap:wrap}
 }
+
+/* ===== round 6: mobile touch targets + legibility ===== */
+@media(max-width:900px){
+  a.m-brand,
+  a.link{min-height:44px;display:inline-flex;align-items:center;gap:6px}
+}

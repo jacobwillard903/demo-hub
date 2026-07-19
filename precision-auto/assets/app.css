@@ -689,3 +689,11 @@ section[id],.card[id]{scroll-margin-top:74px}
   .cmp-row .cmp-pick{width:100%;justify-content:flex-end}
   .fin-offer{flex-wrap:wrap}
 }
+
+/* ===== round 6: mobile touch targets + legibility ===== */
+@media(max-width:900px){
+  a.m-brand,
+  a.link,
+  button.later,
+  a.int-live{min-height:44px;display:inline-flex;align-items:center;gap:6px}
+}

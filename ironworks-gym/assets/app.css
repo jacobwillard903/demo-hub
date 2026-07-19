@@ -679,3 +679,9 @@ tr.row-new td{animation:rowflash 2.2s var(--ease)}
   .cpl-row .meter{flex:1 1 100%;order:4}
   .cev{width:168px}
 }
+
+/* ===== round 6: mobile touch targets + legibility ===== */
+@media(max-width:900px){
+  a.ilive{min-height:44px;display:inline-flex;align-items:center;gap:6px}
+  .tbl-note a{padding-block:12px;margin-block:-12px}
+}

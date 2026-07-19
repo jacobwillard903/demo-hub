@@ -740,3 +740,10 @@ button.side-new{display:block;width:calc(100% - 8px)}
   .tipflow .ar{display:none}
   .tipflow .n{flex:1;text-align:center}
 }
+
+/* ===== round 6: mobile touch targets + legibility ===== */
+@media(max-width:900px){
+  a.m-brand,
+  a.note,
+  a.golive{min-height:44px;display:inline-flex;align-items:center;gap:6px}
+}

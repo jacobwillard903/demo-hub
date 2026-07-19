@@ -568,3 +568,14 @@ body.tour-on .bottomnav{z-index:8400}
   .rev-row .rv-count{width:48px}
   .ratebar-row .rb-lab{width:104px}
 }
+
+/* ===== round 6: mobile touch targets + legibility ===== */
+@media(max-width:900px){
+  button.tour-toggle,
+  a.link,
+  a.see-link{min-height:44px;display:inline-flex;align-items:center;gap:6px}
+  .w-mark,
+  .cf-val{font-size:10.5px}
+  .wx-chip .w-mark,
+  .wx-chip.storm .w-mark{font-size:10.5px}
+}

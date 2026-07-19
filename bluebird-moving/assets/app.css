@@ -733,3 +733,11 @@ body.tour-on .drawer-root{z-index:8800}
   .po-row .po-amt{margin-left:auto}
   .wchip{white-space:normal}
 }
+
+/* ===== round 6: mobile touch targets + legibility ===== */
+@media(max-width:900px){
+  a.m-brand,
+  a.link,
+  button.later,
+  a.int-live{min-height:44px;display:inline-flex;align-items:center;gap:6px}
+}

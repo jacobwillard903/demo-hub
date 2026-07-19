@@ -877,3 +877,19 @@ body.tour-on{overflow:hidden}
   .page-actions{flex-wrap:wrap;flex-shrink:1;justify-content:flex-end;row-gap:8px}
   .page-actions .tourpill{max-width:100%}
 }
+
+/* ===== round 6: mobile touch targets + legibility ===== */
+@media(max-width:900px){
+  a.link,
+  a.int-live{min-height:44px;display:inline-flex;align-items:center;gap:6px}
+  .map-svg text{font-size:10px}
+  /* map labels: modest bump + halo so overlaps stay legible instead of colliding */
+  svg.map-svg text.river-l,
+  svg.map-svg text.seg,
+  svg.map-svg g text.pin-t{font-size:10px}
+  svg.map-svg g text.shield{font-size:10px}
+  svg.map-svg text.seg,
+  svg.map-svg g text.pin-t,
+  svg.map-svg g text.pin-n{paint-order:stroke fill;stroke:var(--card,#fff);stroke-width:3px;stroke-linejoin:round}
+  svg.map-svg text.zone{opacity:.5}
+}

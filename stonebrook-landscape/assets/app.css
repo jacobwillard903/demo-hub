@@ -1012,3 +1012,13 @@ body.tour-on{overflow:hidden}
   .cascade{padding:14px}
   .card-head{flex-wrap:wrap;row-gap:2px}
 }
+
+/* ===== round 6: mobile touch targets + legibility ===== */
+@media(max-width:900px){
+  a.link,
+  .int-see a{min-height:44px;display:inline-flex;align-items:center;gap:6px}
+  .nw-flag,
+  .nh-p,
+  .nh-cap,
+  .nh-mark{font-size:10.5px}
+}
