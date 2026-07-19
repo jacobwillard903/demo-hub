@@ -461,9 +461,105 @@
   }
 
   // ============================================================
+  // Round 4: mobile chrome (bottom nav + More sheet + hamburger)
+  // ============================================================
+  function initMobileChrome() {
+    var sidebar = document.querySelector(".sidebar");
+    var topbar = document.querySelector(".topbar");
+    if (!sidebar || !topbar) return; // landing page keeps its own layout
+
+    // -- More sheet, built from the sidebar's own groups so grouping stays in sync
+    var sheetBack = document.createElement("div");
+    sheetBack.className = "sheet-back";
+    var sheet = document.createElement("div");
+    sheet.className = "sheet";
+    sheet.setAttribute("role", "dialog");
+    sheet.setAttribute("aria-label", "All pages");
+    var shHtml = '<div class="sh-grab"></div>' +
+      '<div class="sh-head"><b>Summit Martial Arts</b>' +
+      '<button class="sh-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>';
+    sidebar.querySelectorAll(".nav-group").forEach(function (g) {
+      var lab = g.querySelector(".nav-label");
+      shHtml += '<div class="nav-label">' + esc(lab ? lab.textContent : "") + "</div>";
+      g.querySelectorAll(".nav-item").forEach(function (a) {
+        var svg = a.querySelector("svg");
+        shHtml += '<a class="nav-item' + (a.classList.contains("on") ? " on" : "") + '" href="' + esc(a.getAttribute("href")) + '">' +
+          (svg ? svg.outerHTML : "") + esc(a.textContent.trim()) + "</a>";
+      });
+    });
+    shHtml += '<div class="sh-foot"><span>ray@summitmartialarts.com</span>' +
+      '<a class="signout" href="index.html">Sign Out</a></div>';
+    sheet.innerHTML = shHtml;
+    document.body.appendChild(sheetBack);
+    document.body.appendChild(sheet);
+    function openSheet() { sheetBack.classList.add("on"); sheet.classList.add("on"); }
+    function closeSheet() { sheetBack.classList.remove("on"); sheet.classList.remove("on"); }
+    sheetBack.addEventListener("click", closeSheet);
+    sheet.querySelector(".sh-x").addEventListener("click", closeSheet);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && sheet.classList.contains("on")) closeSheet();
+    });
+
+    // -- bottom nav: the 4 pages a prospect must see, plus More
+    var tabs = [
+      { href: "app-dashboard.html", label: "Dashboard", icon: '<rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/>' },
+      { href: "app-trials.html", label: "Trials", icon: '<path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/>' },
+      { href: "app-belttest.html", label: "Belt Test", icon: '<circle cx="12" cy="9" r="6"/><path d="M12 15l-2 6 2-1.5L14 21l-2-6z"/>' },
+      { href: "app-retention.html", label: "Retention", icon: '<path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/>' }
+    ];
+    var bnav = document.createElement("nav");
+    bnav.className = "bnav";
+    bnav.setAttribute("aria-label", "Primary");
+    var inTabs = false, bHtml = "";
+    tabs.forEach(function (t) {
+      var on = t.href.replace(".html", "") === PAGE;
+      if (on) inTabs = true;
+      bHtml += '<a href="' + t.href + '"' + (on ? ' class="on" aria-current="page"' : "") + '>' +
+        '<svg viewBox="0 0 24 24">' + t.icon + "</svg>" + t.label + "</a>";
+    });
+    bHtml += '<button type="button" id="bn-more"' + (inTabs ? "" : ' class="on"') + ' aria-label="More pages">' +
+      '<svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>More</button>';
+    bnav.innerHTML = bHtml;
+    document.body.appendChild(bnav);
+    bnav.querySelector("#bn-more").addEventListener("click", function () {
+      if (sheet.classList.contains("on")) closeSheet(); else openSheet();
+    });
+
+    // -- topbar: brand wordmark + hamburger (visible below 900px only, via CSS)
+    var brand = document.createElement("a");
+    brand.className = "m-brand";
+    brand.href = "app-dashboard.html";
+    brand.innerHTML = 'SUM<span class="stripe">M</span>IT';
+    topbar.insertBefore(brand, topbar.firstChild);
+    var burger = document.createElement("button");
+    burger.className = "m-burger";
+    burger.type = "button";
+    burger.setAttribute("aria-label", "Open menu");
+    burger.innerHTML = '<svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+    var right = topbar.querySelector(".top-right");
+    if (right) right.appendChild(burger); else topbar.appendChild(burger);
+    burger.addEventListener("click", function () {
+      if (sheet.classList.contains("on")) closeSheet(); else openSheet();
+    });
+  }
+
+  // wrap every data table so wide tables scroll inside the card, not the page
+  function initTableScroll() {
+    document.querySelectorAll(".tbl").forEach(function (t) {
+      if (t.parentElement.classList.contains("tbl-scroll")) return;
+      var w = document.createElement("div");
+      w.className = "tbl-scroll";
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    });
+  }
+
+  // ============================================================
   // boot
   // ============================================================
   function boot() {
+    initMobileChrome();
+    initTableScroll();
     initMotion();
     initDrill();
     initNewStudent();

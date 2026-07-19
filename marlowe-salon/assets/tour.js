@@ -1,8 +1,11 @@
 /* ============================================================
    Marlowe Hair Co. demo — guided walkthrough ("walkme")
    Shared, zero-dependency. Each page sets window.TOUR = [steps].
-   A step: { el:'<css selector>'|null, title, body, side, cta, pre }
+   A step: { el:'<css selector>'|null, elm, title, body, side, cta, pre }
      - el     : element to spotlight. null = centered card (no spotlight).
+     - elm    : mobile override selector, used below 900px (round 4).
+                A target that is hidden or zero-size falls back to the
+                centered card, so sidebar steps stay safe on phones.
      - side   : 'top'|'bottom'|'left'|'right'|'auto'  (default 'auto')
      - cta    : final-step override for the Next button label
      - pre    : optional fn() run before the step shows
@@ -18,6 +21,19 @@
   var i = 0, root = null, spot = null, card = null, live = false;
 
   function el(sel) { try { return sel ? document.querySelector(sel) : null; } catch (e) { return null; } }
+
+  // round 4: resolve a step's target mobile-safely. Below 900px prefer the
+  // step's `elm` selector; any hidden/zero-size target becomes null (centered card).
+  function resolve(s) {
+    var t = null;
+    if (innerWidth < 900 && s.elm) t = el(s.elm);
+    if (!t) t = el(s.el);
+    if (t) {
+      var r = t.getBoundingClientRect();
+      if ((r.width === 0 && r.height === 0) || getComputedStyle(t).display === "none") t = null;
+    }
+    return t;
+  }
 
   function build() {
     root = document.createElement("div");
@@ -93,7 +109,7 @@
     for (var d = 0; d < steps.length; d++) dots += '<span class="tour-dot' + (d === i ? " on" : "") + '"></span>';
     card.querySelector(".tour-dots").innerHTML = dots;
 
-    var target = el(s.el);
+    var target = resolve(s);
     if (target && target.scrollIntoView) {
       target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center", inline: "nearest" });
     }
@@ -103,7 +119,7 @@
 
   function reflow() {
     if (!live) return;
-    place(steps[i], el(steps[i].el));
+    place(steps[i], resolve(steps[i]));
   }
 
   function place(s, target) {
@@ -124,6 +140,7 @@
 
     var cw = card.offsetWidth, ch = card.offsetHeight, gap = 16, vw = innerWidth, vh = innerHeight;
     var side = s.side || "auto";
+    if (vw < 640) side = "auto"; // round 4: narrow screens pick their own side
     if (side === "auto") {
       if (r.bottom + gap + ch < vh) side = "bottom";
       else if (r.top - gap - ch > 0) side = "top";

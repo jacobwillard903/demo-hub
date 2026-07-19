@@ -19,6 +19,21 @@
 
   function el(sel) { try { return sel ? document.querySelector(sel) : null; } catch (e) { return null; } }
 
+  // Resolve a step's target, falling back to its mobile equivalent (elm)
+  // when the desktop target is hidden (e.g. sidebar items below 900px).
+  function visible(t) {
+    if (!t) return false;
+    var r = t.getBoundingClientRect();
+    return r.width > 0 && r.height > 0;
+  }
+  function resolve(s) {
+    var t = el(s.el);
+    if (visible(t)) return t;
+    var m = el(s.elm);
+    if (visible(m)) return m;
+    return null;
+  }
+
   function build() {
     root = document.createElement("div");
     root.className = "tour-root";
@@ -91,8 +106,8 @@
     for (var d = 0; d < steps.length; d++) dots += '<span class="tour-dot' + (d === i ? " on" : "") + '"></span>';
     card.querySelector(".tour-dots").innerHTML = dots;
 
-    var target = el(s.el);
-    if (target && target.scrollIntoView) {
+    var target = resolve(s);
+    if (target && target.scrollIntoView && !target.closest(".bnav")) {
       target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center", inline: "nearest" });
     }
     setTimeout(function () { place(s, target); }, reduce ? 0 : 260);
@@ -100,7 +115,7 @@
 
   function reflow() {
     if (!live) return;
-    place(steps[i], el(steps[i].el));
+    place(steps[i], resolve(steps[i]));
   }
 
   function place(s, target) {

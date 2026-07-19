@@ -90,6 +90,9 @@
     for (var d = 0; d < steps.length; d++) dots += '<span class="tour-dot' + (d === i ? " on" : "") + '"></span>';
     card.querySelector(".tour-dots").innerHTML = dots;
 
+    // until placed, keep the card centered so it never sits half off-screen
+    if (!card.style.left) card.classList.add("center");
+
     var target = el(s.el);
     if (target && target.scrollIntoView) {
       target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center", inline: "nearest" });
@@ -110,6 +113,7 @@
       card.style.left = ""; card.style.top = "";
       return;
     }
+    var wasCenter = card.classList.contains("center");
     card.classList.remove("center");
     var r = target.getBoundingClientRect();
     var pad = 6;
@@ -134,6 +138,14 @@
     else { left = r.left - gap - cw; top = r.top + r.height / 2 - ch / 2; }
     left = Math.max(12, Math.min(left, vw - cw - 12));
     top = Math.max(12, Math.min(top, vh - ch - 12));
+    if (wasCenter) {
+      // jump straight to the first placed position, no slide from center
+      card.style.transition = "none";
+      card.style.left = left + "px";
+      card.style.top = top + "px";
+      void card.offsetWidth;
+      card.style.transition = "";
+    }
     card.style.left = left + "px";
     card.style.top = top + "px";
     card.setAttribute("data-side", side);

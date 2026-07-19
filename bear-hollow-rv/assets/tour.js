@@ -19,6 +19,25 @@
 
   function el(sel) { try { return sel ? document.querySelector(sel) : null; } catch (e) { return null; } }
 
+  function visible(t) { return !!(t && t.getClientRects().length); }
+
+  // Resolve a step's target. On narrow screens prefer the step's mobile
+  // selector (s.elm) when present; a target hidden at this width (e.g. a
+  // sidebar link) falls back to the mobile selector, else to a centered card.
+  function resolve(s) {
+    var t = el(s.el);
+    if (innerWidth <= 900 && s.elm) {
+      var m = el(s.elm);
+      if (visible(m)) return m;
+    }
+    if (!visible(t)) {
+      var m2 = el(s.elm);
+      if (visible(m2)) return m2;
+      return null;
+    }
+    return t;
+  }
+
   function build() {
     root = document.createElement("div");
     root.className = "tour-root";
@@ -91,9 +110,9 @@
     for (var d = 0; d < steps.length; d++) dots += '<span class="tour-dot' + (d === i ? " on" : "") + '"></span>';
     card.querySelector(".tour-dots").innerHTML = dots;
 
-    var target = el(s.el);
+    var target = resolve(s);
     if (target && target.scrollIntoView) {
-      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center", inline: "nearest" });
+      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center", inline: "center" });
     }
     // let smooth-scroll settle before measuring
     setTimeout(function () { place(s, target); }, reduce ? 0 : 260);
@@ -101,7 +120,7 @@
 
   function reflow() {
     if (!live) return;
-    place(steps[i], el(steps[i].el));
+    place(steps[i], resolve(steps[i]));
   }
 
   function place(s, target) {

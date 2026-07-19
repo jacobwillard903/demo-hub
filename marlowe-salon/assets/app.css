@@ -179,6 +179,8 @@ a{color:inherit;text-decoration:none}
 @media(max-width:980px){.grid-2{grid-template-columns:1fr}}
 .grid-2b{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
 @media(max-width:980px){.grid-2b{grid-template-columns:1fr}}
+/* round 4: wide tables scroll inside their card, never stretch the grid */
+.grid-2>*,.grid-2b>*,.grid-2>div>*{min-width:0}
 
 /* ---------- charts (hand-rolled) ---------- */
 .bars{display:flex;align-items:flex-end;gap:14px;height:190px;padding:8px 4px 0}
@@ -348,7 +350,11 @@ body.tour-on{overflow:hidden}
 .cal-legend .b2{width:12px;height:12px;border-radius:4px;background:#eef0e9;border:1px solid #d6dcc9}
 .cal-legend .b3{width:12px;height:12px;border-radius:4px;background:repeating-linear-gradient(-45deg,var(--shade),var(--shade) 3px,#ece2da 3px,#ece2da 6px);border:1px dashed var(--line-2)}
 .cal-legend .b4{width:12px;height:12px;border-radius:4px;background:var(--plum)}
-@media(max-width:980px){.cal{grid-template-columns:44px repeat(3,1fr)}.cal-col:nth-child(n+6){display:none}.cal-hd:nth-child(n+6){display:none}}
+/* round 4: never drop chairs — the day grid scrolls horizontally inside its card */
+.cal-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media(max-width:980px){
+  .cal{grid-template-columns:44px repeat(6,minmax(112px,1fr));min-width:716px}
+}
 
 /* ---------- clients page ---------- */
 .client-search{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:var(--r);
@@ -399,13 +405,10 @@ table.pl .ind{padding-left:26px}
 .int .st{margin-left:auto}
 .int p{font-size:12.5px;color:var(--text-2);line-height:1.55}
 
-/* ---------- responsive shell ---------- */
-@media(max-width:860px){
+/* ---------- responsive shell (round 4: sidebar yields to bottom nav) ---------- */
+@media(max-width:900px){
   .shell{grid-template-columns:1fr}
-  .side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:2px 10px;padding:12px 14px}
-  .side-sub,.side-group,.side-spacer,.side-foot{display:none}
-  .side-new{margin:0 0 0 auto;padding:8px 12px}
-  .side a.nav{padding:6px 8px}
+  .side{display:none}
   .search{display:none}
 }
 
@@ -540,3 +543,113 @@ button.side-new{display:block;width:calc(100% - 8px)}
   padding:10px 20px;font-size:13.5px;font-weight:600;transition:background .15s var(--ease);
 }
 .ask-bar button:hover{background:var(--plum-deep)}
+
+/* ============================================================
+   round 4 — mobile shell (assets/mobile.js)
+   Bottom nav + More sheet + topbar brand/hamburger, <=900px.
+   ============================================================ */
+
+/* topbar brand + hamburger: hidden on desktop */
+.m-brand{display:none;font-family:var(--serif);font-size:17px;font-weight:700;color:var(--plum-ink);white-space:nowrap}
+.m-brand span{color:var(--plum)}
+.m-burger{display:none;width:44px;height:44px;margin:-8px -10px -8px 0;border-radius:8px;color:var(--text-2);place-items:center}
+.m-burger svg{width:20px;height:20px}
+.m-burger:active{background:var(--shade)}
+
+/* bottom nav */
+.bnav{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:8900;
+  background:var(--card);border-top:1px solid var(--line-2);
+  padding:4px 6px calc(4px + env(safe-area-inset-bottom));
+  box-shadow:0 -8px 24px -18px rgba(43,33,39,.4);
+}
+.bnav .bi{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  min-height:52px;border-radius:8px;color:var(--muted);font-size:10.5px;font-weight:600;letter-spacing:.01em;
+}
+.bnav .bi svg{width:20px;height:20px}
+.bnav .bi span{line-height:1}
+.bnav .bi.on{color:var(--plum)}
+.bnav .bi:active{background:var(--plum-soft)}
+
+/* More sheet */
+.msheet-scrim{position:fixed;inset:0;background:rgba(43,33,39,.4);z-index:9300;opacity:0;pointer-events:none;transition:opacity .22s var(--ease)}
+.msheet-scrim.on{opacity:1;pointer-events:auto}
+.msheet{
+  position:fixed;left:0;right:0;bottom:0;z-index:9400;background:var(--card);
+  border:1px solid var(--line-2);border-bottom:none;border-radius:14px 14px 0 0;
+  box-shadow:0 -18px 48px -20px rgba(43,33,39,.5);
+  max-height:82vh;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  padding:8px 16px calc(18px + env(safe-area-inset-bottom));
+  transform:translateY(103%);transition:transform .28s var(--ease);
+}
+.msheet.on{transform:none}
+@media(prefers-reduced-motion:reduce){.msheet{transition:none}.msheet-scrim{transition:none}}
+.msheet-grab{width:36px;height:4px;border-radius:999px;background:var(--line-2);margin:4px auto 2px}
+.msheet-h{display:flex;align-items:center;gap:10px;padding:6px 0 2px}
+.msheet-t{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--plum-ink)}
+.msheet-t span{color:var(--plum)}
+.msheet-x{margin-left:auto;width:44px;height:44px;border-radius:8px;color:var(--muted);display:grid;place-items:center}
+.msheet-x svg{width:18px;height:18px}
+.msheet-x:active{background:var(--shade)}
+.msheet-new{
+  display:block;width:100%;text-align:center;background:var(--plum);color:#fff;border:1px solid var(--plum-deep);
+  border-radius:var(--r);padding:13px 12px;font-size:14px;font-weight:600;margin:8px 0 2px;min-height:44px;
+}
+.msheet-new:active{background:var(--plum-deep)}
+.msheet-g{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:16px 2px 4px;font-weight:600}
+.msheet-a{
+  display:flex;align-items:center;gap:10px;padding:12px 10px;min-height:44px;border-radius:8px;
+  font-size:14.5px;font-weight:600;color:var(--ink-2);
+}
+.msheet-a:active{background:var(--shade)}
+.msheet-a.on{background:var(--plum-soft);color:var(--plum-ink)}
+.msheet-a .now{margin-left:auto;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--plum)}
+.msheet-out{display:block;padding:14px 10px 4px;margin-top:10px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+/* the mobile layer proper */
+@media(max-width:900px){
+  .m-brand{display:block}
+  .m-burger{display:grid}
+  .bnav{display:flex}
+  .topbar{padding:12px 16px;gap:12px}
+  .crumb{display:none}
+  .page{padding:18px 14px calc(88px + env(safe-area-inset-bottom));max-width:none}
+  .page-head h1{font-size:23px}
+  .page-head .actions{margin-left:0;width:100%}
+  /* KPI rows: force 2-up even over inline column styles */
+  .kpis{grid-template-columns:repeat(2,1fr) !important}
+  .stat-row{grid-template-columns:repeat(2,1fr) !important}
+  .chips{grid-template-columns:1fr}
+  .grid-2,.grid-2b{grid-template-columns:1fr}
+  /* wide tables scroll inside their card */
+  table.data{min-width:560px}
+  /* keep floating layers clear of the bottom nav */
+  .toasts{left:12px;right:12px;bottom:calc(72px + env(safe-area-inset-bottom));align-items:stretch}
+  .toast{max-width:none}
+  .welcome{left:12px;right:12px;bottom:calc(76px + env(safe-area-inset-bottom));width:auto}
+  /* drawers become full-width slide-ins */
+  .drawer{width:100vw;border-left:none}
+  /* modal goes near-full-screen with comfortable inputs (16px stops iOS zoom) */
+  .modal{width:calc(100vw - 16px);max-height:calc(100vh - 24px);overflow-y:auto}
+  .modal-b input,.modal-b select{font-size:16px;padding:12px 12px;min-height:44px}
+  .frow{grid-template-columns:1fr;gap:0}
+  /* 44px touch targets */
+  .drawer-x,.tour-card .tour-x{width:44px;height:44px}
+  .tour-card .tour-x{top:6px;right:6px}
+  .dbtn,.tour-next,.tour-back,.ask-chip,.tour-toggle,.btn-walk{min-height:44px}
+  .modal-f .dbtn{padding:11px 18px}
+  /* ask page fits above the bottom nav */
+  .ask-panel{height:calc(100dvh - 300px);min-height:340px}
+  .ask-bar input{font-size:16px}
+  /* charts breathe a little tighter */
+  .bars{gap:8px}
+  .bars .v{font-size:10px}
+  .duo{gap:10px}
+  .donut-wrap{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:640px){
+  .glance{grid-template-columns:repeat(2,1fr)}
+  .match-grid{grid-template-columns:1fr}
+  .int-grid{grid-template-columns:1fr}
+}

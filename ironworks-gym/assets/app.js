@@ -326,8 +326,113 @@
     toast(name + " added to the roster");
   }
 
+  /* ---------- round 4: wide tables scroll inside their card ---------- */
+  function wrapTables() {
+    qsa("table").forEach(function (t) {
+      if (t.closest(".tblwrap, .schedwrap")) return;
+      var w = document.createElement("div");
+      w.className = "tblwrap";
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    });
+  }
+
+  /* ---------- round 4: mobile chrome (bottom nav + More sheet + topbar brand) ---------- */
+  var ICONS = {
+    dash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>',
+    ask: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>',
+    members: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+    leads: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+    risk: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+    sched: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+    integ: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>',
+    money: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+    pay: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>',
+    more: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>',
+    burger: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>',
+    out: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>'
+  };
+  var NAV_GROUPS = [
+    { label: "Overview", items: [["app-dashboard.html", "Dashboard", "dash"], ["app-ask.html", "Ask", "ask"]] },
+    { label: "Members", items: [["app-members.html", "Members", "members"], ["app-leads.html", "Lead Concierge", "leads"], ["app-retention.html", "At-Risk Radar", "risk"]] },
+    { label: "Operations", items: [["app-schedule.html", "Schedule & Classes", "sched"], ["app-integrations.html", "Integrations", "integ"]] },
+    { label: "Money", items: [["app-money.html", "Financials", "money"], ["app-payments.html", "Payment Recovery", "pay"]] }
+  ];
+  var BOTTOM_TABS = [
+    ["app-dashboard.html", "Dashboard", "dash"],
+    ["app-payments.html", "Recovery", "pay"],
+    ["app-retention.html", "At-Risk", "risk"],
+    ["app-money.html", "Money", "money"]
+  ];
+  function here() { return (location.pathname.split("/").pop() || "app-dashboard.html"); }
+
+  var sheetRoot = null;
+  function closeSheet() { if (sheetRoot) sheetRoot.classList.remove("on"); }
+  function openSheet() { if (sheetRoot) sheetRoot.classList.add("on"); }
+  function buildSheet() {
+    var page = here();
+    var h = '<div class="sheet-mask" data-s-close></div><div class="sheet" role="dialog" aria-modal="true" aria-label="All pages"><div class="sheet-grab"></div>';
+    NAV_GROUPS.forEach(function (g) {
+      h += '<div class="sheet-group"><div class="sheet-group-label">' + g.label + "</div>";
+      g.items.forEach(function (it) {
+        h += '<a href="' + it[0] + '"' + (it[0] === page ? ' class="on" aria-current="page"' : "") + ">" +
+          ICONS[it[2]] + esc(it[1]) + '<span class="chev">&#8250;</span></a>';
+      });
+      h += "</div>";
+    });
+    h += '<div class="sheet-group"><a href="index.html">' + ICONS.out + 'Sign Out<span class="chev">&#8250;</span></a></div>';
+    h += '<div class="sheet-actions"><button class="btn btn-accent" type="button" data-new-member>+ Add Member</button></div></div>';
+    sheetRoot = document.createElement("div");
+    sheetRoot.className = "sheet-root";
+    sheetRoot.innerHTML = h;
+    document.body.appendChild(sheetRoot);
+    qs("[data-s-close]", sheetRoot).addEventListener("click", closeSheet);
+    qs("[data-new-member]", sheetRoot).addEventListener("click", function () { closeSheet(); openModal(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && sheetRoot.classList.contains("on")) closeSheet();
+    });
+  }
+
+  function mobileChrome() {
+    var topbar = qs(".shell .topbar");
+    if (!topbar) return; // landing page: no app shell
+    var page = here();
+
+    // topbar: brand wordmark (left) + hamburger (right)
+    var brand = document.createElement("div");
+    brand.className = "tb-brand";
+    brand.textContent = "IRONWORKS";
+    topbar.insertBefore(brand, topbar.firstChild);
+    var burger = document.createElement("button");
+    burger.type = "button";
+    burger.className = "tb-menu";
+    burger.setAttribute("aria-label", "All pages");
+    burger.innerHTML = ICONS.burger;
+    var right = qs(".topbar-right", topbar) || topbar;
+    right.appendChild(burger);
+
+    // bottom nav
+    var bn = document.createElement("nav");
+    bn.className = "bottomnav";
+    bn.setAttribute("aria-label", "Primary");
+    var h = "";
+    BOTTOM_TABS.forEach(function (t) {
+      h += '<a href="' + t[0] + '"' + (t[0] === page ? ' class="on" aria-current="page"' : "") + ">" + ICONS[t[2]] + "<span>" + esc(t[1]) + "</span></a>";
+    });
+    var moreOn = !BOTTOM_TABS.some(function (t) { return t[0] === page; });
+    h += '<button type="button" id="bn-more"' + (moreOn ? ' class="on"' : "") + ">" + ICONS.more + "<span>More</span></button>";
+    bn.innerHTML = h;
+    document.body.appendChild(bn);
+
+    buildSheet();
+    qs("#bn-more", bn).addEventListener("click", openSheet);
+    burger.addEventListener("click", openSheet);
+  }
+
   /* ---------- init ---------- */
   function init() {
+    wrapTables();
+    mobileChrome();
     welcomeGate();
     entrance();
     countUps();

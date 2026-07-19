@@ -17,7 +17,12 @@
   var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
   var i = 0, root = null, spot = null, card = null, live = false;
 
-  function el(sel) { try { return sel ? document.querySelector(sel) : null; } catch (e) { return null; } }
+  function el(sel) {
+    try {
+      if (typeof sel === "function") return sel() || null;
+      return sel ? document.querySelector(sel) : null;
+    } catch (e) { return null; }
+  }
 
   function build() {
     root = document.createElement("div");
@@ -120,6 +125,8 @@
 
     var cw = card.offsetWidth, ch = card.offsetHeight, gap = 16, vw = innerWidth, vh = innerHeight;
     var side = s.side || "auto";
+    // Mobile: no room beside targets, always stack above/below.
+    if (vw <= 640 && (side === "left" || side === "right")) side = "auto";
     if (side === "auto") {
       if (r.bottom + gap + ch < vh) side = "bottom";
       else if (r.top - gap - ch > 0) side = "top";

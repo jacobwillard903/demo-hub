@@ -134,9 +134,14 @@ window.TOUR = [
   { el: "#int-grid",
     title: "It plugs into what you already run",
     body: "Tekmetric stays the system of record, QuickBooks stays the books, PartsTech stays the parts counter. The AI sits on top and moves the data between them so a human never has to retype anything." },
-  { el: 'a[href="app-ask.html"]', side: "right",
+  { el: function () {
+      // Sidebar is hidden on mobile; spotlight the bottom-nav More button instead.
+      return innerWidth <= 900
+        ? document.querySelector(".bnav .bnav-more")
+        : document.querySelector('.side a[href="app-ask.html"]');
+    }, side: "right",
     title: "And you can just ask it",
-    body: "The Ask page is the whole shop in one question. \"Which estimates are aging?\" \"Is the truck in Bay 3 done?\" Real answers from the shop's own data, no report to run. Try it after the tour." },
+    body: "The Ask page is the whole shop in one question. \"Which estimates are aging?\" \"Is the truck in Bay 3 done?\" Real answers from the shop's own data, no report to run. You will find it right here. Try it after the tour." },
   { el: null, cta: "Finish",
     title: "That is the whole AI service desk",
     body: "The phone answers itself, estimates approve in <b>4 hours instead of 26</b>, status calls answer by text, declined work comes back at <b>$3,900 a month</b>, and the books close themselves in QuickBooks. Same 6 bays, same 3 techs, more billed hours. Ready when you are." }

@@ -404,6 +404,47 @@ button.side-cta{display:block;width:calc(100% - 32px)}
 @keyframes growx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .splitbar.grow-x{transform-origin:left;animation:growx .55s var(--ease) both;overflow:hidden}
 
+/* ============================================================
+   Round 4: mobile (bottom nav, More sheet, responsive layout)
+   ============================================================ */
+
+/* injected mobile chrome, hidden on desktop */
+.m-wordmark{display:none;font-family:var(--serif);font-size:16px;letter-spacing:.08em;font-weight:600;color:var(--ink);white-space:nowrap}
+.hamburger{display:none;width:44px;height:44px;border:none;background:none;border-radius:var(--r-sm);color:var(--ink);place-items:center;flex-shrink:0}
+.hamburger svg{width:22px;height:22px}
+.hamburger:hover{background:var(--shade)}
+
+/* fixed bottom nav */
+.bottomnav{display:none;position:fixed;left:0;right:0;bottom:0;z-index:8400;background:var(--pine-950);border-top:1px solid var(--pine-800);padding:5px 6px calc(5px + env(safe-area-inset-bottom))}
+.bn-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:48px;color:#c6d1c8;font-size:10.5px;font-weight:600;border:none;background:none;border-radius:8px;letter-spacing:.01em}
+.bn-item svg{width:20px;height:20px;opacity:.8}
+.bn-item.active{color:#fff;background:var(--pine-800)}
+.bn-item.active svg{opacity:1}
+body.tour-on .bottomnav{z-index:8400}
+
+/* slide-up More sheet */
+.sheet-root{position:fixed;inset:0;z-index:8450;pointer-events:none}
+.sheet-root.on{pointer-events:auto}
+.sheet-mask{position:absolute;inset:0;background:rgba(21,34,24,.45);opacity:0;transition:opacity .22s var(--ease)}
+.sheet-root.on .sheet-mask{opacity:1}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--pine-950);color:#e8ede7;border-radius:14px 14px 0 0;padding:10px 12px calc(74px + env(safe-area-inset-bottom));transform:translateY(103%);transition:transform .28s var(--ease);max-height:78vh;overflow-y:auto}
+.sheet-root.on .sheet{transform:none}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;padding:8px 8px 4px}
+.sheet-head .s-title{font-family:var(--serif);font-size:17px;font-weight:600;color:#f3f1e6}
+.sheet-x{width:44px;height:44px;border:none;background:none;border-radius:8px;color:#c6d1c8;display:grid;place-items:center}
+.sheet-x svg{width:18px;height:18px}
+.sheet .nav-label{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#7c8d81;padding:12px 8px 5px}
+.sheet .nav-item{display:flex;align-items:center;gap:12px;min-height:46px;padding:8px 10px;border-radius:8px;color:#dbe4dc;font-size:14.5px;border-left:2px solid transparent}
+.sheet .nav-item svg{width:18px;height:18px;flex-shrink:0;opacity:.75}
+.sheet .nav-item.active{background:var(--pine-800);color:#fff;border-left-color:var(--brand);font-weight:600}
+.sheet .side-cta{margin:10px 8px 4px;width:calc(100% - 16px);min-height:46px}
+
+/* wide surfaces scroll inside their card, never the page */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+[data-heatmap]{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.grid>*{min-width:0}
+.feed-item .f-tag{align-self:center}
+
 /* ---------------- Responsive ---------------- */
 @media(max-width:1080px){
   .kpis{grid-template-columns:repeat(3,1fr)}
@@ -413,13 +454,50 @@ button.side-cta{display:block;width:calc(100% - 32px)}
   .hero{grid-template-columns:1fr;padding-top:44px}
   .feature-grid{grid-template-columns:1fr}
 }
-@media(max-width:760px){
+@media(max-width:900px){
   .sidebar{display:none}
-  .kpis,.chips{grid-template-columns:1fr 1fr}
-  .int-grid{grid-template-columns:1fr}
   .searchbox{display:none}
+  .crumb{display:none}
+  .m-wordmark{display:block}
+  .hamburger{display:grid}
+  .bottomnav{display:flex}
+  .topbar{padding:10px 14px}
+  .content{padding:18px 14px calc(84px + env(safe-area-inset-bottom))}
+  .toast-root{left:12px;right:12px;bottom:calc(72px + env(safe-area-inset-bottom));align-items:stretch}
+  .drawer{width:100vw;border-left:none}
+  .modal-root{place-items:end center}
+  .modal{width:100vw;max-width:100vw;max-height:calc(100vh - 24px);overflow-y:auto;border-radius:14px 14px 0 0;border-left:none;border-right:none;border-bottom:none}
+  .modal-foot .btn,.drawer-foot .btn{min-height:44px}
+  .field input,.field select,.chat-input input{font-size:16px}
+  .heatmap{min-width:560px}
+  .statline{flex-wrap:wrap}
+  .statline>div{flex:1 1 45%;border-bottom:1px solid var(--border)}
+}
+@media(max-width:760px){
+  .kpis{grid-template-columns:1fr 1fr}
+  .chips{grid-template-columns:1fr}
+  .int-grid{grid-template-columns:1fr}
+  .pipe-cols{grid-template-columns:1fr}
+  .page-head h1{font-size:23px}
+  .card-head{flex-wrap:wrap;row-gap:6px}
+  .card-head .chip{white-space:normal;text-align:left}
   .tour-card{width:calc(100vw - 24px)}
   .tour-dots{display:none}
+  .bubble{max-width:88%}
+  .chat-card{height:auto;min-height:0}
+  .chat-log{min-height:260px;max-height:44vh}
+  .cashflow{gap:8px}
+  .cf-bar{width:16px}
+  .cf-val{font-size:9.5px}
+  .bar{width:70%;max-width:34px}
+  .row{padding:11px 14px;flex-wrap:wrap}
+  .row .r-main{flex:1 1 55%}
+  .feed-item{padding:13px 14px}
+  .card-head,.card-body{padding-left:14px;padding-right:14px}
+  .quote-doc{padding:16px 14px}
+  .hero h1{font-size:32px}
+  .land-section h2{font-size:24px}
+  .land-nav{flex-wrap:wrap;gap:10px}
 }
 @media(prefers-reduced-motion:reduce){
   *{transition-duration:.01ms !important;animation-duration:.01ms !important}

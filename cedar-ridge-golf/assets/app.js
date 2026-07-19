@@ -82,9 +82,116 @@
     });
   }
 
+  /* ---------------- Round 4: mobile chrome ---------------- */
+  var BN_TABS = [
+    { href: "app-dashboard.html", label: "Dashboard" },
+    { href: "app-phone.html", label: "Phone" },
+    { href: "app-teesheet.html", label: "Tee Sheet" },
+    { href: "app-money.html", label: "Money" }
+  ];
+
+  function mobileChrome() {
+    var sidebar = document.querySelector(".sidebar");
+    if (!sidebar) return;
+    var here = (location.pathname.split("/").pop() || "app-dashboard.html");
+
+    function iconFor(href) {
+      var a = sidebar.querySelector('.nav-item[href="' + href + '"]');
+      var svg = a && a.querySelector("svg");
+      return svg ? svg.outerHTML : "";
+    }
+
+    /* topbar: wordmark + hamburger (visible below 900px only) */
+    var topbar = document.querySelector(".topbar");
+    if (topbar) {
+      var wm = document.createElement("div");
+      wm.className = "m-wordmark";
+      wm.textContent = "CEDAR RIDGE";
+      topbar.insertBefore(wm, topbar.firstChild);
+      var right = topbar.querySelector(".topbar-right") || topbar;
+      var burger = document.createElement("button");
+      burger.className = "hamburger";
+      burger.type = "button";
+      burger.setAttribute("aria-label", "Menu");
+      burger.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+      burger.addEventListener("click", function () { openSheet(); });
+      right.appendChild(burger);
+    }
+
+    /* bottom nav */
+    var promoted = BN_TABS.map(function (t) { return t.href; });
+    var nav = document.createElement("nav");
+    nav.className = "bottomnav";
+    nav.setAttribute("aria-label", "Primary");
+    var html = "";
+    BN_TABS.forEach(function (t) {
+      html += '<a class="bn-item' + (here === t.href ? " active" : "") + '" href="' + t.href + '">' +
+        iconFor(t.href) + "<span>" + t.label + "</span></a>";
+    });
+    html += '<button class="bn-item' + (promoted.indexOf(here) === -1 ? " active" : "") + '" type="button" data-more-open>' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>' +
+      "<span>More</span></button>";
+    nav.innerHTML = html;
+    document.body.appendChild(nav);
+
+    /* More sheet: every remaining page, grouped like the sidebar */
+    var sheetRoot = document.createElement("div");
+    sheetRoot.className = "sheet-root";
+    var groups = "";
+    sidebar.querySelectorAll(".nav-group").forEach(function (g) {
+      var items = "";
+      g.querySelectorAll(".nav-item").forEach(function (a) {
+        var href = a.getAttribute("href");
+        if (promoted.indexOf(href) > -1) return;
+        items += '<a class="nav-item' + (href === here ? " active" : "") + '" href="' + href + '">' +
+          (a.querySelector("svg") ? a.querySelector("svg").outerHTML : "") + a.textContent.trim() + "</a>";
+      });
+      if (!items) return;
+      var lab = g.querySelector(".nav-label");
+      groups += (lab ? '<div class="nav-label">' + lab.textContent + "</div>" : "") + items;
+    });
+    sheetRoot.innerHTML =
+      '<div class="sheet-mask" data-sheet-close></div>' +
+      '<div class="sheet" role="dialog" aria-modal="true" aria-label="All pages">' +
+      '  <div class="sheet-head"><span class="s-title">Cedar Ridge</span>' +
+      '  <button class="sheet-x" type="button" data-sheet-close aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>' +
+      '  <button class="side-cta" type="button" data-new-booking data-sheet-close>+ New Booking</button>' +
+      groups +
+      '  <a class="nav-item" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>Sign Out</a>' +
+      "</div>";
+    document.body.appendChild(sheetRoot);
+
+    function openSheet() {
+      sheetRoot.classList.add("on");
+      document.addEventListener("keydown", escSheet);
+    }
+    function closeSheet() {
+      sheetRoot.classList.remove("on");
+      document.removeEventListener("keydown", escSheet);
+    }
+    function escSheet(e) { if (e.key === "Escape") closeSheet(); }
+    sheetRoot.querySelectorAll("[data-sheet-close]").forEach(function (b) {
+      b.addEventListener("click", closeSheet);
+    });
+    nav.querySelector("[data-more-open]").addEventListener("click", openSheet);
+  }
+
+  /* wide tables scroll inside their card, never the page */
+  function wrapTables() {
+    document.querySelectorAll(".table").forEach(function (t) {
+      if (t.closest(".heatmap") || t.parentElement.classList.contains("table-scroll")) return;
+      var w = document.createElement("div");
+      w.className = "table-scroll";
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    });
+  }
+
   function init() {
     renderHeatmaps();
     renderRevenueBars();
+    mobileChrome();
+    wrapTables();
     welcomeGate();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

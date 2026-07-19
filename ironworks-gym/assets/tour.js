@@ -18,6 +18,19 @@
   var i = 0, root = null, spot = null, card = null, live = false;
 
   function el(sel) { try { return sel ? document.querySelector(sel) : null; } catch (e) { return null; } }
+  function visible(t) { return !!(t && t.getClientRects().length); }
+  /* Resolve a step's target: primary el, else its mobile fallback (elm),
+     else null (centered card). Sidebar targets are hidden below 900px, so
+     steps that point at the sidebar carry an elm pointing at the bottom
+     nav / More equivalent. */
+  function resolve(s) {
+    var t = el(s.el);
+    s._m = false;
+    if (visible(t)) return t;
+    t = el(s.elm);
+    if (visible(t)) { s._m = true; return t; }
+    return null;
+  }
 
   function build() {
     root = document.createElement("div");
@@ -91,16 +104,16 @@
     for (var d = 0; d < steps.length; d++) dots += '<span class="tour-dot' + (d === i ? " on" : "") + '"></span>';
     card.querySelector(".tour-dots").innerHTML = dots;
 
-    var target = el(s.el);
+    var target = resolve(s);
     if (target && target.scrollIntoView) {
-      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center", inline: "nearest" });
+      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center", inline: "center" });
     }
     setTimeout(function () { place(s, target); }, reduce ? 0 : 260);
   }
 
   function reflow() {
     if (!live) return;
-    place(steps[i], el(steps[i].el));
+    place(steps[i], resolve(steps[i]));
   }
 
   function place(s, target) {
@@ -120,7 +133,7 @@
     spot.style.height = (r.height + pad * 2) + "px";
 
     var cw = card.offsetWidth, ch = card.offsetHeight, gap = 16, vw = innerWidth, vh = innerHeight;
-    var side = s.side || "auto";
+    var side = s._m ? "top" : (s.side || "auto");
     if (side === "auto") {
       if (r.bottom + gap + ch < vh) side = "bottom";
       else if (r.top - gap - ch > 0) side = "top";
