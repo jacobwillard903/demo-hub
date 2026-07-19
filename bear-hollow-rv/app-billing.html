@@ -90,6 +90,12 @@
         <span class="amt">$718.74</span>
       </div>
 
+      <div class="card" style="margin-top:14px" id="meter-feed">
+        <div class="card-head"><h2>Live Meter Feed, Last 14 Days</h2><span class="via">via MeterLink</span></div>
+        <div id="meter-rows"></div>
+        <div class="wx-note"><b>Site 44 is drawing 2.3x normal.</b> A flat overnight load since Tuesday, the classic space heater signature. The assistant texted the tenant Friday morning and got an answer before you'd have read the meter. Tap a row for the pedestal detail.</div>
+      </div>
+
       <div class="card" style="margin-top:14px" id="tenant-card">
         <div class="card-head"><h2>Monthly Tenants, July Cycle</h2><span class="link tnum">Metered at $0.14/kWh</span></div>
         <div style="overflow-x:auto">
@@ -139,6 +145,9 @@ window.TOUR = [
   { el: "#tenant-card",
     title: "Every tenant, every meter, every invoice.",
     body: "Site, meter read, electric at $0.14/kWh as its own line item, rent, total, payment method, status. The whole month in one table. The flagged re-read on Site 60 was caught <b>before</b> it billed wrong.", side: "top" },
+  { el: "#meter-feed",
+    title: "It can see a space heater.",
+    body: "The pedestals report hourly. <b>Site 44 is drawing 2.3x its normal power</b>, a flat overnight load that started Tuesday, the space heater pattern. The assistant flagged it and texted the tenant before it became a billing argument. Your old meter routine was a clipboard, once a month.", side: "top" },
   { el: "#late-payer",
     title: "The one late payer chased himself.",
     body: "Site 58's card failed. The assistant sent two polite nudges with the exact amount and a payment link, and got a reply. The awkward money conversation happened <b>without you in it</b>. Next: where all of this lands in the books.", side: "bottom" }
@@ -146,7 +155,7 @@ window.TOUR = [
 window.TOUR_NEXT = { href: "app-money.html", label: "Next: Financials" };
 </script>
 <script src="assets/data.js"></script>
-<script>window.BH.renderTenantTable("tenant-table");</script>
+<script>window.BH.renderTenantTable("tenant-table");window.BH.renderMeterFeed("meter-rows");</script>
 <script src="assets/tour.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/interact.js"></script>

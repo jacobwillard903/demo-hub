@@ -155,6 +155,10 @@ window.MARLOWE = {
       a: "Five items are at or below reorder. Olaplex No. 3 is the urgent one: 3 left and selling 40% faster since Danielle's reel, with Saturday coming. Heat protectant is at 2, texture spray sold out midweek, and the backbar is low on 20 vol developer, 7N, and lightener. A $312 draft order is sitting one tap from approved." },
     { k: ["tips", "tip"],
       a: "$6,240 in card tips this month, auto-split per stylist and paid out. None of it touches the revenue line, so the books stay honest and nobody argues over a spreadsheet." },
+    { k: ["review", "rating", "competitor", "luxe", "blowout bar"],
+      a: "Marlowe is at 4.9 stars on Google with 212 reviews, adding 18 a month. Down the street, Luxe & Co Salon sits at 4.5 with 148 and The Blowout Bar at 4.3 with 96. The gap keeps widening because a review request goes out after every happy visit, automatically." },
+    { k: ["online", "shopify", "shipped", "web order"],
+      a: "Online retail did $640 of this month's $4,870, about 13%, from the take-home shelf on the website. Eight orders this week; Olaplex No. 3 is the runner with six bottles shipped. The site shares the shelf's live counts, so it never sells a bottle the salon does not have." },
     { k: ["profit", "net", "quickbooks", "books", "expenses"],
       a: "Net profit is $16,181 for the last 30 days, a 39.5% margin on $40,940 total income. Expenses ran $24,759, payroll is 53% of that. QuickBooks synced 4 minutes ago; the bookkeeper categorized 41 transactions today and matched every Square payout to the bank." }
   ],

@@ -98,7 +98,7 @@
     <section class="chip-row" id="alerts">
       <a class="chip warn" href="app-dispatch.html"><span class="n num">1</span><span class="t">Crew unconfirmed for Saturday</span><span class="chev">&#8250;</span></a>
       <a class="chip bad" href="app-quotes.html"><span class="n num">1</span><span class="t">Deposit unpaid past 24h</span><span class="chev">&#8250;</span></a>
-      <a class="chip warn" href="app-quotes.html"><span class="n num">1</span><span class="t">COI due for Kessler by Jul 23</span><span class="chev">&#8250;</span></a>
+      <a class="chip good" href="app-quotes.html#coi"><span class="n num">1</span><span class="t">COI approved and on file for Kessler</span><span class="chev">&#8250;</span></a>
       <a class="chip info" href="app-dispatch.html"><span class="n num">3</span><span class="t">On the month-end waitlist</span><span class="chev">&#8250;</span></a>
     </section>
 
@@ -118,22 +118,46 @@
           <div class="quote">Month-end weekends carry the month. Jun 29 and Jul 13 are the crunch weeks, and both are up on last year with the same 4 trucks.</div>
         </div>
       </div>
-      <div class="card" id="job-mix">
-        <div class="card-head"><h2>Jobs by Type</h2><span class="link num">38 this month</span></div>
-        <div class="card-pad">
-          <div class="seg-bar">
-            <span class="seg" style="flex:24;background:#31485f">24</span>
-            <span class="seg" style="flex:9;background:#54718e">9</span>
-            <span class="seg" style="flex:2;background:#87a2ba">2</span>
-            <span class="seg" style="flex:3;background:#f2ae19;color:#16273a">3</span>
+      <div>
+        <div class="card mb" id="job-mix">
+          <div class="card-head"><h2>Jobs by Type</h2><span class="link num">38 this month</span></div>
+          <div class="card-pad">
+            <div class="seg-bar">
+              <span class="seg" style="flex:24;background:#31485f">24</span>
+              <span class="seg" style="flex:9;background:#54718e">9</span>
+              <span class="seg" style="flex:2;background:#87a2ba">2</span>
+              <span class="seg" style="flex:3;background:#f2ae19;color:#16273a">3</span>
+            </div>
+            <div class="legend">
+              <span class="li"><span class="dot" style="background:#31485f"></span>Local homes <span class="n">24</span></span>
+              <span class="li"><span class="dot" style="background:#54718e"></span>Apartments <span class="n">9</span></span>
+              <span class="li"><span class="dot" style="background:#87a2ba"></span>Offices <span class="n">2</span></span>
+              <span class="li"><span class="dot" style="background:#f2ae19"></span>Piano and bulky <span class="n">3</span></span>
+            </div>
+            <div class="quote">Offices are small in count and big in ticket. Kessler alone is $1,750, and its COI is already approved and on file.</div>
           </div>
-          <div class="legend">
-            <span class="li"><span class="dot" style="background:#31485f"></span>Local homes <span class="n">24</span></span>
-            <span class="li"><span class="dot" style="background:#54718e"></span>Apartments <span class="n">9</span></span>
-            <span class="li"><span class="dot" style="background:#87a2ba"></span>Offices <span class="n">2</span></span>
-            <span class="li"><span class="dot" style="background:#f2ae19"></span>Piano and bulky <span class="n">3</span></span>
+        </div>
+        <div class="card" id="reviews">
+          <div class="card-head"><h2>Reviews vs the Neighborhood</h2><span class="via">via Google Business Profile</span></div>
+          <div class="card-pad">
+            <div class="rev-rows">
+              <div class="rev-row you" data-rec="gbp">
+                <div class="rev-top"><span class="rn">Bluebird Moving Co.</span><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="rr num">4.8</span><span class="rc num">296 reviews</span></div>
+                <div class="rev-bar"><span class="rf" style="width:96%"></span></div>
+                <div class="rev-vel"><b>+13 this month</b>, fastest in the market. Reply rate 100%, drafted for Tony.</div>
+              </div>
+              <div class="rev-row" data-rec="gbp">
+                <div class="rev-top"><span class="rn">Capital City Movers</span><span class="rr num">4.2</span><span class="rc num">188 reviews</span></div>
+                <div class="rev-bar"><span class="rf" style="width:84%"></span></div>
+                <div class="rev-vel">+4 this month</div>
+              </div>
+              <div class="rev-row" data-rec="gbp">
+                <div class="rev-top"><span class="rn">Two Guys &amp; a Van</span><span class="rr num">4.5</span><span class="rc num">77 reviews</span></div>
+                <div class="rev-bar"><span class="rf" style="width:90%"></span></div>
+                <div class="rev-vel">+2 this month</div>
+              </div>
+            </div>
           </div>
-          <div class="quote">Offices are small in count and big in ticket. Kessler alone is $1,750, and the COI is already moving so there is no day-before fire drill.</div>
         </div>
       </div>
     </section>
@@ -181,13 +205,13 @@
           </div>
           <span class="amt num">2 jobs</span>
         </div>
-        <div class="item warn" data-rec="kessler">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+        <div class="item warn" data-rec="okafor">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/><path d="M8 19v2M12 20v2M16 19v2"/></svg></span>
           <div>
-            <div class="t">Kessler Insurance COI due by Jul 23</div>
-            <div class="d">Request is with the agent, requirements pulled from the building's lease email.</div>
+            <div class="t">Rain 60% at 2 PM over the piano job Saturday</div>
+            <div class="d">Schedule padded 30 minutes, extra shrink wrap loaded, customer texted a heads-up.</div>
           </div>
-          <span class="amt num">$1,750</span>
+          <span class="amt num">$1,065</span>
         </div>
         <div class="item" data-rec="ellison">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
@@ -215,7 +239,7 @@ window.TOUR = [
     body: "<b>47 of 47 calls answered</b>, 9 jobs booked after hours, and the big one: <b>close rate 28% to 45%</b>. At a $1,500 average job, unanswered calls were costing $50K to $125K a year. This row says that leak is shut." },
   { el: "#alerts",
     title: "What actually needs Tony",
-    body: "One unpaid deposit ($1,480 sitting loose), one quiet crew member, one COI deadline, three households on the month-end waitlist. Everything else already handled itself. This used to be a Sunday night of phone tag." },
+    body: "One unpaid deposit ($1,480 sitting loose), one quiet crew member, three households on the month-end waitlist. And one green chip: the Kessler <b>COI is already approved and on file</b>, a week before the move. This used to be a Sunday night of phone tag." },
   { el: "#weekend",
     title: "Saturday, all four trucks",
     body: "The Delgado 4BR runs two trucks with a shuttle for the tight street, Whitfield is the slot that got backfilled in <b>26 minutes</b>, and the piano rides the liftgate truck at 2:30. <b>100% utilization</b> on the day that pays the month. Click any row for the full story." },

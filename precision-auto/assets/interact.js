@@ -157,6 +157,18 @@
         h += '<div class="d-kv"><span class="k"><span class="pill ' + (DVI_DOT[row[0]] || "neutral") + '" style="margin-right:8px"><span class="pdot"></span>' + esc(row[0]) + "</span>" + esc(row[1]) + '</span><span class="v num">' + esc(row[2]) + "</span></div>";
       });
     }
+    if (r.recall) {
+      h += '<div class="d-sec">Open recall <span class="via">via NHTSA Recalls</span></div>';
+      h += '<div class="d-kv"><span class="k" style="flex:1"><span class="pill warn" style="margin-right:8px"><span class="pdot"></span>Open</span>' + esc(r.recall) + "</span></div>";
+    }
+    if (r.cf && r.cf.length) {
+      h += '<div class="d-sec">Service history <span class="via">via CARFAX</span></div><div class="d-tl">';
+      r.cf.forEach(function (t) {
+        h += '<div class="te"><span class="tt">' + esc(t[0]) + "</span>" + esc(t[1]) + "</div>";
+      });
+      h += "</div>";
+      h += '<div class="d-note">Prior services at other shops feed the maintenance reminder engine, so the 60k text goes out on real mileage, not a guess.</div>';
+    }
     if (r.tl && r.tl.length) {
       h += '<div class="d-sec">AI touch timeline</div><div class="d-tl">';
       r.tl.forEach(function (t) {
@@ -354,6 +366,124 @@
     return false;
   }
 
+  /* ---------------- round 5: live-data widget drawers ---------------- */
+  function kv(k, v) {
+    return '<div class="d-kv"><span class="k">' + k + '</span><span class="v">' + v + "</span></div>";
+  }
+  var LIVE = {
+    "vin": function () {
+      var v = PT.live.vin;
+      return { title: v.veh, sub: "Decoded from plate " + v.plateState + " " + v.plate + ", via CARFAX", html:
+        '<div class="d-sec">Decoded vehicle <span class="via">via CARFAX</span></div>' +
+        kv("VIN", '<span class="num" style="font-family:var(--mono);font-size:12px">' + v.vin + "</span>") +
+        kv("Trim", "EX-L") + kv("Engine", v.engine) + kv("Drivetrain", v.drive) +
+        kv("Transmission", v.trans) + kv("In service", v.inService) + kv("Mileage", v.miles) +
+        '<div class="d-sec">Auto-filled into the RO</div><div class="d-tl">' +
+        '<div class="te"><span class="tt">Tue 7:47 PM</span>' + v.cust + " booked Thursday 8:00 AM by text</div>" +
+        '<div class="te"><span class="tt">Tue 7:47 PM</span>Plate ran through CARFAX, VIN and build decoded</div>' +
+        '<div class="te"><span class="tt">Tue 7:48 PM</span>RO #' + v.ro + " created in Tekmetric with year, make, engine, and drivetrain filled</div>" +
+        '<div class="te"><span class="tt">Tue 7:48 PM</span>VIN checked against NHTSA, no open recalls on this car</div></div>' +
+        '<div class="d-sec">Actions</div><div class="d-actions"><button class="d-act" type="button">Open RO #' + v.ro + "</button><button class=\"d-act\" type=\"button\">View full history report</button></div>" };
+    },
+    "recall-rav4": function () {
+      return { title: "Open recall: fuel pump", sub: "2019 Toyota RAV4, Alice K., RO #4218", html:
+        '<div class="d-sec">Recall detail <span class="via">via NHTSA Recalls</span></div>' +
+        kv("Campaign", '<span class="num">NHTSA 20V-682</span>') + kv("Component", "Low pressure fuel pump") +
+        kv("Risk", "Pump may fail, engine can stall") + kv("Remedy", "Dealer replaces the pump, free") +
+        '<div class="d-sec">Drafted customer text</div>' +
+        '<div class="d-note" style="border:1px solid var(--border);border-radius:10px;padding:10px 13px;margin-top:0;color:var(--ink)">Hi Alice, quick heads up from Precision. While your RAV4 was in we ran the VIN and found an open fuel pump recall (NHTSA 20V-682). The dealer fixes it free, and it is worth doing. Want the details with your pickup text?</div>' +
+        '<div class="d-note">Mentioning it before the dealer does builds trust, and the car usually comes back to us for everything else.</div>' +
+        '<div class="d-sec">Actions</div><div class="d-actions"><button class="d-act" type="button">Approve and send</button><button class="d-act" type="button">Open RO #4218</button></div>' };
+    },
+    "recall-f150": function () {
+      return { title: "Open recall: brake master cylinder", sub: "2016 Ford F-150, Dan W., RO #4213", html:
+        '<div class="d-sec">Recall detail <span class="via">via NHTSA Recalls</span></div>' +
+        kv("Campaign", '<span class="num">NHTSA 20V-332</span>') + kv("Component", "Brake master cylinder") +
+        kv("Remedy", "Dealer replaces it, free") + kv("Status", "Customer told at pickup") +
+        '<div class="d-note">Flagged at write-up, mentioned when Dan approved the front end work. He booked the dealer visit for next month.</div>' +
+        '<div class="d-sec">Actions</div><div class="d-actions"><button class="d-act" type="button">Open RO #4213</button></div>' };
+    },
+    "parts-worldpac": function () {
+      return { title: "WorldPac, $118.40", sub: "Outer tie rod ends (pair), RO #4213", html:
+        '<div class="d-sec">Quote <span class="via">via PartsTech</span></div>' +
+        kv("Price", "$118.40") + kv("Availability", "In stock, Tulsa DC") + kv("Delivery", "Today 2:30 PM") + kv("Brand", "Moog, problem solver") +
+        '<div class="d-note">Cheapest in-stock option, on the estimate automatically. The truck is in Bay 4 this afternoon, so 2:30 works.</div>' +
+        '<div class="d-sec">Actions</div><div class="d-actions"><button class="d-act" type="button">Order now</button><button class="d-act" type="button">Open estimate</button></div>' };
+    },
+    "parts-oreilly": function () {
+      return { title: "O'Reilly Pro, $126.90", sub: "Outer tie rod ends (pair), RO #4213", html:
+        '<div class="d-sec">Quote <span class="via">via PartsTech</span></div>' +
+        kv("Price", "$126.90") + kv("Availability", "In stock, store 4112") + kv("Delivery", "45 minutes") +
+        '<div class="d-note">Fastest option. The AI holds it as the backup if WorldPac misses the 2:30 run.</div>' +
+        '<div class="d-sec">Actions</div><div class="d-actions"><button class="d-act" type="button">Switch to this supplier</button></div>' };
+    },
+    "parts-napa": function () {
+      return { title: "NAPA, $109.80", sub: "Outer tie rod ends (pair), RO #4213", html:
+        '<div class="d-sec">Quote <span class="via">via PartsTech</span></div>' +
+        kv("Price", "$109.80") + kv("Availability", "Backordered") + kv("ETA", "Tuesday") +
+        '<div class="d-note">Cheapest on paper, but a backordered part is a truck blocking Bay 4 until Tuesday. Skipped.</div>' +
+        '<div class="d-sec">Actions</div><div class="d-actions"><button class="d-act" type="button">Watch for restock</button></div>' };
+    },
+    "sunbit": function () {
+      return { title: "Financing offer, RO #4189", sub: "2014 Chevy Tahoe, the Hendersons, via Sunbit", html:
+        '<div class="d-sec">Offer <span class="via">via Sunbit</span></div>' +
+        kv("Ticket", "$2,150.00, transmission service") + kv("Prequalified", "Yes, soft check only") +
+        kv("Plan", "6 months, $358/mo") + kv("Offered", "In nudge #2, this morning 8:30 AM") +
+        '<div class="d-note">Big tickets are where approvals die. A monthly number in the nudge text is a big part of the 61% to 78% approval climb.</div>' +
+        '<div class="d-sec">Actions</div><div class="d-actions"><button class="d-act" type="button">Resend the offer</button><button class="d-act" type="button">Open RO #4189</button></div>' };
+    },
+    "comp-you": function () {
+      return { title: "Precision Auto Care, 4.9", sub: "327 Google reviews, via Google Business Profile", html:
+        '<div class="d-sec">This month <span class="via">via Google Business Profile</span></div>' +
+        kv("New reviews", "+9") + kv("Requests sent", "14, one hour after pickup") + kv("Unhappy routed private", "2, straight to Gary") +
+        '<div class="d-note">Review velocity is the local ranking lever. Nine a month keeps Precision on top of "auto repair Tulsa".</div>' +
+        '<div class="d-sec">Actions</div><div class="d-actions"><button class="d-act" type="button">Open Business Profile</button></div>' };
+    },
+    "comp-tulsa": function () {
+      return { title: "Tulsa Auto Pros, 4.4", sub: "156 Google reviews, via Google Business Profile", html:
+        '<div class="d-sec">This month</div>' + kv("New reviews", "+2") + kv("Trend", "Flat since March") +
+        '<div class="d-note">The shop down the street the missed calls used to go to.</div>' };
+    },
+    "comp-midtown": function () {
+      return { title: "Midtown Motors, 4.1", sub: "89 Google reviews, via Google Business Profile", html:
+        '<div class="d-sec">This month</div>' + kv("New reviews", "+1") + kv("Trend", "Two 1-star reviews in June, both about phone calls not returned") +
+        '<div class="d-note">Their last two bad reviews are the exact problem this system removes.</div>' };
+    }
+  };
+  function wireLiveDrawers() {
+    document.querySelectorAll("[data-ld]").forEach(function (el) {
+      el.classList.add("clickable");
+      el.addEventListener("click", function (e) {
+        if (e.target.closest("button") && !e.target.closest("[data-ld-open]")) return;
+        var f = LIVE[el.getAttribute("data-ld")];
+        if (!f) return;
+        var d = f();
+        openDrawer(d.title, d.sub, d.html);
+      });
+    });
+  }
+
+  /* ---------------- round 5: VIN decode card ---------------- */
+  var vinDone = false;
+  function runVinDecode(instant) {
+    var card = document.querySelector("#vin-decode");
+    if (!card || vinDone) return;
+    vinDone = true;
+    var btn = card.querySelector(".vin-decode-btn");
+    var scan = card.querySelector(".vin-scan");
+    var res = card.querySelector(".vin-result");
+    if (btn) { btn.disabled = true; btn.textContent = "Decoded"; }
+    function reveal() {
+      if (scan) scan.classList.remove("on");
+      if (res) res.classList.add("on");
+      toast("Decoded: 2018 Honda CR-V EX-L. RO #4221 write-up auto-filled in Tekmetric.");
+    }
+    if (instant || reduce) { reveal(); return; }
+    if (scan) scan.classList.add("on");
+    setTimeout(reveal, 750);
+  }
+  window.PTVinDecode = runVinDecode;
+
   /* ---------------- wire up ---------------- */
   ready(function () {
     entrance();
@@ -361,7 +491,11 @@
     grow(".barchart .fill", "height");
     grow(".cash-chart .cbar", "height");
     grow(".hourbar .f", "width");
+    grow(".rvc-bar .f", "width");
     wireDrill();
+    wireLiveDrawers();
+    var vbtn = document.querySelector("#vin-decode .vin-decode-btn");
+    if (vbtn) vbtn.addEventListener("click", function () { runVinDecode(false); });
     document.querySelectorAll(".side-cta, [data-new-ro]").forEach(function (b) {
       b.addEventListener("click", function (e) { e.preventDefault(); openModal(); });
     });

@@ -140,6 +140,50 @@
         </a>
       </section>
 
+      <div class="grid-2b">
+        <section class="card" id="card-reviews">
+          <div class="card-h"><h2>Reviews vs the Street</h2><span class="via">via Google Business Profile</span></div>
+          <div class="card-b">
+            <ul class="snap">
+              <li class="you" data-r5="rev-marlowe">
+                <span class="nm">Marlowe Hair Co.</span>
+                <span class="rt tnum">4.9</span>
+                <span class="starbar"><i style="width:98%"></i></span>
+                <span class="ct">212 reviews</span>
+                <span class="vel pill plum">+18 this month</span>
+              </li>
+              <li data-r5="rev-luxe">
+                <span class="nm">Luxe &amp; Co Salon</span>
+                <span class="rt tnum">4.5</span>
+                <span class="starbar"><i style="width:90%"></i></span>
+                <span class="ct">148 reviews</span>
+                <span class="vel pill mut">+6 this month</span>
+              </li>
+              <li data-r5="rev-blowout">
+                <span class="nm">The Blowout Bar</span>
+                <span class="rt tnum">4.3</span>
+                <span class="starbar"><i style="width:86%"></i></span>
+                <span class="ct">96 reviews</span>
+                <span class="vel pill mut">+3 this month</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card" id="card-sync">
+          <div class="card-h"><h2>Today's Book, Synced</h2><span class="via">via Square Appointments</span></div>
+          <div class="card-b">
+            <div class="sync-line"><span class="dot"></span><b>31 appointments synced</b> &middot; 6 checked in &middot; last sync 2 min ago</div>
+            <div class="slots-l">Next open slots the AI is offering</div>
+            <div class="slots">
+              <button class="slot" type="button" data-r5="slot-1">Today 4:15 PM <span class="d">Brooke</span></button>
+              <button class="slot" type="button" data-r5="slot-2">Sat 11:30 AM <span class="d">Marissa</span></button>
+              <button class="slot" type="button" data-r5="slot-3">Sat 2:00 PM <span class="d">Chair 6</span></button>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <div class="grid-2">
         <section class="card" id="card-revenue">
           <div class="card-h"><h2>Revenue Trend</h2><span class="note">Weekly, last 8 weeks</span></div>
@@ -299,6 +343,12 @@ window.TOUR = [
   { el: "#chips", side: "bottom",
     title: "What needs you today.",
     body: "Two chairs open Saturday, four color clients drifting past their window, three reviews waiting on a reply. Each one is a link, not a memory you have to hold behind the chair." },
+  { el: "#card-reviews", side: "bottom",
+    title: "The whole street, scored.",
+    body: "Live from Google Business Profile: Marlowe at <b>4.9 with 212 reviews</b>, adding 18 a month, next to Luxe &amp; Co at 4.5 and The Blowout Bar at 4.3. A new client comparing listings sees this gap before she ever calls. Click any row for the story behind the number." },
+  { el: "#card-sync", side: "bottom",
+    title: "The book, live from Square.",
+    body: "Today's 31 appointments, synced 2 minutes ago. And the empty hours are not just empty: the AI surfaces the next open slots and is already offering them to matching waitlist clients." },
   { el: "#nav-ask", elm: "#mnav-more", side: "right",
     title: "Ask it anything, in plain words.",
     body: "\"Who's overdue for color?\" \"How does tomorrow look?\" \"What did we recover this month?\" The Ask page answers from the salon's own numbers. Try it after the tour." },

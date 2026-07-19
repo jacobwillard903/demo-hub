@@ -653,3 +653,90 @@ button.side-new{display:block;width:calc(100% - 8px)}
   .match-grid{grid-template-columns:1fr}
   .int-grid{grid-template-columns:1fr}
 }
+
+/* ============================================================
+   round 5 — live-data showcases
+   Source-tagged widgets: reviews snapshot, Square sync, channel
+   inbox, payout ledger, tips pass-through, online retail feed.
+   ============================================================ */
+
+/* the quiet proof-of-integration tag */
+.via{font-size:11px;color:var(--muted);font-weight:400;white-space:nowrap;letter-spacing:.01em}
+.card-h .via{margin-left:auto}
+.card-h .note+.via,.card-h .via+.note{margin-left:12px}
+
+/* reviews competitive snapshot */
+.snap{list-style:none}
+.snap li{display:grid;grid-template-columns:minmax(120px,1.3fr) auto minmax(70px,1fr) auto;align-items:center;gap:12px;
+  padding:11px 10px;border-bottom:1px solid var(--line);border-radius:6px;font-size:13.5px}
+.snap li:last-child{border-bottom:none}
+.snap li.you{background:var(--plum-soft);border:1px solid var(--plum-line);margin-bottom:6px}
+.snap .nm{font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.snap li.you .nm{color:var(--plum-ink)}
+.snap .rt{font-family:var(--serif);font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
+.snap li.you .rt{color:var(--plum)}
+.snap .starbar{height:7px;border-radius:999px;background:var(--shade);overflow:hidden;min-width:60px}
+.snap .starbar i{display:block;height:100%;border-radius:999px;background:var(--line-2)}
+.snap li.you .starbar i{background:var(--plum)}
+.snap .ct{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.snap .vel{justify-self:end}
+
+/* square sync strip */
+.sync-line{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--text-2);flex-wrap:wrap}
+.sync-line .dot{width:8px;height:8px;border-radius:50%;background:var(--good);flex:none}
+.sync-line b{color:var(--ink);font-weight:600}
+.slots{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.slot{
+  display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--plum);
+  background:var(--card);border:1px dashed var(--plum-line);border-radius:999px;padding:7px 13px;
+  cursor:pointer;transition:background .14s var(--ease),border-color .14s var(--ease);
+}
+.slot:hover{background:var(--plum-soft);border-style:solid}
+.slot .d{font-family:var(--mono);font-size:10.5px;color:var(--muted);font-weight:400}
+.slots-l{font-size:11.5px;color:var(--muted);margin-top:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+
+/* channel chips (front desk feed) */
+.chan{font-size:11px;font-weight:600;border-radius:5px;padding:2.5px 8px;white-space:nowrap;flex:none}
+.chan.ig{background:#f3e8f2;color:#8a3d78}
+.chan.sms{background:var(--good-soft);color:var(--good)}
+.chan.call{background:var(--warn-soft);color:var(--warn)}
+.chan.web{background:var(--shade);color:var(--text-2)}
+
+/* mini segmented bar (bookings by channel, online vs in-chair) */
+.minibar{margin-top:14px}
+.minibar .progressbar{height:12px}
+.minibar-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--text-2);margin-top:9px}
+.minibar-legend .sw{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.minibar-legend b{font-variant-numeric:tabular-nums}
+
+/* payout ledger + tips pass-through */
+.rows .mt{color:var(--muted);font-size:12px;white-space:nowrap}
+.tipflow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;color:var(--text-2);margin-bottom:14px}
+.tipflow .n{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-weight:600;color:var(--ink);white-space:nowrap}
+.tipflow .n.z{background:var(--plum-soft);border-color:var(--plum-line);color:var(--plum-ink)}
+.tipflow .ar{color:var(--muted);flex:none}
+.tiprow{display:grid;grid-template-columns:70px 1fr 62px;align-items:center;gap:12px;padding:7px 0;font-size:12.5px}
+.tiprow .who{font-weight:600}
+.tiprow .amt{text-align:right;font-variant-numeric:tabular-nums;color:var(--text-2)}
+.stockbar.plum i{background:var(--plum)}
+
+/* integrations: "where you'll see it" + live deep link */
+.int .see{border-top:1px solid var(--line);margin-top:auto;padding-top:10px;font-size:12px;color:var(--text-2);line-height:1.5}
+.int .see .k{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:3px}
+.int .golive{display:inline-flex;align-items:center;gap:4px;margin-top:7px;font-size:12.5px;font-weight:600;color:var(--plum)}
+.int .golive:hover{color:var(--plum-deep);text-decoration:underline}
+
+/* deep-link landing highlight */
+.hl-target{animation:hlpulse 1.8s var(--ease) 1}
+@keyframes hlpulse{0%{box-shadow:0 0 0 3px var(--plum)}100%{box-shadow:0 0 0 3px transparent}}
+@media(prefers-reduced-motion:reduce){.hl-target{animation:none;box-shadow:0 0 0 2px var(--plum-line)}}
+
+@media(max-width:900px){
+  .snap li{grid-template-columns:1fr auto;grid-template-rows:auto auto;row-gap:6px}
+  .snap .starbar{display:none}
+  .snap .ct{grid-column:1;text-align:left}
+  .snap .vel{grid-row:1/3;align-self:center}
+  .tiprow{grid-template-columns:64px 1fr 58px}
+  .tipflow .ar{display:none}
+  .tipflow .n{flex:1;text-align:center}
+}

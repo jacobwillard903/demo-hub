@@ -186,7 +186,7 @@
               </tr>
               <tr>
                 <td class="who"><b>Marketing</b><span>Meta lead ads</span></td>
-                <td>$21.70 per lead this month</td>
+                <td>$21.67 per lead, see Leads &amp; Trials</td>
                 <td class="num">$650</td>
               </tr>
               <tr>
@@ -232,6 +232,36 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="card mt" id="stripe-engine">
+        <div class="card-head"><h2>Autopay Engine</h2><span class="hd-tags"><span class="chip good"><span class="dot good"></span>$769 of $922 recovered</span><span class="via">via Stripe</span></span></div>
+        <div class="card-body" style="padding-bottom:6px">
+          <div class="cascade">
+            <div class="cas-step bad"><div class="t">Jul 1, autopay run</div><div class="x"><b>6 charges failed</b>, expired or replaced cards, $922 at risk</div></div>
+            <div class="cas-step good"><div class="t">Jul 2, 7:00 AM</div><div class="x"><b>Smart retry recovered 2</b>, $307, before anyone woke up</div></div>
+            <div class="cas-step good"><div class="t">Jul 2, 10:15 AM</div><div class="x"><b>3 parents texted a secure card link</b>, all recovered by Jul 4, $462</div></div>
+            <div class="cas-step warn"><div class="t">Still open</div><div class="x"><b>The Hansen family, $153</b>, warm second reminder queued Friday</div></div>
+          </div>
+        </div>
+        <div class="rowlist" id="payout-ledger">
+          <div class="row" data-drill='{"title":"Payout $2,340","sub":"Landed Thursday, July 17","kv":[["Amount","$2,340.00"],["Landed","Thursday, July 17"],["Matched to","9 invoices: 6 tuition, 2 intro offers, 1 testing fee"],["Bank deposit","Tied Friday 7:05 AM"]],"tl":[{"t":"Thursday","txt":"Payout landed in the operating account.","hot":false},{"t":"Friday 7:05 AM","txt":"Matched to its 9 invoices and the bank deposit before the first class.","hot":true}]}'>
+            <span class="ico" style="background:#1e7f4f"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg></span>
+            <span class="rt"><b>Payout $2,340, landed Thursday</b><span>Matched to 9 invoices: 6 tuition, 2 intros, 1 testing fee</span></span>
+            <span class="rmeta"><span class="chip good"><span class="dot good"></span>Matched</span></span>
+          </div>
+          <div class="row" data-drill='{"title":"Payout $1,118","sub":"Landed Tuesday, July 15","kv":[["Amount","$1,118.00"],["Landed","Tuesday, July 15"],["Matched to","5 invoices: pro shop and testing fees"],["Bank deposit","Tied Wednesday 7:05 AM"]],"tl":[{"t":"Tuesday","txt":"Payout landed, mostly gi and sparring gear sales.","hot":false},{"t":"Wednesday","txt":"Matched and filed to the retail line in QuickBooks.","hot":true}]}'>
+            <span class="ico" style="background:#1e7f4f"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg></span>
+            <span class="rt"><b>Payout $1,118, landed Tuesday</b><span>Matched to 5 invoices: pro shop and testing fees</span></span>
+            <span class="rmeta"><span class="chip good"><span class="dot good"></span>Matched</span></span>
+          </div>
+          <div class="row" data-drill='{"title":"Payout $19,407","sub":"Landed July 3, the big tuition run","kv":[["Amount","$19,407.00"],["Landed","Thursday, July 3"],["Matched to","168 invoices from the July 1 autopay run"],["Includes","The 2 charges the smart retry brought back"]],"tl":[{"t":"Jul 1","txt":"Autopay run billed 180 students across four programs.","hot":false},{"t":"Jul 3","txt":"Payout landed and reconciled against all 168 invoices, to the dollar.","hot":true}]}'>
+            <span class="ico" style="background:#16233b"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 8.5h-5.5a2 2 0 000 4h3a2 2 0 010 4H8"/><path d="M12 6v12"/></svg></span>
+            <span class="rt"><b>Payout $19,407, landed July 3</b><span>The July 1 tuition run, matched to 168 invoices</span></span>
+            <span class="rmeta"><span class="chip good"><span class="dot good"></span>Matched</span></span>
+          </div>
+        </div>
+        <div class="tbl-note">Every payout is matched to its invoices and the bank deposit the morning it lands. Failed charges walk the retry path above instead of sitting unnoticed at the front desk.</div>
       </section>
 
       <section class="grid g23 mt">
@@ -315,6 +345,8 @@ window.TOUR = [
     body: "Everything on this page is live from QuickBooks Online, synced minutes ago. <b>$27,061 in, $14,259 out, $12,802 net</b> at a 47% margin, and Coach Ray has not logged into QuickBooks since March." },
   { el: "#pl-card", side: "right", title: "A P&L that speaks academy",
     body: "Tuition by program, <b>testing fees</b>, intro offers, and pro shop retail on one side. Rent, instructor payroll, insurance, and mats on the other. The tuition lines tie to the <b>$24,900 MRR</b> on the dashboard, to the dollar." },
+  { el: "#stripe-engine", side: "top", title: "Watch a failed payment fix itself",
+    body: "July 1: 6 autopays fail, <b>$922 at risk</b>. Next morning the smart retry brings back 2, a text with a card link recovers 3 more, and <b>$769 is home in 72 hours</b>. Below the cascade, every payout lands already matched to its invoices." },
   { el: "#recovery-card", side: "left", title: "Failed tuition no longer just leaks",
     body: "6 autopays failed on July 1, <b>$922 at risk</b>. The assistant retried the cards and texted parents an update link: <b>5 recovered, $769</b>, no awkward front-desk conversation. One warm reminder still working." },
   { el: "#bookkeeper-feed", side: "left", title: "A bookkeeper that never sleeps",

@@ -235,16 +235,57 @@
         </section>
       </div>
 
-      <section class="card" id="money-tips" style="margin-top:14px">
-        <div class="card-h"><h2>Tips</h2><span class="note">Handled, not tangled</span></div>
-        <div class="card-b">
-          <div class="stat-row" style="grid-template-columns:repeat(3,1fr)">
-            <div class="big-stat"><div class="n tnum">$6,240</div><div class="l">Card tips collected this month</div></div>
-            <div class="big-stat"><div class="n tnum">100%</div><div class="l">Auto-split and paid out to stylists</div></div>
-            <div class="big-stat"><div class="n tnum">$0</div><div class="l">Tips miscounted as revenue</div></div>
+      <div class="grid-2">
+        <section class="card" id="money-payouts">
+          <div class="card-h"><h2>Payouts, Matched to the Books</h2><span class="note">This week</span><span class="via">via Square</span></div>
+          <div class="card-b">
+            <ul class="rows">
+              <li data-r5="pay-1">
+                <span class="when tnum">Tomorrow</span>
+                <span class="who"><b>$1,284</b> <span class="svc">&middot; 14 tickets, tips already split out</span></span>
+                <span class="pill mut">Scheduled</span>
+              </li>
+              <li data-r5="pay-2">
+                <span class="when tnum">Thu</span>
+                <span class="who"><b>$2,180</b> <span class="svc">&middot; landed, matched to 31 tickets to the penny</span></span>
+                <span class="pill good">Matched</span>
+              </li>
+              <li data-r5="pay-3">
+                <span class="when tnum">Wed</span>
+                <span class="who"><b>$1,940</b> <span class="svc">&middot; landed, 27 tickets, one refund netted correctly</span></span>
+                <span class="pill good">Matched</span>
+              </li>
+              <li data-r5="pay-4">
+                <span class="when tnum">Tue</span>
+                <span class="who"><b>$1,730</b> <span class="svc">&middot; landed, 24 tickets incl. Saturday retail spillover</span></span>
+                <span class="pill good">Matched</span>
+              </li>
+              <li data-r5="pay-5">
+                <span class="when tnum">Mon</span>
+                <span class="who"><b>$2,050</b> <span class="svc">&middot; weekend settlement, 29 tickets, $402 tips through</span></span>
+                <span class="pill good">Matched</span>
+              </li>
+            </ul>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section class="card" id="money-tips">
+          <div class="card-h"><h2>Tips Pass-Through</h2><span class="note">This month</span><span class="via">via Square</span></div>
+          <div class="card-b">
+            <div class="tipflow">
+              <span class="n tnum">$6,240 collected</span><span class="ar">&#8594;</span>
+              <span class="n">split 5 stylists</span><span class="ar">&#8594;</span>
+              <span class="n">100% paid out</span><span class="ar">&#8594;</span>
+              <span class="n z tnum">$0 to revenue</span>
+            </div>
+            <div class="tiprow"><span class="who">Danielle</span><span class="stockbar plum"><i style="width:100%"></i></span><span class="amt tnum">$1,610</span></div>
+            <div class="tiprow"><span class="who">Brooke</span><span class="stockbar plum"><i style="width:92%"></i></span><span class="amt tnum">$1,480</span></div>
+            <div class="tiprow"><span class="who">Marissa</span><span class="stockbar plum"><i style="width:80%"></i></span><span class="amt tnum">$1,290</span></div>
+            <div class="tiprow"><span class="who">Elise</span><span class="stockbar plum"><i style="width:64%"></i></span><span class="amt tnum">$1,030</span></div>
+            <div class="tiprow"><span class="who">Nikki</span><span class="stockbar plum"><i style="width:52%"></i></span><span class="amt tnum">$830</span></div>
+          </div>
+        </section>
+      </div>
 
       <p class="foot-note">Demo data, illustrative numbers.</p>
     </main>
@@ -266,9 +307,9 @@ window.TOUR = [
   { el: "#money-book", side: "left",
     title: "The bookkeeper works nights too.",
     body: "41 transactions categorized, tips split out per stylist, payouts matched to the bank, a duplicate charge caught, and Nikki's late booth rent chased, politely, with Dana's approval. That used to be a Sunday." },
-  { el: "#money-tips", side: "top",
-    title: "Tips stop being a spreadsheet fight.",
-    body: "$6,240 in card tips this month, auto-split, paid out, and kept out of revenue. Next: proof it plugs into the tools the salon already runs on." }
+  { el: "#money-payouts", side: "top",
+    title: "Every payout, matched before it lands.",
+    body: "The week's Square deposits, each reconciled to its tickets automatically, with <b>$6,240 of tips</b> split to 5 stylists and kept out of revenue entirely. Alongside it, the pass-through, visualized. Next: proof it plugs into the tools the salon already runs on." }
 ];
 window.TOUR_NEXT = { href: "app-integrations.html", label: "Next: Integrations" };
 </script>

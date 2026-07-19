@@ -78,6 +78,15 @@
         <span class="wb-meta">Reshuffle drafted 8:01 PM, sent 6:04 AM</span>
       </div>
 
+      <div class="card" id="nws-hourly" style="margin:14px 0">
+        <div class="card-head">
+          <h2>Hour by Hour, Wednesday in Overland</h2>
+          <span class="via-tag">via National Weather Service</span>
+        </div>
+        <div class="nws-hours" id="nwsh-mount"></div>
+        <div class="cas-foot">The band that crosses your 80% rule runs <b>9 AM to 1 PM</b>, straight through Route B's mowing window. That is the shape the reshuffle read at 8:00 PM Tuesday, and why the move texts went out at 6:04 AM instead of a 10 AM scramble in the rain.</div>
+      </div>
+
       <div class="stat-banner" id="rd-banner">
         <div class="sb"><div class="v">14</div><div class="l">Customers moved, all texted 6:04 AM</div></div>
         <div class="divider"></div>
@@ -135,6 +144,23 @@
         </div>
       </div>
 
+      <div class="card" id="route-map-card" style="margin-bottom:14px">
+        <div class="card-head">
+          <h2>Thursday's Line, Re-Sequenced</h2>
+          <span class="via-tag">via Google Maps</span>
+        </div>
+        <div class="map-scroll">
+          <div id="route-map-mount"></div>
+        </div>
+        <div class="map-stats">
+          <div class="map-stat"><b>14</b> stops on the moved line</div>
+          <div class="map-stat"><b>4.2</b> stops per mile of route</div>
+          <div class="map-stat"><b>1h 48m</b> total drive time</div>
+          <div class="map-stat hot"><b>11 mi</b> saved vs the old order</div>
+        </div>
+        <div class="cas-foot">The faint dashed line is Wednesday's original order, built up over years of adding stops wherever they landed. The solid line is Thursday, re-sequenced tightest-first the same night. Same 14 lawns, <b>11 fewer miles</b>, and Karen Delgado's first cut slotted in as stop 14 without pushing anyone. Click any pin.</div>
+      </div>
+
       <div class="grid-2">
         <div class="card" id="notify-card">
           <div class="card-head"><h2>14 Customers Notified at 6:04 AM</h2><span class="link tnum">6 replies, all handled</span></div>
@@ -184,9 +210,15 @@ window.TOUR = [
   { el: "#weather-banner",
     title: "The forecast pulls the trigger, not you.",
     body: "Tuesday 8:00 PM the National Weather Service feed crossed your washout rule: 90% rain, 1.1 inches. The reshuffle drafted itself <b>one minute later</b>. You saw a finished plan, not a problem." },
+  { el: "#nws-hourly",
+    title: "It reads the shape of the day, not just the number.",
+    body: "The heavy band sits <b>9 AM to 1 PM</b>, right on top of Route B's mowing window. That is the read that made the call. The 6:04 AM text mark is where the decision left the building.", side: "top" },
   { el: "#board-after",
     title: "Wednesday struck, Thursday rebuilt.",
     body: "Route B's <b>14 stops slid to Thursday</b> and the day re-sequenced tightest-first, <b>11 fewer drive miles</b> than just tacking them on. The crew got a shop day; the Kowalski drain prep still moved. About <b>$1,690</b> of cuts kept on the books.", side: "left" },
+  { el: "#route-map-card",
+    title: "The same 14 lawns, eleven fewer miles.",
+    body: "Wednesday's old order (the faint dashed line) wandered because stops got added wherever they landed. Thursday re-sequenced tightest-first: <b>4.2 stops per mile</b>, 1h 48m of driving, and Delgado's first cut absorbed as stop 14. Click any pin for that customer.", side: "top" },
   { el: "#notify-card",
     title: "14 texts at 6:04 AM. Zero from your thumbs.",
     body: "Every moved customer got the same calm message before breakfast. Six replied; all six were handled, including one Friday re-slot. The old way was 30 to 40 one-at-a-time texts from the couch, or silence and an angry review.", side: "right" },
@@ -197,6 +229,7 @@ window.TOUR = [
 window.TOUR_NEXT = { href: "app-billing.html", label: "Next: Plans + AR Autopilot" };
 </script>
 <script src="assets/data.js"></script>
+<script src="assets/showcase.js"></script>
 <script src="assets/tour.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/interact.js"></script>

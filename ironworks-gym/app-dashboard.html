@@ -88,6 +88,37 @@
         </div>
       </div>
 
+      <div class="card stack" id="today-strip">
+        <div class="card-h"><h2>Your Friday</h2><div class="hint">classes, intros, and holds, assembled overnight</div><span class="via">via Google Calendar</span></div>
+        <div class="calstrip">
+          <div class="cev">
+            <div class="ct">6:00 AM</div>
+            <b>Barbell Strength</b>
+            <div class="cs">You coach &middot; 12 of 14 booked</div>
+          </div>
+          <div class="cev">
+            <div class="ct">6:30 AM</div>
+            <b>Intro: Devon Marsh</b>
+            <div class="cs">With Tyler &middot; meet prep, confirmed</div>
+          </div>
+          <div class="cev">
+            <div class="ct">9:30 AM</div>
+            <b>Vendor call: Rogue rack order</b>
+            <div class="cs">Notes prepped against June's equipment line</div>
+          </div>
+          <div class="cev">
+            <div class="ct">12:00 PM</div>
+            <b>Programming block</b>
+            <div class="cs">Next week's cycle &middot; 45 min held for you</div>
+          </div>
+          <div class="cev now">
+            <div class="ct">5:30 PM</div>
+            <b>Evening Strength</b>
+            <div class="cs">Full, 14 of 14 &middot; Big Tom will be there</div>
+          </div>
+        </div>
+      </div>
+
       <div class="kpis" id="kpi-row">
         <div class="kpi" data-link="app-money.html">
           <div class="l">Monthly Recurring Revenue</div>
@@ -137,6 +168,37 @@
           <span class="lbl">Sub request open</span>
           <span class="chev">&#8250;</span>
         </a>
+      </div>
+
+      <div class="card stack" id="reviews-snapshot">
+        <div class="card-h"><h2>How You Stack Up Locally</h2><div class="hint">checked every Monday, review asks sent at the 30-day PR moment</div><span class="via">via Google Business Profile</span></div>
+        <div>
+          <div class="rev-row you">
+            <div class="rv-n"><b>Ironworks Strength Co.</b><small>you</small></div>
+            <div class="rv-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="rv-score">4.9</div>
+            <div class="meter"><i class="green" style="width:98%"></i></div>
+            <div class="rv-cnt">186 reviews</div>
+            <div class="rv-vel up">+14 this month</div>
+          </div>
+          <div class="rev-row">
+            <div class="rv-n"><b>Midwest Barbell Club</b><small>3.4 miles away</small></div>
+            <div class="rv-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#189;</div>
+            <div class="rv-score">4.6</div>
+            <div class="meter"><i style="width:92%"></i></div>
+            <div class="rv-cnt">112 reviews</div>
+            <div class="rv-vel flat">+4 this month</div>
+          </div>
+          <div class="rev-row">
+            <div class="rv-n"><b>Flex Factory Fitness</b><small>2.1 miles away</small></div>
+            <div class="rv-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            <div class="rv-score">4.3</div>
+            <div class="meter"><i style="width:86%"></i></div>
+            <div class="rv-cnt">61 reviews</div>
+            <div class="rv-vel flat">+1 this month</div>
+          </div>
+        </div>
+        <div class="tbl-note">Anyone searching "gym near me" sees these three side by side. The AI asks happy members for a review right after their 30-day PR, which is why your count grows 14 a month while theirs grow by 1 and 4.</div>
       </div>
 
       <div class="grid grid-2 stack">
@@ -279,6 +341,9 @@ window.TOUR = [
   { el: null,
     title: "Meet Ironworks' AI ops layer.",
     body: "One system sitting on top of PushPress. It chases failed cards, answers leads, watches for quiet members, runs the schedule, and keeps the books, all in your voice, all while you coach. A few minutes, nine screens." },
+  { el: "#today-strip", side: "bottom",
+    title: "Your Friday, already assembled.",
+    body: "The classes you coach, Devon's 6:30 intro, the Rogue vendor call, and a flag on the 5:30: Big Tom is booked in and his card needs a 20-second conversation. Pulled from Google Calendar overnight; every intro the concierge books lands here on its own." },
   { el: "#kpi-row", side: "bottom",
     title: "The numbers you check at 5 AM, in one row.",
     body: "MRR <b>$28,300</b>, 240 members, churn down to <b>3.2%</b> from 5.1%. And the one owners never see: <b>$1,240</b> of failed payments recovered this month without you sending a single text." },
@@ -288,6 +353,9 @@ window.TOUR = [
   { el: "#alert-chips", side: "bottom",
     title: "Only what actually needs you.",
     body: "Everything else got handled overnight. These three are the exceptions: 2 cards still declining, 3 intros to confirm, 1 sub request. Each one is a click away." },
+  { el: "#reviews-snapshot", side: "top",
+    title: "It watches your competitors' reviews too.",
+    body: "You: <b>4.9</b> across 186 reviews, growing <b>+14 a month</b>. Midwest Barbell: 4.6 (112). Flex Factory: 4.3 (61). Live from Google Business Profile, and the AI earns that velocity by asking happy members right after their 30-day PR. Click any row for the detail." },
   { el: "#nav-ask", elm: "#bn-more", side: "right",
     title: "Or just ask.",
     body: "Anything on these screens is one question away. \"How much did we recover this month?\" \"Who is at risk?\" The Ask tab (under More on your phone) answers in plain English from the same live numbers." },

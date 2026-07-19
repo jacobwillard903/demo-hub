@@ -433,6 +433,80 @@ a:focus-visible,button:focus-visible{outline:2px solid #8194b8;outline-offset:2p
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tbl-scroll .tbl{min-width:100%}
 
+/* ---------- round 5: live-data showcases ---------- */
+.main [id]{scroll-margin-top:76px}
+.via{font-size:11px;font-weight:600;color:var(--muted-2);white-space:nowrap;letter-spacing:.01em}
+.hd-tags{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+
+/* Meta lead ads funnel */
+.mf-row{padding:13px 18px;border-bottom:1px solid var(--border)}
+.mf-row:last-child{border-bottom:none}
+.mf-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:9px}
+.mf-head b{font-size:13.5px;font-weight:600;display:block}
+.mf-sub{font-size:12px;color:var(--muted)}
+.mf-nums{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:9px;font-size:12.5px;color:var(--text-2)}
+.mf-nums b{color:var(--ink);font-variant-numeric:tabular-nums;font-weight:700}
+.mf-nums .hot b{color:var(--brand)}
+
+/* Stripe retry cascade */
+.cascade{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:6px 2px 2px}
+.cas-step{position:relative;padding:20px 16px 2px 0}
+.cas-step::after{content:"";position:absolute;top:5px;left:16px;right:4px;height:2px;background:var(--border);border-radius:1px}
+.cas-step:last-child::after{display:none}
+.cas-step::before{content:"";position:absolute;top:0;left:0;width:12px;height:12px;border-radius:50%;background:var(--info);border:3px solid var(--info-bg);z-index:1}
+.cas-step.good::before{background:var(--good);border-color:var(--good-bg)}
+.cas-step.bad::before{background:var(--bad);border-color:var(--bad-bg)}
+.cas-step.warn::before{background:var(--warn);border-color:var(--warn-bg)}
+.cas-step .t{font-size:11.5px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+.cas-step .x{font-size:13px;color:var(--text-2);line-height:1.5;margin-top:3px}
+.cas-step .x b{color:var(--ink)}
+@media(prefers-reduced-motion:no-preference){
+  .cas-step{animation:rise .3s var(--ease) both}
+  .cas-step:nth-child(2){animation-delay:.12s}
+  .cas-step:nth-child(3){animation-delay:.24s}
+  .cas-step:nth-child(4){animation-delay:.36s}
+}
+
+/* Google Calendar day strip */
+.daystrip{display:flex;gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:16px 18px}
+.day-blk{flex:0 0 auto;min-width:158px;max-width:220px;border:1px solid var(--border);border-left:3px solid var(--info);border-radius:9px;background:#fafbfc;padding:10px 13px}
+.day-blk.brand{border-left-color:var(--brand)}
+.day-blk.good{border-left-color:var(--good)}
+.day-blk .t{font-size:11.5px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+.day-blk .n{font-size:13.5px;font-weight:600;margin-top:2px;line-height:1.35}
+.day-blk .s{font-size:12px;color:var(--text-2);margin-top:2px;line-height:1.4}
+@media(prefers-reduced-motion:no-preference){
+  .day-blk{animation:rise .28s var(--ease) both}
+  .day-blk:nth-child(2){animation-delay:.07s}
+  .day-blk:nth-child(3){animation-delay:.14s}
+  .day-blk:nth-child(4){animation-delay:.21s}
+  .day-blk:nth-child(5){animation-delay:.28s}
+  .day-blk:nth-child(6){animation-delay:.35s}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .day-blk,.rev-tile,.mf-row{transition:transform .16s var(--ease),box-shadow .16s var(--ease),border-color .14s var(--ease),background .14s var(--ease)}
+  .day-blk:hover,.rev-tile:hover{transform:translateY(-2px);box-shadow:0 8px 22px -12px rgba(17,28,48,.25)}
+  .mf-row:hover{background:#fafbfd}
+}
+
+/* Google reviews scoreboard */
+.rev-grid{align-items:stretch}
+.rev-tile{border:1px solid var(--border);border-radius:9px;padding:14px 16px;background:#fafbfc}
+.rev-tile.you{border-color:var(--brand);background:var(--card);box-shadow:0 6px 18px -12px rgba(179,49,45,.35)}
+.rev-name{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.rev-name b{font-size:13.5px;font-weight:600}
+.rev-score{font-size:28px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin:6px 0 8px}
+.rev-score span{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}
+.rev-sub{font-size:12px;color:var(--text-2);margin-top:8px;line-height:1.45}
+.rev-tile.you .rev-sub b{color:var(--good)}
+
+/* integrations: where you'll see it */
+.int-see{margin-top:12px;border-top:1px solid var(--border);padding-top:10px;font-size:12.5px;color:var(--text-2);line-height:1.55}
+.int-see>b{color:var(--ink);font-weight:600}
+.see-live{display:inline-flex;align-items:center;gap:4px;font-weight:600;color:var(--info);font-size:12.5px;margin-top:7px}
+.see-live:hover{text-decoration:underline}
+.see-live svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
 /* responsive */
 @media(max-width:1180px){
   .kpi-row{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -488,6 +562,16 @@ a:focus-visible,button:focus-visible{outline:2px solid #8194b8;outline-offset:2p
   .modal .fld input[type=text],.modal .fld input[type=tel],.modal .fld select{font-size:16px;padding:11px 12px}
   .modal .mo-foot{padding-bottom:calc(16px + env(safe-area-inset-bottom))}
   .modal .mo-foot .btn,.welcome .w-btns .btn{min-height:44px}
+
+  /* round 5 mobile: cascade stacks vertical, strips scroll in-card */
+  .cascade{grid-template-columns:1fr;padding:4px 2px 2px 4px}
+  .cas-step{padding:0 0 18px 24px}
+  .cas-step::before{top:2px}
+  .cas-step::after{top:16px;left:5px;right:auto;bottom:0;width:2px;height:auto}
+  .mf-row{padding:12px 14px}
+  .rev-grid{grid-template-columns:1fr}
+  .daystrip{padding:14px}
+  .int-see .see-live{min-height:44px;align-items:center}
 
   .ask-bar{bottom:calc(64px + env(safe-area-inset-bottom))}
   .ask-bar input{font-size:16px}

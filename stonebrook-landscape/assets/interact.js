@@ -55,7 +55,9 @@
   function esc(s) {
     return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
-  // rec: { kind, title, sub, chips:[{txt,cls}], fields:[[k,v]], timeline:[[when,what]], actions:[label] }
+  // rec: { kind, title, sub, chips:[{txt,cls}], fields:[[k,v]], timeline:[[when,what]],
+  //        actions:[label], html: string|fn (trusted widget markup, e.g. the parcel sketch),
+  //        go: {href,label} (primary action that navigates) }
   function openDrawer(rec) {
     if (!drawerRoot) buildDrawer();
     var h = "";
@@ -67,6 +69,7 @@
       rec.chips.forEach(function (c) { h += '<span class="pill ' + (c.cls || "neutral") + '">' + esc(c.txt) + "</span>"; });
       h += "</div>";
     }
+    if (rec.html) h += typeof rec.html === "function" ? rec.html() : rec.html;
     if (rec.fields && rec.fields.length) {
       h += '<div class="dr-fields">';
       rec.fields.forEach(function (f) {
@@ -83,8 +86,11 @@
     }
     var actions = rec.actions && rec.actions.length ? rec.actions : ["Text customer", "Add a note"];
     h += '<div class="dr-actions">';
+    if (rec.go && rec.go.href) {
+      h += '<a class="btn btn-primary" href="' + esc(rec.go.href) + '">' + esc(rec.go.label || "See it live") + "</a>";
+    }
     actions.forEach(function (a, ix) {
-      h += '<button type="button" class="btn' + (ix === 0 ? " btn-primary" : "") + '" data-queue>' + esc(a) + "</button>";
+      h += '<button type="button" class="btn' + (ix === 0 && !(rec.go && rec.go.href) ? " btn-primary" : "") + '" data-queue>' + esc(a) + "</button>";
     });
     h += "</div>";
     h += '<div class="dr-foot">Demo data. In the live system these buttons hand the task to the assistant.</div>';
@@ -103,7 +109,13 @@
   var BANK = [
     { keys: ["delgado", "birchwood"], rec: { kind: "Lead, booked", title: "Karen Delgado", sub: "412 Birchwood Ln, 0.3 acre corner lot. Called while Dave was on the mower.",
       chips: [{ txt: "Booked", cls: "good" }, { txt: "Standard plan $180/mo", cls: "tan" }],
-      fields: [["Came in", "Missed call, Tue 10:42 AM"], ["Lot measure", "0.31 acre from the satellite view"], ["Quoted", "$52/cut or $180/mo standard plan"], ["She picked", "Monthly plan, card on file"], ["Scheduled", "Route B Westside, first cut this Thursday"]],
+      html: function () {
+        if (!window.SHOW) return "";
+        return '<div class="dr-sect">The lot, measured from the sky <span class="via-tag">via satellite lot measure</span></div>' +
+          '<div class="dr-parcel">' + window.SHOW.parcelSVG({ still: true }) + "</div>" +
+          '<div class="dr-quotemath"><span>Turf 9,400 sq ft</span><i>&#8594;</i><b>$52/cut</b><i>&#8594;</i><b>$180/mo</b></div>';
+      },
+      fields: [["Came in", "Missed call, Tue 10:42 AM"], ["Lot measure", "0.31 acre, turf 9,400 sq ft, beds 640"], ["Quoted", "$52/cut or $180/mo standard plan"], ["She picked", "Monthly plan, card on file"], ["Scheduled", "Route B Westside, first cut this Thursday"]],
       timeline: [["10:42 AM", "Call missed while Dave ran Route C. Assistant answered by text in 22 seconds."], ["10:44 AM", "Pulled the lot from the address, measured 0.31 acre, quoted both prices."], ["10:51 AM", "She chose the monthly plan. Card saved, welcome text sent."], ["10:52 AM", "Dropped onto Route B between two nearby stops, first cut Thursday. Zero extra windshield time."]],
       actions: ["Text Karen", "View Route B"] } },
     { keys: ["hollis"], rec: { kind: "Commercial bid", title: "Hollis Dental Group", sub: "Two-building office campus on Weldon Pkwy. Wants weekly service plus beds.",
@@ -346,12 +358,18 @@
       var kind = textOf(card, ".int-kind");
       var body = textOf(card, "p");
       var connected = card.textContent.indexOf("Connected") > -1;
+      var see = card.querySelector(".int-see");
+      var seeTxt = see ? textOf(see, ".is-where") : "";
+      var seeLink = see ? see.querySelector("a") : null;
       wireClick(card, function () {
+        var fields = [["What it does here", body]];
+        if (seeTxt) fields.push(["Where you'll see it", seeTxt]);
         openDrawer({
           kind: "Integration", title: name, sub: kind,
           chips: [{ txt: connected ? "Connected" : "Available", cls: connected ? "good" : "neutral" }],
-          fields: [["What it does here", body]],
+          fields: fields,
           timeline: connected ? [["Live", "Synced and healthy. Last activity within the hour."]] : [["Ready", "Connects in an afternoon. Nothing gets replaced."]],
+          go: seeLink ? { href: seeLink.getAttribute("href"), label: "See it live" } : null,
           actions: connected ? ["View sync log", "Pause sync"] : ["Connect it", "Learn more"]
         });
       });

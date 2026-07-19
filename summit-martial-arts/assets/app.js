@@ -163,7 +163,7 @@
   }
   function openDrawer(rec) {
     if (!dPanel) buildDrawer();
-    var tl = (window.SUMMIT && window.SUMMIT.timelines && window.SUMMIT.timelines[PAGE]) || (window.SUMMIT && window.SUMMIT.timelines["app-dashboard"]) || [];
+    var tl = rec.tl || (window.SUMMIT && window.SUMMIT.timelines && window.SUMMIT.timelines[PAGE]) || (window.SUMMIT && window.SUMMIT.timelines["app-dashboard"]) || [];
     var html =
       '<div class="d-head"><div><h3>' + esc(rec.title) + "</h3>" +
       (rec.sub ? '<div class="d-sub">' + esc(rec.sub) + "</div>" : "") +
@@ -230,18 +230,33 @@
   }
 
   function initDrill() {
+    // round 5: any element carrying data-drill opens the drawer with its own record + timeline
+    document.querySelectorAll("[data-drill]").forEach(function (el) {
+      el.classList.add("clickable");
+      el.setAttribute("tabindex", "0");
+      function open() {
+        var rec;
+        try { rec = JSON.parse(el.getAttribute("data-drill")); } catch (e) { return; }
+        openDrawer(rec);
+      }
+      el.addEventListener("click", open);
+      el.addEventListener("keydown", function (e) { if (e.key === "Enter") open(); });
+    });
     // table rows (skip P&L total lines with <b> in the amount col? keep all: every line drills)
     document.querySelectorAll(".card .tbl tbody tr").forEach(function (tr) {
+      if (tr.hasAttribute("data-drill")) return;
       tr.classList.add("clickable");
       tr.addEventListener("click", function () { openDrawer(recFromTableRow(tr)); });
     });
     // feed items (not on ask page)
     document.querySelectorAll(".feed .f-item").forEach(function (el) {
+      if (el.hasAttribute("data-drill")) return;
       el.classList.add("clickable");
       el.addEventListener("click", function () { openDrawer(recFromRow(el)); });
     });
     // row lists
     document.querySelectorAll(".rowlist .row").forEach(function (el) {
+      if (el.hasAttribute("data-drill")) return;
       el.classList.add("clickable");
       el.addEventListener("click", function () { openDrawer(recFromRow(el)); });
     });

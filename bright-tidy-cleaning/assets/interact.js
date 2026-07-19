@@ -186,7 +186,7 @@
       fields: [["Why Jen", "Floating today, 9 minutes away, knows the house"], ["Client text", "Arrival-window update sent at 6:53 AM, thumbs-up reply"]],
       timeline: [["6:46 AM", "Stop reassigned in the proposed re-route."], ["6:53 AM", "Client notified after your approval."]],
       actions: ["View Jen's route", "Text the Beaumonts"] } },
-    { keys: ["supply", "reorder", "microfiber"], rec: { kind: "Supplies", title: "Low-stock reorder", sub: "3 items low. Draft ready at KC Janitorial Supply.",
+    { keys: ["supply", "reorder", "microfiber", "draft order"], rec: { kind: "Supplies", title: "Low-stock reorder", sub: "3 items low. Draft ready at KC Janitorial Supply.",
       chips: [{ txt: "$86 draft", cls: "info" }],
       fields: [["Microfiber cloths", "Team B caddy under 10 left"], ["Hardwood cleaner", "1 refill left across teams"], ["Vacuum bags", "Team C Shark, last box open"]],
       timeline: [["Logged", "Crew leads mark low stock in their end-of-day text."], ["Now", "One tap places the order for Thursday delivery."]],
@@ -212,6 +212,56 @@
       fields: [["Change", "Thursday 1 PM to Friday 9 AM, their ask"], ["Freed slot", "Offered to the waitlist automatically"]],
       timeline: [["Tue", "Reschedule handled by text in 3 messages."], ["Tue", "Thursday 1 PM marked open and queued for offer."]],
       actions: ["View Friday's route", "Text the Hallers"] } },
+    { keys: ["payout $2,340", "$2,340"], rec: { kind: "Stripe payout", title: "Payout $2,340, landed Thursday", sub: "Per-visit autopay charges, batched by the processor.",
+      chips: [{ txt: "Matched to 9 invoices", cls: "good" }, { txt: "Reconciled", cls: "neutral" }],
+      fields: [["Gross charges", "$2,412 across 9 visits"], ["Processing fees", "$72, filed to Software & phone"], ["Net payout", "$2,340, landed Thursday"], ["Books", "Matched to the bank deposit and reconciled in QuickBooks automatically"]],
+      timeline: [["Wed", "9 visits marked complete, 9 cards charged."], ["Thu 6:10 AM", "Payout landed. Matched and reconciled before Melissa's coffee."]],
+      actions: ["View in QuickBooks", "See the 9 invoices"] } },
+    { keys: ["payout $1,880", "$1,880"], rec: { kind: "Stripe payout", title: "Payout $1,880, landed Monday", sub: "Includes the two invoices the reminder ladder collected.",
+      chips: [{ txt: "Matched to 7 invoices", cls: "good" }],
+      fields: [["Net payout", "$1,880, landed Monday"], ["Included", "The Foglers $150 and D. Reyes $120, both paid after reminder 1"], ["Books", "Matched and reconciled automatically"]],
+      timeline: [["Mon", "Payout landed, matched to 7 invoices."], ["Mon", "The two reminder-ladder payments closed out on the chaser."]],
+      actions: ["View in QuickBooks", "See the 7 invoices"] } },
+    { keys: ["bright & tidy (you)", "reviews scoreboard"], rec: { kind: "Reviews", title: "Bright & Tidy: 4.9 stars, 243 reviews", sub: "Adding +16 a month. The neighborhood average is 3.",
+      chips: [{ txt: "4.9 (243)", cls: "good" }, { txt: "+16 this month", cls: "gold" }],
+      fields: [["The engine", "Happy clients get a nudge after their 4th clean, timed to the visit-complete event"], ["Replies", "Every new review gets a drafted reply for your approval within minutes"], ["Why it compounds", "Rating times velocity is what local search ranks. You are winning both."]],
+      timeline: [["This month", "16 new reviews, all 5 stars, replies drafted same day."], ["Ongoing", "Nudges only go to clients with a clean visit history."]],
+      actions: ["See this month's reviews", "Edit the nudge timing"] } },
+    { keys: ["sparkle squad"], rec: { kind: "Competitor watch", title: "Sparkle Squad", sub: "4.6 stars, 95 reviews, +4 this month.",
+      chips: [{ txt: "4.6 (95)", cls: "neutral" }],
+      fields: [["Read", "Good rating, low velocity. A third your review count and a quarter your pace."], ["Watch", "If their velocity jumps, you will see it here first."]],
+      timeline: [["Monthly", "Snapshot refreshed from public listings."]],
+      actions: ["View their listing", "Compare month over month"] } },
+    { keys: ["maid brigade"], rec: { kind: "Competitor watch", title: "Maid Brigade of KC", sub: "4.3 stars, 178 reviews, +2 this month.",
+      chips: [{ txt: "4.3 (178)", cls: "neutral" }],
+      fields: [["Read", "Bigger name, slower engine. They add 2 reviews a month to your 16."], ["Gap", "Every month the rating and velocity gap widens in your favor."]],
+      timeline: [["Monthly", "Snapshot refreshed from public listings."]],
+      actions: ["View their listing", "Compare month over month"] } },
+    { keys: ["owner digest"], rec: { kind: "Calendar block", title: "Owner digest, 12:30 PM", sub: "The whole morning in one read, over lunch.",
+      chips: [{ txt: "Daily", cls: "info" }],
+      fields: [["Today's digest", "Callout covered by 6:52, walkthrough booked Thursday, $270 collected, supplies drafted"], ["Why lunch", "Melissa is mid-clean all morning. The digest waits for her break instead of buzzing her pocket."]],
+      timeline: [["12:30 PM", "Digest lands by text, three sentences, links into this app."]],
+      actions: ["Read today's digest", "Change the time"] } },
+    { keys: ["texts answer themselves"], rec: { kind: "Calendar block", title: "Home by 5:30", sub: "The after-hours shift belongs to the assistant.",
+      chips: [{ txt: "Covered", cls: "good" }],
+      fields: [["Last night", "The 9:48 PM Brookside web form was quoted in under a minute"], ["Wednesday", "Karen Walsh's 8:52 PM skip text became a Thursday rebook"], ["The rule", "Anything needing a human waits politely for morning. Nothing rings the house."]],
+      timeline: [["Evenings", "Quotes, reschedules, and reminders keep moving without Melissa."]],
+      actions: ["View the after-hours log", "Adjust quiet hours"] } },
+    { keys: ["avg between stops", "route miles", "route density"], rec: { kind: "Route stat", title: "Route density, today", sub: "Tight routes are the margin nobody sees.",
+      chips: [{ txt: "Team A: 11 min avg", cls: "good" }],
+      fields: [["Team A", "11 min average between stops, packed by neighborhood"], ["Team B", "13 min average, running solo today"], ["Team C", "16 min average, floating by design"], ["Miles", "41 route miles today, logged automatically for the deduction"]],
+      timeline: [["On every booking", "New clients get slotted onto the route day that keeps drive time low, like the Ngs at 6 minutes off Team A's path."]],
+      actions: ["View the route logic", "See the mileage log"] } },
+    { keys: ["jen"], rec: { kind: "Crew", title: "Jen, Team C", sub: "Solo Tuesdays and Thursdays, floating Fridays.",
+      chips: [{ txt: "Covering the Beaumonts", cls: "gold" }],
+      fields: [["Today", "Picked up Kayla's 10:00 Beaumont stop in the 6:45 AM re-route, 9 minutes off her path"], ["Why her", "Floating today, closest by drive time, and she has cleaned that house twice"]],
+      timeline: [["6:46 AM", "Proposed as the cover in the re-route."], ["7:15 AM", "Confirmed her updated day."]],
+      actions: ["View Jen's route", "Text Jen"] } },
+    { keys: ["new caller"], rec: { kind: "Captured call", title: "After-hours caller, captured", sub: "Rang once, got a text in seconds, kept moving.",
+      chips: [{ txt: "Text-back sent", cls: "good" }],
+      fields: [["What happened", "The call rang out, the text-back landed in about half a minute, and intake started by reply"], ["Why it matters", "86% of callers who hit voicemail dial the next company. A fast text keeps them talking to you."]],
+      timeline: [["At the call", "Text-back sent from your business number."], ["After", "Intake, quote, and booking continue by text without you."]],
+      actions: ["View the thread", "Adjust the text-back"] } },
     { keys: ["zenmaid"], rec: { kind: "Integration", title: "ZenMaid", sub: "Scheduling system of record",
       chips: [{ txt: "Connected", cls: "good" }],
       fields: [["What it does here", "The assistant reads and writes the schedule: skips, backfills, re-routes, new bookings all land in ZenMaid, not a second calendar."]],
@@ -349,6 +399,34 @@
       var head = textOf(card, "b");
       wireClick(card, function () {
         openDrawer(findRecord(card.textContent) || genericRecord("Alert", head.slice(0, 80)));
+      });
+    });
+    // route map pins (crews)
+    document.querySelectorAll(".map-pin").forEach(function (g) {
+      var name = g.getAttribute("data-name") || "";
+      g.addEventListener("click", function () {
+        openDrawer(findRecord(name) || clientRecord(name) || genericRecord("Route stop", name));
+      });
+    });
+    // route density stats (crews)
+    document.querySelectorAll(".map-stat").forEach(function (el) {
+      el.classList.add("clickable");
+      el.addEventListener("click", function () {
+        openDrawer(findRecord(el.textContent) || genericRecord("Route stat", el.textContent.trim().slice(0, 60)));
+      });
+    });
+    // calendar day strip (dashboard)
+    document.querySelectorAll(".cal-block").forEach(function (b) {
+      var name = textOf(b, "b");
+      wireClick(b, function () {
+        openDrawer(findRecord(b.textContent) || clientRecord(name) || genericRecord("Calendar block", name, textOf(b, ".ct")));
+      });
+    });
+    // reviews scoreboard rows (dashboard)
+    document.querySelectorAll(".rev-row").forEach(function (r) {
+      var name = textOf(r, ".rev-who b");
+      wireClick(r, function () {
+        openDrawer(findRecord(r.textContent) || genericRecord("Reviews", name));
       });
     });
     // integration cards
@@ -551,7 +629,17 @@
       b.style.animationDelay = Math.min(i * 65, 700) + "ms";
       i++;
     });
-    document.querySelectorAll(".kpi .value,.stat-banner .sb .v,.outcome .ov,.chip .num").forEach(countUp);
+    document.querySelectorAll(".kpi .value,.stat-banner .sb .v,.outcome .ov,.chip .num,.rev-num").forEach(countUp);
+    document.querySelectorAll(".rev-meter .fill").forEach(function (fill, ix) {
+      var w = fill.style.width;
+      if (!w) return;
+      fill.style.transition = "none";
+      fill.style.width = "0%";
+      setTimeout(function () {
+        fill.style.transition = "width .7s cubic-bezier(.22,.61,.36,1)";
+        fill.style.width = w;
+      }, 200 + ix * 110);
+    });
     document.querySelectorAll(".barchart .bar,.flowchart .fin,.flowchart .fout").forEach(function (bar, ix) {
       var h = bar.style.height;
       if (!h) return;

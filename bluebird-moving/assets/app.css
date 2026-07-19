@@ -528,6 +528,91 @@ a.kpi{display:block}
 .counter-strip .k{font-size:12px;color:var(--muted);margin-top:3px}
 
 /* ============================================================
+   Round 5: live-data showcases (move maps, weather, reviews,
+   Stripe payouts, COI). All canned, tagged "via <API>".
+   ============================================================ */
+section[id],div[id].card,.card[id]{scroll-margin-top:74px}
+
+.via{font-size:11px;font-weight:500;letter-spacing:.01em;color:var(--muted-2);white-space:nowrap}
+.card-head .via{margin-left:auto}
+.card-head .via + .link{margin-left:0}
+
+/* schematic map */
+.bmap{border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;background:#f7f9fa}
+.bmap svg{display:block;width:100%;height:auto}
+.bmap .blk{fill:var(--shade);stroke:var(--border);stroke-width:1}
+.bmap .road{stroke:#e0e5e9;stroke-width:5;fill:none;stroke-linecap:round}
+.bmap .route{stroke:var(--steel);stroke-width:3.5;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:700;stroke-dashoffset:0;animation:route-draw .9s var(--ease) both .15s}
+@keyframes route-draw{from{stroke-dashoffset:700}to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.bmap .route{animation:none}}
+.bmap .route.r2{stroke:var(--steel-2)}
+.bmap .route.r3{stroke:var(--brand-deep)}
+.bmap .pin{stroke:#fff;stroke-width:2.5}
+.bmap .pin.o{fill:var(--steel)}
+.bmap .pin.d{fill:var(--brand-deep)}
+.bmap .mlabel{font-family:var(--sans);font-size:11px;font-weight:600;fill:var(--text-2)}
+.bmap .mlabel.end{text-anchor:end}
+.bmap .mchip rect{fill:var(--card);stroke:var(--border-2)}
+.bmap .mchip text{font-family:var(--sans);font-size:11px;font-weight:600;fill:var(--ink);text-anchor:middle;font-variant-numeric:tabular-nums}
+.bmap.big .mlabel{font-size:12px}
+.d-mmath{margin-top:10px}
+
+/* dispatch route rows under the map */
+.rrows{display:flex;flex-direction:column;border-top:1px solid var(--border);margin-top:14px}
+.rrow{display:flex;align-items:center;gap:12px;padding:10px 2px;border-bottom:1px solid var(--border);font-size:13px;transition:background .12s var(--ease)}
+.rrow:last-child{border-bottom:none}
+.rrow:hover{background:#fafbfb}
+.rrow .rdot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.rrow .rt{font-weight:600;color:var(--ink)}
+.rrow .rd{color:var(--text-2)}
+.rrow .rm{margin-left:auto;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--text-2)}
+
+/* weather chips (dispatch rows) */
+.wchip{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;border-radius:999px;padding:2px 9px;background:var(--info-soft);color:var(--info);white-space:nowrap}
+.wchip svg{width:12px;height:12px;flex-shrink:0}
+.wchip.rain{background:var(--warn-soft);color:var(--warn)}
+.wx-note{display:flex;gap:8px;align-items:flex-start;font-size:12px;line-height:1.5;color:var(--warn);background:var(--warn-soft);border:1px solid #f0dfc2;border-radius:var(--r-sm);padding:7px 11px;margin-top:8px}
+.wx-note b{color:inherit}
+
+/* reviews competitive snapshot */
+.rev-rows{display:flex;flex-direction:column;gap:14px}
+.rev-row{padding:2px 0}
+.rev-top{display:flex;align-items:baseline;gap:10px;font-size:13.5px}
+.rev-top .rn{font-weight:600}
+.rev-top .rr{margin-left:auto;font-weight:700;font-variant-numeric:tabular-nums}
+.rev-top .rc{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.rev-bar{position:relative;height:8px;border-radius:999px;background:var(--shade);margin-top:7px;overflow:hidden}
+.rev-bar .rf{position:absolute;inset:0 auto 0 0;border-radius:999px;background:var(--steel-3)}
+.rev-row.you .rev-bar .rf{background:var(--brand)}
+.rev-row.you .rev-top .rn{color:var(--ink)}
+.rev-vel{font-size:12px;color:var(--muted);margin-top:6px}
+.rev-vel b{color:var(--good)}
+
+/* Stripe payout matching */
+.po-rows{display:flex;flex-direction:column}
+.po-row{display:flex;align-items:center;gap:12px;padding:12px 20px;border-bottom:1px solid var(--border);transition:background .12s var(--ease)}
+.po-row:last-child{border-bottom:none}
+.po-row:hover{background:#fafbfb}
+.po-row .po-ic{width:30px;height:30px;border-radius:7px;background:var(--good-soft);color:var(--good);display:grid;place-items:center;flex-shrink:0}
+.po-row .po-ic svg{width:15px;height:15px}
+.po-row.transit .po-ic{background:var(--info-soft);color:var(--info)}
+.po-row.chase .po-ic{background:var(--warn-soft);color:var(--warn)}
+.po-row .po-t{font-size:13.5px;font-weight:600}
+.po-row .po-d{font-size:12.5px;color:var(--text-2);margin-top:1px;line-height:1.45}
+.po-row .po-amt{margin-left:auto;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* integrations: where you'll see it */
+.int-see{font-size:12.5px;color:var(--muted);line-height:1.5;border-top:1px solid var(--border);padding-top:9px}
+.int-see b{color:var(--text-2);font-weight:600}
+.int-live{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;color:var(--brand-text);margin-top:2px}
+.int-live:hover{color:var(--brand-deep)}
+.int-live svg{width:12px;height:12px}
+
+/* keep drill-through drawers under the tour overlay so its spotlight can frame them */
+body.tour-on .drawer-root{z-index:8800}
+
+/* ============================================================
    Round 4: mobile (below 900px the sidebar folds into a
    bottom nav + More sheet; no horizontal page scroll ever)
    ============================================================ */
@@ -635,4 +720,16 @@ a.kpi{display:block}
   .drow{flex-wrap:wrap;gap:10px 16px}
   .drow .truck{flex:1 1 100%;display:flex;align-items:baseline;gap:10px}
   .drow .win{text-align:left}
+
+  /* round 5 mobile: maps scale in-card, chips wrap, via tags may drop */
+  .card-head{flex-wrap:wrap}
+  .card-head .via{margin-left:0;flex:1 1 100%;order:3}
+  .bmap.big{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .bmap.big svg{min-width:560px}
+  .rrow{flex-wrap:wrap;gap:6px 10px}
+  .rrow .rm{margin-left:auto}
+  .rev-top{flex-wrap:wrap;gap:4px 10px}
+  .po-row{padding:12px 16px;flex-wrap:wrap}
+  .po-row .po-amt{margin-left:auto}
+  .wchip{white-space:normal}
 }

@@ -165,6 +165,36 @@
         </div>
       </div>
 
+      <div class="card" id="stripe-ledger" style="margin-bottom:14px">
+        <div class="card-head">
+          <h2>Autopay ledger, payout-matched <span class="via-tag">via Stripe</span></h2>
+          <span class="pill good">58 of 61 cleared first try</span>
+        </div>
+        <div class="rowlist">
+          <div class="row">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            <span class="who"><b>Payout $2,340 landed Thursday</b><span>Matched to 9 invoices and reconciled in QuickBooks before Melissa's coffee.</span></span>
+            <span class="meta"><span class="amt">$2,340</span><span class="when">Thu</span></span>
+          </div>
+          <div class="row">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            <span class="who"><b>Payout $1,880 landed Monday</b><span>Matched to 7 invoices, including the Foglers and D. Reyes after their friendly nudges.</span></span>
+            <span class="meta"><span class="amt">$1,880</span><span class="when">Mon</span></span>
+          </div>
+          <div class="row">
+            <span class="ico"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+            <span class="who"><b>Card retry: T. Brennan</b><span>$165 declined Jul 9. Retry 2 scheduled for Saturday, invoice moved onto the reminder ladder.</span></span>
+            <span class="meta"><span class="amt">$165</span><span class="when">Retry Sat</span></span>
+          </div>
+          <div class="row">
+            <span class="ico"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+            <span class="who"><b>Card expired: S. Park</b><span>$140 charge failed Jul 11. A card-update link rode along with this morning's reminder 1.</span></span>
+            <span class="meta"><span class="amt">$140</span><span class="when">Failed</span></span>
+          </div>
+        </div>
+        <div class="table-foot">The failed charges plus the Muellers' open invoice are the $445 outstanding on the dashboard. Every one is mid-ladder, none are forgotten.</div>
+      </div>
+
       <div class="grid-2eq">
         <div class="card" id="billing-card">
           <div class="card-head"><h2>Per-visit billing &amp; autopay</h2></div>
@@ -232,6 +262,9 @@ window.TOUR = [
   { el: "#pnl-card",
     title: "A cleaning company P&L, in your own words.",
     body: "Recurring residential, deep cleans and move-outs, commercial janitorial. Payroll, supplies, mileage, insurance, software. The AI categorizes every transaction into these lines, and the numbers reconcile with the $24,700/mo book on the dashboard.", side: "right" },
+  { el: "#stripe-ledger",
+    title: "Every payout, matched before you ask.",
+    body: "Thursday's <b>$2,340 payout</b> landed already matched to 9 invoices. When a card fails, the retry schedules itself and the invoice moves onto the reminder ladder. That is the entire story of the $445, and it is already being handled.", side: "top" },
   { el: "#bookkeeper-feed",
     title: "The bookkeeper you also never hired.",
     body: "41 transactions categorized, 12 payouts matched, a <b>$38 duplicate charge caught</b>, the overdue nudges drafted, mileage logged. Melissa hasn't opened QuickBooks in six weeks, and the books are cleaner than ever.", side: "left" }

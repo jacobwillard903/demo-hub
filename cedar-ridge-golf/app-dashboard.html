@@ -126,6 +126,14 @@
         </a>
       </div>
 
+      <div class="card section-gap" id="wx-week">
+        <div class="card-head">
+          <h2>Next 7 Days</h2>
+          <span class="via-tag">via National Weather Service</span>
+        </div>
+        <div class="card-body wx-scroll" data-wx-week data-drill="wx-week"></div>
+      </div>
+
       <div class="grid two-col section-gap">
         <div class="card" id="rev-card">
           <div class="card-head">
@@ -185,7 +193,8 @@
         <div class="card-body" data-heatmap></div>
       </div>
 
-      <div class="card" id="teesheet-today">
+      <div class="grid two-col section-gap">
+        <div class="card" id="teesheet-today">
           <div class="card-head">
             <h2>Today's Tee Sheet, Next Up</h2>
             <a class="link" href="#">Open foreUP</a>
@@ -248,6 +257,37 @@
           </div>
         </div>
 
+        <div class="card" id="reviews-card">
+          <div class="card-head">
+            <h2>Reviews, You vs the Neighbors</h2>
+            <span class="via-tag">via Google Business Profile</span>
+          </div>
+          <div data-drill="gbp-reviews">
+            <div class="rev-row you">
+              <span class="rv-name">Cedar Ridge<span class="rv-sub">+21 reviews this month</span></span>
+              <span class="rv-track"><span class="rv-fill" style="width:94%"></span></span>
+              <span class="rv-score tnum">4.7</span>
+              <span class="rv-count tnum">534</span>
+            </div>
+            <div class="rev-row">
+              <span class="rv-name">Prairie Pines Muni<span class="rv-sub">8 miles east</span></span>
+              <span class="rv-track"><span class="rv-fill" style="width:88%"></span></span>
+              <span class="rv-score tnum">4.4</span>
+              <span class="rv-count tnum">388</span>
+            </div>
+            <div class="rev-row">
+              <span class="rv-name">Willow Bend GC<span class="rv-sub">12 miles south</span></span>
+              <span class="rv-track"><span class="rv-fill" style="width:84%"></span></span>
+              <span class="rv-score tnum">4.2</span>
+              <span class="rv-count tnum">203</span>
+            </div>
+          </div>
+          <div class="card-body" style="border-top:1px solid var(--border);font-size:12.5px;color:var(--text-2)">
+            Best rated course within 20 miles, and pulling away. Every golfer who plays gets a review ask, every new review gets a drafted reply within the hour, queued for your one-click approve.
+          </div>
+        </div>
+      </div>
+
       <p style="margin-top:22px;font-size:12px;color:var(--muted)">Demo data, illustrative numbers.</p>
     </main>
   </div>
@@ -270,6 +310,10 @@ window.TOUR = [
   { el: "#heat-card",
     title: "Your week, hour by hour",
     body: "Green is booked, red is money sitting on the shelf. Saturday 8 AM has a waitlist while Tuesday 1 PM sits empty. The layer works those red cells automatically, so they stop ending up as giveaway trade times.",
+    side: "top" },
+  { el: "#reviews-card",
+    title: "You vs the neighbors, live",
+    body: "Pulled straight from Google Business Profile: <b>4.7 with 534 reviews and +21 a month</b>, against Prairie Pines at 4.4 and Willow Bend at 4.2. The layer asks every golfer for the review and drafts every reply, so this gap keeps widening on its own.",
     side: "top" },
   { el: "#alert-chips",
     title: "What needs a human today",

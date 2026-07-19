@@ -92,8 +92,8 @@
           <div class="kcard" data-rec="kessler">
             <div class="kwho"><span>Kessler Insurance</span><span class="kamt num">$1,750</span></div>
             <div class="kdesc">Small office, 12 desks + server rack, after close Jul 24. COI required by the building.</div>
-            <div class="kmeta"><span class="pill good"><span class="pdot"></span>Quote signed</span><span class="pill warn"><span class="pdot"></span>COI due Jul 23</span></div>
-<div class="kfup">24h follow-up closed it. COI request with the agent, <b>nudged daily</b>.</div>          </div>
+            <div class="kmeta"><span class="pill good"><span class="pdot"></span>Quote signed</span><span class="pill good"><span class="pdot"></span>COI approved</span></div>
+<div class="kfup">24h follow-up closed it. COI generated, sent, and <b>approved Fri 11:15 AM</b>.</div>          </div>
           <div class="kcard">
             <div class="kwho"><span>R. Gilmore</span><span class="kamt num">$980</span></div>
             <div class="kdesc">2BR, German Village to Whitehall. Opened the quote twice, no reply.</div>
@@ -128,7 +128,7 @@
       </div>
     </section>
 
-    <section class="grid-2-even">
+    <section class="grid-3">
       <div class="card" id="fup-engine">
         <div class="card-head"><h2>The Follow-Up Engine</h2><span class="link">Nobody has to remember</span></div>
         <div class="card-pad">
@@ -154,6 +154,22 @@
         </div>
         <div class="showing">Virtual surveys kill the days-long wait for an in-home estimate. Big jobs still get Tony in person, like the Nguyens on Saturday.</div>
       </div>
+      <div class="card" id="coi">
+        <div class="card-head"><h2>COI, Kessler Office Move</h2><span class="via">via COI Generator</span></div>
+        <div class="card-pad">
+          <div class="mini-rows" style="margin-top:0">
+            <div class="mr"><span>Certificate, $1M general liability</span><b>Generated Thu</b></div>
+            <div class="mr"><span>300 Marconi Blvd building management</span><b>Named as holder</b></div>
+            <div class="mr"><span>Sent to the building manager, cc Dana</span><b>Thu 9:06 AM</b></div>
+            <div class="mr"><span>Status</span><span class="pill good"><span class="pdot"></span>Approved Fri 11:15 AM</span></div>
+          </div>
+          <div class="tl-page" style="margin-top:14px" data-rec="coi">
+            <div class="te"><span class="tt">Thu 9:02 AM</span>COI requirements pulled from the building's lease email.</div>
+            <div class="te"><span class="tt">Thu 9:04 AM</span>Certificate generated and emailed, move date and elevator reservation included.</div>
+            <div class="te hot"><span class="tt">Fri 11:15 AM</span><b>Approved, on file 8 days early.</b> The day-before fire drill never happens.</div>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -168,10 +184,16 @@ window.TOUR = [
     body: "20 quotes in 30 days, 9 booked. What changed is speed (a range in <b>4 minutes</b> while they're still deciding) and follow-ups that never get forgotten on a truck. At your average ticket that's roughly <b>$3,800 a month</b> that used to leak." },
   { el: "#kanban",
     title: "Every quote, on a board",
-    body: "Quoted, followed up, deposit paid. The rule that changed the business: <b>a date is only held when the $150 deposit is paid</b>. Verbal yeses used to hold trucks for ghosts. Click any card to see the cube sheet and every AI touch behind it." },
+    body: "Quoted, followed up, deposit paid. The rule that changed the business: <b>a date is only held when the $150 deposit is paid</b>. Verbal yeses used to hold trucks for ghosts. Click any card to see the cube sheet and every AI touch behind it.",
+    pre: function () { if (window.BBDrawerClose) BBDrawerClose(); } },
+  { el: ".drawer", side: "left",
+    title: "The quote drawer, with the map",
+    body: "The Nguyen job, exactly as the AI priced it on the call: <b>Maple St to Ashford Lofts, 8.4 mi, 22 min</b>, no stairs flag at the destination. Under 30 minutes means the flat 1 hour travel charge, walk-up means the stair fee, and the range lands at $850 to $1,100. The map IS the quote math.",
+    pre: function () { if (window.BBOpenRec) BBOpenRec("nguyen"); } },
   { el: "#kb-followed", side: "right",
     title: "The chase runs itself",
-    body: "Harper's $1,480 gets nudge #2 at 9:00 AM. Kessler's <b>COI is being chased daily</b> so there's no fire drill the day before the office move. Gilmore gets the 1-week touch Tuesday. None of this lives in Tony's head anymore." },
+    body: "Harper's $1,480 gets nudge #2 at 9:00 AM. Kessler's <b>COI came back approved Friday</b>, so there's no fire drill the day before the office move. Gilmore gets the 1-week touch Tuesday. None of this lives in Tony's head anymore.",
+    pre: function () { if (window.BBDrawerClose) BBDrawerClose(); } },
   { el: "#fup-engine",
     title: "24h, 72h, 1 week, every time",
     body: "The cadence fires on every quote automatically. The 24-hour nudge alone revived <b>4 quotes this month</b>. Next: the board that puts those booked jobs on trucks." }

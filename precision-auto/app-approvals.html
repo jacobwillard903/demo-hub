@@ -121,6 +121,58 @@
       <div class="showing num">Showing 6 of 6 open. 14 approved this week.</div>
     </section>
 
+    <section class="grid-2-even">
+      <div class="card" id="vin-decode">
+        <div class="card-head"><h2>Plate to Write-Up</h2><span class="hd-right"><span class="pill brand"><span class="pdot"></span>Thursday 8:00 AM booking</span><span class="via">via CARFAX</span></span></div>
+        <div class="card-pad">
+          <div class="cmp-line">Sarah M. booked by text Tuesday night. The AI ran her plate before she hung up.</div>
+          <div class="vin-box">
+            <span class="plate"><span class="st">OK</span><span class="no num">TSA 4821</span></span>
+            <button class="vin-decode-btn" type="button">Decode plate</button>
+          </div>
+          <div class="vin-scan"><span class="typing"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span></span>Running the plate against CARFAX...</div>
+          <div class="vin-result">
+            <div class="veh-card" data-ld="vin">
+              <span class="veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16.94V19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-2M19 17h2a1 1 0 0 0 1-1v-3a2 2 0 0 0-1.4-1.9l-2.1-.7-2-4.4A2 2 0 0 0 14.7 5H9.3a2 2 0 0 0-1.8 1l-2 4.4-2.1.7A2 2 0 0 0 2 13v3a1 1 0 0 0 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
+              <div>
+                <div class="veh-name">2018 Honda CR-V EX-L</div>
+                <div class="veh-vin num">VIN 2HKRW2H85JH675309</div>
+                <div class="veh-specs">
+                  <span class="sp">Engine <b>1.5L turbo I4</b></span>
+                  <span class="sp">Drivetrain <b>AWD</b></span>
+                  <span class="sp">Trans <b>CVT</b></span>
+                  <span class="sp">Est. mileage <b class="num">62,400</b></span>
+                </div>
+                <div class="veh-fill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Auto-filled into RO #4221 in Tekmetric</div>
+              </div>
+            </div>
+          </div>
+          <div class="quote">Thursday's write-up was done Tuesday night. Nobody asks the customer what motor is in it, and the VIN gets a recall check on the way in.</div>
+        </div>
+      </div>
+
+      <div class="card" id="recall-card">
+        <div class="card-head"><h2>Open Recall Watch</h2><span class="hd-right"><span class="pill warn"><span class="pdot"></span>2 found this week</span><span class="via">via NHTSA Recalls</span></span></div>
+        <div class="card-pad">
+          <div class="rc-rows">
+            <div class="rc-row" data-ld="recall-rav4">
+              <div class="rc-top"><span class="rc-veh">2019 Toyota RAV4, Alice K., RO #4218</span><span class="rc-id num">NHTSA 20V-682</span></div>
+              <div class="rc-what">Open recall: low pressure fuel pump. Dealer replaces it free.</div>
+              <div class="rc-draft">
+                <div class="rc-cap"><span>Drafted customer text</span><span class="pill info"><span class="pdot"></span>Queued for approval</span></div>
+                Hi Alice, quick heads up from Precision. While your RAV4 was in we ran the VIN and found an open fuel pump recall (NHTSA 20V-682). The dealer fixes it free, and it is worth doing. Want the details with your pickup text?
+              </div>
+            </div>
+            <div class="rc-row quiet" data-ld="recall-f150">
+              <div class="rc-top"><span class="rc-veh">2016 Ford F-150, Dan W., RO #4213</span><span class="rc-id num">NHTSA 20V-332</span></div>
+              <div class="rc-what">Brake master cylinder recall. Dan was told at pickup and booked the dealer visit.</div>
+            </div>
+          </div>
+          <div class="quote">Every VIN is checked at write-up. Mentioning the recall before the dealer does builds the kind of trust that keeps the car coming back here for everything else.</div>
+        </div>
+      </div>
+    </section>
+
     <section class="grid-2">
       <div class="card" id="dvi-preview">
         <div class="card-head"><h2>What the Customer Sees</h2><span class="pill brand"><span class="pdot"></span>DVI for RO #4213</span></div>
@@ -151,6 +203,46 @@
         </div>
       </div>
     </section>
+
+    <section class="grid-2-even">
+      <div class="card" id="parts-compare">
+        <div class="card-head"><h2>Parts Priced While You Quote</h2><span class="hd-right"><span class="via">via PartsTech</span></span></div>
+        <div class="card-pad">
+          <div class="cmp-line"><b>Outer tie rod ends (pair)</b>, RO #4213, 2016 Ford F-150. Three suppliers quoted in one pass.</div>
+          <div class="cmp-rows">
+            <div class="cmp-row best" data-ld="parts-worldpac">
+              <span class="cmp-sup">WorldPac</span>
+              <span class="cmp-eta">In stock, delivery today 2:30 PM</span>
+              <span class="cmp-price num">$118.40</span>
+              <span class="cmp-pick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Added to estimate</span>
+            </div>
+            <div class="cmp-row" data-ld="parts-oreilly">
+              <span class="cmp-sup">O'Reilly Pro</span>
+              <span class="cmp-eta">In stock, 45 minutes</span>
+              <span class="cmp-price num">$126.90</span>
+            </div>
+            <div class="cmp-row" data-ld="parts-napa">
+              <span class="cmp-sup">NAPA</span>
+              <span class="cmp-eta">Backordered, ETA Tuesday</span>
+              <span class="cmp-price num">$109.80</span>
+            </div>
+          </div>
+          <div class="quote">Cheapest in-stock wins. NAPA is cheaper on paper, but a backordered part is a truck blocking Bay 4 until Tuesday. The estimate got the right number in seconds.</div>
+        </div>
+      </div>
+
+      <div class="card" id="sunbit-offer">
+        <div class="card-head"><h2>Financing on the Big Ticket</h2><span class="hd-right"><span class="pill good"><span class="pdot"></span>Prequalified</span><span class="via">via Sunbit</span></span></div>
+        <div class="card-pad">
+          <div class="cmp-line"><b>RO #4189, the Hendersons</b>, $2,150.00 transmission service, aging 31 hours.</div>
+          <div class="fin-offer" data-ld="sunbit">
+            <span class="fin-mo num">$358<small>/mo</small></span>
+            <span class="fin-meta">6 month plan, soft check only, offered right in nudge #2 this morning. No paperwork at the counter.</span>
+          </div>
+          <div class="quote">Big tickets are where approvals die. A monthly number in the nudge text is a big part of the climb from 61% to 78%.</div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="demo-note">Demo data, illustrative numbers. Precision Auto Care is a fictional shop.</footer>
@@ -167,6 +259,13 @@ window.TOUR = [
   { el: "#est-table",
     title: "Every open estimate, chased politely",
     body: "Look at RO #4213: sent 10:14 AM, 2 nudges, <b>approved at 3:52 PM</b>, $1,284.50. The three aging ones are getting their next nudge on schedule. Nobody at the counter is dialing anyone." },
+  { el: "#vin-decode",
+    pre: function () { if (window.PTVinDecode) window.PTVinDecode(true); },
+    title: "A plate becomes a write-up",
+    body: "Sarah booked by text Tuesday night, and the AI ran her plate before she hung up. CARFAX decoded it: <b>2018 Honda CR-V EX-L, 1.5L turbo, AWD</b>, straight into RO #4221. Nobody asks her what motor is in it Thursday morning." },
+  { el: "#recall-card", side: "left",
+    title: "The recall the dealer would have told her about",
+    body: "Every VIN gets checked against NHTSA on the way in. The RAV4 in Bay 5 has an <b>open fuel pump recall</b>, and the customer text is already drafted. Two found across this week's cars, two trust-building conversations the shop starts first." },
   { el: "#dvi-preview",
     title: "Photos sell the work",
     body: "The customer gets the DVI with red, yellow, and green findings and the actual photos. A cracked bushing you can see is a much easier yes than a line item over the phone." },

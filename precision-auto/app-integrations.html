@@ -67,51 +67,61 @@
         <div class="int-top"><span class="int-name">Tekmetric</span><span class="pill good"><span class="pdot"></span>Connected</span></div>
         <div class="int-kind">Shop management</div>
         <p class="int-desc">The system of record. The AI reads ROs, bay status, and DVIs, and writes appointments and notes straight back. Every booking on the phone page landed here.</p>
+        <div class="int-see"><b>Where you'll see it:</b> The bay board and every RO on the Dashboard.<br><a class="int-live" href="app-dashboard.html#bay-board">See it live &#8250;</a></div>
       </div>
       <div class="int-card">
         <div class="int-top"><span class="int-name">QuickBooks Online</span><span class="pill good"><span class="pdot"></span>Connected</span></div>
         <div class="int-kind">Accounting</div>
         <p class="int-desc">Feeds the Financials page. Transactions categorized to the shop chart of accounts, payouts matched to deposits, fleet invoices nudged on schedule.</p>
+        <div class="int-see"><b>Where you'll see it:</b> The live P&L on the Financials page.<br><a class="int-live" href="app-money.html#pl-card">See it live &#8250;</a></div>
       </div>
       <div class="int-card">
         <div class="int-top"><span class="int-name">PartsTech</span><span class="pill good"><span class="pdot"></span>Connected</span></div>
         <div class="int-kind">Parts ordering</div>
         <p class="int-desc">Live parts pricing and availability while quoting. Backorders push a customer text automatically, and statements reconcile against the books.</p>
+        <div class="int-see"><b>Where you'll see it:</b> Three supplier quotes on the tie rod estimate.<br><a class="int-live" href="app-approvals.html#parts-compare">See it live &#8250;</a></div>
       </div>
       <div class="int-card">
         <div class="int-top"><span class="int-name">CARFAX</span><span class="pill good"><span class="pdot"></span>Connected</span></div>
         <div class="int-kind">Vehicle history and VIN decode</div>
         <p class="int-desc">A plate or VIN becomes year, make, engine, and service history at write-up. No more asking the customer what motor is in it.</p>
+        <div class="int-see"><b>Where you'll see it:</b> The plate-to-write-up decode on Approvals.<br><a class="int-live" href="app-approvals.html#vin-decode">See it live &#8250;</a></div>
       </div>
       <div class="int-card">
         <div class="int-top"><span class="int-name">NHTSA Recalls</span><span class="pill good"><span class="pdot"></span>Connected</span></div>
         <div class="int-kind">Open recall lookup</div>
         <p class="int-desc">Every VIN checked for open recalls at check-in. The advisor mentions it before the dealer does, which builds trust and the occasional extra visit.</p>
+        <div class="int-see"><b>Where you'll see it:</b> The open recall watch on Approvals.<br><a class="int-live" href="app-approvals.html#recall-card">See it live &#8250;</a></div>
       </div>
       <div class="int-card">
         <div class="int-top"><span class="int-name">Twilio</span><span class="pill good"><span class="pdot"></span>Connected</span></div>
         <div class="int-kind">Voice and SMS</div>
         <p class="int-desc">The shop's phone line and text number. Powers the receptionist, the estimate chaser, the status responder, and the recovery texts.</p>
+        <div class="int-see"><b>Where you'll see it:</b> The 7:42 PM save thread on Phone and Text.<br><a class="int-live" href="app-phone.html#sms-thread">See it live &#8250;</a></div>
       </div>
       <div class="int-card">
         <div class="int-top"><span class="int-name">Stripe</span><span class="pill good"><span class="pdot"></span>Connected</span></div>
         <div class="int-kind">Payments</div>
         <p class="int-desc">Pay by link in the ready text, deposits for big jobs, and settlements that match themselves to the bank in QuickBooks.</p>
+        <div class="int-see"><b>Where you'll see it:</b> The matched payout ledger on Financials.<br><a class="int-live" href="app-money.html#payout-ledger">See it live &#8250;</a></div>
       </div>
       <div class="int-card">
         <div class="int-top"><span class="int-name">Google Business Profile</span><span class="pill good"><span class="pdot"></span>Connected</span></div>
         <div class="int-kind">Reviews and local search</div>
         <p class="int-desc">Review requests an hour after pickup, unhappy customers routed private to Gary first. 4.9 stars and climbing.</p>
+        <div class="int-see"><b>Where you'll see it:</b> The competitive snapshot on Recovery and Reviews.<br><a class="int-live" href="app-recovery.html#rev-comp">See it live &#8250;</a></div>
       </div>
       <div class="int-card">
         <div class="int-top"><span class="int-name">Gmail and Google Calendar</span><span class="pill good"><span class="pdot"></span>Connected</span></div>
         <div class="int-kind">Email and scheduling</div>
         <p class="int-desc">Fleet invoices and estimate PDFs go out from the shop's own address. Loaner handoffs and vendor visits land on the shared calendar.</p>
+        <div class="int-see"><b>Where you'll see it:</b> The fleet AR nudges on Financials.<br><a class="int-live" href="app-money.html#ar-card">See it live &#8250;</a></div>
       </div>
       <div class="int-card">
-        <div class="int-top"><span class="int-name">Sunbit</span><span class="pill neutral"><span class="pdot"></span>Available</span></div>
+        <div class="int-top"><span class="int-name">Sunbit</span><span class="pill good"><span class="pdot"></span>Connected</span></div>
         <div class="int-kind">Repair financing</div>
-        <p class="int-desc">Pay over time on big tickets. A $2,150 transmission service is an easier yes at $95 a month, offered right in the estimate text.</p>
+        <p class="int-desc">Pay over time on big tickets. The chaser drops a prequalified monthly number straight into the nudge text, so a $2,150 transmission service reads as $358 a month.</p>
+        <div class="int-see"><b>Where you'll see it:</b> The $358/mo offer on the Hendersons' estimate.<br><a class="int-live" href="app-approvals.html#sunbit-offer">See it live &#8250;</a></div>
       </div>
       <div class="int-card">
         <div class="int-top"><span class="int-name">Mitchell 1 ProDemand</span><span class="pill neutral"><span class="pdot"></span>Available</span></div>
@@ -133,7 +143,7 @@
 window.TOUR = [
   { el: "#int-grid",
     title: "It plugs into what you already run",
-    body: "Tekmetric stays the system of record, QuickBooks stays the books, PartsTech stays the parts counter. The AI sits on top and moves the data between them so a human never has to retype anything." },
+    body: "Tekmetric stays the system of record, QuickBooks stays the books, PartsTech stays the parts counter. The AI sits on top and moves the data between them so a human never has to retype anything. Every Connected card says where its data shows up, and <b>See it live</b> jumps you straight to that widget." },
   { el: function () {
       // Sidebar is hidden on mobile; spotlight the bottom-nav More button instead.
       return innerWidth <= 900

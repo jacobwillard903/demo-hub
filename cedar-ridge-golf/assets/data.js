@@ -19,6 +19,33 @@ window.CRGC = {
     { min: 35, color: "#cf8f4e", label: "35 to 49%" },
     { min: 0,  color: "#b85c43", label: "Under 35%" }
   ],
+  // NWS hourly forecast for Saturday (the storm scenario). armed = inside the
+  // autopilot window; horn = the hour the horn blows.
+  wxHourly: [
+    { t: "7a",  ic: "sun",   rain: 5,  wind: 4 },
+    { t: "8a",  ic: "sun",   rain: 5,  wind: 6 },
+    { t: "9a",  ic: "cloud", rain: 10, wind: 7 },
+    { t: "10a", ic: "cloud", rain: 15, wind: 8 },
+    { t: "11a", ic: "cloud", rain: 25, wind: 9 },
+    { t: "12p", ic: "cloud", rain: 45, wind: 11, armed: true },
+    { t: "1p",  ic: "storm", rain: 85, wind: 18, armed: true, horn: true },
+    { t: "2p",  ic: "storm", rain: 70, wind: 16, armed: true },
+    { t: "3p",  ic: "rain",  rain: 40, wind: 12, armed: true },
+    { t: "4p",  ic: "cloud", rain: 20, wind: 9 },
+    { t: "5p",  ic: "sun",   rain: 10, wind: 7 },
+    { t: "6p",  ic: "sun",   rain: 5,  wind: 6 },
+    { t: "7p",  ic: "sun",   rain: 5,  wind: 5 }
+  ],
+  // NWS 7-day outlook for the dashboard strip.
+  wxWeek: [
+    { d: "Thu", ic: "sun",   hi: 88, lo: 70, rain: 5 },
+    { d: "Fri", ic: "sun",   hi: 90, lo: 72, rain: 10 },
+    { d: "Sat", ic: "storm", hi: 84, lo: 71, rain: 85, armed: true },
+    { d: "Sun", ic: "cloud", hi: 82, lo: 68, rain: 20 },
+    { d: "Mon", ic: "sun",   hi: 86, lo: 69, rain: 5 },
+    { d: "Tue", ic: "sun",   hi: 89, lo: 71, rain: 10 },
+    { d: "Wed", ic: "cloud", hi: 87, lo: 72, rain: 30 }
+  ],
   // Weekly green + cart revenue, last 7 days.
   revenueWeek: [
     { day: "Fri 10", amt: 9840 },

@@ -502,3 +502,69 @@ body.tour-on .bottomnav{z-index:8400}
 @media(prefers-reduced-motion:reduce){
   *{transition-duration:.01ms !important;animation-duration:.01ms !important}
 }
+
+/* ============================================================
+   Round 5: live-data showcases
+   ============================================================ */
+
+/* quiet source tag on API-powered widgets */
+.via-tag{font-size:11px;color:var(--muted-2);font-weight:600;letter-spacing:.02em;white-space:nowrap;flex-shrink:0}
+
+/* anchored cards clear the sticky topbar on deep-links */
+.content [id]{scroll-margin-top:72px}
+
+/* NWS weather strips (hourly + 7-day) */
+.wx-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.wx-strip{display:flex;gap:6px;padding:2px 0}
+.wx-chip{flex:1;min-width:56px;display:flex;flex-direction:column;align-items:center;gap:3px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--cream);padding:9px 4px 8px;position:relative;animation:rise .3s var(--ease) both}
+.wx-chip .w-t{font-family:var(--mono);font-size:10.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.wx-chip .w-ic{width:20px;height:20px;color:var(--text-2)}
+.wx-chip .w-ic svg{width:20px;height:20px}
+.wx-chip.sun .w-ic{color:#b0862f}
+.wx-chip.rain .w-ic,.wx-chip.storm .w-ic{color:#4a6f8a}
+.wx-chip .w-rain{font-size:12.5px;font-weight:700}
+.wx-chip .w-wind{font-size:10px;color:var(--muted)}
+.wx-chip.armed{background:var(--bad-bg);border-color:#e5c2b6}
+.wx-chip.armed .w-rain{color:var(--bad)}
+.wx-chip.armed .w-ic{color:var(--bad)}
+.wx-chip .w-mark{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--bad);color:#fff;font-size:9px;font-weight:700;border-radius:999px;padding:1.5px 7px;white-space:nowrap;letter-spacing:.02em}
+.wx-7day .wx-chip{min-width:74px}
+.wx-note{display:flex;align-items:flex-start;gap:8px;margin-top:14px;font-size:12.5px;color:var(--text-2);line-height:1.55}
+.wx-window-key{width:12px;height:12px;border-radius:3px;background:var(--bad-bg);border:1px solid #e5c2b6;flex-shrink:0;margin-top:3px}
+
+/* GolfNow rate compare */
+.ratebar-row{display:flex;align-items:center;gap:10px;margin-top:9px}
+.ratebar-row .rb-lab{width:132px;flex-shrink:0;font-size:12.5px;color:var(--text-2)}
+.ratebar-row .rb-track{flex:1;height:22px;background:var(--shade);border-radius:5px;overflow:hidden}
+.ratebar-row .rb-fill{height:100%;border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding:0 8px;color:#fff;font-size:11.5px;font-weight:700;font-variant-numeric:tabular-nums;transform-origin:left;animation:growx .55s var(--ease) both}
+.ratebar-row .rb-fill.yours{background:var(--brand)}
+.ratebar-row .rb-fill.trade{background:#b0862f}
+.kept-line{display:flex;align-items:baseline;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
+.kept-line .kl-num{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--brand)}
+.kept-line .kl-lab{font-size:12.5px;color:var(--text-2)}
+
+/* Google Business Profile reviews snapshot */
+.rev-row{display:flex;align-items:center;gap:12px;padding:11px 18px;border-bottom:1px solid var(--border)}
+.rev-row:last-child{border-bottom:none}
+.rev-row.you{background:var(--brand-50)}
+.rev-row .rv-name{width:150px;flex-shrink:0;font-size:13px;font-weight:600}
+.rev-row .rv-name .rv-sub{display:block;font-size:11px;color:var(--muted);font-weight:500;margin-top:1px}
+.rev-row .rv-track{flex:1;height:10px;background:var(--shade);border-radius:999px;overflow:hidden}
+.rev-row .rv-fill{height:100%;border-radius:999px;background:var(--muted-2);transform-origin:left;animation:growx .55s var(--ease) both}
+.rev-row.you .rv-fill{background:var(--brand)}
+.rev-row .rv-score{width:34px;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:14px;flex-shrink:0}
+.rev-row .rv-count{width:58px;text-align:right;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;flex-shrink:0}
+
+/* Integrations: where you'll see it */
+.int-see{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+.int-see b{color:var(--text-2);font-weight:600}
+.int-see .see-link{margin-left:auto;font-size:12px;font-weight:700;color:var(--brand);white-space:nowrap}
+.int-see .see-link:hover{text-decoration:underline}
+
+@media(max-width:760px){
+  .wx-strip{min-width:560px}
+  .wx-7day{min-width:470px}
+  .rev-row .rv-name{width:112px}
+  .rev-row .rv-count{width:48px}
+  .ratebar-row .rb-lab{width:104px}
+}

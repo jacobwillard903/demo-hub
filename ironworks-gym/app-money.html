@@ -122,7 +122,88 @@
         </div>
       </div>
 
-      <div class="grid grid-2 stack" style="margin-top:6px">
+      <div class="grid grid-half stack" style="margin-top:6px">
+        <div class="card" id="payout-ledger">
+          <div class="card-h"><h2>Payout-Matched Ledger</h2><div class="hint">every deposit tied to its charges</div><span class="via">via Stripe</span></div>
+          <table>
+            <thead>
+              <tr><th>Payout</th><th>Landed</th><th class="num">Charges</th><th class="num">Fees</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Payout $1,046</b></td>
+                <td>Mon Jul 21</td>
+                <td class="num">9</td>
+                <td class="num">$31</td>
+                <td><span class="st st-amber">In transit</span></td>
+              </tr>
+              <tr>
+                <td><b>Payout $1,982</b></td>
+                <td>Tue Jul 15</td>
+                <td class="num">14</td>
+                <td class="num">$58</td>
+                <td><span class="st st-green">Reconciled</span></td>
+              </tr>
+              <tr>
+                <td><b>Payout $2,214</b></td>
+                <td>Tue Jul 8</td>
+                <td class="num">17</td>
+                <td class="num">$64</td>
+                <td><span class="st st-green">Reconciled</span></td>
+              </tr>
+              <tr>
+                <td><b>Payout $8,940</b></td>
+                <td>Wed Jul 2</td>
+                <td class="num">61</td>
+                <td class="num">$259</td>
+                <td><span class="st st-green">Reconciled</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tbl-note">Each payout is matched to its bank deposit and its exact charges, to the penny, the morning it lands. Tuesday's $1,982 includes Marcus Reeves' recovered $165. Click a row for the breakdown.</div>
+        </div>
+
+        <div class="card" id="retry-feed">
+          <div class="card-h"><h2>Card Events, As They Happen</h2><div class="hint">the raw signals behind Payment Recovery</div><span class="via">via Stripe</span></div>
+          <div class="feed">
+            <div class="frow">
+              <span class="fdot amber"></span>
+              <div class="fmain">
+                <div class="ft"><span class="ev">card.expiring</span> Rachel Odum</div>
+                <div class="fs">Caught before the August bill even ran. Update link went out at 8:00 AM sharp.</div>
+              </div>
+              <div class="ftime">Fri 7:58 AM</div>
+            </div>
+            <div class="frow">
+              <span class="fdot green"></span>
+              <div class="fmain">
+                <div class="ft"><span class="ev">charge.succeeded</span> Marcus Reeves, $165</div>
+                <div class="fs">Card updated 11:47 AM, recharged on the spot. Decline to recovery in under 3 hours.</div>
+              </div>
+              <div class="ftime">Tue Jul 15</div>
+            </div>
+            <div class="frow">
+              <span class="fdot red"></span>
+              <div class="fmain">
+                <div class="ft"><span class="ev">charge.failed</span> &times;2 Big Tom Kowalski, $165</div>
+                <div class="fs">Two automatic retries failed, both texts opened, no update. Escalated to you.</div>
+              </div>
+              <div class="ftime">Thu Jul 10</div>
+            </div>
+            <div class="frow">
+              <span class="fdot green"></span>
+              <div class="fmain">
+                <div class="ft"><span class="ev">charge.failed</span> Miguel Santos, $59</div>
+                <div class="fs">Insufficient funds, so no text. Smart retry scheduled for the 1st, when it cleared.</div>
+              </div>
+              <div class="ftime">Tue Jul 8</div>
+            </div>
+          </div>
+          <div class="tbl-note">The same $294 and the same two open names as <a href="app-payments.html" style="font-weight:700;color:var(--accent)">Payment Recovery</a>. That page is the story; this is the wire feed it is built from.</div>
+        </div>
+      </div>
+
+      <div class="grid grid-2 stack">
         <div>
           <div class="card stack" id="cash-chart">
             <div class="card-h"><h2>Cash Flow by Week</h2><div class="hint">July &middot; in vs out</div></div>

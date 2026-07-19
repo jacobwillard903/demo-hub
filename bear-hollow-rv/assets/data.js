@@ -157,10 +157,127 @@
     }
   }
 
+  // ---- live meter feed (round 5, via MeterLink) -------------------
+  // 14 daily kWh values per pedestal. Site 44 runs 2.3x normal from Tue on.
+  var meterFeed = [
+    { site: 33, name: "G. Whitaker", days: [21,22,20,23,22,21,24,22,23,21,22,23,22,21] },
+    { site: 43, name: "R. Toomey",   days: [25,24,26,25,27,24,26,25,24,26,25,27,26,25] },
+    { site: 44, name: "M. Ferris",   days: [23,22,24,23,22,24,23,22,23,22,51,53,52,54], anom: true,
+      note: "2.3x normal since Tue. Space heater pattern. Tenant texted." },
+    { site: 46, name: "P. Osmond",   days: [28,27,29,28,30,27,29,28,27,29,28,30,29,28] },
+    { site: 55, name: "H. Quist",    days: [27,28,26,29,28,27,29,28,27,28,29,27,28,29] },
+    { site: 58, name: "D. Prather",  days: [25,26,24,27,25,26,25,24,26,25,26,25,24,26] },
+    { site: 60, name: "F. Ibarra",   days: [19,20,18,21,19,20,19,21,20,19,33,20,19,20],
+      note: "One-day spike Jul 14, re-read flagged before invoicing." },
+    { site: 64, name: "Y. Camacho",  days: [29,30,28,31,29,30,29,28,30,29,31,30,29,30] }
+  ];
+
+  function sparkline(days, w, h) {
+    var max = Math.max.apply(null, days), min = Math.min.apply(null, days);
+    var span = Math.max(1, max - min);
+    var pts = days.map(function (v, i) {
+      var x = (i / (days.length - 1)) * (w - 6) + 3;
+      var y = h - 4 - ((v - min) / span) * (h - 8);
+      return x.toFixed(1) + "," + y.toFixed(1);
+    });
+    var last = pts[pts.length - 1].split(",");
+    return '<svg class="spark" viewBox="0 0 ' + w + " " + h + '" aria-hidden="true">' +
+      '<polyline points="' + pts.join(" ") + '"/>' +
+      '<circle cx="' + last[0] + '" cy="' + last[1] + '" r="2.4"/></svg>';
+  }
+
+  function renderMeterFeed(mountId) {
+    var mount = document.getElementById(mountId);
+    if (!mount) return;
+    var html = "";
+    meterFeed.forEach(function (m) {
+      var t = null;
+      tenants.forEach(function (x) { if (x.site === m.site) t = x; });
+      var cyc = t ? t.kwh.toLocaleString("en-US") : "";
+      html += '<div class="mrow' + (m.anom ? " anom" : "") + '" data-msite="' + m.site + '">' +
+        '<span class="ms">' + m.site + "</span>" +
+        '<span class="mwho"><b>' + m.name + "</b><span>" +
+          (m.note ? m.note : "Steady. " + m.days[m.days.length - 1] + " kWh yesterday.") + "</span></span>" +
+        sparkline(m.days, 100, 26) +
+        '<span class="mk"><b>' + cyc + ' kWh</b>cycle to date</span>' +
+        "</div>";
+    });
+    mount.innerHTML = html;
+  }
+
+  // ---- schematic park map (round 5, via Google Maps) --------------
+  function padColor(status) { return status === "matched" ? "matched" : status; }
+  function renderParkMap(mountId) {
+    var mount = document.getElementById(mountId);
+    if (!mount) return;
+    var byId = {};
+    sites.forEach(function (s) { byId[s.id] = s; });
+    function pad(id, x, y, w2, h2, rx) {
+      var s = byId[id];
+      if (!s) return "";
+      var cls = padColor(s.status);
+      var dark = cls === "occ" || cls === "matched";
+      return '<g class="pad-g" data-sid="' + id + '"><title>' + s.label + ". " + s.type + (s.note ? ". " + s.note : "") + "</title>" +
+        '<rect class="pad ' + cls + '" x="' + (x - w2 / 2).toFixed(1) + '" y="' + (y - h2 / 2).toFixed(1) +
+        '" width="' + w2 + '" height="' + h2 + '" rx="' + (rx || 3) + '"/>' +
+        '<text class="p-lbl' + (dark ? " lt" : "") + '" x="' + x.toFixed(1) + '" y="' + (y + 2.8).toFixed(1) +
+        '" text-anchor="middle">' + s.label + "</text></g>";
+    }
+    var h = "";
+    h += '<svg class="pmap" viewBox="0 0 1000 560" role="img" aria-label="Schematic map of Bear Hollow RV Park">';
+    // grounds + river
+    h += '<rect class="p-grass" x="0" y="0" width="1000" height="560" rx="10"/>';
+    h += '<path class="p-river" d="M0 492 C 180 470, 320 512, 520 496 C 720 480, 850 516, 1000 498 L1000 560 L0 560 Z"/>';
+    h += '<path class="p-riverline" d="M0 505 C 190 484, 330 524, 530 508 C 725 493, 855 528, 1000 511"/>';
+    h += '<text class="p-tag" x="500" y="541" text-anchor="middle">Bear Creek</text>';
+    // roads: entrance, spine down to riverside lane, oak loop
+    h += '<path class="p-road" d="M0 84 L306 84 L306 442"/>';
+    h += '<path class="p-road" d="M60 442 L952 442"/>';
+    h += '<ellipse class="p-road2" cx="622" cy="220" rx="278" ry="118" fill="none"/>';
+    h += '<path class="p-road2" d="M306 260 L344 240"/>';
+    // office + bathhouse
+    h += '<rect class="p-bldg" x="322" y="56" width="52" height="32" rx="4"/><text class="p-lbl lt" x="348" y="75" text-anchor="middle">Office</text>';
+    h += '<rect class="p-bldg" x="560" y="196" width="42" height="26" rx="4"/><text class="p-lbl lt" x="581" y="212" text-anchor="middle">Bath</text>';
+    // trees
+    [[120,300],[150,330],[95,345],[185,300],[905,120],[930,160],[875,95],[420,120],[450,95]].forEach(function (t) {
+      h += '<circle class="p-tree" cx="' + t[0] + '" cy="' + t[1] + '" r="11"/>';
+    });
+    // zone labels
+    h += '<text class="p-zone" x="60" y="416">Riverside pull-throughs 1-30</text>';
+    h += '<text class="p-zone" x="500" y="220" text-anchor="middle">Oak Loop 31-64</text>';
+    h += '<text class="p-zone" x="118" y="152" text-anchor="middle">Tents</text>';
+    h += '<text class="p-zone" x="874" y="52" text-anchor="middle">Cabins</text>';
+    h += '<text class="p-zone" x="66" y="52">Overflow</text>';
+    h += '<text class="p-tag" x="10" y="72">Entrance</text>';
+    // riverside 1-30 along the lane above the creek
+    var n;
+    for (n = 1; n <= 30; n++) h += pad("s" + n, 62 + (n - 1) * 30.6, 468, 26, 17);
+    // oak loop 31-64 around the ellipse
+    for (n = 31; n <= 64; n++) {
+      var a = ((n - 31) / 34) * Math.PI * 2 - Math.PI / 2;
+      var x = 622 + Math.cos(a) * 278, y = 220 + Math.sin(a) * 118;
+      h += pad("s" + n, x, y, 26, 16);
+    }
+    // tents T1-12: grove cluster
+    for (n = 1; n <= 12; n++) {
+      var col = (n - 1) % 4, row = Math.floor((n - 1) / 4);
+      h += pad("t" + n, 72 + col * 34, 176 + row * 32, 24, 16, 8);
+    }
+    // cabins C1-4
+    for (n = 1; n <= 4; n++) h += pad("c" + n, 806 + (n - 1) * 46, 78, 34, 24, 4);
+    // overflow V1-4
+    for (n = 1; n <= 4; n++) h += pad("v" + n, 44 + (n - 1) * 40, 116, 30, 17);
+    h += "</svg>";
+    mount.innerHTML = h;
+  }
+
   window.BH = {
     sites: sites,
     tenants: tenants,
+    meterFeed: meterFeed,
     renderSiteGrid: renderSiteGrid,
-    renderTenantTable: renderTenantTable
+    renderTenantTable: renderTenantTable,
+    renderMeterFeed: renderMeterFeed,
+    renderParkMap: renderParkMap
   };
 })();

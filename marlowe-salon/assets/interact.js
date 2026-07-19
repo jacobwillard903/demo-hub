@@ -307,8 +307,9 @@
   };
 
   function wireDrill() {
-    // rows, feed items, match cards
+    // rows, feed items, match cards (round-5 widgets carry data-r5 and wire themselves)
     document.querySelectorAll(".rows li, .feed li, .match, .visits li").forEach(function (el) {
+      if (el.hasAttribute("data-r5")) return;
       el.classList.add("clicky");
       el.setAttribute("tabindex", "0");
       function open() {
@@ -377,14 +378,26 @@
     document.querySelectorAll(".int").forEach(function (card) {
       card.classList.add("clicky");
       card.setAttribute("tabindex", "0");
-      function open() {
+      function open(ev) {
+        // let the "See it live" deep link navigate instead of opening the drawer
+        if (ev && ev.target && ev.target.closest && ev.target.closest("a")) return;
         var mark = card.querySelector(".mark");
         var st = card.querySelector(".st");
         var p = card.querySelector("p");
+        var see = card.querySelector(".see");
         var connected = st && /Connected/.test(st.textContent);
+        var extra = "";
+        if (see) {
+          var where = see.querySelector("span:not(.k)");
+          var live = see.querySelector(".golive");
+          extra = '<div class="dsec">Where you\'ll see it</div><div class="dnote" style="margin-top:0">' +
+                  esc(where ? where.textContent.trim() : "") + "</div>";
+          if (live) extra += '<div class="drawer-actions"><a class="dbtn quiet" href="' + esc(live.getAttribute("href")) + '">See it live</a></div>';
+        }
         genericDrawer(mark ? mark.textContent.trim() : "Integration",
           connected ? "Connected" : "Available",
           esc(p ? p.textContent.trim() : ""),
+          extra +
           '<div class="drawer-actions">' +
           (connected
             ? '<button class="dbtn" type="button" data-queue="sync check for this connection">Run a sync check</button>'
@@ -392,8 +405,194 @@
           "</div>");
       }
       card.addEventListener("click", open);
-      card.addEventListener("keydown", function (e) { if (e.key === "Enter") open(); });
+      card.addEventListener("keydown", function (e) { if (e.key === "Enter" && !e.target.closest("a")) open(e); });
     });
+  }
+
+  /* ---------------- round 5: live-data showcase drawers ---------------- */
+  function r5Drawer(title, sub, note, tl, money, actions) {
+    var html = '<div class="dnote" style="margin-top:0">' + note + "</div>";
+    if (tl) html += timelineHTML(tl);
+    if (money) html += '<div class="dsec">Dollars</div><div class="dmoney">' + money + "</div>";
+    html += actionsHTML(actions || [{ label: "Mark handled", queue: "marking this item handled" }]);
+    openDrawer(title, sub, html);
+  }
+  var r5Drawers = {
+    "rev-marlowe": function () {
+      r5Drawer("Marlowe Hair Co. on Google", "4.9 stars, 212 reviews, via Google Business Profile",
+        "Pulled live from the salon's Business Profile. 18 new reviews this month, all 5 stars but one. " +
+        "Requests go out by text after happy visits, and drafted replies wait for Dana's approval before anything posts.",
+        [
+          { t: "Today", x: "Review requests sent to 6 clients after checkout." },
+          { t: "This wk", x: "5 new reviews in. Two mention Danielle by name." },
+          { t: "This mo", x: "+18 reviews. The pace doubled since requests went automatic." }
+        ],
+        "Salons at 4.9 win the \"best salon near me\" search. Every tenth of a star up the list is booked chairs.",
+        [{ label: "Open review queue", href: "app-rebooking.html#radar-reviews" },
+         { label: "Request more reviews", queue: "review requests for today's happy visits" }]);
+    },
+    "rev-luxe": function () {
+      r5Drawer("Luxe & Co Salon", "Competitor, 2.1 miles away, via Google Business Profile",
+        "4.5 stars across 148 reviews, adding about 6 a month. Watched read-only from public data so Dana always knows where Marlowe stands on the local map. No action needed, just the scoreboard.",
+        [
+          { t: "This mo", x: "+6 reviews. Their pace is flat." },
+          { t: "Gap", x: "Marlowe is +0.4 stars and 64 reviews ahead, and pulling away." }
+        ],
+        null,
+        [{ label: "See Marlowe's numbers", queue: "opening the full reviews comparison" }]);
+    },
+    "rev-blowout": function () {
+      r5Drawer("The Blowout Bar", "Competitor, 0.8 miles away, via Google Business Profile",
+        "4.3 stars across 96 reviews, adding about 3 a month. Closest competitor by distance, furthest by rating. " +
+        "A new client comparing the two listings sees the difference before she ever calls.",
+        [
+          { t: "This mo", x: "+3 reviews, one 2-star about a missed appointment." },
+          { t: "Gap", x: "Marlowe is +0.6 stars and 116 reviews ahead." }
+        ],
+        null,
+        [{ label: "See Marlowe's numbers", queue: "opening the full reviews comparison" }]);
+    },
+    "slot-1": function () {
+      r5Drawer("Today 4:15 PM, Brooke", "Open slot, via Square Appointments",
+        "A 45 minute window on Brooke's book, surfaced straight from the synced Square calendar. Long enough for a cut or a gloss. The waitlist has 3 clients who fit it.",
+        [{ t: "2 min ago", x: "Slot confirmed still open on the last sync." },
+         { t: "Ready", x: "One tap offers it to the 3 matching waitlist clients, first YES wins." }],
+        "Filled at the average $140 ticket, this window pays for the software month in one afternoon.",
+        [{ label: "Offer to waitlist", queue: "waitlist offer for today 4:15 PM with Brooke" },
+         { label: "Open the calendar", href: "app-calendar.html#cal-card" }]);
+    },
+    "slot-2": function () {
+      r5Drawer("Saturday 11:30 AM, Marissa", "Open slot, via Square Appointments",
+        "A 105 minute window on the biggest day of the week, big enough for a partial highlight. Two waitlisted highlight clients fit it, including Tara B., who is 8 weeks overdue.",
+        [{ t: "2 min ago", x: "Slot confirmed still open on the last sync." },
+         { t: "Queued", x: "Tomorrow's 10:00 AM nudge to Tara B. attaches this exact opening." }],
+        "A $145 partial highlight, and possibly a drifting client recovered in the same text.",
+        [{ label: "Offer to waitlist", queue: "waitlist offer for Saturday 11:30 AM with Marissa" },
+         { label: "Open Rebooking Radar", href: "app-rebooking.html" }]);
+    },
+    "slot-3": function () {
+      r5Drawer("Saturday 2:00 PM, chair 6", "Open chair, via Square Appointments",
+        "One of the two open Saturday chairs. Any stylist working overflow can take it, so the AI matches by service length only, which widens the waitlist pool to 9 clients.",
+        [{ t: "8:05 AM", x: "First round of offers went to the 9 matching clients." },
+         { t: "So far", x: "2 replies, both considering times. Re-ping at 5 PM." }],
+        "Two open Saturday chairs are roughly $1,600 of bookable revenue.",
+        [{ label: "Offer to waitlist", queue: "fresh waitlist offer for Saturday 2:00 PM" },
+         { label: "How rescues work", href: "app-rescue.html" }]);
+    },
+    "chan-bar": function () {
+      r5Drawer("Bookings by channel", "This week, via Instagram, Meta and the salon line",
+        "11 bookings from 34 conversations. Instagram DMs converted 5, texts 4, missed calls texted back 2. " +
+        "The DM number is the one that used to be zero: those messages sat unread until close.",
+        [{ t: "IG DMs", x: "5 bookings from 14 conversations, 2 of them after hours." },
+         { t: "Texts", x: "4 bookings from 13 conversations." },
+         { t: "Calls", x: "2 bookings from 7 missed calls, texted back within a minute." }],
+        "At the salon's $100 to $500 service range, slow replies were quietly the most expensive leak in the business.",
+        [{ label: "Open the feed", queue: "scrolling to this week's conversations" }]);
+    },
+    "pay-1": function () {
+      r5Drawer("Payout $1,284, tomorrow", "Scheduled, via Square",
+        "Tomorrow's deposit, already reconciled before it lands: 14 card tickets from today, tips split out per stylist, fees accounted for. When the bank shows it, the books already agree.",
+        [{ t: "Gross", x: "$1,415 across 14 tickets." },
+         { t: "Tips", x: "$186 passed through to stylist tip payable, never revenue." },
+         { t: "Fees", x: "$45 card processing, filed to its expense line." }],
+        "Net to bank: $1,284. Matched to the deposit automatically when it posts.",
+        [{ label: "View in the books", href: "app-money.html#money-pl" }]);
+    },
+    "pay-2": function () {
+      r5Drawer("Payout $2,180, landed Thursday", "Matched, via Square",
+        "Thursday's deposit hit the operating account and matched to 31 tickets on the first pass. Tips were split to 5 stylists the same night.",
+        [{ t: "Thu 6:02 AM", x: "Deposit posted to the bank." },
+         { t: "Thu 6:04 AM", x: "Auto-matched to Wednesday's 31 tickets, to the penny." },
+         { t: "Thu 6:04 AM", x: "$318 of tips confirmed in tip payable, $0 in revenue." }],
+        null,
+        [{ label: "View in the books", href: "app-money.html#money-pl" }]);
+    },
+    "pay-3": function () {
+      r5Drawer("Payout $1,940, landed Wednesday", "Matched, via Square",
+        "Matched to 27 tickets. One refund from Tuesday ($40 gloss) was netted out and filed against the original sale, the way an accountant would want it.",
+        [{ t: "Wed 6:01 AM", x: "Deposit posted and matched." },
+         { t: "Note", x: "$40 refund netted against Tuesday's sale, categorized correctly." }],
+        null,
+        [{ label: "View in the books", href: "app-money.html#money-pl" }]);
+    },
+    "pay-4": function () {
+      r5Drawer("Payout $1,730, landed Tuesday", "Matched, via Square",
+        "Matched to 24 tickets, including the $312 retail Saturday spillover that settled Monday night. Nothing for Dana to chase.",
+        [{ t: "Tue 6:03 AM", x: "Deposit posted and matched to 24 tickets." }],
+        null,
+        [{ label: "View in the books", href: "app-money.html#money-pl" }]);
+    },
+    "pay-5": function () {
+      r5Drawer("Payout $2,050, landed Monday", "Matched, via Square",
+        "Saturday and Sunday's combined settlement. The biggest deposit of the week matched on the first pass, 29 tickets and $402 of tips passed through.",
+        [{ t: "Mon 6:02 AM", x: "Weekend deposit posted and matched." },
+         { t: "Mon 6:02 AM", x: "$402 of tips split across 5 stylists." }],
+        null,
+        [{ label: "View in the books", href: "app-money.html#money-pl" }]);
+    },
+    "ord-1042": function () {
+      r5Drawer("Order #1042, shipped", "Online store, via Shopify",
+        "Olaplex No. 3 x2 for a regular who ran out between visits. Paid online, shipped this morning with tracking texted to her.",
+        [{ t: "Yesterday", x: "Ordered 9:40 PM from the link in Danielle's reel." },
+         { t: "Today", x: "Shipped. Shelf count decremented automatically, reorder math updated." }],
+        "$60 of retail that used to walk to a big-box store between appointments.",
+        [{ label: "Open the shelf", href: "app-retail.html#ret-shelf" }]);
+    },
+    "ord-1041": function () {
+      r5Drawer("Order #1041, ready for pickup", "Online store, via Shopify",
+        "Purple shampoo and heat protectant, ordered for pickup before Friday's appointment. It will be bagged at the front desk when she checks in.",
+        [{ t: "Today", x: "Order placed, pickup chosen. Added to Friday's check-in notes." }],
+        "$52, attached to a visit that was already on the book.",
+        [{ label: "Open the shelf", href: "app-retail.html#ret-shelf" }]);
+    },
+    "ord-1039": function () {
+      r5Drawer("Order #1039, delivered", "Online store, via Shopify",
+        "Bond repair mask, delivered Tuesday to a client who moved to Franklin and still buys her products from Marlowe.",
+        [{ t: "Mon", x: "Ordered from the win-back email's product link." },
+         { t: "Tue", x: "Delivered. A retail client kept after moving away." }],
+        null,
+        [{ label: "Open the shelf", href: "app-retail.html#ret-shelf" }]);
+    },
+    "ord-1036": function () {
+      r5Drawer("Order #1036, restock notify", "Online store, via Shopify",
+        "Texture spray is sold out in the salon and online. Two clients tapped \"notify me\"; both get a text the moment the draft reorder lands and counts go back up.",
+        [{ t: "Thu", x: "Sold out flagged. Notify list opened online." },
+         { t: "Queued", x: "Restock texts fire automatically on delivery." }],
+        "Out of stock used to be a silent lost sale. Now it is a queued one.",
+        [{ label: "Approve the reorder", queue: "approving the $312 draft distributor order" }]);
+    }
+  };
+  function wireR5() {
+    document.querySelectorAll("[data-r5]").forEach(function (el) {
+      var fn = r5Drawers[el.getAttribute("data-r5")];
+      if (!fn) return;
+      el.classList.add("clicky");
+      el.setAttribute("tabindex", "0");
+      el.addEventListener("click", function (e) { e.preventDefault(); fn(); });
+      el.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); fn(); } });
+    });
+    // tips pass-through: each stylist split row opens that stylist's record
+    document.querySelectorAll(".tiprow").forEach(function (row) {
+      var who = row.querySelector(".who");
+      if (!who) return;
+      row.classList.add("clicky");
+      row.setAttribute("tabindex", "0");
+      function open() { stylistDrawer(who.textContent.trim()); }
+      row.addEventListener("click", open);
+      row.addEventListener("keydown", function (e) { if (e.key === "Enter") open(); });
+    });
+  }
+  // deep-link landing: highlight the widget an integrations "See it live" link points at
+  function hashLand() {
+    if (!location.hash || location.hash.length < 2) return;
+    var t = null;
+    try { t = document.querySelector(location.hash); } catch (e) { return; }
+    if (!t) return;
+    setTimeout(function () {
+      t.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+      t.classList.add("hl-target");
+      setTimeout(function () { t.classList.remove("hl-target"); }, 2200);
+    }, 250);
   }
 
   /* ---------------- New Appointment modal ---------------- */
@@ -576,8 +775,10 @@
     growCharts();
     deepLinks();
     wireDrill();
+    wireR5();
     wireNewAppt();
     wireAsk();
+    hashLand();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();

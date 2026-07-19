@@ -83,57 +83,79 @@
         <div class="int-card">
           <div class="int-head"><div><div class="int-name">CampLife</div><div class="int-kind">Reservations</div></div></div>
           <p>Two-way sync. Bookings the assistant takes land in CampLife in seconds, and anything entered in CampLife updates the site board. The paper grid retires, CampLife stays.</p>
+          <div class="int-see"><b>Where you'll see it:</b> the live Site Board, every site colored by status the moment CampLife changes.</div>
+          <a class="int-live" href="app-siteboard.html#site-board-card">See it live<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
           <span class="pill good"><span class="dot"></span>Connected</span>
         </div>
         <div class="int-card">
           <div class="int-head"><div><div class="int-name">QuickBooks Online</div><div class="int-kind">Accounting</div></div></div>
           <p>Every invoice, payout, and expense posts itself. The Financials tab reads live from here, and the AI bookkeeper keeps the books current daily.</p>
+          <div class="int-see"><b>Where you'll see it:</b> the live P&amp;L on Financials, categorized and four minutes fresh.</div>
+          <a class="int-live" href="app-money.html#pnl-card">See it live<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
           <span class="pill good"><span class="dot"></span>Connected</span>
         </div>
         <div class="int-card">
           <div class="int-head"><div><div class="int-name">Stripe</div><div class="int-kind">Payments</div></div></div>
           <p>The payment link in every booking text. Deposits, refunds, and retained cancellation fees, matched to bank deposits automatically.</p>
+          <div class="int-see"><b>Where you'll see it:</b> the payout ledger on Financials, each bank deposit matched to the bookings inside it.</div>
+          <a class="int-live" href="app-money.html#payout-ledger">See it live<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
           <span class="pill good"><span class="dot"></span>Connected</span>
         </div>
         <div class="int-card">
           <div class="int-head"><div><div class="int-name">Twilio</div><div class="int-kind">Calls and texts</div></div></div>
           <p>The park's own phone number, answered around the clock. Voice for the 2:47 AM caller, SMS for gate codes, arrival texts, and waitlist offers.</p>
+          <div class="int-see"><b>Where you'll see it:</b> the call and text feed on the AI Front Desk, including the 2:47 AM booking.</div>
+          <a class="int-live" href="app-frontdesk.html#fd-feed">See it live<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
           <span class="pill good"><span class="dot"></span>Connected</span>
         </div>
-        <div class="int-card">
+        <div class="int-card" id="int-nws">
           <div class="int-head"><div><div class="int-name">National Weather Service</div><div class="int-kind">Weather alerts</div></div></div>
           <p>Watches and warnings for the park's county, streamed live. Severe weather triggers the shelter text to every occupied site, like July 9.</p>
+          <div class="int-see"><b>Where you'll see it:</b> the 7-day forecast strip on the Dashboard, with Tuesday's storm already flagged.</div>
+          <a class="int-live" href="app-dashboard.html#wx-card">See it live<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
           <span class="pill good"><span class="dot"></span>Connected</span>
         </div>
         <div class="int-card">
           <div class="int-head"><div><div class="int-name">Google Business Profile</div><div class="int-kind">Reviews</div></div></div>
           <p>New Google reviews stream into the Reviews tab within the hour, each with a drafted reply waiting for a one-tap approval.</p>
+          <div class="int-see"><b>Where you'll see it:</b> the reviews snapshot on the Dashboard, you next to the parks down the road.</div>
+          <a class="int-live" href="app-dashboard.html#rank-tile">See it live<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
           <span class="pill good"><span class="dot"></span>Connected</span>
         </div>
         <div class="int-card">
           <div class="int-head"><div><div class="int-name">MeterLink Submetering</div><div class="int-kind">Utilities</div></div></div>
           <p>Smart meter reads from the Riverside pedestals flow straight onto monthly invoices at $0.14/kWh. Outliers get flagged for a re-read before they bill wrong.</p>
+          <div class="int-see"><b>Where you'll see it:</b> the live meter feed on Seasonal Billing, with the Riverside outlier flagged for a re-read.</div>
+          <a class="int-live" href="app-billing.html#meter-feed">See it live<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
           <span class="pill good"><span class="dot"></span>Connected</span>
         </div>
         <div class="int-card">
           <div class="int-head"><div><div class="int-name">Gmail</div><div class="int-kind">Email</div></div></div>
           <p>Reservation confirmations, monthly invoices, and the Monday owner summary, sent from the park's own address, not a robot's.</p>
+          <div class="int-see"><b>Where you'll see it:</b> the monthly tenant cycle on Seasonal Billing, invoices sent from the park's own address.</div>
+          <a class="int-live" href="app-billing.html#tenant-card">See it live<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
           <span class="pill good"><span class="dot"></span>Connected</span>
         </div>
         <div class="int-card">
           <div class="int-head"><div><div class="int-name">Google Calendar</div><div class="int-kind">Schedule</div></div></div>
           <p>Pump-outs, mowing, cabin turnovers, and maintenance blocks land on Ken and Patty's shared calendar, so the grounds list runs itself too.</p>
+          <div class="int-see"><b>Where you'll see it:</b> tonight's arrivals on the Dashboard, pump-outs and turnovers blocked in alongside them.</div>
+          <a class="int-live" href="app-dashboard.html#arrivals">See it live<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
           <span class="pill good"><span class="dot"></span>Connected</span>
         </div>
         <div class="int-card">
           <div class="int-head"><div><div class="int-name">Hipcamp</div><div class="int-kind">Marketplace</div></div></div>
-          <p>List the tent sites and cabins to Hipcamp's campers. Availability would sync from the site board, so a marketplace booking can never double-book a site.</p>
-          <span class="pill neutral">Available</span>
+          <p>List the tent sites and cabins to Hipcamp's campers. Availability syncs from the site board, so a marketplace booking can never double-book a site.</p>
+          <div class="int-see"><b>Where you'll see it:</b> the channel mix on the Dashboard, marketplace bookings and their fees next to your direct ones.</div>
+          <a class="int-live" href="app-dashboard.html#channel-card">See it live<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <span class="pill good"><span class="dot"></span>Connected</span>
         </div>
         <div class="int-card">
           <div class="int-head"><div><div class="int-name">RoverPass</div><div class="int-kind">Marketplace</div></div></div>
           <p>RV traveler marketplace with live availability and real rig-length rules, fed by the same board the assistant books from.</p>
-          <span class="pill neutral">Available</span>
+          <div class="int-see"><b>Where you'll see it:</b> the channel mix on the Dashboard, rig-length matched marketplace bookings landing on the board.</div>
+          <a class="int-live" href="app-dashboard.html#channel-card">See it live<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+          <span class="pill good"><span class="dot"></span>Connected</span>
         </div>
         <div class="int-card">
           <div class="int-head"><div><div class="int-name">Good Sam</div><div class="int-kind">Directory</div></div></div>
@@ -152,6 +174,9 @@ window.TOUR = [
   { el: "#int-grid",
     title: "Will it work with my stuff? Yes.",
     body: "CampLife, QuickBooks, Stripe, the park's own phone number, the Riverside smart meters, Google reviews, Gmail. Nothing gets ripped out. The assistant sits on top and makes them act like one system.", side: "top" },
+  { el: "#int-nws",
+    title: "Every connection has a screen you can point at.",
+    body: "Each card says where that feed shows up and jumps you straight to it. The weather service lands on the Dashboard forecast strip, Stripe on the payout ledger, the Riverside meters on the billing feed. <b>Connected means visible, not just configured.</b>", side: "top" },
   { el: "#int-alert",
     title: "Connected is more than synced.",
     body: "July 9: a severe thunderstorm warning came in at 8:42 PM and <b>61 occupied sites had the shelter text within a minute</b>. That's what the weather feed, the site board, and the texting line do together.", side: "bottom" },

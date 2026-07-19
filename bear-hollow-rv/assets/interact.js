@@ -74,6 +74,7 @@
       });
       h += "</div>";
     }
+    if (rec.html) h += rec.html;
     if (rec.timeline && rec.timeline.length) {
       h += '<div class="dr-sect">What the assistant did</div><div class="dr-tl">';
       rec.timeline.forEach(function (t) {
@@ -211,11 +212,45 @@
       fields: [["Weekend", "Labor Day, Fri Sep 4 to Mon Sep 7"], ["Offers out", "3 guests, first to confirm wins"], ["If they pass", "Next in line is queued automatically"]],
       timeline: [["Today 7:40 AM", "Two openings detected, waitlist matched by rig fit."], ["Tomorrow 7:40 AM", "Unclaimed holds release and re-offer."]],
       actions: ["View waitlist", "Add a guest"] } },
-    { keys: ["storm", "weather"], rec: { kind: "Automation", title: "July 9 storm alert", sub: "Severe thunderstorm warning, 8:42 PM",
-      chips: [{ txt: "61 sites texted", cls: "good" }],
-      fields: [["Trigger", "National Weather Service warning for the park's county"], ["Sent", "Shelter location text to every occupied site within a minute"], ["Replies", "14, every one answered"]],
+    { keys: ["storm", "weather"], rec: { kind: "Automation", title: "July 9 storm alert", sub: "Severe thunderstorm warning, 8:42 PM. Live feed, hour by hour.",
+      chips: [{ txt: "61 sites texted", cls: "good" }, { txt: "via National Weather Service", cls: "neutral" }],
+      fields: [["Trigger", "Severe thunderstorm warning for the park's county"], ["Sent", "Shelter location text to every occupied site within a minute"], ["Replies", "14, every one answered"]],
+      html: '<div class="dr-sect">That evening, hour by hour</div><div class="dr-hours">' +
+        '<div class="dr-hour"><span class="t">6 PM</span><span class="v">0%</span><span class="w">91&deg;</span></div>' +
+        '<div class="dr-hour"><span class="t">7 PM</span><span class="v">15%</span><span class="w">88&deg;</span></div>' +
+        '<div class="dr-hour"><span class="t">8 PM</span><span class="v">55%</span><span class="w">gusts 30</span></div>' +
+        '<div class="dr-hour hot"><span class="t">8:42</span><span class="v">WARN</span><span class="w">texts out</span></div>' +
+        '<div class="dr-hour hot"><span class="t">9 PM</span><span class="v">90%</span><span class="w">gusts 48</span></div>' +
+        '<div class="dr-hour"><span class="t">10 PM</span><span class="v">40%</span><span class="w">easing</span></div>' +
+        '<div class="dr-hour"><span class="t">11 PM</span><span class="v">10%</span><span class="w">clear</span></div>' +
+        "</div>",
       timeline: [["8:42 PM", "Warning issued."], ["8:43 PM", "All 61 occupied sites texted the shelter location."], ["9:20 PM", "All clear follow-up."]],
       actions: ["View the message", "Edit shelter info"] } },
+    { keys: ["ferris", "site 44", "2.3x"], rec: { kind: "Meter anomaly", title: "Site 44 drawing 2.3x normal", sub: "M. Ferris. Steady overnight load since Tuesday 2 AM.",
+      chips: [{ txt: "Tenant texted", cls: "good" }, { txt: "via MeterLink", cls: "neutral" }],
+      fields: [["Normal draw", "23 kWh/day trailing average"], ["Since Tuesday", "52 kWh/day, a flat resistive load overnight"], ["Pattern", "Space heater signature, 1.2 kW steady from 10 PM to 8 AM"], ["Billing impact", "None hidden. It's metered, so it bills correctly either way, about $4.06/day extra"]],
+      timeline: [["Tue 2:04 AM", "Draw stepped up and stayed up. Watch started."], ["Thu 6:00 AM", "Third night confirmed the pattern, flagged as an anomaly."], ["Fri 7:05 AM", "Tenant texted: \"Your Site 44 meter is running about double. Anything plugged in you forgot about?\""], ["Fri 7:22 AM", "Reply: \"Heater for the dog's bed, sorry. Shutting it off days.\""]],
+      actions: ["View the meter log", "Text M. Ferris"] } },
+    { keys: ["2,340.16"], rec: { kind: "Stripe payout", title: "Payout $2,340.16", sub: "Landed Thursday. 9 payments, matched automatically.",
+      chips: [{ txt: "Matched to bank deposit", cls: "good" }, { txt: "via Stripe", cls: "neutral" }],
+      fields: [["Hendricks, Site 22", "$174.00"], ["Miller party, Site 14", "$104.00"], ["Casteel party, Cabin C2", "$285.00"], ["Okafor deposit, Site 47", "$50.00"], ["5 more reservations", "$1,727.16"], ["Card fees", "$68.32, posted to Card processing"]],
+      timeline: [["Thu 5:12 AM", "Payout initiated by Stripe."], ["Thu 11:40 AM", "Landed in the operating account."], ["Thu 11:41 AM", "All 9 payments matched to their reservations and invoices. Books stayed clean."]],
+      actions: ["View in the ledger", "Open the deposit"] } },
+    { keys: ["1,872.40"], rec: { kind: "Stripe payout", title: "Payout $1,872.40", sub: "Landed Wednesday. 7 payments, matched automatically.",
+      chips: [{ txt: "Matched to bank deposit", cls: "good" }, { txt: "via Stripe", cls: "neutral" }],
+      fields: [["Reservations", "6 transient bookings, $1,257.40"], ["Monthly autopay", "K. Delgado catch-up payment, $615.00"], ["Card fees", "$54.66"]],
+      timeline: [["Wed 11:35 AM", "Landed and matched, 7 for 7."]],
+      actions: ["View in the ledger"] } },
+    { keys: ["3,105.22"], rec: { kind: "Stripe payout", title: "Payout $3,105.22", sub: "Landed Tuesday. 12 payments from the weekend rush.",
+      chips: [{ txt: "Matched to bank deposit", cls: "good" }, { txt: "via Stripe", cls: "neutral" }],
+      fields: [["Weekend bookings", "11 reservations, $3,070.22"], ["Retained deposit", "Site 14 cancellation fee, $35.00"], ["Card fees", "$90.71"]],
+      timeline: [["Tue 11:38 AM", "Landed and matched, 12 for 12, including the retained cancellation fee."]],
+      actions: ["View in the ledger"] } },
+    { keys: ["4,918.75"], rec: { kind: "Stripe payout", title: "Payout $4,918.75", sub: "Landed Monday. 19 payments, 8 of them monthly autopays.",
+      chips: [{ txt: "Matched to bank deposit", cls: "good" }, { txt: "via Stripe", cls: "neutral" }],
+      fields: [["Monthly autopays", "8 tenants, $4,006.75 with metered electric"], ["Transient bookings", "11 nights, $912.00"], ["Card fees", "$143.59"]],
+      timeline: [["Mon 11:36 AM", "Landed and matched, 19 for 19. Each autopay tied to its July invoice."]],
+      actions: ["View in the ledger"] } },
     { keys: ["shoulder-season", "campaign", "3rd night free"], rec: { kind: "Campaign", title: "Shoulder-season campaign", sub: '"3rd night free, October Tuesday through Thursday"',
       chips: [{ txt: "Live", cls: "good" }],
       fields: [["Audience", "214 past guests who stayed midweek before"], ["Results", "11 bookings, +$1,830 October revenue"], ["Rate", "5.1% booked from one text"]],
@@ -426,6 +461,106 @@
     document.querySelectorAll(".match-card").forEach(function (card) {
       wireClick(card, function () { openDrawer(findRecord("hendricks")); });
     });
+    // round 5: weather strip days
+    document.querySelectorAll(".wx-day").forEach(function (day) {
+      var d = day.getAttribute("data-day"), hi = day.getAttribute("data-hi"), lo = day.getAttribute("data-lo");
+      var cond = day.getAttribute("data-cond"), pr = day.getAttribute("data-pr") || "0";
+      wireClick(day, function () {
+        if (day.classList.contains("storm")) {
+          openDrawer({
+            kind: "Forecast", title: "Tuesday: storms, 80% chance", sub: "Severe cells possible late afternoon. The assistant already acted on it.",
+            chips: [{ txt: "3 upgrades offered", cls: "warn" }, { txt: "via National Weather Service", cls: "neutral" }],
+            fields: [["Forecast", "79/68, thunderstorms from about 3 PM"], ["Exposed that night", "3 tent arrivals, plus Site 41's awning from Friday"], ["Offer sent", "Cabin upgrade at the weekday rate, first reply wins the last cabin"], ["Taken so far", "1 of 3. C4 is now booked Tuesday night"]],
+            timeline: [["This morning 6:10 AM", "80% storm probability crossed the threshold for Tuesday."], ["6:12 AM", "Cabin-upgrade offer texted to Tuesday's 3 tent arrivals."], ["7:48 AM", "First acceptance, C4 booked at $79. The tent site went back on sale."], ["Mon 8 PM (queued)", "Awning and secure-camp reminder to every site in the park."]],
+            actions: ["View the offer text", "See Tuesday's arrivals"]
+          });
+        } else {
+          openDrawer({
+            kind: "Forecast", title: d + ": " + cond, sub: "High " + hi + ", low " + lo + ". " + pr + "% chance of rain.",
+            chips: [{ txt: "No action needed", cls: "good" }, { txt: "via National Weather Service", cls: "neutral" }],
+            fields: [["Occupancy impact", "None flagged. Bookings and arrivals run as planned."], ["Watching for", "Storm probability over 60%, heat over 102, wind over 40 mph"]],
+            timeline: [["Hourly", "The county forecast refreshes and re-checks every arrival against it."]],
+            actions: ["View hourly detail"]
+          });
+        }
+      });
+    });
+    // round 5: channel mix rows
+    var CHAN = {
+      direct: { kind: "Booking channel", title: "Direct", sub: "The assistant's phone line, texts, and your own site. 96 July bookings.",
+        chips: [{ txt: "$0 commission", cls: "good" }],
+        fields: [["Revenue MTD", "$35,738 of $41,128 nightly revenue, 87%"], ["Commission", "$0. Card processing only"], ["Why it grows", "Marketplace guests get converted to direct rebookings at checkout"]],
+        timeline: [["All month", "Every call, text, and after-hours booking lands here, fee-free."]],
+        actions: ["View direct bookings"] },
+      hipcamp: { kind: "Booking channel", title: "Hipcamp", sub: "Tents and cabins listed. 18 July bookings, mostly first-timers.",
+        chips: [{ txt: "10% commission", cls: "warn" }],
+        fields: [["Revenue MTD", "$3,120"], ["Commission paid", "$312"], ["Worth it because", "14 of 18 were guests who'd never stayed here. The assistant invites every one back direct"]],
+        timeline: [["Live", "Availability syncs from the site board, so a Hipcamp booking can never double-book a site."]],
+        actions: ["View Hipcamp bookings"] },
+      roverpass: { kind: "Booking channel", title: "RoverPass", sub: "RV traveler marketplace. 12 July bookings with real rig-length rules.",
+        chips: [{ txt: "8% fee", cls: "warn" }],
+        fields: [["Revenue MTD", "$2,270"], ["Fees paid", "$182"], ["Rig rules", "Listings carry the same length and amp limits as the board, so matches hold"]],
+        timeline: [["Live", "Fed by the same availability the assistant books from."]],
+        actions: ["View RoverPass bookings"] }
+    };
+    document.querySelectorAll(".chan-row").forEach(function (row) {
+      var rec = CHAN[row.getAttribute("data-chan")];
+      if (rec) wireClick(row, function () { openDrawer(rec); });
+    });
+    // round 5: reviews competitive snapshot rows
+    var RANK = {
+      you: { kind: "Google Business Profile", title: "Bear Hollow RV Park", sub: "4.7 stars, 389 reviews, adding 12 a month.",
+        chips: [{ txt: "You", cls: "good" }, { txt: "via Google Business Profile", cls: "neutral" }],
+        fields: [["Rating", "4.7, up from 4.5 last season"], ["Velocity", "+12 reviews/month, triple the nearest park"], ["Why", "Every checkout gets an invite text, every review gets a reply in minutes"]],
+        timeline: [["Nightly", "Profile stats refresh and land on this snapshot."]],
+        actions: ["Open the profile", "View reviews"] },
+      tablerock: { kind: "Competitor watch", title: "Table Rock Campground", sub: "4.5 stars, 512 reviews. The big established park.",
+        chips: [{ txt: "+6/month", cls: "neutral" }, { txt: "via Google Business Profile", cls: "neutral" }],
+        fields: [["Their edge", "Volume. 512 reviews from 20 years on the lake"], ["Your edge", "Rating and momentum. You out-rate them and out-collect them 2 to 1"], ["Recent theme in their reviews", "\"Impossible to reach anyone by phone\""]],
+        timeline: [["Weekly", "Their public profile is re-checked and this row updates."]],
+        actions: ["View their profile"] },
+      shady: { kind: "Competitor watch", title: "Shady Acres RV", sub: "4.1 stars, 167 reviews. Two exits down the highway.",
+        chips: [{ txt: "+2/month", cls: "neutral" }, { txt: "via Google Business Profile", cls: "neutral" }],
+        fields: [["Gap", "0.6 stars behind you. On a phone screen at 65 mph, that decides it"], ["Recent theme in their reviews", "\"Nobody answers after 5\", which is exactly the hour your assistant wins"]],
+        timeline: [["Weekly", "Their public profile is re-checked and this row updates."]],
+        actions: ["View their profile"] }
+    };
+    document.querySelectorAll(".rank-row").forEach(function (row) {
+      var rec = RANK[row.getAttribute("data-rank")];
+      if (rec) wireClick(row, function () { openDrawer(rec); });
+    });
+    // round 5: meter feed rows
+    document.querySelectorAll(".mrow").forEach(function (row) {
+      var name = textOf(row, ".mwho b");
+      if (!name) return;
+      wireClick(row, function () {
+        openDrawer(findRecord(name) || tenantRecord(name) || genericRecord("Meter", name));
+      });
+    });
+    // round 5: park map pads
+    document.querySelectorAll(".pmap .pad-g").forEach(function (g) {
+      var id = g.getAttribute("data-sid");
+      var s = window.BH && window.BH.sites ? window.BH.sites.filter(function (x) { return x.id === id; })[0] : null;
+      if (!s) return;
+      g.style.cursor = "pointer";
+      g.addEventListener("click", function () { openDrawer(siteRecord(s)); });
+    });
+  }
+
+  /* ----------------------------------------------------------
+     Round 5: deep-link landing (integrations "See it live")
+     ---------------------------------------------------------- */
+  function flashHash() {
+    var hash = location.hash;
+    if (!hash || hash.length < 2) return;
+    var t = null;
+    try { t = document.querySelector(hash); } catch (e) { return; }
+    if (!t) return;
+    setTimeout(function () {
+      t.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+      t.classList.add("dl-flash");
+      setTimeout(function () { t.classList.remove("dl-flash"); }, 3600);
+    }, 350);
   }
 
   /* ----------------------------------------------------------
@@ -664,6 +799,7 @@
     wireDrill();
     wireKpis();
     wireCta();
+    flashHash();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();

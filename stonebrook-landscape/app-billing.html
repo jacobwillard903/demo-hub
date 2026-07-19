@@ -140,6 +140,32 @@
         </div>
       </div>
 
+      <div class="grid-2eq">
+        <div class="card" id="payout-card">
+          <div class="card-head">
+            <h2>Payouts, Matched to Invoices</h2>
+            <span class="via-tag">via Stripe</span>
+          </div>
+          <div class="ledger" id="payout-mount"></div>
+          <div class="cas-foot">Four payouts, <b>$11,905</b> of the $14,820 collected month to date. The other $2,915 is checks and cash logged at the shop. Every invoice inside a payout is matched and filed the same morning, so nothing gets reconciled in a spreadsheet in February. Click any row.</div>
+        </div>
+
+        <div class="card" id="cascade-card">
+          <div class="card-head">
+            <h2>The 92% Is a Ladder, Not Luck</h2>
+            <span class="via-tag">via Stripe</span>
+          </div>
+          <div class="cascade">
+            <div class="cas-step hit"><span class="cn">1</span><span class="cb"><b>Charge on the 1st</b><span>All 61 plan cards run with the monthly posting. 52 clear in five days with no reminder at all.</span></span></div>
+            <div class="cas-step hit"><span class="cn">2</span><span class="cb"><b>Decline caught same day</b><span>Patterson's $180 failed on the 12th. He got a soft heads-up text, not a dunning letter.</span></span></div>
+            <div class="cas-step hit"><span class="cn">3</span><span class="cb"><b>Automatic retry at 2:00 AM</b><span>Day 3. Cleared, receipt texted. Dave found out it had failed by reading that it hadn't.</span></span></div>
+            <div class="cas-step"><span class="cn">4</span><span class="cb"><b>Still failing: update-card link</b><span>Then the reminder trail at day 10 and day 17. Voss's expired card is sitting here right now.</span></span></div>
+            <div class="cas-step"><span class="cn">5</span><span class="cb"><b>Day 60: service pauses</b><span>Your rule, not a judgment call at 9 PM. One account (Brennan, $380) is paused with a 2-payment offer open.</span></span></div>
+          </div>
+          <div class="cas-foot">That ladder is the whole difference between <b>92% automatic</b> and an AR balance that used to reach $3-8K by August. Nobody skips a step because nobody is doing the steps.</div>
+        </div>
+      </div>
+
       <div class="card" id="plan-roster" style="margin-bottom:14px">
         <div class="card-head"><h2>Monthly Plan Accounts</h2><span class="link tnum">Live from Jobber + Stripe</span></div>
         <table class="dtable">
@@ -209,6 +235,12 @@ window.TOUR = [
   { el: "#aging-card",
     title: "The aging bar that stopped ballooning.",
     body: "$1,260 in 1-30, $540 across 3 accounts in 31-60, and one <b>$380 account past 60, service paused automatically</b> so the crew never mows for free. Nobody skips a reminder night because nobody is sending them by hand.", side: "left" },
+  { el: "#payout-card",
+    title: "Money landed, and the books already know.",
+    body: "<b>$2,340 landed Thursday, matched to 9 invoices</b> before Dave's coffee. Four payouts, $11,905 of the month's $14,820, every one reconciled the same morning. Click a row to see what was inside it.", side: "right" },
+  { el: "#cascade-card",
+    title: "92% is a ladder, not luck.",
+    body: "Charge, catch the decline, retry at 2 AM, then the card link and the trail, then a <b>day-60 pause</b> that happens on its own. Patterson's $180 came back at step 3. Nobody skips a step because nobody is doing the steps.", side: "left" },
   { el: "#bill-feed",
     title: "What the autopilot actually did.",
     body: "Patterson's failed card <b>retried at 2 AM and cleared, $180</b>. Nguyen's $360 got the day-10 nudge and a reply. Voss's expiring card was caught before it aged. This feed used to be Dave's 8 PM.", side: "top" }
@@ -216,6 +248,7 @@ window.TOUR = [
 window.TOUR_NEXT = { href: "app-upsells.html", label: "Next: the Enhancement Engine" };
 </script>
 <script src="assets/data.js"></script>
+<script src="assets/showcase.js"></script>
 <script>window.SB.renderPlanTable("plan-table-body");</script>
 <script src="assets/tour.js"></script>
 <script src="assets/app.js"></script>

@@ -40,6 +40,27 @@ window.PT = {
     subletMTD: 2650,
     feesMTD: 1450
   },
+  /* Round 5: canned live-data lookups (VIN decode, recalls, parts, financing,
+     payouts, reviews). Presented as live feeds, zero network calls. */
+  live: {
+    recallsFoundWeek: 2,
+    vin: {
+      plateState: "OK", plate: "TSA 4821", vin: "2HKRW2H85JH675309",
+      veh: "2018 Honda CR-V EX-L", engine: "1.5L turbo I4", drive: "AWD",
+      trans: "CVT", inService: "May 2018", miles: "62,400 mi est.",
+      ro: "4221", cust: "Sarah M."
+    },
+    payouts: [
+      ["$2,340.18", "Thu Jul 16", 9, "$68.42"],
+      ["$3,112.60", "Tue Jul 14", 11, "$90.87"],
+      ["$1,894.22", "Fri Jul 10", 7, "$55.31"],
+      ["$2,766.45", "Wed Jul 8", 10, "$80.71"]
+    ],
+    reviews: {
+      you: ["Precision Auto Care", 4.9, 327, "+9 this month"],
+      comps: [["Tulsa Auto Pros", 4.4, 156, "+2 this month"], ["Midtown Motors", 4.1, 89, "+1 this month"]]
+    }
+  },
   /* Round 3: full records behind every RO on screen. Drives the drill-through drawer. */
   records: {
     "4207": { veh: "2015 Toyota Camry", cust: "Dale R.", phone: "(555) 908-4415", concern: "Oil change and rotation, waiter", stage: ["info", "In Progress, Bay 1"], amt: "$89.00",
@@ -57,6 +78,8 @@ window.PT = {
     "4213": { veh: "2016 Ford F-150", cust: "Dan W.", phone: "(555) 218-9034", concern: "Clunk over bumps, front end", stage: ["good", "Approved 3:52 PM, Bay 4"], amt: "$1,284.50",
       dvi: [["red", "Outer tie rod ends, both sides, play at 12 and 3", "$486.00"], ["red", "Lower control arm bushings, cracked", "$612.50"], ["yellow", "Front tires at 4/32, wear on inner edge", "$186.00"]],
       tl: [["Today 10:14 AM", "Estimate sent with DVI photos"], ["Today 12:30 PM", "Nudge #1, DVI opened on his phone"], ["Today 3:15 PM", "Nudge #2 with the tie rod video"], ["Today 3:52 PM", "Approved $1,284.50 from his phone, zero calls"]],
+      cf: [["Feb 2026", "Oil and filter, QuickLube Express, 118,204 mi"], ["Sep 2025", "Front pads and rotors, Tulsa Auto Pros, 112,890 mi"], ["Mar 2025", "Battery replaced, dealer, 106,340 mi"]],
+      recall: "Brake master cylinder, NHTSA 20V-332. Customer told at pickup, dealer fixes free.",
       act: ["Text parts ETA", "Open RO in Tekmetric"] },
     "4216": { veh: "2019 Toyota RAV4", cust: "The Nguyens", phone: "(555) 774-2205", concern: "Front end noise, control arm replacement", stage: ["warn", "Parts on Order, Bay 5"], amt: "$1,284.00",
       dvi: [["red", "Lower control arm, bushing torn", "$1,098.00"], ["yellow", "Alignment needed after repair", "$186.00"]],
@@ -69,6 +92,7 @@ window.PT = {
     "4189": { veh: "2014 Chevy Tahoe", cust: "The Hendersons", phone: "(555) 883-4471", concern: "Transmission service, slipping between 2nd and 3rd", stage: ["warn", "Estimate Aging, 31h"], amt: "$2,150.00",
       dvi: [["red", "Transmission fluid dark, friction material in pan", "$2,150.00"], ["green", "Driveline and mounts checked", "$0"]],
       tl: [["Yesterday 9:02 AM", "Estimate sent with DVI"], ["Yesterday 2:00 PM", "Nudge #1 by text"], ["Today 8:30 AM", "Nudge #2, offered the Sunbit monthly option"], ["Tomorrow 9:00 AM", "Nudge #3 scheduled, then flag for Mike"]],
+      cf: [["Jul 2026", "Brake job, Precision Auto Care, 148,300 mi"], ["Oct 2025", "Trans fluid checked, no service, Midtown Motors, 141,050 mi"], ["Feb 2025", "Coolant flush, Tulsa Auto Pros, 134,700 mi"]],
       act: ["Nudge now", "Flag for Mike", "Open RO in Tekmetric"] },
     "4193": { veh: "2015 Toyota Camry", cust: "Bill Tate", phone: "(555) 650-1184", concern: "Alignment and 2 tires, inner edge wear", stage: ["warn", "Estimate Aging, 28h"], amt: "$618.00",
       dvi: [["red", "Front tires at 3/32, cords soon", "$432.00"], ["yellow", "Alignment out of spec, toe", "$186.00"]],
@@ -80,6 +104,8 @@ window.PT = {
       act: ["Nudge now", "Open RO in Tekmetric"] },
     "4218": { veh: "2019 Toyota RAV4", cust: "Alice K.", phone: "(555) 690-3327", concern: "Alignment and 2 tires", stage: ["info", "Waiting, sent 3h ago"], amt: "$618.00",
       tl: [["Today 1:22 PM", "Estimate sent with DVI"], ["Today 5:00 PM", "Nudge #1 scheduled"]],
+      cf: [["Nov 2025", "Oil and rotation, dealer, 41,200 mi"], ["Apr 2025", "30k service, dealer, 31,880 mi"]],
+      recall: "Low pressure fuel pump, NHTSA 20V-682. Customer text drafted, queued for approval.",
       act: ["Nudge now", "Open RO in Tekmetric"] },
     "4220": { veh: "2020 Silverado 1500", cust: "Marcus T.", phone: "(555) 471-2290", concern: "Oil change add-on while the truck is in", stage: ["info", "Waiting, sent 1h ago"], amt: "$89.00",
       tl: [["Today 3:05 PM", "Add-on offered by text while the brake job runs"], ["Today 6:00 PM", "Nudge scheduled if no reply"]],
@@ -107,6 +133,7 @@ window.PT = {
       act: ["Nudge now", "Open RO in Tekmetric"] },
     "3967": { veh: "2018 Honda CR-V", cust: "Sarah M.", phone: "(555) 214-0387", concern: "Cabin filter and wipers, declined Apr 24", stage: ["info", "Replied, deciding"], amt: "$89.00",
       tl: [["Apr 24", "Presented, declined"], ["Jul 17", "Recovery text"], ["Jul 17", "Replied \"maybe at my next oil change\", tagged to her Thursday visit"]],
+      cf: [["Jan 2026", "Oil and filter, QuickLube Express, 58,900 mi"], ["Jun 2025", "Tires, Discount Tire, 52,300 mi"], ["Nov 2024", "45k service, dealer, 46,100 mi"]],
       act: ["Add to Thursday RO", "Open in Tekmetric"] }
   }
 };

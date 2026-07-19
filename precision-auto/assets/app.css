@@ -579,3 +579,113 @@ a.kpi{display:block}
   .welcome-card{margin:0 16px calc(86px + env(safe-area-inset-bottom)) 16px}
   .tour-card .tour-x{width:44px;height:44px}
 }
+
+/* ============================================================
+   Round 5: live-data showcases (via tags, VIN decode, recalls,
+   parts compare, financing, payout ledger, reviews snapshot)
+   ============================================================ */
+
+/* anchor targets clear the sticky topbar on deep-links */
+section[id],.card[id]{scroll-margin-top:74px}
+
+/* the proof-of-integration tag */
+.via{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--muted-2);white-space:nowrap}
+.via::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--muted-2);opacity:.6}
+.card-head .hd-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.d-sec .via{text-transform:none;letter-spacing:0;margin-left:8px}
+.d-note{font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:10px}
+
+/* five alert chips on the dashboard */
+.chip-row.five{grid-template-columns:repeat(5,1fr)}
+@media(max-width:1100px){.chip-row.five{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- VIN decode ---------- */
+.vin-box{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.vin-box .plate{display:flex;align-items:center;gap:9px;border:1px solid var(--border-2);border-radius:var(--r-sm);padding:9px 13px;background:#fafbfb}
+.vin-box .plate .st{font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.vin-box .plate .no{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.1em}
+.vin-decode-btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:#fff;background:var(--ink);border-radius:var(--r-sm);padding:10px 18px;transition:background .15s var(--ease)}
+.vin-decode-btn:hover{background:var(--ink-2)}
+.vin-decode-btn[disabled]{opacity:.55;cursor:default}
+.vin-scan{display:none;align-items:center;gap:9px;font-size:13px;color:var(--muted);margin-top:14px}
+.vin-scan.on{display:flex}
+.vin-result{display:none}
+.vin-result.on{display:block;animation:rise-in .28s var(--ease) both}
+@media(prefers-reduced-motion:reduce){.vin-result.on{animation:none}}
+.veh-card{display:flex;gap:14px;border:1px solid var(--border);border-radius:var(--r-sm);padding:14px 16px;margin-top:14px;background:#fafbfb;cursor:pointer;transition:border-color .15s var(--ease)}
+.veh-card:hover{border-color:var(--border-2)}
+.veh-card .veh-ic{width:38px;height:38px;border-radius:9px;background:var(--brand-soft);color:var(--brand-deep);display:grid;place-items:center;flex-shrink:0}
+.veh-card .veh-ic svg{width:19px;height:19px}
+.veh-card .veh-name{font-size:15px;font-weight:700;letter-spacing:-.01em}
+.veh-card .veh-vin{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:2px;word-break:break-all}
+.veh-specs{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px}
+.veh-specs .sp{font-size:12.5px;color:var(--text-2)}
+.veh-specs .sp b{color:var(--ink)}
+.veh-fill{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:12.5px;font-weight:600;color:var(--good)}
+.veh-fill svg{width:14px;height:14px}
+
+/* ---------- recall watch ---------- */
+.rc-rows{display:flex;flex-direction:column;gap:12px}
+.rc-row{border:1px solid #f0dfc2;background:#fcf8ef;border-radius:var(--r-sm);padding:13px 15px;cursor:pointer;transition:border-color .15s var(--ease)}
+.rc-row:hover{border-color:#e3c891}
+.rc-row.quiet{border-color:var(--border);background:#fafbfb}
+.rc-row .rc-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rc-row .rc-veh{font-size:13.5px;font-weight:600}
+.rc-row .rc-id{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-left:auto;white-space:nowrap}
+.rc-row .rc-what{font-size:13px;color:var(--text-2);margin-top:3px;line-height:1.5}
+.rc-draft{margin-top:11px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 13px;font-size:13px;line-height:1.55;color:var(--ink)}
+.rc-draft .rc-cap{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+
+/* ---------- parts compare ---------- */
+.cmp-line{font-size:13.5px;color:var(--text-2);margin-bottom:12px}
+.cmp-line b{color:var(--ink)}
+.cmp-rows{display:flex;flex-direction:column;gap:9px}
+.cmp-row{display:flex;align-items:center;gap:12px;border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;cursor:pointer;transition:border-color .15s var(--ease),background .15s var(--ease)}
+.cmp-row:hover{border-color:var(--border-2)}
+.cmp-row .cmp-sup{font-size:13.5px;font-weight:600;min-width:110px}
+.cmp-row .cmp-eta{font-size:12.5px;color:var(--muted)}
+.cmp-row .cmp-price{margin-left:auto;font-size:14.5px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cmp-row.best{border-color:#cfe8da;background:var(--good-soft)}
+.cmp-row.best:hover{border-color:#a9d8bf}
+.cmp-row .cmp-pick{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:var(--good);white-space:nowrap}
+.cmp-row .cmp-pick svg{width:13px;height:13px}
+
+/* ---------- financing offer ---------- */
+.fin-offer{display:flex;align-items:center;gap:16px;border:1px solid var(--border);border-radius:var(--r-sm);padding:15px 17px;background:#fafbfb;cursor:pointer;transition:border-color .15s var(--ease)}
+.fin-offer:hover{border-color:var(--border-2)}
+.fin-offer .fin-mo{font-size:26px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fin-offer .fin-mo small{font-size:13px;font-weight:600;color:var(--muted)}
+.fin-offer .fin-meta{font-size:12.5px;color:var(--text-2);line-height:1.5}
+
+/* ---------- reviews competitive snapshot ---------- */
+.rc-comp{display:flex;flex-direction:column;gap:12px}
+.rvc-row{display:flex;align-items:center;gap:14px;cursor:pointer;border-radius:var(--r-sm);padding:6px 8px;margin:0 -8px;transition:background .13s var(--ease)}
+.rvc-row:hover{background:#fafbfb}
+.rvc-row .rvc-name{font-size:13.5px;font-weight:600;width:190px;flex-shrink:0}
+.rvc-row.you .rvc-name{color:var(--brand-deep)}
+.rvc-row .rvc-bar{flex:1;height:10px;background:var(--shade);border-radius:999px;overflow:hidden;min-width:60px}
+.rvc-row .rvc-bar .f{display:block;height:100%;border-radius:999px;background:var(--steel-3)}
+.rvc-row.you .rvc-bar .f{background:var(--brand)}
+.rvc-row .rvc-score{font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;width:112px;text-align:right}
+.rvc-row .rvc-score .ct{font-weight:500;color:var(--muted)}
+.rvc-row .rvc-vel{font-size:12px;font-weight:600;color:var(--good);white-space:nowrap;width:92px;text-align:right}
+.rvc-row .rvc-vel.dim{color:var(--muted-2);font-weight:500}
+
+/* ---------- integrations: where you'll see it ---------- */
+.int-see{border-top:1px solid var(--border);padding-top:10px;font-size:12.5px;color:var(--muted);line-height:1.5}
+.int-see b{color:var(--text-2);font-weight:600}
+.int-live{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:var(--brand-deep);margin-top:5px;transition:color .13s var(--ease)}
+.int-live:hover{color:var(--brand)}
+
+/* ---------- round 5 mobile ---------- */
+@media(max-width:900px){
+  .chip-row.five{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vin-decode-btn{min-height:44px}
+  .rvc-row{flex-wrap:wrap;gap:8px 12px}
+  .rvc-row .rvc-name{width:auto;flex:1 1 100%}
+  .rvc-row .rvc-score{width:auto}
+  .rvc-row .rvc-vel{width:auto;margin-left:auto}
+  .cmp-row{flex-wrap:wrap}
+  .cmp-row .cmp-pick{width:100%;justify-content:flex-end}
+  .fin-offer{flex-wrap:wrap}
+}

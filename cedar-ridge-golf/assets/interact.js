@@ -208,6 +208,56 @@
       tl: [["Jun 28", "Quote accepted"], ["Jun 30", "Deposit paid, foreUP blocked for the shotgun"], ["Sep 14", "Balance reminder sends on your OK"]],
       actions: ["Approve the reminder", "Open event sheet"]
     },
+    "wx-sat": {
+      title: "Saturday radar, hour by hour",
+      sub: "National Weather Service point forecast, refreshed every 20 min", tag: ["chip-bad", "Autopilot armed"], amt: "85%", amtLab: "Peak rain probability, 1 PM cell",
+      kv: [["Storm window", "12 PM to 3 PM, winds to 18 mph"], ["Tee times inside it", "22, holding $3,910"], ["Horn decision", "Yours. The playbook fires only after the horn"], ["If it fires", "84 golfers texted within 4 minutes"]],
+      tl: [["Thu 6:10 AM", "NWS radar flagged the Saturday 1 PM cell"], ["Thu 6:12 AM", "Autopilot armed, rebook slots reserved Sun + next Sat"], ["Sat 12:48 PM", "Projected horn. Texts, rain checks, and rebooks all queue off this feed"]],
+      actions: ["Review the playbook", "Open the full forecast"]
+    },
+    "wx-week": {
+      title: "Next 7 days, from the radar feed",
+      sub: "National Weather Service, updated this morning", tag: ["chip-warn", "1 storm day"], amt: "Sat", amtLab: "The only day the autopilot is armed",
+      kv: [["Saturday", "85% rain at 1 PM, 22 tee times exposed"], ["Sunday", "20% and clearing, holding 14 rebook slots"], ["Rest of week", "Dry, no action needed"], ["Wired to", "Rain Day Autopilot + the tee sheet"]],
+      tl: [["6:10 AM daily", "Forecast pulled and scored against the tee sheet"], ["Thu 6:12 AM", "Saturday cell crossed the threshold, autopilot armed"], ["Continuous", "Any new cell re-scores the week automatically"]],
+      actions: ["See Rain Day page", "Adjust storm threshold"]
+    },
+    "gbp-reviews": {
+      title: "Reviews, you vs the neighbors",
+      sub: "Google Business Profile, checked hourly", tag: ["chip-good", "+21 this month"], amt: "4.7", amtLab: "534 reviews, best rating in a 20 mile radius",
+      kv: [["Cedar Ridge", "4.7 stars, 534 reviews, +21 this month"], ["Willow Bend GC", "4.2 stars, 203 reviews"], ["Prairie Pines Muni", "4.4 stars, 388 reviews"], ["Reply time", "Every new review gets a drafted reply within the hour"]],
+      tl: [["Tue 8:14 PM", "5-star review from a rain day rebook, reply drafted"], ["Wed 7:02 AM", "You approved 3 drafted replies with one click"], ["Monthly", "Review-ask texts go to golfers who just played, that is the +21"]],
+      actions: ["Read the new reviews", "Approve drafted replies"]
+    },
+    "golfnow-rate": {
+      title: "Your rate vs the trade time",
+      sub: "Marketplace rates watched for comparison, nothing listed", tag: ["chip-good", "$2,340 kept"], amt: "$42 vs $19",
+      amtLab: "Sat 2 PM: your rack rate against the marketplace trade time",
+      kv: [["Your Sat 2 PM rate", "$42, sold on your own sheet"], ["Marketplace trade time", "$19 equivalent, golfer is theirs not yours"], ["Kept this season", "$2,340 by filling midday yourself"], ["Typical course", "Hands about $44,000 a year to marketplaces in barter"]],
+      tl: [["Daily 6 AM", "Marketplace rates pulled for your zip code"], ["10:00 AM", "Soft windows offered to your own list first, at your price"], ["Season to date", "56 tee times kept off the trade pile"]],
+      actions: ["See the backfill engine", "Compare another slot"]
+    },
+    "po-thu": {
+      title: "Payout, Thursday July 16",
+      sub: "Stripe payout po_9F42, landed in operating", tag: ["chip-good", "Matched"], amt: "$2,340", amtLab: "9 charges, tied to the bank deposit to the penny",
+      kv: [["Green fees", "$1,742, 6 charges"], ["Cart fees", "$414, card on file"], ["Rain check redemptions", "$184, 2 golfers back from the Jul 3 storm"], ["Bank deposit", "Matched same day, no float mystery"]],
+      tl: [["Thu 5:02 AM", "Payout initiated by Stripe"], ["Thu 9:14 AM", "Landed in the operating account"], ["Thu 9:15 AM", "Auto-matched to its 9 charges and posted to QuickBooks"]],
+      actions: ["Open in QuickBooks", "See the 9 charges"]
+    },
+    "po-mon": {
+      title: "Maplewood FD outing deposit",
+      sub: "Stripe payout po_8D17, Monday July 13", tag: ["chip-good", "Matched"], amt: "$1,470", amtLab: "25% deposit on the $5,880 September package",
+      kv: [["Payer", "Maplewood FD Benefit, Lt. S. Barrera"], ["Paid via", "The deposit link inside the quote"], ["Booked to", "Outings and events, deferred until Sep 28"], ["Balance", "$4,410 due Sep 21, reminder drafted"]],
+      tl: [["Jun 30", "Deposit paid through the quote link"], ["Mon 9:20 AM", "Payout landed and matched to the invoice"], ["Sep 28", "Recognized as revenue when the shotgun plays"]],
+      actions: ["Open the event sheet", "See the balance reminder"]
+    },
+    "toast-fb": {
+      title: "F&B, straight from the register",
+      sub: "Toast POS, grill and beverage cart, this week", tag: ["chip-good", "Reconciled nightly"], amt: "$5.61", amtLab: "F&B attached to every round played, July to date",
+      kv: [["The turn (grill)", "$9,140 this week"], ["Beverage cart", "$4,320, best weekend on record"], ["Tips", "$1,238, split out of revenue automatically"], ["Where it lands", "The F&B line on the P&L, posted nightly"]],
+      tl: [["Nightly 11:40 PM", "Toast batches close and post to the books"], ["Tue", "Week's batches reconciled, tips split out"], ["Monthly", "Attach rate per round tracked, up $0.84 vs last July"]],
+      actions: ["Open the F&B line", "See beverage cart hours"]
+    },
     "target-live": {
       title: "Tomorrow 11:50 AM to 2:30 PM",
       sub: "Weekday midday, the biggest soft window", tag: ["chip-warn", "Offer live"], amt: "+$279", amtLab: "9 bookings so far from the $31 offer",

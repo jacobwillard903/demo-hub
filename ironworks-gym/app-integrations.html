@@ -92,30 +92,44 @@
         <div class="icard">
           <div class="ihead"><div><div class="iname">PushPress</div><div class="ikind">Member management</div></div><span class="st st-green">Connected</span></div>
           <p>The source of truth. Members, billing, check-ins, and class rosters sync both ways. Recovery texts, the radar, and the leaderboard all read from it nightly.</p>
+          <div class="iwhere"><b>Where you'll see it:</b> the coach leaderboard and check-in numbers across the Dashboard, Members, and At-Risk Radar.</div>
+          <a class="ilive" href="app-dashboard.html#coach-table">See it live &#8250;</a>
         </div>
         <div class="icard">
           <div class="ihead"><div><div class="iname">QuickBooks Online</div><div class="ikind">Accounting</div></div><span class="st st-green">Connected</span></div>
           <p>The AI bookkeeper categorizes every transaction, matches payouts to deposits, and keeps the P&amp;L current so you never open the ledger yourself.</p>
+          <div class="iwhere"><b>Where you'll see it:</b> the P&amp;L, cash flow, and bookkeeper feed on Financials.</div>
+          <a class="ilive" href="app-money.html#pl-card">See it live &#8250;</a>
         </div>
         <div class="icard">
           <div class="ihead"><div><div class="iname">Stripe</div><div class="ikind">Payments</div></div><span class="st st-green">Connected</span></div>
           <p>Watches every charge. A decline triggers the recovery sequence within minutes and a secure card-update link goes out in Ironworks' voice.</p>
+          <div class="iwhere"><b>Where you'll see it:</b> the payout-matched ledger and live card-event feed on Financials, and the whole Payment Recovery page.</div>
+          <a class="ilive" href="app-money.html#payout-ledger">See it live &#8250;</a>
         </div>
         <div class="icard">
           <div class="ihead"><div><div class="iname">Twilio SMS</div><div class="ikind">Texting</div></div><span class="st st-green">Connected</span></div>
           <p>The gym's own number. Recovery nudges, intro reminders, at-risk check-ins, and sub-coverage pings all send and receive here.</p>
+          <div class="iwhere"><b>Where you'll see it:</b> the missed-call text-back log on Lead Concierge, plus every text thread on Payment Recovery and At-Risk Radar.</div>
+          <a class="ilive" href="app-leads.html#textback-log">See it live &#8250;</a>
         </div>
         <div class="icard">
           <div class="ihead"><div><div class="iname">Instagram / Meta DMs</div><div class="ikind">Lead channel</div></div><span class="st st-green">Connected</span></div>
           <p>Where your leads actually are. The concierge answers DMs in seconds and books No-Sweat Intros without leaving the thread.</p>
+          <div class="iwhere"><b>Where you'll see it:</b> the lead-source and cost-per-lead breakdown on Lead Concierge, next to the live DM thread.</div>
+          <a class="ilive" href="app-leads.html#lead-sources">See it live &#8250;</a>
         </div>
         <div class="icard">
           <div class="ihead"><div><div class="iname">Google Calendar</div><div class="ikind">Scheduling</div></div><span class="st st-green">Connected</span></div>
           <p>Intros land on your calendar the moment they book. Coach sub confirmations update the class calendar automatically.</p>
+          <div class="iwhere"><b>Where you'll see it:</b> the "Your Friday" strip at the top of the Dashboard.</div>
+          <a class="ilive" href="app-dashboard.html#today-strip">See it live &#8250;</a>
         </div>
         <div class="icard">
-          <div class="ihead"><div><div class="iname">Google Business Profile</div><div class="ikind">Reviews &amp; local search</div></div><span class="st st-amber">Available</span></div>
-          <p>Ask every new member for a review at the 30-day PR moment, reply to reviews in your voice, keep hours and photos current.</p>
+          <div class="ihead"><div><div class="iname">Google Business Profile</div><div class="ikind">Reviews &amp; local search</div></div><span class="st st-green">Connected</span></div>
+          <p>Watches your rating next to your local competitors', asks happy members for a review at the 30-day PR moment, and replies in your voice.</p>
+          <div class="iwhere"><b>Where you'll see it:</b> the "How You Stack Up Locally" snapshot on the Dashboard.</div>
+          <a class="ilive" href="app-dashboard.html#reviews-snapshot">See it live &#8250;</a>
         </div>
         <div class="icard">
           <div class="ihead"><div><div class="iname">Mailchimp</div><div class="ikind">Email</div></div><span class="st st-amber">Available</span></div>
@@ -141,7 +155,7 @@
 window.TOUR = [
   { el: "#int-grid", side: "top",
     title: "Your stack, not a rip-and-replace.",
-    body: "PushPress, QuickBooks, Stripe, Twilio, Instagram, Google Calendar: already wired. The AI sits on top of what Ironworks runs today. Nothing to migrate, nothing to relearn, and the Available cards switch on whenever you want them." },
+    body: "PushPress, QuickBooks, Stripe, Twilio, Instagram, Google Calendar, Google Business Profile: already wired. The AI sits on top of what Ironworks runs today. Every Connected card says where its data shows up; tap <b>See it live</b> to jump straight to that widget. The Available cards switch on whenever you want them." },
   { el: null, cta: "Finish",
     title: "This runs while you coach.",
     body: "Payment recovery, lead concierge, at-risk radar, the roster, the schedule, the books. One ops layer on top of PushPress, in Ironworks' voice, watching nights and weekends. <b>Built for Ironworks in a week.</b>" }

@@ -81,6 +81,31 @@
       </div>
       <div style="height:14px"></div>
 
+      <div class="card" id="parcel-card" style="margin-bottom:14px" data-parcel-drawer>
+        <div class="card-head">
+          <h2>Measured From the Sky, Priced From Your Sheet</h2>
+          <span class="via-tag">via satellite lot measure</span>
+        </div>
+        <div class="parcel-hero">
+          <div class="parcel-stage" id="parcel-mount"></div>
+          <div class="parcel-side">
+            <div class="zone-rows">
+              <div class="zone-row"><span class="zw" style="background:#5d8a6c"></span><span>Back turf</span><b>4,310 sq ft</b></div>
+              <div class="zone-row"><span class="zw" style="background:#6e9c7d"></span><span>Front turf</span><b>3,880 sq ft</b></div>
+              <div class="zone-row"><span class="zw" style="background:#7fa98d"></span><span>Side strip</span><b>1,210 sq ft</b></div>
+              <div class="zone-row total"><span class="zw" style="background:var(--green-800)"></span><span>Mowable turf</span><b>9,400 sq ft</b></div>
+              <div class="zone-row"><span class="zw" style="background:#a5714a"></span><span>Beds, mulch eligible</span><b>640 sq ft</b></div>
+              <div class="zone-row"><span class="zw" style="background:#cbc5b4"></span><span>House, drive, walks</span><b>3,454 sq ft</b></div>
+            </div>
+            <div class="quote-math">
+              <div class="qm-line"><span>Turf 9,400 sq ft</span><i>&#8594;</i><span>your 9-11k band</span><i>&#8594;</i><b>$52/cut</b><i>&#8594;</i><b>$180/mo</b></div>
+              <div class="qm-note">Karen Delgado's actual quote: measured, priced, and texted 2 minutes after the missed call. No truck rolled.</div>
+            </div>
+            <div class="parcel-foot">Every quote on this page starts with this sketch. Odd lots (steep slope, locked gates, commercial scope) get flagged for a human look instead of a bad number. Click the card for the measured record.</div>
+          </div>
+        </div>
+      </div>
+
       <div class="grid-2">
         <div class="card" id="lead-feed">
           <div class="card-head"><h2>Captured While You Mowed</h2><span class="link tnum">This week</span></div>
@@ -177,9 +202,12 @@ window.TOUR = [
   { el: "#est-banner",
     title: "The desk that answers while you cut.",
     body: "12 leads this week, 5 booked, <b>$2,340/mo of new recurring</b>, median first response 41 seconds. In spring, when 10 calls hit in 30 minutes, this is the difference between growth and 'found someone else.'" },
+  { el: "#parcel-card",
+    title: "The lot, measured from the sky.",
+    body: "This is Karen Delgado's corner lot, sketched and measured in 8 seconds from the address: <b>turf 9,400 sq ft</b>, beds 640, house and drive excluded. That turf number hits your 9-11k rate band, so the math is visible: <b>9,400 sq ft becomes $52/cut becomes $180/mo</b>. No windshield time to quote a lawn.", side: "bottom" },
   { el: "#delgado-item",
     title: "Missed call to booked customer in 9 minutes.",
-    body: "Karen Delgado called at 10:42 while the crew cut Route C. The assistant measured her lot from the <b>satellite view (0.31 acre)</b>, quoted <b>$52/cut or $180/mo</b> off your rate sheet, saved her card, and slotted her onto Route B next to two existing stops. Click the row for the full thread.", side: "right" },
+    body: "Karen called at 10:42 while the crew cut Route C. The assistant ran that measure, quoted <b>$52/cut or $180/mo</b> off your rate sheet, saved her card, and slotted her onto Route B next to two existing stops. Click the row: the sketch rides along in her record.", side: "right" },
   { el: "#quote-logic",
     title: "Quoted from the sky, priced from your sheet.",
     body: "Address in, lot measured by satellite, price pulled from <b>your</b> rates, and the stop placed where route density stays tight. Weird lots get flagged for a human look instead of a bad number.", side: "left" },
@@ -190,6 +218,7 @@ window.TOUR = [
 window.TOUR_NEXT = { href: "app-rainday.html", label: "Next: the Rain-Day Reshuffle" };
 </script>
 <script src="assets/data.js"></script>
+<script src="assets/showcase.js"></script>
 <script src="assets/tour.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/interact.js"></script>

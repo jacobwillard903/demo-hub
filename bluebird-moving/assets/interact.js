@@ -139,6 +139,41 @@
     if (dRoot) dRoot.classList.remove("on");
   }
   window.BBDrawer = openDrawer;
+  window.BBDrawerClose = closeDrawer;
+  window.BBOpenRec = function (key) {
+    var r = window.BB && BB.records[key];
+    if (r) openDrawer(r.title, r.sub, recDrawerHTML(r));
+  };
+
+  /* ---------------- schematic move map (via Google Maps, canned) ---------------- */
+  function mapSVG(m) {
+    return '' +
+      '<div class="bmap"><svg viewBox="0 0 360 200" role="img" aria-label="Schematic move map">' +
+      // city blocks
+      '<rect x="14" y="18" width="70" height="44" rx="5" class="blk"/>' +
+      '<rect x="14" y="76" width="46" height="58" rx="5" class="blk"/>' +
+      '<rect x="98" y="30" width="58" height="36" rx="5" class="blk"/>' +
+      '<rect x="188" y="120" width="72" height="48" rx="5" class="blk"/>' +
+      '<rect x="276" y="112" width="66" height="34" rx="5" class="blk"/>' +
+      '<rect x="236" y="26" width="58" height="40" rx="5" class="blk"/>' +
+      '<rect x="118" y="128" width="52" height="44" rx="5" class="blk"/>' +
+      // roads
+      '<path class="road" d="M0 108 H360"/>' +
+      '<path class="road" d="M86 0 V200"/>' +
+      '<path class="road" d="M176 0 V200"/>' +
+      '<path class="road" d="M268 0 V200"/>' +
+      // route
+      '<path class="route" d="M44 162 H86 V108 H176 V52 H316"/>' +
+      // pins
+      '<circle class="pin o" cx="44" cy="162" r="7"/>' +
+      '<circle class="pin d" cx="316" cy="52" r="7"/>' +
+      '<text class="mlabel" x="44" y="186">' + esc(m.o) + "</text>" +
+      '<text class="mlabel end" x="322" y="34">' + esc(m.d) + "</text>" +
+      '<g class="mchip"><rect x="196" y="76" width="120" height="22" rx="11"/>' +
+      '<text x="256" y="91">' + esc(m.mi) + ", " + esc(m.min) + " drive</text></g>" +
+      "</svg></div>";
+  }
+  window.BBMapSVG = mapSVG;
 
   function kvRow(k, v) {
     if (Array.isArray(v)) {
@@ -152,6 +187,19 @@
     if (r.who) {
       h += '<div class="d-sec">Details</div>';
       r.who.forEach(function (row) { h += kvRow(row[0], row[1]); });
+    }
+    if (r.map) {
+      h += '<div class="d-sec">Move map <span class="via">via Google Maps</span></div>';
+      h += mapSVG(r.map);
+      if (r.map.math) {
+        h += '<div class="d-mmath">';
+        r.map.math.forEach(function (row) { h += kvRow(row[0], row[1]); });
+        h += "</div>";
+      }
+    }
+    if (r.wx) {
+      h += '<div class="d-sec">Move-day forecast <span class="via">via National Weather Service</span></div>';
+      r.wx.forEach(function (row) { h += kvRow(row[0], row[1]); });
     }
     if (r.cube) {
       h += '<div class="d-sec">Cube sheet</div>';
@@ -200,7 +248,7 @@
   }
 
   function wireDrill() {
-    var sels = ".page .table tbody tr, .page .feed .ev, .page .attn .item, .page .bay, .page .chip-row .chip, .page .kcard, .page .drow, .page .tl-page .te";
+    var sels = ".page .table tbody tr, .page .feed .ev, .page .attn .item, .page .bay, .page .chip-row .chip, .page .kcard, .page .drow, .page .tl-page .te, .page .rrow, .page .rev-row, .page .po-row";
     document.querySelectorAll(sels).forEach(function (el) {
       el.classList.add("clickable");
       el.addEventListener("click", function (e) {
@@ -349,6 +397,7 @@
     grow(".barchart .fill", "height");
     grow(".cash-chart .cbar", "height");
     grow(".hourbar .f", "width");
+    grow(".rev-bar .rf", "width");
     wireDrill();
     document.querySelectorAll(".side-cta, [data-new-quote]").forEach(function (b) {
       b.addEventListener("click", function (e) { e.preventDefault(); openModal(); });

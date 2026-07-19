@@ -72,42 +72,52 @@
         <div class="int-card">
           <div class="int-top"><span class="int-name">foreUP</span><span class="chip chip-good"><span class="dot"></span>Connected</span></div>
           <div class="int-desc">The tee sheet of record. Every booking, move, cancel, and refill the AI makes lands here, same as if Kim typed it.</div>
+          <div class="int-see">Where you'll see it: Today's tee sheet and every booking row on the <b>Dashboard</b><a class="see-link" href="app-dashboard.html#teesheet-today">See it live &#8250;</a></div>
         </div>
         <div class="int-card">
           <div class="int-top"><span class="int-name">QuickBooks Online</span><span class="chip chip-good"><span class="dot"></span>Connected</span></div>
           <div class="int-desc">The books. The AI bookkeeper categorizes, matches, and reconciles here daily. The Financials page is this connection, live.</div>
+          <div class="int-see">Where you'll see it: The live P&amp;L on <b>Financials</b><a class="see-link" href="app-money.html#pl-card">See it live &#8250;</a></div>
         </div>
         <div class="int-card">
           <div class="int-top"><span class="int-name">Stripe</span><span class="chip chip-good"><span class="dot"></span>Connected</span></div>
           <div class="int-desc">Card-on-file bookings, outing deposit links, and rain check credits. Payouts auto-matched to bank deposits.</div>
+          <div class="int-see">Where you'll see it: The payout-matched ledger on <b>Financials</b><a class="see-link" href="app-money.html#stripe-ledger">See it live &#8250;</a></div>
         </div>
         <div class="int-card">
           <div class="int-top"><span class="int-name">Toast POS</span><span class="chip chip-good"><span class="dot"></span>Connected</span></div>
           <div class="int-desc">Grill and beverage cart sales flow to the F&amp;B line nightly, tips split out, no Sunday data entry.</div>
+          <div class="int-see">Where you'll see it: The F&amp;B tiles on <b>Financials</b><a class="see-link" href="app-money.html#toast-card">See it live &#8250;</a></div>
         </div>
         <div class="int-card">
           <div class="int-top"><span class="int-name">Twilio SMS</span><span class="chip chip-good"><span class="dot"></span>Connected</span></div>
           <div class="int-desc">Every confirmation, waitlist offer, and rain day text rides this line, from the course's own number.</div>
+          <div class="int-see">Where you'll see it: The mass rebook thread on <b>Rain Day</b><a class="see-link" href="app-rainday.html#rebook-thread">See it live &#8250;</a></div>
         </div>
         <div class="int-card">
           <div class="int-top"><span class="int-name">Gmail</span><span class="chip chip-good"><span class="dot"></span>Connected</span></div>
           <div class="int-desc">Watches the outings inbox. The Riverside Rotary quote went out through here, 4 minutes after the ask.</div>
+          <div class="int-see">Where you'll see it: The inquiry-to-quote card on <b>Outing Quotes</b><a class="see-link" href="app-outings.html#inquiry-card">See it live &#8250;</a></div>
         </div>
         <div class="int-card">
           <div class="int-top"><span class="int-name">Google Calendar</span><span class="chip chip-good"><span class="dot"></span>Connected</span></div>
           <div class="int-desc">Outings, leagues, and staff shifts on one calendar, so a shotgun start never collides with a full sheet.</div>
+          <div class="int-see">Where you'll see it: The outing pipeline on <b>Outing Quotes</b><a class="see-link" href="app-outings.html#pipeline-card">See it live &#8250;</a></div>
         </div>
         <div class="int-card">
           <div class="int-top"><span class="int-name">National Weather Service</span><span class="chip chip-good"><span class="dot"></span>Connected</span></div>
           <div class="int-desc">The radar feed that arms Rain Day Autopilot. Saturday's 1 PM cell was flagged here before the horn.</div>
+          <div class="int-see">Where you'll see it: The hour-by-hour storm strip on <b>Rain Day</b><a class="see-link" href="app-rainday.html#wx-hourly">See it live &#8250;</a></div>
         </div>
         <div class="int-card">
           <div class="int-top"><span class="int-name">Google Business Profile</span><span class="chip chip-good"><span class="dot"></span>Connected</span></div>
           <div class="int-desc">New reviews get a drafted reply within the hour, in the course's voice, queued for a one-click approve.</div>
+          <div class="int-see">Where you'll see it: The reviews snapshot on the <b>Dashboard</b><a class="see-link" href="app-dashboard.html#reviews-card">See it live &#8250;</a></div>
         </div>
         <div class="int-card" id="int-golfnow">
           <div class="int-top"><span class="int-name">GolfNow</span><span class="chip chip-neutral">Available</span></div>
           <div class="int-desc">Connect it if you like. The backfill engine exists so you can sell your own tee times instead of trading them away.</div>
+          <div class="int-see">Where you'll see it: Rate comparisons on the <b>No-Show Shield</b> page, your rate vs their trade time<a class="see-link" href="app-teesheet.html#golfnow-card">See it live &#8250;</a></div>
         </div>
       </div>
 
@@ -123,7 +133,7 @@
 window.TOUR = [
   { el: "#int-grid",
     title: "Will it work with my stuff? Yes.",
-    body: "foreUP stays the tee sheet, QuickBooks stays the books, Toast stays the register. The layer connects to all of it and does the typing. And GolfNow stays optional, because the whole point is keeping your own inventory." },
+    body: "foreUP stays the tee sheet, QuickBooks stays the books, Toast stays the register. The layer connects to all of it and does the typing. Every card says where its data shows up, and See it live jumps you straight to that widget." },
   { el: null,
     title: "One more thing",
     body: "Numbers on a page are one way to read the course. The other is to just ask. Last stop: the assistant that answers plain questions from the same tee sheet, call log, and books.",

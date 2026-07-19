@@ -212,7 +212,7 @@
       for (var p in rec) out[p] = rec[p];
       return out;
     }
-    var subEl = qs(".rs", el) || qs(".fs", el) || qs(".ks", el) || qs(".ikind", el) || qs(".sc-c", el) || qs(".ts", el);
+    var subEl = qs(".rs", el) || qs(".fs", el) || qs(".ks", el) || qs(".ikind", el) || qs(".sc-c", el) || qs(".cs", el) || qs(".ts", el);
     return {
       title: title,
       sub: subEl ? subEl.textContent.trim() : "",
@@ -233,7 +233,7 @@
     });
   }
   function wireDrawers() {
-    qsa("tbody tr, .feed .frow, .rows .row, .kcard, .scell, .icard").forEach(wireDrawerEl);
+    qsa("tbody tr, .feed .frow, .rows .row, .kcard, .scell, .icard, .rev-row, .cev, .cpl-row").forEach(wireDrawerEl);
   }
 
   /* ---------- add-member modal ---------- */

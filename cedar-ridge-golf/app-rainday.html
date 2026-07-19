@@ -68,6 +68,14 @@
         </div>
       </div>
 
+      <div class="card section-gap" id="wx-hourly">
+        <div class="card-head">
+          <h2>Saturday, Hour by Hour</h2>
+          <span class="via-tag">via National Weather Service</span>
+        </div>
+        <div class="card-body wx-scroll" data-wx-hourly data-drill="wx-sat"></div>
+      </div>
+
       <div class="card section-gap" id="storm-banner">
         <div class="card-head">
           <h2>Thunderstorms, Saturday 1:00 PM</h2>
@@ -189,6 +197,10 @@
 <script src="assets/interact.js"></script>
 <script>
 window.TOUR = [
+  { el: "#wx-hourly",
+    title: "The radar feed, wired to decisions",
+    body: "This is the National Weather Service point forecast for the course, hour by hour. The shaded hours are not decoration: the 1 PM cell is what armed the autopilot Thursday morning and reserved rebook slots before anyone here looked at a weather app.",
+    side: "bottom" },
   { el: "#storm-banner",
     title: "Saturday, 1 PM, the sky opens",
     body: "22 tee times and 84 golfers sit in the storm window, <b>$3,910</b> on the line. This is the day the phone melts and the counter backs up. Watch what happens instead." },

@@ -248,5 +248,187 @@ window.IW.records = {
       ["ok", "Intro booked for Saturday", "Zero ad spend, zero on-ramp.", "Jul 11"]
     ],
     actions: ["Confirm Saturday", "Open the thread"]
+  },
+
+  /* ---- round 5: live-data showcase records ---- */
+  "ironworks strength co.": {
+    sub: "Google Business Profile / your listing",
+    chip: ["4.9 stars, 186 reviews", "st-green"],
+    money: ["+14", "new reviews this month, up from 2 to 3 before the review engine"],
+    fields: [["Rating", "4.9 of 5"], ["Reviews", "186"], ["This month", "+14"], ["Review asks sent", "22"], ["Ask timing", "30-day PR moment"]],
+    timeline: [
+      ["ok", "Review ask: Trey Vaughn", "Sent the day after his first PR. 5 stars, mentioned Coach Tyler by name.", "Jul 16"],
+      ["", "Replied to 3 new reviews", "In Sarah's voice, each one names the coach the member praised.", "Jul 15"],
+      ["ok", "Hours and photos verified current", "Holiday hours for Labor Day already staged.", "Jul 14"]
+    ],
+    actions: ["Open the profile", "See this month's asks"]
+  },
+  "flex factory fitness": {
+    sub: "Competitor / 2.1 miles away",
+    chip: ["4.3 stars, 61 reviews", "st-gray"],
+    fields: [["Rating", "4.3 of 5"], ["Reviews", "61"], ["This month", "+1"], ["Last owner reply", "7 months ago"]],
+    timeline: [
+      ["hit", "Two 1-star reviews in June", "Both mention billing surprises. Their owner never replied.", "Jun 22"],
+      ["", "Watched weekly", "Rating, count, and velocity tracked so you see a move before it matters.", "Every Mon"]
+    ],
+    note: "Their members who search 'gym near me' see 4.3 next to your 4.9. That gap is doing your marketing for free.",
+    actions: ["Open their profile", "See the gap trend"]
+  },
+  "midwest barbell club": {
+    sub: "Competitor / 3.4 miles away",
+    chip: ["4.6 stars, 112 reviews", "st-gray"],
+    fields: [["Rating", "4.6 of 5"], ["Reviews", "112"], ["This month", "+4"], ["Velocity vs yours", "4 vs your 14"]],
+    timeline: [
+      ["", "Steady but slower", "Adding about 4 reviews a month to your 14. The count gap widens every week.", "Every Mon"],
+      ["hit", "New coach announcement", "Their profile photos updated Jul 8. Worth a glance.", "Jul 8"]
+    ],
+    actions: ["Open their profile", "See the gap trend"]
+  },
+  "payout $1,982": {
+    sub: "Stripe payout / landed Tue Jul 15",
+    chip: ["Reconciled to the penny", "st-green"],
+    money: ["$1,982", "net of $58 in fees, matched to 14 charges"],
+    fields: [["Gross", "$2,040"], ["Fees", "$58"], ["Charges", "14"], ["Bank deposit", "Tue Jul 15"], ["Includes", "Marcus Reeves' recovered $165"]],
+    timeline: [
+      ["", "Payout created", "14 charges bundled, including one recovered decline.", "Sun Jul 13"],
+      ["ok", "Deposit matched", "The AI bookkeeper tied it to the Tuesday bank deposit and filed the fees.", "Tue Jul 15"]
+    ],
+    actions: ["Open in the books", "See the 14 charges"]
+  },
+  "payout $2,214": {
+    sub: "Stripe payout / landed Tue Jul 8",
+    chip: ["Reconciled to the penny", "st-green"],
+    money: ["$2,214", "net of $64 in fees, matched to 17 charges"],
+    fields: [["Gross", "$2,278"], ["Fees", "$64"], ["Charges", "17"], ["Bank deposit", "Tue Jul 8"]],
+    timeline: [
+      ["ok", "Deposit matched", "PT sessions and mid-cycle joins. Fees split out automatically.", "Tue Jul 8"]
+    ],
+    actions: ["Open in the books", "See the 17 charges"]
+  },
+  "payout $8,940": {
+    sub: "Stripe payout / landed Wed Jul 2",
+    chip: ["Reconciled to the penny", "st-green"],
+    money: ["$8,940", "net of $259 in fees, matched to 61 charges. Dues land on the 1st."],
+    fields: [["Gross", "$9,199"], ["Fees", "$259"], ["Charges", "61"], ["Bank deposit", "Wed Jul 2"]],
+    timeline: [
+      ["", "The big one", "Monthly dues batch. 61 charges in a single payout.", "Jul 1"],
+      ["ok", "Deposit matched", "Reconciled the morning it landed. Zero spreadsheet time.", "Wed Jul 2"]
+    ],
+    actions: ["Open in the books", "See the 61 charges"]
+  },
+  "payout $1,046": {
+    sub: "Stripe payout / expected Mon Jul 21",
+    chip: ["In transit", "st-amber"],
+    money: ["$1,046", "net of $31 in fees, 9 charges, on the way to the bank"],
+    fields: [["Gross", "$1,077"], ["Fees", "$31"], ["Charges", "9"], ["Expected", "Mon Jul 21"]],
+    timeline: [
+      ["", "Payout created", "This week's PT and day passes.", "Fri Jul 18"],
+      ["", "Will auto-match on arrival", "The bookkeeper is already holding the charge list.", "Mon Jul 21"]
+    ],
+    actions: ["Open in the books"]
+  },
+  "chris boland": {
+    sub: "Lead / missed call, before open",
+    chip: ["Texted back in 31s", "st-green"],
+    fields: [["Channel", "Missed call, (555) 618-4402"], ["Called", "Fri 7:41 AM"], ["Text-back", "31 seconds"], ["Status", "Replied, choosing an intro time"]],
+    timeline: [
+      ["hit", "Missed call before open", "You were coaching the 7 AM.", "Fri 7:41 AM"],
+      ["", "Auto text-back in 31 seconds", "\"Sorry we missed you! This is Ironworks. Want to grab a free No-Sweat Intro?\"", "Fri 7:41 AM"],
+      ["ok", "He replied", "\"was calling about memberships\", intro times sent.", "Fri 8:02 AM"]
+    ],
+    actions: ["Call Chris", "Open the thread"]
+  },
+  "(555) 214-8837": {
+    sub: "After-hours caller / Thu 9:41 PM",
+    chip: ["Texted back in 6s", "st-green"],
+    fields: [["Called", "Thu 9:41 PM"], ["Text-back", "6 seconds"], ["Status", "Intro link sent this morning"]],
+    timeline: [
+      ["hit", "Missed call, 9:41 PM", "Gym closed at 8. Before this system, that call was gone.", "Thu 9:41 PM"],
+      ["", "Auto text-back in 6 seconds", "Friendly text with hours, prices, and an intro link.", "Thu 9:41 PM"],
+      ["ok", "Replied this morning", "\"do you have 6am classes?\" Answered, intro link sent.", "Fri 7:05 AM"]
+    ],
+    actions: ["Open the thread", "Book the intro"]
+  },
+  "(555) 630-2214": {
+    sub: "After-hours caller / Sun 7:12 AM",
+    chip: ["Intro booked", "st-green"],
+    fields: [["Called", "Sun 7:12 AM"], ["Text-back", "5 seconds"], ["Intro", "Tue 6:30 PM"]],
+    timeline: [
+      ["hit", "Missed call, Sunday 7:12 AM", "Nobody staffs a Sunday sunrise. The system does.", "Sun 7:12 AM"],
+      ["ok", "Texted in 5 seconds, intro booked", "Booked herself into Tuesday 6:30 from the link.", "Sun 7:31 AM"]
+    ],
+    actions: ["Open the thread"]
+  },
+  "instagram dms": {
+    sub: "Lead channel / organic, via Instagram",
+    chip: ["9 of 23 leads", "st-green"],
+    money: ["$0", "cost per lead. Your best channel is free."],
+    fields: [["Leads in July", "9"], ["Cost per lead", "$0"], ["Intros booked", "4"], ["Joined", "3"], ["Avg first reply", "44 seconds"]],
+    timeline: [
+      ["ok", "Kayla Bruner", "Day-pass question to booked intro in 3 minutes.", "Wed"],
+      ["ok", "Erin Fitzgerald", "Beginner question, now a Student member.", "Jun 30"]
+    ],
+    actions: ["Open the inbox", "See all 9 threads"]
+  },
+  "meta lead ads": {
+    sub: "Lead channel / paid, via Meta Lead Ads",
+    chip: ["6 of 23 leads", "st-amber"],
+    money: ["$63", "cost per lead on $380 of July spend. 2 joined: $190 to acquire a $129/mo member."],
+    fields: [["Leads in July", "6"], ["Spend", "$380"], ["Cost per lead", "$63"], ["Joined", "2"], ["Cost per join", "$190"]],
+    timeline: [
+      ["", "Form leads land here in seconds", "Every ad form submission gets the same 38-second treatment as a DM.", "Ongoing"],
+      ["ok", "Devon Marsh", "Meet-prep ad, now booked with Tyler.", "Mon"]
+    ],
+    note: "A $190 acquisition cost against $129 a month in dues pays back in week 7. The ads work because the follow-up is instant.",
+    actions: ["Open ads manager", "See the 6 leads"]
+  },
+  "google search & maps": {
+    sub: "Lead channel / organic, via Google Business Profile",
+    chip: ["5 of 23 leads", "st-green"],
+    money: ["$0", "cost per lead. Your 4.9 rating does the selling."],
+    fields: [["Leads in July", "5"], ["Cost per lead", "$0"], ["Source", "Profile calls + website clicks"], ["Joined", "1"]],
+    timeline: [
+      ["", "Found you next to a 4.3", "Searchers see your rating beside Flex Factory's before they ever call.", "Ongoing"]
+    ],
+    actions: ["Open the profile"]
+  },
+  "missed calls": {
+    sub: "Lead channel / phone, via Twilio",
+    chip: ["3 of 23 leads", "st-green"],
+    money: ["$0", "cost per lead. These used to be lost entirely."],
+    fields: [["Leads in July", "3"], ["Cost per lead", "$0"], ["Avg text-back", "14 seconds"], ["Lost after-hours calls", "0"]],
+    timeline: [
+      ["ok", "Every miss gets a text", "The log on this page shows each one, timestamped.", "Ongoing"]
+    ],
+    actions: ["See the text-back log"]
+  },
+  "barbell strength": {
+    sub: "Class / 6:00 AM, coached by you",
+    chip: ["12 of 14 booked", "st-green"],
+    fields: [["Time", "6:00 AM, 60 min"], ["Coach", "Sarah Voss"], ["Booked", "12 of 14"], ["Regulars", "Marcus Reeves, Danielle Ortiz"]],
+    timeline: [
+      ["ok", "Roster synced from PushPress", "Reminders went out last night. Two spots left.", "Thu 8:00 PM"]
+    ],
+    actions: ["Open the roster"]
+  },
+  "vendor call: rogue rack order": {
+    sub: "Calendar hold / 9:30 AM, 20 min",
+    chip: ["Prepped", "st-gray"],
+    fields: [["With", "Rogue sales rep"], ["About", "Third squat rack + plate order"], ["Budget line", "Equipment, $720/mo run rate"]],
+    timeline: [
+      ["", "Quote received", "Filed against June's equipment line so you know what fits.", "Jul 14"],
+      ["", "One-pager drafted", "Last order, current spend, and the delivery window question, in your notes.", "Jul 17"]
+    ],
+    actions: ["Open the notes"]
+  },
+  "evening strength": {
+    sub: "Class / 5:30 PM, coached by Tyler",
+    chip: ["Full, 14 of 14", "st-amber"],
+    fields: [["Time", "5:30 PM"], ["Coach", "Tyler Brandt"], ["Booked", "14 of 14, 3 waitlisted"], ["Note", "Big Tom will be there"]],
+    timeline: [
+      ["hit", "Reminder for you", "Big Tom Kowalski is booked in. His $165 decline needs a 20-second conversation.", "Today"],
+      ["", "Waitlist auto-managed", "Any cancel texts the first waitlisted member instantly.", "Ongoing"]
+    ],
+    actions: ["Open the roster", "Mark Big Tom handled"]
   }
 };

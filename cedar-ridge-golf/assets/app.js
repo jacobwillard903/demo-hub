@@ -52,6 +52,49 @@
     host.innerHTML = html;
   }
 
+  /* ---------------- Round 5: NWS weather strips ---------------- */
+  var WX_ICONS = {
+    sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>',
+    cloud: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .4-9A7 7 0 0 0 4.3 12.5 3.5 3.5 0 0 0 5.5 19z"/></svg>',
+    rain: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 15a4.5 4.5 0 0 0 .4-9A7 7 0 0 0 4.3 8.5 3.5 3.5 0 0 0 5.5 15z"/><path d="M8 18v2M12 17v3M16 18v2"/></svg>',
+    storm: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 14a4.5 4.5 0 0 0 .4-9A7 7 0 0 0 4.3 7.5 3.5 3.5 0 0 0 5.5 14z"/><path d="m12.5 15-2.5 4h3l-2.5 4"/></svg>'
+  };
+
+  function renderWxHourly() {
+    var host = document.querySelector("[data-wx-hourly]");
+    if (!host || !D.wxHourly) return;
+    var html = '<div class="wx-strip">';
+    D.wxHourly.forEach(function (h, i) {
+      html += '<div class="wx-chip ' + h.ic + (h.armed ? " armed" : "") + '" style="animation-delay:' + (i * 40) + 'ms">' +
+        '<span class="w-t">' + h.t + "</span>" +
+        '<span class="w-ic">' + (WX_ICONS[h.ic] || "") + "</span>" +
+        '<span class="w-rain tnum">' + h.rain + "%</span>" +
+        '<span class="w-wind tnum">' + h.wind + " mph</span>" +
+        (h.horn ? '<span class="w-mark">Horn 12:48</span>' : "") +
+        "</div>";
+    });
+    html += "</div>";
+    html += '<div class="wx-note"><span class="wx-window-key"></span>Shaded hours are the autopilot window. It armed on the 1 PM cell Thursday morning, reserved rebook slots for Sunday and next Saturday, and texts all 84 golfers within 4 minutes if the horn blows.</div>';
+    host.innerHTML = html;
+  }
+
+  function renderWxWeek() {
+    var host = document.querySelector("[data-wx-week]");
+    if (!host || !D.wxWeek) return;
+    var html = '<div class="wx-strip wx-7day">';
+    D.wxWeek.forEach(function (d, i) {
+      html += '<div class="wx-chip ' + d.ic + (d.armed ? " armed" : "") + '" style="animation-delay:' + (i * 40) + 'ms">' +
+        '<span class="w-t">' + d.d + "</span>" +
+        '<span class="w-ic">' + (WX_ICONS[d.ic] || "") + "</span>" +
+        '<span class="w-rain tnum">' + d.rain + "%</span>" +
+        '<span class="w-wind tnum">' + d.hi + "&deg; / " + d.lo + "&deg;</span>" +
+        (d.armed ? '<span class="w-mark">Autopilot armed</span>' : "") +
+        "</div>";
+    });
+    html += "</div>";
+    host.innerHTML = html;
+  }
+
   function welcomeGate() {
     if (!document.body.hasAttribute("data-welcome")) return;
     if (/[?&]tour=1\b/.test(location.search)) return;
@@ -190,6 +233,8 @@
   function init() {
     renderHeatmaps();
     renderRevenueBars();
+    renderWxHourly();
+    renderWxWeek();
     mobileChrome();
     wrapTables();
     welcomeGate();
